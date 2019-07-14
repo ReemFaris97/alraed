@@ -36,4 +36,18 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function showLoginForm()
+    {
+        return view('admin.auth.login');
+    }
+
+
+    public function redirectTo()
+    {
+        if (auth()->user()->is_admin == 1)
+            return '/dashboard';
+        else
+            return '/';
+    }
 }
