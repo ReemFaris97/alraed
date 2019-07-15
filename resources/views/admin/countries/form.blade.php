@@ -4,14 +4,14 @@
 <div class="form-group form-float">
   <label class="form-label">الاسم بالعربى</label>
   <div class="form-line">
-    {!! Form::text("ar_name",null,['class'=>'form-control','placeholder'=>'اكتب اسم القسم'])!!}
+    {!! Form::text("ar_name",null,['class'=>'form-control','placeholder'=>'اكتب اسم الدولة هنا ..'])!!}
   </div>
 </div>
 
 <div class="form-group form-float">
     <label class="form-label">الاسم بالانجليزية</label>
     <div class="form-line">
-        {!! Form::text("en_name",null,['class'=>'form-control','placeholder'=>'write category name '])!!}
+        {!! Form::text("en_name",null,['class'=>'form-control','placeholder'=>'write country name '])!!}
     </div>
 </div>
 

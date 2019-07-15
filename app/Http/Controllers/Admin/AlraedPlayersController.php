@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\OurTeam;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +15,8 @@ class AlraedPlayersController extends Controller
      */
     public function index()
     {
-        //
+        $members=OurTeam::all();
+        return view('admin.our_team.index',['items'=>$members]);
     }
 
     /**
@@ -24,7 +26,7 @@ class AlraedPlayersController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.our_team.add');
     }
 
     /**
@@ -35,7 +37,24 @@ class AlraedPlayersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'ar_name' => 'required|string|max:191',
+            'en_name' => 'required|string|max:191',
+            'ar_job_title' => 'required|string|max:191',
+            'en_job_title' => 'required|string|max:191',
+            'ar_description' => 'required|string',
+            'en_description' => 'required|string',
+            'image' => 'required|image|'
+        ]);
+
+        $inputs = $request->all();
+
+        if ($request->hasFile('image')) {
+            $inputs['image'] = uploader($request, 'image');
+        }
+        OurTeam::create($inputs);
+        popup('add');
+        return back();
     }
 
     /**
@@ -55,9 +74,9 @@ class AlraedPlayersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(OurTeam $ourTeam)
     {
-        //
+        return view('admin.our_team.edit',['item'=>$ourTeam]);
     }
 
     /**
@@ -67,9 +86,27 @@ class AlraedPlayersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, OurTeam $ourTeam)
     {
-        //
+        $this->validate($request,[
+            'ar_name' => 'required|string|max:191',
+            'en_name' => 'required|string|max:191',
+            'ar_job_title' => 'required|string|max:191',
+            'en_job_title' => 'required|string|max:191',
+            'ar_description' => 'required|string',
+            'en_description' => 'required|string',
+            'image' => 'sometimes|image|'
+        ]);
+
+        $inputs = $request->all();
+
+        if ($request->hasFile('image')) {
+            $inputs['image'] = uploader($request, 'image');
+        }
+
+        $ourTeam->update($inputs);
+        popup('update');
+        return back();
     }
 
     /**
@@ -78,8 +115,10 @@ class AlraedPlayersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(OurTeam $ourTeam)
     {
-        //
+        $ourTeam->delete();
+        popup('delete');
+        return back();
     }
 }

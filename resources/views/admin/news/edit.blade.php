@@ -1,8 +1,8 @@
 @extends('admin.layout.app')
 
 @section('title')
-تعديل القسم
-{{ $item->name }}
+تعديل الخبر
+{{ $item->title }}
 @endsection
 @section('content')
 
@@ -11,14 +11,14 @@
   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <div class="card">
       <div class="header">
-        <h2>تعديل القسم       {{ $item->name }}</h2>
+        <h2>تعديل الخبر       {{ $item->title }}</h2>
         <ul class="header-dropdown m-r--5">
-            <a href="{{route('admin.categories.index')}}">   <button class="btn btn-danger">كل الاقسام</button></a>
+            <a href="{{route('admin.news.index')}}">   <button class="btn btn-danger">كل الأخبار</button></a>
          </ul>
       </div>
       <div class="body">
-        {!!Form::model($item , ['route' => ['admin.categories.update' , $item->id] , 'method' => 'PATCH','files' => true]) !!}
-        @include('admin.categories.form')
+        {!!Form::model($item , ['route' => ['admin.news.update' , $item->id] , 'method' => 'PATCH','files' => true]) !!}
+        @include('admin.news.form')
         {!!Form::close() !!}
       </div>
     </div>

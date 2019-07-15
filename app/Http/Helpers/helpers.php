@@ -80,6 +80,7 @@ function deleteImg($img_name)
     \Storage::disk('public')->delete(uploadpath(), $img_name);
     return True;
 }
+
 function percentage($first, $second){
     $pre=-$first + $second;
     if($first==0){
@@ -99,63 +100,18 @@ function status()
 }
 
 
-function cartStatus(){
-    $cart = [
-        'prepared'=>'تم تجهيز الطلب',
-        'on_processing'=>'جارى تجهيز الطلب',
-        'not_received'=>'لم يتم استلام الطلب',
-        'received'=>'تم استلام الطلب',
-        'refused'   =>  'تم الرفض'
-    ];
-//    $cart = ['accepted','on_delivery','refused'];
-    return $cart;
-}
-
-function send_message()
-{
-    $options = array(
-        'message' => '',
-        'number' => '',
-        'sender' => '',
-        'unicode' => '',
-        'return' => ''
-    );
-
-    $headers = array(
-        'Authorization: key=AAAAk6lowFA:APA91bHGrGBDapUy8SsD95ipWTFmiUXpB6B1zEjILpcH6hDw6X2dx0nosuVZtTis1l7J2hzEp5662tKnSQdWnXarNIQ3Jar-14ywJWPex6uZLNFo7N8WtrbaYBy1orEBWkHvag1Ao2Eg',
-        'Content-Type: application/json'
-    );
-
-
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, 'https://fcm.googleapis.com/fcm/send');
-    curl_setopt($ch, CURLOPT_POST, true);
-//    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($options));
-    $result = curl_exec($ch);
-    curl_close($ch);
-    return $result;
-}
-
 function users()
 {
-    $cities = App\User::all()->mapWithKeys(function ($item) {
+    $users = App\User::all()->mapWithKeys(function ($item) {
         return [$item['id'] => $item['name']];
     });
-    return $cities;
-}
-
-function perm($name)
-{
-    return \App\Permission::whereName($name)->first()->id;
+    return $users;
 }
 
 
 function setting($name)
 {
-    return getLang(\App\Setting::where('name', $name)->first(),'value');
+    return getLang(\App\Settings::where('name', $name)->first(),'value');
 }
 
 
@@ -169,27 +125,12 @@ function countries()
 
 function categories()
 {
-    $countries = App\Category::all()->mapWithKeys(function ($item) {
+    $categories = App\Category::all()->mapWithKeys(function ($item) {
         return [$item['id'] => $item['ar_name']];
     });
-    return $countries;
+    return $categories;
 }
 
-function answers()
-{
-    $answers = App\Questionnaires::all()->mapWithKeys(function ($item) {
-        return [$item['id'] => $item['answer']];
-    });
-    return $answers;
-}
-
-function sub_categories()
-{
-    $subcategories = App\SubCategory::all()->mapWithKeys(function ($item) {
-        return [$item['id'] => $item['ar_name']];
-    });
-    return $subcategories;
-}
 
 function popup($name)
 {
@@ -239,10 +180,6 @@ function multipleUploader($request, $img_name, $model, $options = [])
     }
 }
 
-function UniqueCode($code)
-{
-    return \App\Coupon::where('code', $code)->first();
-}
 
 function fcm_server_key()
 {

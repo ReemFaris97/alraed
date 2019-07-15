@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Country;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +15,8 @@ class CountriesController extends Controller
      */
     public function index()
     {
-        //
+        $countries=Country::all();
+        return view('admin.countries.index',['items'=>$countries]);
     }
 
     /**
@@ -24,7 +26,7 @@ class CountriesController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.countries.add');
     }
 
     /**
@@ -35,7 +37,16 @@ class CountriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'ar_name'=>'required|string|max:191',
+            'en_name'=>'required|string|max:191',
+        ]);
+
+        $inputs=$request->all();
+        Country::create($inputs);
+        popup('add');
+        return back();
+
     }
 
     /**
@@ -55,9 +66,9 @@ class CountriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Country $country)
     {
-        //
+        return view('admin.countries.edit',['item'=>$country]);
     }
 
     /**
@@ -67,9 +78,18 @@ class CountriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Country $country)
     {
-        //
+        $this->validate($request,[
+
+            'ar_name'=>'required|string|max:191',
+            'en_name'=>'required|string|max:191',
+        ]);
+
+        $inputs=$request->all();
+        $country->update($inputs);
+        popup('update');
+        return back();
     }
 
     /**
@@ -78,8 +98,10 @@ class CountriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Country $country)
     {
-        //
+        $country->delete();
+        popup('delete');
+        return back();
     }
 }

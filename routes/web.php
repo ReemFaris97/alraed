@@ -1,24 +1,34 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
 
-Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => 'admin'], function () {
+
+//******************************* DASHBOARD ROUTES  ***********************************
+
+Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin'], function () {
 
     Route::get('/', 'IndexController@index')->name('home');
 
+    //USERS
+    Route::resource('admins','AdminsController');
+    Route::resource('assistant','AssistantsController');
+
+
+    //GENERAL
+    Route::resource('banners','BannersController');
+    Route::resource('our-team','AlraedPlayersController');
+    Route::resource('multimedia','MultiMediaController');
+    Route::resource('categories','CategoriesController');
+    Route::resource('news','NewsController');
+
+
+    //PLAYERS
+    Route::resource('countries','CountriesController');
+    Route::resource('teams','TeamsController');
+    Route::resource('players','PlayersController');
+
+    //SYSTEM SETTINGS
+    Route::resource('settings', 'SettingsController');
 
 });
 Auth::routes();

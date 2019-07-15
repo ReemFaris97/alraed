@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Traits\SettingOperation;
+use App\Settings;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class SettingsController extends Controller
 {
+    use SettingOperation;
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +17,9 @@ class SettingsController extends Controller
      */
     public function index()
     {
-        //
+        $settings=Settings::all()->pluck('page')->unique();
+//        dd($settings);
+        return view('admin.setting.index',compact('settings'));
     }
 
     /**
@@ -24,7 +29,7 @@ class SettingsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.settings.create');
     }
 
     /**
@@ -35,7 +40,9 @@ class SettingsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->RegisterSetting($request);
+//        popup('add');
+        return back()->with('تم التعديل بنجاح');
     }
 
     /**
@@ -46,7 +53,9 @@ class SettingsController extends Controller
      */
     public function show($id)
     {
-        //
+        $settings=Settings::wherePage($id)->get();
+        $settings_page = $id;
+        return view('admin.setting.form',compact('settings_page','settings'));
     }
 
     /**

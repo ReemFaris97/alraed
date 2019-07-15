@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +15,8 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        //
+        $categories=Category::all();
+        return view('admin.categories.index',['items'=>$categories]);
     }
 
     /**
@@ -24,7 +26,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.add');
     }
 
     /**
@@ -35,7 +37,17 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+
+            'ar_name'=>'required|string|max:191',
+            'en_name'=>'required|string|max:191',
+        ]);
+
+        $inputs=$request->all();
+        Category::create($inputs);
+        popup('add');
+        return back();
+
     }
 
     /**
@@ -55,9 +67,9 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category)
     {
-        //
+        return view('admin.categories.edit',['item'=>$category]);
     }
 
     /**
@@ -67,9 +79,20 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
-        //
+        $this->validate($request,[
+
+            'ar_name'=>'required|string|max:191',
+            'en_name'=>'required|string|max:191',
+        ]);
+
+        $inputs=$request->all();
+        $category->update($inputs);
+        popup('update');
+        return back();
+
+
     }
 
     /**
@@ -78,8 +101,10 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Category $category)
     {
-        //
+        $category->delete();
+        popup('delete');
+        return back();
     }
 }

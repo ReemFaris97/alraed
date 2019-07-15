@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Team;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +15,8 @@ class TeamesController extends Controller
      */
     public function index()
     {
-        //
+        $teams=Team::all();
+        return view('admin.teams.index',['items'=>$teams]);
     }
 
     /**
@@ -24,7 +26,7 @@ class TeamesController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.teams.create');
     }
 
     /**
@@ -35,7 +37,22 @@ class TeamesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+
+            'ar_name'=>'required|string|max:191',
+            'en_name'=>'required|string|max:191',
+            'image'=>'required|image'
+        ]);
+
+        $inputs=$request->all();
+
+        if ($request->hasFile('image')){
+
+            $inputs['image']=uploader($request,'image');
+        }
+        Team::create($inputs);
+        popup('add');
+        return back();
     }
 
     /**
@@ -55,9 +72,9 @@ class TeamesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Team $team)
     {
-        //
+        return view('admin.teams.edit',['item'=>$team]);
     }
 
     /**
@@ -67,9 +84,24 @@ class TeamesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Team $team)
     {
-        //
+        $this->validate($request,[
+
+            'ar_name'=>'required|string|max:191',
+            'en_name'=>'required|string|max:191',
+            'image'=>'sometimes|image'
+        ]);
+
+        $inputs=$request->all();
+
+        if ($request->hasFile('image')){
+
+            $inputs['image']=uploader($request,'image');
+        }
+       $team->update($inputs);
+        popup('update');
+        return back();
     }
 
     /**
@@ -78,8 +110,10 @@ class TeamesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Team $team)
     {
-        //
+        $team->delete();
+        popup('delete');
+        return back();
     }
 }

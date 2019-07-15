@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Banner;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +15,8 @@ class BannersController extends Controller
      */
     public function index()
     {
-        //
+        $banners=Banner::all();
+        return view('admin.banners.index',['items'=>$banners]);
     }
 
     /**
@@ -24,7 +26,7 @@ class BannersController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.banners.add');
     }
 
     /**
@@ -35,7 +37,22 @@ class BannersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'ar_title' => 'required|string|max:191',
+            'en_title' => 'required|string|max:191',
+            'ar_description' => 'required|string',
+            'en_description' => 'required|string',
+            'image' => 'required|image|'
+        ]);
+
+        $inputs = $request->all();
+
+        if ($request->hasFile('image')) {
+            $inputs['image'] = uploader($request, 'image');
+        }
+        Banner::create($inputs);
+        popup('add');
+        return back();
     }
 
     /**
@@ -55,9 +72,9 @@ class BannersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Banner $banner)
     {
-        //
+        return view('admin.banners.edit',['item'=>$banner]);
     }
 
     /**
@@ -67,9 +84,25 @@ class BannersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Banner $banner)
     {
-        //
+        $this->validate($request, [
+            'ar_title' => 'required|string|max:191',
+            'en_title' => 'required|string|max:191',
+            'ar_description' => 'required|string',
+            'en_description' => 'required|string',
+            'image' => 'required|image|'
+        ]);
+
+        $inputs = $request->all();
+
+        if ($request->hasFile('image')) {
+            $inputs['image'] = uploader($request, 'image');
+        }
+
+        $banner->update($inputs);
+        popup('update');
+        return back();
     }
 
     /**
@@ -78,8 +111,10 @@ class BannersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Banner $banner)
     {
-        //
+        $banner->delete();
+        popup('delete');
+        return back();
     }
 }

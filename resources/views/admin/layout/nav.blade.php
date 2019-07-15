@@ -8,132 +8,199 @@
 </li>
 
 <li>
-    <a class="check_active" href="{{route('website.homeWebsite')}}">
+    <a class="check_active" href="#">
         <i class="material-icons">home</i>
         <span>موقع الرائد</span>
     </a>
 
 </li>
 
+<li class="header">مستخدمين النظام</li>
 
-{{--<li>--}}
-{{--    <a href="javascript:void(0);" class="menu-toggle">--}}
-{{--        <i class="material-icons">assignment_ind</i>--}}
-{{--        <span>أعضاء الإدارة</span>--}}
-{{--    </a>--}}
-{{--    <ul class="ml-menu">--}}
-{{--        <li>--}}
-{{--            <a class="check_active" href="{{route('admin.admins.index')}}">--}}
+<li>
+    <a href="javascript:void(0);" class="menu-toggle">
+        <i class="material-icons">assignment_ind</i>
+        <span>أعضاء الإدارة</span>
+    </a>
+    <ul class="ml-menu">
+        <li>
+            <a class="check_active" href="{{route('admin.admins.index')}}">
 
-{{--                <span> عرض أعضاء الإدارة</span>--}}
-{{--            </a>--}}
-{{--        </li>--}}
-{{--        <li>--}}
-{{--            <a class="check_active" href="{{route('admin.admins.create')}}">--}}
+                <span> عرض أعضاء الإدارة</span>
+            </a>
+        </li>
+        <li>
+            <a class="check_active" href="{{route('admin.admins.create')}}">
 
-{{--                <span>اضافه عضو إدارة جديد</span>--}}
-{{--            </a>--}}
-{{--        </li>--}}
-{{--    </ul>--}}
-{{--</li>--}}
-
-
-
-{{--<li>--}}
-{{--    <a href="javascript:void(0);" class="menu-toggle">--}}
-{{--        <i class="material-icons">edit_location</i>--}}
-{{--        <span>الأقسام الرئيسية</span>--}}
-{{--    </a>--}}
-{{--    <ul class="ml-menu">--}}
-{{--        <li>--}}
-{{--            <a class="check_active" href="{{route('admin.categories.index')}}">--}}
-{{--                <span> عرض الأقسام الرئيسية</span>--}}
-{{--            </a>--}}
-{{--        </li>--}}
-{{--        <li>--}}
-{{--            <a class="check_active" href="{{route('admin.categories.create')}}">--}}
-{{--                <span> اضافه قسم رئيسي</span>--}}
-{{--            </a>--}}
-{{--        </li>--}}
-{{--    </ul>--}}
-{{--</li>--}}
-
-
-{{--<li>--}}
-{{--    <a href="javascript:void(0);" class="menu-toggle">--}}
-{{--        <i class="material-icons">edit_location</i>--}}
-{{--        <span>الاقسام الفرعية</span>--}}
-{{--    </a>--}}
-{{--    <ul class="ml-menu">--}}
-{{--        <li>--}}
-{{--            <a class="check_active" href="{{route('admin.sub-categories.index')}}">--}}
-{{--                <span> عرض الاقسام الفرعية</span>--}}
-{{--            </a>--}}
-{{--        </li>--}}
-{{--        <li>--}}
-{{--            <a class="check_active" href="{{route('admin.sub-categories.create')}}">--}}
-{{--                <span>اضافه قسم فرعى </span>--}}
-{{--            </a>--}}
-{{--        </li>--}}
-{{--    </ul>--}}
-{{--</li>--}}
+                <span>اضافه عضو إدارة جديد</span>
+            </a>
+        </li>
+    </ul>
+</li>
 
 
 
-{{--<li>--}}
-{{--    <a href="javascript:void(0);" class="menu-toggle">--}}
-{{--        <i class="material-icons">layers</i>--}}
-{{--        <span> المنتجات </span>--}}
-{{--    </a>--}}
-{{--    <ul class="ml-menu">--}}
-{{--        <li>--}}
-{{--            <a class="check_active" href="{{route('admin.products.index')}}">--}}
+<li>
+    <a href="javascript:void(0);" class="menu-toggle">
+        <i class="material-icons">layers</i>
+        <span> البنرات </span>
+    </a>
+    <ul class="ml-menu">
+        <li>
+            <a class="check_active" href="{{route('admin.banners.index')}}">
 
-{{--                <span> عرض المنتجات</span>--}}
-{{--            </a>--}}
-{{--        </li>--}}
-{{--        <li>--}}
-{{--            <a class="check_active" href="{{route('admin.products.create')}}">--}}
-{{--                <span>اضافه منتج </span>--}}
-{{--            </a>--}}
-{{--        </li>--}}
-{{--    </ul>--}}
-{{--</li>--}}
+                <span> عرض جميع البنرات</span>
+            </a>
+        </li>
+        <li>
+            <a class="check_active" href="{{route('admin.banners.create')}}">
+                <span>اضافه بنر جديد </span>
+            </a>
+        </li>
+    </ul>
+</li>
 
-{{--<li>--}}
-{{--    <a class="check_active" href="{{route('admin.rates.index')}}">--}}
-{{--        <i class="material-icons">layers</i>--}}
-{{--        <span>تقييم المنتجات</span>--}}
-{{--    </a>--}}
+<li>
+    <a href="javascript:void(0);" class="menu-toggle">
+        <i class="material-icons">layers</i>
+        <span> فريقنا الأول </span>
+    </a>
+    <ul class="ml-menu">
+        <li>
+            <a class="check_active" href="{{route('admin.our-team.index')}}">
 
-{{--</li>--}}
-{{--<li>--}}
-{{--    --}}{{--<a class="check_active" href="{{route('admin.favourites.index')}}">--}}
-{{--        --}}{{--<i class="material-icons">layers</i>--}}
-{{--        --}}{{--<span>المفضلة</span>--}}
-{{--    --}}{{--</a>--}}
+                <span> عرض أعضاء فريق الرواد</span>
+            </a>
+        </li>
+        <li>
+            <a class="check_active" href="{{route('admin.our-team.create')}}">
+                <span>اضافه عضو جديد </span>
+            </a>
+        </li>
+    </ul>
+</li>
 
-{{--</li>--}}
+<li>
+    <a href="javascript:void(0);" class="menu-toggle">
+        <i class="material-icons">edit_location</i>
+        <span>إدارة الوسائط المتعددة</span>
+    </a>
+    <ul class="ml-menu">
+        <li>
+            <a class="check_active" href="{{route('admin.multimedia.index')}}">
+
+                <span> عرض الوسائط المتعددة</span>
+            </a>
+        </li>
+        <li>
+            <a class="check_active" href="{{route('admin.multimedia.create')}}">
+                <span>اضافه  جديد </span>
+            </a>
+        </li>
+    </ul>
+</li>
+
+<li class="header">إدارة الأخبار</li>
+<li>
+    <a href="javascript:void(0);" class="menu-toggle">
+        <i class="material-icons">edit_location</i>
+        <span>أقسام الأخبار</span>
+    </a>
+    <ul class="ml-menu">
+        <li>
+            <a class="check_active" href="{{route('admin.categories.index')}}">
+                <span> عرض الأقسام</span>
+            </a>
+        </li>
+        <li>
+            <a class="check_active" href="{{route('admin.categories.create')}}">
+                <span> اضافه قسم</span>
+            </a>
+        </li>
+    </ul>
+</li>
 
 
-{{--<li>--}}
-{{--    --}}{{--<a href="javascript:void(0);" class="menu-toggle">--}}
-{{--        --}}{{--<i class="material-icons">edit_location</i>--}}
-{{--        --}}{{--<span>الخصومات</span>--}}
-{{--    --}}{{--</a>--}}
-{{--    --}}{{--<ul class="ml-menu">--}}
-{{--        --}}{{--<li>--}}
-{{--            --}}{{--<a class="check_active" href="{{route('admin.discounts.index')}}">--}}
-{{--                --}}{{--<span>جميع الخصومات</span>--}}
-{{--            --}}{{--</a>--}}
-{{--        --}}{{--</li>--}}
-{{--        --}}{{--<li>--}}
-{{--            --}}{{--<a class="check_active" href="{{route('admin.discounts.create')}}">--}}
-{{--                --}}{{--<span>اضافه خصم جديد</span>--}}
-{{--            --}}{{--</a>--}}
-{{--        --}}{{--</li>--}}
-{{--    --}}{{--</ul>--}}
-{{--</li>--}}
+<li>
+    <a href="javascript:void(0);" class="menu-toggle">
+        <i class="material-icons">edit_location</i>
+        <span>الأخبار</span>
+    </a>
+    <ul class="ml-menu">
+        <li>
+            <a class="check_active" href="{{route('admin.news.index')}}">
+                <span> عرض جميع الأخبار</span>
+            </a>
+        </li>
+        <li>
+            <a class="check_active" href="{{route('admin.news.create')}}">
+                <span>اضافه خبر جديد </span>
+            </a>
+        </li>
+    </ul>
+</li>
+
+<li class="header">إدارة اللاعبين</li>
+
+<li>
+    <a href="javascript:void(0);" class="menu-toggle">
+        <i class="material-icons">edit_location</i>
+        <span>الدول</span>
+    </a>
+    <ul class="ml-menu">
+        <li>
+            <a class="check_active" href="{{route('admin.countries.index')}}">
+                <span>جميع الدول</span>
+            </a>
+        </li>
+        <li>
+            <a class="check_active" href="{{route('admin.countries.create')}}">
+                <span>اضافه دولة جديد</span>
+            </a>
+        </li>
+    </ul>
+</li>
+
+<li>
+    <a href="javascript:void(0);" class="menu-toggle">
+        <i class="material-icons">layers</i>
+        <span>  الِفرق </span>
+    </a>
+    <ul class="ml-menu">
+        <li >
+            <a class="check_active" href="{{route('admin.teams.index')}}">
+                <span> عرض  جميع الفرق</span>
+            </a>
+        </li>
+        <li >
+            <a  class="check_active" href="{{route('admin.teams.create')}}">
+
+                <span>اضافة فريق جديد</span>
+            </a>
+        </li>
+    </ul>
+</li>
+
+
+<li>
+    <a href="javascript:void(0);" class="menu-toggle">
+        <i class="material-icons">layers</i>
+        <span>  لاعبي الفرق </span>
+    </a>
+    <ul class="ml-menu">
+        <li >
+            <a class="check_active" href="{{route('admin.players.index')}}">
+                <span> عرض  جميع اللاعبين</span>
+            </a>
+        </li>
+        <li >
+            <a  class="check_active" href="{{route('admin.players.create')}}">
+
+                <span>اضافة لاعب جديد</span>
+            </a>
+        </li>
+    </ul>
+</li>
 
 
 {{--<li>--}}
@@ -162,25 +229,7 @@
 {{--    </ul>--}}
 {{--</li>--}}
 
-{{--<li>--}}
-{{--    --}}{{--<a href="javascript:void(0);" class="menu-toggle">--}}
-{{--        --}}{{--<i class="material-icons">edit_location</i>--}}
-{{--        --}}{{--<span>مصاريف الشحن</span>--}}
-{{--    --}}{{--</a>--}}
-{{--    --}}{{--<ul class="ml-menu">--}}
-{{--        --}}{{--<li>--}}
-{{--            --}}{{--<a class="check_active" href="{{route('admin.charge-fees.index')}}">--}}
 
-{{--                --}}{{--<span> عرض مصاريف الشحن</span>--}}
-{{--            --}}{{--</a>--}}
-{{--        --}}{{--</li>--}}
-{{--        --}}{{--<li>--}}
-{{--            --}}{{--<a class="check_active" href="{{route('admin.charge-fees.create')}}">--}}
-{{--                --}}{{--<span>اضافه  جديد </span>--}}
-{{--            --}}{{--</a>--}}
-{{--        --}}{{--</li>--}}
-{{--    --}}{{--</ul>--}}
-{{--</li>--}}
 
 {{--<li>--}}
 {{--    <a class="check_active" href="{{route('admin.carts.index')}}">--}}
@@ -190,25 +239,7 @@
 
 {{--</li>--}}
 
-{{--<li>--}}
-{{--    <a href="javascript:void(0);" class="menu-toggle">--}}
-{{--        <i class="material-icons">layers</i>--}}
-{{--        <span>  أسئلة الإستبيان</span>--}}
-{{--    </a>--}}
-{{--    <ul class="ml-menu">--}}
-{{--        <li >--}}
-{{--            <a class="check_active" href="{{route('admin.questions.index')}}">--}}
-{{--                <span> عرض  أسئلة الإستبيان</span>--}}
-{{--            </a>--}}
-{{--        </li>--}}
-{{--        <li >--}}
-{{--            <a  class="check_active" href="{{route('admin.questions.create')}}">--}}
 
-{{--                <span>اضافة سؤال استبيان</span>--}}
-{{--            </a>--}}
-{{--        </li>--}}
-{{--    </ul>--}}
-{{--</li>--}}
 
 {{--<li>--}}
 {{--    <a class="check_active" href="{{route('admin.questionnaires.index')}}">--}}
@@ -222,13 +253,13 @@
 
 
 
-{{--<li>--}}
-{{--<a class="check_active" href="{{route('admin.settings.index')}}">--}}
-{{--<i class="material-icons">layers</i>--}}
-{{--<span> الاعدادات </span>--}}
-{{--</a>--}}
+<li>
+<a class="check_active" href="{{route('admin.settings.index')}}">
+<i class="material-icons">layers</i>
+<span> الاعدادات </span>
+</a>
 
-{{--</li>--}}
+</li>
 
 
 

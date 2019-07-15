@@ -1,7 +1,7 @@
 @extends('admin.layout.app')
 
 @section('title')
-    كل الاقسام
+    كل الدول
 @endsection
 @section('header')
     @include('admin.datatable.headers')
@@ -14,11 +14,11 @@
             <div class="card">
                 <div class="header">
                     <h2>
-                        كل الاقسام
+                        كل الدول
                     </h2>
                     <ul class="header-dropdown m-r--5">
-                        <a href="{{route('admin.categories.create')}}">
-                            <button class="btn btn-success">إضافة قسم جديد</button>
+                        <a href="{{route('admin.countries.create')}}">
+                            <button class="btn btn-success">إضافة دولة جديدة</button>
                         </a>
                     </ul>
                 </div>
@@ -39,12 +39,12 @@
                                 <td>{{$item->ar_name}}</td>
                                 <td>{{$item->en_name}}</td>
                                 <td>
-                                    <a href="{{route('admin.categories.edit',['id'=>$item->id])}}"
+                                    <a href="{{route('admin.countries.edit',['id'=>$item->id])}}"
                                        class="btn btn-info btn-circle"><i class="fa fa-pencil"></i></a>
                                     <a href="#" onclick="Delete({{$item->id}})" data-toggle="tooltip"
                                        data-original-title="حذف" class="btn btn-danger btn-circle"><i
                                                 class="fa fa-trash-o"></i></a>
-                                    {!!Form::open( ['route' => ['admin.categories.destroy',$item->id] ,'id'=>'delete-form'.$item->id, 'method' => 'Delete']) !!}
+                                    {!!Form::open( ['route' => ['admin.countries.destroy',$item->id] ,'id'=>'delete-form'.$item->id, 'method' => 'Delete']) !!}
                                     {!!Form::close() !!}
                                 </td>
                             </tr>

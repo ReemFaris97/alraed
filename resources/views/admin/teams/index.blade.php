@@ -1,7 +1,7 @@
 @extends('admin.layout.app')
 
 @section('title')
-    كل الاقسام
+    كل الفرق
 @endsection
 @section('header')
     @include('admin.datatable.headers')
@@ -14,11 +14,11 @@
             <div class="card">
                 <div class="header">
                     <h2>
-                        كل الاقسام
+                        كل الفرق
                     </h2>
                     <ul class="header-dropdown m-r--5">
-                        <a href="{{route('admin.categories.create')}}">
-                            <button class="btn btn-success">إضافة قسم جديد</button>
+                        <a href="{{route('admin.teams.create')}}">
+                            <button class="btn btn-success">إضافة جديد</button>
                         </a>
                     </ul>
                 </div>
@@ -27,8 +27,8 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>الاسم بالعربى</th>
-                            <th>name in english</th>
+                            <th>اسم الفريق</th>
+                            <th>صورة الفريق</th>
                             <th>العمليات</th>
                         </tr>
                         </thead>
@@ -36,15 +36,15 @@
                         @foreach($items as $key=>$item)
                             <tr>
                                 <td>{{++$key}}</td>
-                                <td>{{$item->ar_name}}</td>
-                                <td>{{$item->en_name}}</td>
+                                <td>{{$item->ar_name }}</td>
+                                <td><img src="{{getimg($item->image)}}" style="width: 50px; height: 50px"></td>
                                 <td>
-                                    <a href="{{route('admin.categories.edit',['id'=>$item->id])}}"
+                                    <a href="{{route('admin.teams.edit',['id'=>$item->id])}}"
                                        class="btn btn-info btn-circle"><i class="fa fa-pencil"></i></a>
                                     <a href="#" onclick="Delete({{$item->id}})" data-toggle="tooltip"
                                        data-original-title="حذف" class="btn btn-danger btn-circle"><i
                                                 class="fa fa-trash-o"></i></a>
-                                    {!!Form::open( ['route' => ['admin.categories.destroy',$item->id] ,'id'=>'delete-form'.$item->id, 'method' => 'Delete']) !!}
+                                    {!!Form::open( ['route' => ['admin.teams.destroy',$item->id] ,'id'=>'delete-form'.$item->id, 'method' => 'Delete']) !!}
                                     {!!Form::close() !!}
                                 </td>
                             </tr>
@@ -68,7 +68,7 @@
             console.log(item_id);
             swal({
                 title: "هل أنت متأكد ",
-                text: "هل تريد حذف هذا القسم ؟",
+                text: "هل تريد حذف هذا الفريق ؟",
                 icon: "warning",
                 buttons: ["الغاء", "موافق"],
                 dangerMode: true,
@@ -77,7 +77,7 @@
                 if (isConfirm) {
                     document.getElementById('delete-form' + item_id).submit();
                 } else {
-                    swal("تم االإلفاء", "حذف  القسم تم الغاؤه", 'info', {buttons: 'موافق'});
+                    swal("تم االإلفاء", "حذف  الفريق تم الغاؤه", 'info', {buttons: 'موافق'});
                 }
             });
         }
