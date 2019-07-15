@@ -82,17 +82,7 @@
 @endsection
 
 @push('scripts')
-    {!! Html::script('/admin/plugins/ckeditor/ckeditor.js') !!}
-
-    {{--<script>--}}
-        {{----}}
-        {{--$(document).ready(function () {--}}
-
-            {{--CKEDITOR.replaceClass = 'editor1';--}}
-
-        {{--});--}}
-
-    {{--</script>--}}
+    {!! Html::script('admin/plugins/ckeditor/ckeditor.js') !!}
 
     <script>
 
