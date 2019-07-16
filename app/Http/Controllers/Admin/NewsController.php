@@ -38,7 +38,7 @@ class NewsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'category_id' => 'required|',
+            'category_id' => 'required|exists:categories,id',
             'ar_title' => 'required|string|max:191',
             'en_title' => 'required|string|max:191',
             'ar_description' => 'required|string',

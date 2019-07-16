@@ -21,11 +21,8 @@ class CreateMatchesTable extends Migration
             $table->unsignedBigInteger('second_team_id');
             $table->foreign('second_team_id')->references('id')->on('teams');
 
-
-
             $table->string('stadium');
-            $table->string('first_team_result');
-            $table->string('second_team_result');
+            $table->string('date');
 
 
             $table->timestamps();

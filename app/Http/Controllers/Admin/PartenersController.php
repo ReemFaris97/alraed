@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Partner;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class PartenersController extends Controller
+class PartnersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,8 @@ class PartenersController extends Controller
      */
     public function index()
     {
-        //
+        $partners=Partner::all();
+        return view('admin.partners.index',['items'=>$partners]);
     }
 
     /**
@@ -24,7 +26,7 @@ class PartenersController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.partners.add');
     }
 
     /**
@@ -35,7 +37,23 @@ class PartenersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'ar_name'=>'required|string|max:191',
+            'en_name'=>'required|string|max:191',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'url'=>'sometimes'
+        ]);
+
+        $inputs=$request->all();
+
+        if ($request->hasFile('image')){
+            $inputs['image']=uploader($request,'image');
+        }
+
+        Partner::create($inputs);
+        popup('add');
+        return back();
+
     }
 
     /**
@@ -55,9 +73,9 @@ class PartenersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Partner $partner)
     {
-        //
+        return view('admin.partners.edit',['item'=>$partner]);
     }
 
     /**
@@ -67,9 +85,24 @@ class PartenersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Partner $partner)
     {
-        //
+        $this->validate($request,[
+            'ar_name'=>'required|string|max:191',
+            'en_name'=>'required|string|max:191',
+            'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'url'=>'sometimes'
+        ]);
+
+        $inputs=$request->all();
+
+        if ($request->hasFile('image')){
+            $inputs['image']=uploader($request,'image');
+        }
+
+        $partner->update($inputs);
+        popup('update');
+        return back();
     }
 
     /**
@@ -78,8 +111,10 @@ class PartenersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Partner $partner)
     {
-        //
+        $partner->delete();
+        popup('delete');
+        return back();
     }
 }

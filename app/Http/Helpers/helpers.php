@@ -99,6 +99,16 @@ function status()
     return $array;
 }
 
+function PlayerPosition()
+{
+    $array = [
+        'goal_keeper'=>'حارس مرمى',
+        'defender'=>'مدافع',
+        'mid_line'=>'خط وسط',
+        'attacking'=>'مهاجم'
+    ];
+    return $array;
+}
 
 function users()
 {
@@ -129,6 +139,14 @@ function categories()
         return [$item['id'] => $item['ar_name']];
     });
     return $categories;
+}
+
+function teams()
+{
+    $teams = App\Team::all()->mapWithKeys(function ($item) {
+        return [$item['id'] => $item['ar_name']];
+    });
+    return $teams;
 }
 
 

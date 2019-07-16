@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Champion;
+use DemeterChain\C;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +16,8 @@ class ChampionsController extends Controller
      */
     public function index()
     {
-        //
+        $champions=Champion::all();
+        return view('admin.champions.index',['items'=>$champions]);
     }
 
     /**
@@ -24,7 +27,7 @@ class ChampionsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.champions.add');
     }
 
     /**
@@ -35,7 +38,22 @@ class ChampionsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'ar_title'=>'required|string|max:191',
+            'en_title'=>'required|string|max:191',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $inputs=$request->all();
+        if ($request->hasFile('image')){
+
+            $inputs['image']=uploader($request,'image');
+        }
+
+        Champion::create($inputs);
+        popup('add');
+        return back();
+
     }
 
     /**
@@ -55,9 +73,9 @@ class ChampionsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Champion $champion)
     {
-        //
+        return view('admin.champions.edit',['item'=>$champion]);
     }
 
     /**
@@ -67,9 +85,23 @@ class ChampionsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Champion $champion)
     {
-        //
+        $this->validate($request,[
+            'ar_title'=>'required|string|max:191',
+            'en_title'=>'required|string|max:191',
+            'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $inputs=$request->all();
+        if ($request->hasFile('image')){
+
+            $inputs['image']=uploader($request,'image');
+        }
+
+        $champion->update($inputs);
+        popup('update');
+        return back();
     }
 
     /**
@@ -78,8 +110,10 @@ class ChampionsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Champion $champion)
     {
-        //
+        $champion->delete();
+        popup('delete');
+        return back();
     }
 }

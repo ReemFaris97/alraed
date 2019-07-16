@@ -9,11 +9,12 @@ Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin']
 
     //USERS
     Route::resource('admins', 'AdminsController');
-    Route::resource('assistant', 'AssistantsController');
+    Route::resource('assistants', 'AssistantsController');
 
 
     //GENERAL
     Route::resource('banners', 'BannersController');
+    Route::resource('partners', 'PartnersController');
     Route::resource('our-team', 'AlraedPlayersController');
     Route::resource('multimedia', 'MultiMediaController');
     Route::resource('categories', 'CategoriesController');
@@ -23,10 +24,12 @@ Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin']
     //PLAYERS
     Route::resource('countries', 'CountriesController');
     Route::resource('teams', 'TeamsController');
-    Route::resource('players', 'PlayersController');
+    Route::resource('players', 'TeamPlayersController');
 
     //MATCHES
+    Route::resource('champions', 'ChampionsController');
     Route::resource('matches', 'MatchesController');
+    Route::resource('statistics', 'StatisticsController');
 
 
     //SYSTEM SETTINGS

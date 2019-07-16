@@ -6,7 +6,7 @@ use App\Team;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class TeamesController extends Controller
+class TeamsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,7 +26,7 @@ class TeamesController extends Controller
      */
     public function create()
     {
-        return view('admin.teams.create');
+        return view('admin.teams.add');
     }
 
     /**
@@ -41,7 +41,7 @@ class TeamesController extends Controller
 
             'ar_name'=>'required|string|max:191',
             'en_name'=>'required|string|max:191',
-            'image'=>'required|image'
+            'image'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
         $inputs=$request->all();
@@ -90,7 +90,7 @@ class TeamesController extends Controller
 
             'ar_name'=>'required|string|max:191',
             'en_name'=>'required|string|max:191',
-            'image'=>'sometimes|image'
+            'image'=>'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
         $inputs=$request->all();

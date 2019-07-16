@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Match;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +15,8 @@ class MatchesController extends Controller
      */
     public function index()
     {
-        //
+        $matches=Match::all();
+        return view('admin.matches.index',['items'=>$matches]);
     }
 
     /**
@@ -24,7 +26,7 @@ class MatchesController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.matches.create');
     }
 
     /**
@@ -35,7 +37,18 @@ class MatchesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'first_team_id'=>'required|exists:teams,id',
+            'second_team_id'=>'required|exists:teams,id',
+            'champion_id'=>'required|exists:champions,id',
+            'stadium'=>'required|string|max:191',
+            'date'=>'required'
+        ]);
+        $inputs=$request->all();
+        Match::create($inputs);
+        popup('add');
+        return back();
+
     }
 
     /**
@@ -55,9 +68,9 @@ class MatchesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Match $match)
     {
-        //
+        return view('admin.matches.edit',['item'=>$match]);
     }
 
     /**
@@ -67,9 +80,20 @@ class MatchesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Match $match)
     {
-        //
+        $this->validate($request,[
+            'first_team_id'=>'required|exists:teams,id',
+            'second_team_id'=>'required|exists:teams,id',
+            'champion_id'=>'required|exists:champions,id',
+            'stadium'=>'required|string|max:191',
+            'date'=>'required'
+        ]);
+        $inputs=$request->all();
+        $match->update($inputs);
+        popup('update');
+        return back();
+
     }
 
     /**
@@ -78,8 +102,10 @@ class MatchesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Match $match)
     {
-        //
+        $match->delete();
+        popup('delete');
+        return back();
     }
 }
