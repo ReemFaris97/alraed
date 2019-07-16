@@ -12,4 +12,9 @@ class Team extends Model
     {
         return getLang($this, 'name');
     }
+
+    public function players(){
+
+        return $this->hasMany(TeamPlayers::class);
+    }
 }

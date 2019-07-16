@@ -1,7 +1,7 @@
 @extends('admin.layout.app')
 
 @section('title')
-جدول المباريات
+جميع الإحصائيات
 @endsection
 @section('header')
     @include('admin.datatable.headers')
@@ -14,11 +14,11 @@
             <div class="card">
                 <div class="header">
                     <h2>
-                        جدول المباريات
+                        جميع الإحصائيات
                     </h2>
                     <ul class="header-dropdown m-r--5">
-                        <a href="{{route('admin.matches.create')}}">
-                            <button class="btn btn-success">إضافة مباراة جديدة</button>
+                        <a href="{{route('admin.statistics.create')}}">
+                            <button class="btn btn-success">إضافة جديدة</button>
                         </a>
                     </ul>
                 </div>
@@ -39,18 +39,17 @@
                         @foreach($items as $key=>$item)
                             <tr>
                                 <td>{{++$key}}</td>
-                                <td>{{$item->Champion->ar_title }}</td>
                                 <td>{{$item->FirstTeam->ar_name }}</td>
                                 <td>{{$item->SecondTeam->ar_name }}</td>
                                 <td>{{$item->stadium }}</td>
                                 <td>{{$item->date }}</td>
                                 <td>
-                                    <a href="{{route('admin.matches.edit',['id'=>$item->id])}}"
+                                    <a href="{{route('admin.statistics.edit',['id'=>$item->id])}}"
                                        class="btn btn-info btn-circle"><i class="fa fa-pencil"></i></a>
                                     <a href="#" onclick="Delete({{$item->id}})" data-toggle="tooltip"
                                        data-original-title="حذف" class="btn btn-danger btn-circle"><i
                                                 class="fa fa-trash-o"></i></a>
-                                    {!!Form::open( ['route' => ['admin.matches.destroy',$item->id] ,'id'=>'delete-form'.$item->id, 'method' => 'Delete']) !!}
+                                    {!!Form::open( ['route' => ['admin.statistics.destroy',$item->id] ,'id'=>'delete-form'.$item->id, 'method' => 'Delete']) !!}
                                     {!!Form::close() !!}
                                 </td>
                             </tr>

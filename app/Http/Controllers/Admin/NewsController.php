@@ -45,7 +45,7 @@ class NewsController extends Controller
             'en_description' => 'required|string',
             'ar_writer_name' => 'required|string|max:191',
             'en_writer_name' => 'required|string|max:191',
-            'image' => 'required|image|'
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
         $inputs = $request->all();
@@ -97,7 +97,7 @@ class NewsController extends Controller
             'en_description' => 'required|string',
             'ar_writer_name' => 'required|string|max:191',
             'en_writer_name' => 'required|string|max:191',
-            'image' => 'required|image|'
+            'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
         $inputs = $request->all();

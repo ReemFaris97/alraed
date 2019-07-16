@@ -26,7 +26,7 @@ class MatchesController extends Controller
      */
     public function create()
     {
-        return view('admin.matches.create');
+        return view('admin.matches.add');
     }
 
     /**
@@ -42,6 +42,8 @@ class MatchesController extends Controller
             'second_team_id'=>'required|exists:teams,id',
             'champion_id'=>'required|exists:champions,id',
             'stadium'=>'required|string|max:191',
+            'ar_name'=>'required|string|max:191',
+            'en_name'=>'required|string|max:191',
             'date'=>'required'
         ]);
         $inputs=$request->all();
@@ -87,6 +89,8 @@ class MatchesController extends Controller
             'second_team_id'=>'required|exists:teams,id',
             'champion_id'=>'required|exists:champions,id',
             'stadium'=>'required|string|max:191',
+            'ar_name'=>'required|string|max:191',
+            'en_name'=>'required|string|max:191',
             'date'=>'required'
         ]);
         $inputs=$request->all();

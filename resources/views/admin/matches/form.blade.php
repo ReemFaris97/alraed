@@ -3,67 +3,51 @@
 @include('admin.common.alert')
 
 <div class="form-group form-float">
-    <label class="form-label">اسم التيم الخاص باللاعب</label>
-    <div class="form-line">
-        {!! Form::select("team_id",teams(),null,['class'=>'form-control','placeholder'=>'اختر الفريق الخاص باللاعب'])!!}
-    </div>
-</div>
-
-<div class="form-group form-float">
-    <label class="form-label">الدولة</label>
-    <div class="form-line">
-        {!! Form::select("country_id",countries(),null,['class'=>'form-control','placeholder'=>'اختر قسم الخبر'])!!}
-    </div>
-</div>
-<div class="form-group form-float">
-    <label class="form-label">اسم اللاعب بالعربى</label>
+    <label class="form-label">اسم المباراة باللغة العربية</label>
     <div class="form-line">
         {!! Form::text("ar_name",null,['class'=>'form-control','placeholder'=>'اكتب اسم اللاعب....'])!!}
     </div>
 </div>
 
 <div class="form-group form-float">
-    <label class="form-label">اسم اللاعب بالانجليزية</label>
+    <label class="form-label">اسم المباراة باللغة الإنجليزية</label>
     <div class="form-line">
-        {!! Form::text("en_name",null,['class'=>'form-control','placeholder'=>'write player name... '])!!}
-    </div>
-</div>
-
-<div class="form-group form-float">
-    <label class="form-label">عمر اللاعب</label>
-    <div class="form-line">
-        {!! Form::number("age",null,['class'=>'form-control','placeholder'=>'اكتب عمر اللاعب...'])!!}
-    </div>
-</div>
-<div class="form-group form-float">
-    <label class="form-label">طول اللاعب</label>
-    <div class="form-line">
-        <label>سم</label>
-        {!! Form::number("length",null,['class'=>'form-control','placeholder'=>'اكتب طول اللاعب...'])!!}
+        {!! Form::text("en_name",null,['class'=>'form-control','placeholder'=>'Enter Match name....'])!!}
     </div>
 </div>
 
 
 <div class="form-group form-float">
-    <label class="form-label">مكان اللاعب في التشكيلة</label>
+    <label class="form-label">الفريق الأول</label>
     <div class="form-line">
-        {!! Form::select("position",PlayerPosition(),null,['class'=>'form-control','placeholder'=>'اختر مكان اللاعب ف التشكيلة'])!!}
+        {!! Form::select("first_team_id",teams(),null,['class'=>'form-control','placeholder'=>'اختر الفريق الأول'])!!}
     </div>
 </div>
 
-@if (isset($item->image))
-    <div class="form-group form-float">
-        <label class="form-label">صورة اللاعب الحالية  :</label>
-        <div class="form-line">
-            <img class="img-preview" src="{{getimg($item->image)}}" style="width: 50px; height: 50px">
-        </div>
+<div class="form-group form-float">
+    <label class="form-label">الفريق لثاني </label>
+    <div class="form-line">
+        {!! Form::select("second_team_id",teams(),null,['class'=>'form-control','placeholder'=>'اختر الفريق الثاني'])!!}
     </div>
-@endif
+</div>
 
 <div class="form-group form-float">
-    <label class="form-label">اضافة صورة للاعب </label>
+    <label class="form-label">البطولة</label>
     <div class="form-line">
-        {!! Form::file("image",null,['class'=>'form-control'])!!}
+        {!! Form::select("champion_id",champions(),null,['class'=>'form-control','placeholder'=>'اختر البطولة'])!!}
+    </div>
+</div>
+<div class="form-group form-float">
+    <label class="form-label">الملعب</label>
+    <div class="form-line">
+        {!! Form::text("stadium",null,['class'=>'form-control','placeholder'=>'اكتب اسم اللاعب....'])!!}
+    </div>
+</div>
+
+<div class="form-group form-float">
+    <label class="form-label">تاريخ المباراة</label>
+    <div class="form-line">
+        {!! Form::date("date",null,['class'=>'form-control','placeholder'=>'تاريخ المباراة...'])!!}
     </div>
 </div>
 

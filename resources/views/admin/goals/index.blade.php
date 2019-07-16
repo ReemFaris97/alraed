@@ -1,7 +1,7 @@
 @extends('admin.layout.app')
 
 @section('title')
-جدول المباريات
+جميع الاهداف
 @endsection
 @section('header')
     @include('admin.datatable.headers')
@@ -14,11 +14,11 @@
             <div class="card">
                 <div class="header">
                     <h2>
-                        جدول المباريات
+                        جميع الأهداف
                     </h2>
                     <ul class="header-dropdown m-r--5">
                         <a href="{{route('admin.matches.create')}}">
-                            <button class="btn btn-success">إضافة مباراة جديدة</button>
+                            <button class="btn btn-success">إضافة هدف جديد</button>
                         </a>
                     </ul>
                 </div>
@@ -27,11 +27,10 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>البطولة</th>
-                            <th>الفريق الأول</th>
-                            <th>الفريق الثاني</th>
-                            <th> الملعب</th>
-                            <th> تاريخ المباراة</th>
+                            <th>المباراة</th>
+                            <th>الفريق</th>
+                            <th>اللاعب الذي أحرز الهدف</th>
+                            <th>في الدقيقة</th>
                             <th>العمليات</th>
                         </tr>
                         </thead>
@@ -39,18 +38,17 @@
                         @foreach($items as $key=>$item)
                             <tr>
                                 <td>{{++$key}}</td>
-                                <td>{{$item->Champion->ar_title }}</td>
-                                <td>{{$item->FirstTeam->ar_name }}</td>
-                                <td>{{$item->SecondTeam->ar_name }}</td>
-                                <td>{{$item->stadium }}</td>
-                                <td>{{$item->date }}</td>
+                                <td>{{$item->match->ar_name }}</td>
+                                <td>{{$item->team->ar_name }}</td>
+                                <td>{{$item->player->ar_name }}</td>
+                                <td>{{$item->minuit }}</td>
                                 <td>
-                                    <a href="{{route('admin.matches.edit',['id'=>$item->id])}}"
+                                    <a href="{{route('admin.goals.edit',['id'=>$item->id])}}"
                                        class="btn btn-info btn-circle"><i class="fa fa-pencil"></i></a>
                                     <a href="#" onclick="Delete({{$item->id}})" data-toggle="tooltip"
                                        data-original-title="حذف" class="btn btn-danger btn-circle"><i
                                                 class="fa fa-trash-o"></i></a>
-                                    {!!Form::open( ['route' => ['admin.matches.destroy',$item->id] ,'id'=>'delete-form'.$item->id, 'method' => 'Delete']) !!}
+                                    {!!Form::open( ['route' => ['admin.goals.destroy',$item->id] ,'id'=>'delete-form'.$item->id, 'method' => 'Delete']) !!}
                                     {!!Form::close() !!}
                                 </td>
                             </tr>
@@ -74,7 +72,7 @@
             console.log(item_id);
             swal({
                 title: "هل أنت متأكد ",
-                text: "هل تريد حذف هذه المباراة ؟",
+                text: "هل تريد حذف هذا الهدف ؟",
                 icon: "warning",
                 buttons: ["الغاء", "موافق"],
                 dangerMode: true,
@@ -83,7 +81,7 @@
                 if (isConfirm) {
                     document.getElementById('delete-form' + item_id).submit();
                 } else {
-                    swal("تم االإلفاء", "حذف  المباراة تم الغاؤه", 'info', {buttons: 'موافق'});
+                    swal("تم االإلفاء", "حذف  الهدف تم الغاؤه", 'info', {buttons: 'موافق'});
                 }
             });
         }

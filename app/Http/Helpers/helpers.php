@@ -150,6 +150,31 @@ function teams()
 }
 
 
+function champions()
+{
+    $champions = App\Champion::all()->mapWithKeys(function ($item) {
+        return [$item['id'] => $item['ar_title']];
+    });
+    return $champions;
+}
+
+function players()
+{
+    $players = App\TeamPlayers::all()->mapWithKeys(function ($item) {
+        return [$item['id'] => $item['ar_name']];
+    });
+    return $players;
+}
+
+function matches()
+{
+    $matches = App\Match::all()->mapWithKeys(function ($item) {
+        return [$item['id'] => $item['ar_name']];
+    });
+    return $matches;
+}
+
+
 function popup($name)
 {
     $ms = 5000;

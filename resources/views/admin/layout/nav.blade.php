@@ -288,6 +288,27 @@
 <li>
     <a href="javascript:void(0);" class="menu-toggle">
         <i class="material-icons">layers</i>
+        <span>  الأهداف </span>
+    </a>
+    <ul class="ml-menu">
+        <li >
+            <a class="check_active" href="{{route('admin.goals.index')}}">
+                <span> عرض  جميع الأهداف</span>
+            </a>
+        </li>
+        <li >
+            <a  class="check_active" href="{{route('admin.goals.create')}}">
+
+                <span>اضافة هدف جديد</span>
+            </a>
+        </li>
+    </ul>
+</li>
+
+
+<li>
+    <a href="javascript:void(0);" class="menu-toggle">
+        <i class="material-icons">layers</i>
         <span>  الإحصائيات </span>
     </a>
     <ul class="ml-menu">

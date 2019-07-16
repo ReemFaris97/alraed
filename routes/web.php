@@ -29,11 +29,15 @@ Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin']
     //MATCHES
     Route::resource('champions', 'ChampionsController');
     Route::resource('matches', 'MatchesController');
+    Route::resource('goals', 'GoalsController');
     Route::resource('statistics', 'StatisticsController');
 
 
     //SYSTEM SETTINGS
     Route::resource('settings', 'SettingsController');
+
+    //Ajax Routes
+    Route::get('ajax-team/{team_id}', 'GoalsController@TeamAjax');
 
 });
 Auth::routes();
