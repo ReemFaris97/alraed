@@ -66,9 +66,9 @@ class StatisticsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Statistic $statistic)
     {
-        //
+        return view('admin.statistics.show',['item'=>$statistic]);
     }
 
     /**

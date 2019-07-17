@@ -45,7 +45,7 @@ class LoginController extends Controller
 
     public function redirectTo()
     {
-        if (auth()->user()->is_admin == 1)
+        if (auth()->user()->is_active == 1)
             return '/dashboard';
         else
             return '/';

@@ -3,13 +3,17 @@
 
 //******************************* DASHBOARD ROUTES  ***********************************
 
-Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin'], function () {
+Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware'=>'admin'], function () {
 
     Route::get('/', 'IndexController@index')->name('home');
 
     //USERS
     Route::resource('admins', 'AdminsController');
     Route::resource('assistants', 'AssistantsController');
+
+        //ACTIVATE ACCOUNTS
+        Route::get('activate/{id}','ActivateAccountsController@activate')->name('Activate');
+        Route::get('deactivate/{id}','ActivateAccountsController@deactivate')->name('Deactivate');
 
 
     //GENERAL
@@ -40,6 +44,18 @@ Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin']
     Route::get('ajax-team/{team_id}', 'GoalsController@TeamAjax');
 
 });
+
+//*******************************  END DASHBOARD ROUTES  ***********************************
+
+
+//*******************************  WEBSITE ROUTES  ***********************************
+
+
+
+
+
+//*******************************  END WEBSITE ROUTES  ***********************************
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

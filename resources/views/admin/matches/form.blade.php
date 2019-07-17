@@ -5,7 +5,7 @@
 <div class="form-group form-float">
     <label class="form-label">اسم المباراة باللغة العربية</label>
     <div class="form-line">
-        {!! Form::text("ar_name",null,['class'=>'form-control','placeholder'=>'اكتب اسم اللاعب....'])!!}
+        {!! Form::text("ar_name",null,['class'=>'form-control','placeholder'=>'اكتب اسم المباراة....'])!!}
     </div>
 </div>
 

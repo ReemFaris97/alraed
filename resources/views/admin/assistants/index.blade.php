@@ -1,7 +1,7 @@
 @extends('admin.layout.app')
 
 @section('title')
-    أعضاء إدارة النظام
+    المديرين المساعدين
 @endsection
 @section('header')
     @include('admin.datatable.headers')
@@ -14,11 +14,11 @@
             <div class="card">
                 <div class="header">
                     <h2>
-                        أعضاء إدارة النظام
+                        المديرين المساعدين
                     </h2>
                     <ul class="header-dropdown m-r--5">
-                        <a href="{{route('admin.admins.create')}}">
-                            <button class="btn btn-success">إضافة عضو جديد</button>
+                        <a href="{{route('admin.assistants.create')}}">
+                            <button class="btn btn-success">إضافة مدير مساعد جديد</button>
                         </a>
                     </ul>
                 </div>
@@ -54,17 +54,15 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <a href="{{route('admin.admins.edit',['id'=>$item->id])}}"
+                                    <a href="{{route('admin.assistants.edit',['id'=>$item->id])}}"
                                        class="btn btn-info btn-circle"><i style="padding-top:5px;padding-left: 6px;"
                                                                           class="fa fa-pencil"></i></a>
-                                    @if($item->email== "admin@admin.com")
-                                    @else
                                         <a href="#" onclick="Delete({{$item->id}})" data-toggle="tooltip"
                                            data-original-title="حذف" class="btn btn-danger btn-circle"><i
                                                     style="padding-top: 5px;padding-left: 4px;"
                                                     class="fa fa-trash-o"></i></a>
-                                    @endif
-                                    {!!Form::open( ['route' => ['admin.admins.destroy',$item->id] ,'id'=>'delete-form'.$item->id, 'method' => 'Delete']) !!}
+
+                                    {!!Form::open( ['route' => ['admin.assistants.destroy',$item->id] ,'id'=>'delete-form'.$item->id, 'method' => 'Delete']) !!}
                                     {!!Form::close() !!}
 
 
@@ -91,7 +89,7 @@
             console.log(item_id);
             swal({
                 title: "هل أنت متأكد ",
-                text: "هل تريد حذف هذا المستخدم ؟",
+                text: "هل تريد حذف هذا المدير المساعد ؟",
                 icon: "warning",
                 buttons: ["الغاء", "موافق"],
                 dangerMode: true,
@@ -100,7 +98,7 @@
                 if (isConfirm) {
                     document.getElementById('delete-form' + item_id).submit();
                 } else {
-                    swal("تم االإلفاء", "حذف  ألمستخدم تم الغاؤه", 'info', {buttons: 'موافق'});
+                    swal("تم االإلفاء", "حذف  المدير المساعد تم الغاؤه", 'info', {buttons: 'موافق'});
                 }
             });
         }

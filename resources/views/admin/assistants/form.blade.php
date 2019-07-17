@@ -65,6 +65,6 @@
     </div>
 @endif
 
-{!! Form::input('hidden','role','admin',['class'=>'form-control']) !!}
+{!! Form::input('hidden','role','assistant',['class'=>'form-control']) !!}
 
 <button class="btn btn-primary waves-effect" type="submit">حفظ</button>

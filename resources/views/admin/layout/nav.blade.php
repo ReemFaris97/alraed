@@ -63,7 +63,7 @@
 
 <li>
     <a href="javascript:void(0);" class="menu-toggle">
-        <i class="material-icons">layers</i>
+        <i class="material-icons">perm_media</i>
         <span> البنرات </span>
     </a>
     <ul class="ml-menu">
@@ -123,7 +123,7 @@
 </li>
 <li>
     <a href="javascript:void(0);" class="menu-toggle">
-        <i class="material-icons">edit_location</i>
+        <i class="material-icons">perm_media</i>
         <span>إدارة الوسائط المتعددة</span>
     </a>
     <ul class="ml-menu">
@@ -144,7 +144,7 @@
 
 <li>
     <a href="javascript:void(0);" class="menu-toggle">
-        <i class="material-icons">edit_location</i>
+        <i class="material-icons">view_list</i>
         <span>أقسام الأخبار</span>
     </a>
     <ul class="ml-menu">
@@ -164,7 +164,7 @@
 
 <li>
     <a href="javascript:void(0);" class="menu-toggle">
-        <i class="material-icons">edit_location</i>
+        <i class="material-icons">view_list</i>
         <span>الأخبار</span>
     </a>
     <ul class="ml-menu">
@@ -204,7 +204,7 @@
 
 <li>
     <a href="javascript:void(0);" class="menu-toggle">
-        <i class="material-icons">layers</i>
+        <i class="material-icons">person_add</i>
         <span>  الِفرق </span>
     </a>
     <ul class="ml-menu">
@@ -225,7 +225,7 @@
 
 <li>
     <a href="javascript:void(0);" class="menu-toggle">
-        <i class="material-icons">layers</i>
+        <i class="material-icons">person_add</i>
         <span>  لاعبي الفرق </span>
     </a>
     <ul class="ml-menu">
@@ -267,7 +267,7 @@
 
 <li>
     <a href="javascript:void(0);" class="menu-toggle">
-        <i class="material-icons">layers</i>
+        <i class="material-icons">update</i>
         <span>  المباريات </span>
     </a>
     <ul class="ml-menu">
@@ -287,7 +287,7 @@
 
 <li>
     <a href="javascript:void(0);" class="menu-toggle">
-        <i class="material-icons">layers</i>
+        <i class="material-icons">donut_large</i>
         <span>  الأهداف </span>
     </a>
     <ul class="ml-menu">
@@ -308,7 +308,7 @@
 
 <li>
     <a href="javascript:void(0);" class="menu-toggle">
-        <i class="material-icons">layers</i>
+        <i class="material-icons">assignment</i>
         <span>  الإحصائيات </span>
     </a>
     <ul class="ml-menu">
@@ -325,53 +325,6 @@
         </li>
     </ul>
 </li>
-
-{{--<li>--}}
-{{--    <a href="javascript:void(0);" class="menu-toggle">--}}
-{{--        <i class="material-icons">edit_location</i>--}}
-{{--        <span>التقارير</span>--}}
-{{--    </a>--}}
-{{--    <ul class="ml-menu">--}}
-{{--        <li>--}}
-{{--            <a class="check_active" href="{{route('admin.reports.clients')}}">--}}
-
-{{--                <span> عرض تقارير العملاء</span>--}}
-{{--            </a>--}}
-{{--        </li>--}}
-{{--        <li>--}}
-{{--            <a class="check_active" href="{{route('admin.reports.products')}}">--}}
-
-{{--                <span> عرض تقارير المنتجات</span>--}}
-{{--            </a>--}}
-{{--        </li>--}}
-{{--        <li>--}}
-{{--            <a class="check_active" href="{{route('admin.reports.dailyReports')}}">--}}
-{{--                <span>عرض التقارير اليومية  </span>--}}
-{{--            </a>--}}
-{{--        </li>--}}
-{{--    </ul>--}}
-{{--</li>--}}
-
-
-
-{{--<li>--}}
-{{--    <a class="check_active" href="{{route('admin.carts.index')}}">--}}
-{{--        <i class="material-icons">layers</i>--}}
-{{--        <span>عربات التسوق</span>--}}
-{{--    </a>--}}
-
-{{--</li>--}}
-
-
-
-{{--<li>--}}
-{{--    <a class="check_active" href="{{route('admin.questionnaires.index')}}">--}}
-{{--        <i class="material-icons">layers</i>--}}
-{{--        <span> إدارة الإستبيانات</span>--}}
-{{--    </a>--}}
-
-{{--</li>--}}
-
 
 
 <li class="header">الإعدادات العامة الخاصة بالنظام</li>

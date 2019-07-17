@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +15,8 @@ class AdminsController extends Controller
      */
     public function index()
     {
-        //
+        $admins=User::where('role','admin')->get();
+        return view('admin.admins.index',['items'=>$admins]);
     }
 
     /**
@@ -24,7 +26,7 @@ class AdminsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.admins.add');
     }
 
     /**
@@ -35,7 +37,29 @@ class AdminsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'name'=>'required|string|max:191|unique:users',
+            'email'=>'required|email|max:255|unique:users',
+            'phone'=>'required|numeric|unique:users',
+            'password'=>'required|min:6|confirmed',
+            'image'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+//            'is_active'=>'required'
+        ]);
+         $inputs=$request->all();
+
+         if($request->hasFile('image')){
+
+             $inputs['image']=uploader($request,'image');
+         }
+
+         if ($request->has('password')){
+
+             $inputs['password']=bcrypt($request->password);
+         }
+
+         User::create($inputs);
+         popup('add');
+         return back();
     }
 
     /**
@@ -55,9 +79,9 @@ class AdminsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        return view('admin.admins.edit',['item'=>$user]);
     }
 
     /**
@@ -67,9 +91,32 @@ class AdminsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        $this->validate($request,[
+            'name'=>'required|string|max:191|unique:users,name' . $user->id,
+            'email'=>'required|email|max:255|unique:users,email'. $user->id,
+            'phone'=>'required|numeric|max:10|unique:users,phone' .$user->id,
+            'password'=>'required|min:6|confirmed',
+            'image'=>'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+//            'is_active'=>'required'
+        ]);
+        $inputs=$request->all();
+
+        if($request->hasFile('image')){
+
+            $inputs['image']=uploader($request,'image');
+        }
+
+        if ($request->has('password')){
+
+            $inputs['password']=bcrypt($request->password);
+        }
+
+        $user->update($inputs);
+
+        popup('update');
+        return back();
     }
 
     /**
@@ -78,8 +125,11 @@ class AdminsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+
+        $user->delete();
+        popup('delete');
+        return back();
     }
 }

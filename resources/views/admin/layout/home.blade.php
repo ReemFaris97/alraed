@@ -4,120 +4,155 @@
     الصفحه الرئيسه
 @endsection
 
-@section('header')
-    {{Html::style('admin/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css')}}
-@endsection
 @section('content')
     <!-- Widgets -->
     <div class="row clearfix">
 
-{{--        <a href="{{route('admin.categories.index')}}" style="color:#eee">--}}
-{{--        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">--}}
-{{--            <div class="info-box bg-lime hover-expand-effect">--}}
-{{--                <div class="icon">--}}
-{{--                    <i class="material-icons">playlist_add_check</i>--}}
-{{--                </div>--}}
+        <a href="{{route('admin.admins.index')}}" style="color:#eee">
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-lime hover-expand-effect">
+                <div class="icon">
+                    <i class="material-icons">assignment_ind</i>
+                </div>
 
-{{--                <div class="content">--}}
-{{--                    <div class="text">--}}
-{{--                      الأقسام--}}
-{{--                    </div>--}}
-{{--                    <div class="number count">{{\App\Category::count()}}</div>--}}
-{{--                </div>--}}
+                <div class="content">
+                    <div class="text">
+                      عدد أعضاء إدارة النظام
+                    </div>
+                    <div class="number count">{{\App\User::where('role','admin')->count()}}</div>
+                </div>
 
-{{--            </div>--}}
-{{--        </div>--}}
-{{--        </a>--}}
-{{--        <a href="{{route('admin.sub-categories.index')}}" style="color: #eee">الأقسام--}}
-{{--        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">--}}
-{{--            <div class="info-box bg-yellow hover-expand-effect">--}}
-{{--                <div class="icon">--}}
-{{--                    <i class="material-icons">playlist_add_check</i>--}}
-{{--                </div>--}}
-{{--                <div class="content">--}}
-{{--                    <div class="text">--}}
-{{--                            الفرعية</div>--}}
-{{--                    <div class="number count">{{\App\SubCategory::count()}}</div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--        </a>--}}
-{{--        <a href="{{route('admin.admins.index')}}" style="color: #eee">--}}
-{{--        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">--}}
-{{--            <div class="info-box bg-brown hover-expand-effect">--}}
-{{--                <div class="icon">--}}
-{{--                    <i class="material-icons">person_add</i>--}}
-{{--                </div>--}}
-{{--                <div class="content">--}}
-{{--                    <div class="text">عدد أعضاء--}}
-{{--                            الإدارة</div>--}}
-{{--                    <div class="number count">{{\App\User::count()}}</div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
+            </div>
+        </div>
+        </a>
 
-{{--        </a>--}}
-{{--        <a href="{{route('admin.products.index')}}" style="color: #eee">--}}
-{{--        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">--}}
-{{--            <div class="info-box bg-red hover-expand-effect">--}}
-{{--                <div class="icon">--}}
-{{--                    <i class="fa fa-leanpub"></i>--}}
+        <a href="{{route('admin.admins.index')}}" style="color:#eee">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box bg-lime hover-expand-effect">
+                    <div class="icon">
+                        <i class="material-icons">assignment_ind</i>
+                    </div>
+
+                    <div class="content">
+                        <div class="text">
+                             عدد المديرين المساعدين للنظام
+                        </div>
+                        <div class="number count">{{\App\User::where('role','assistant')->count()}}</div>
+                    </div>
+
+                </div>
+            </div>
+        </a>
+
+
+
+
+        <a href="{{route('admin.our-team.index')}}" style="color: #eee">أعضاء فريق الأول
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-yellow hover-expand-effect">
+                <div class="icon">
+                    <i class="material-icons">person_add</i>
+                </div>
+                <div class="content">
+                    <div class="text">
+                            أعضاء فرق الأول</div>
+                    <div class="number count">{{\App\OurTeam::count()}}</div>
+                </div>
+            </div>
+        </div>
+        </a>
+
+
+        <a href="{{route('admin.teams.index')}}" style="color: #eee">عدد الفرق
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="info-box bg-yellow hover-expand-effect">
+                    <div class="icon">
+                        <i class="material-icons">person_add</i>
+                    </div>
+                    <div class="content">
+                        <div class="text">
+                            عدد الفرق</div>
+                        <div class="number count">{{\App\Team::count()}}</div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+
+
+
+        <a href="{{route('admin.matches.index')}}" style="color: #eee">
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="info-box bg-red hover-expand-effect">
+                <div class="icon">
+                    <i class="material-icons">local_grocery_store</i>
+                </div>
+                <div class="content">
+                    <div class="text">المباريات</div>
+                    <div class="number count">{{\App\Match::count()}}</div>
+                </div>
+            </div>
+        </div>
+        </a>
+
+
+
+
+
+{{--        <!-- Donut Chart -->--}}
+{{--        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">--}}
+{{--            <div class="card">--}}
+{{--                <div class="header">--}}
+{{--                    <h2>الأهداف</h2>--}}
+
 {{--                </div>--}}
-{{--                <div class="content">--}}
-{{--                    <div class="text">المنتجات</div>--}}
-{{--                    <div class="number count">{{\App\Product::count()}}</div>--}}
+{{--                <div class="body">--}}
+{{--                    <div id="donut_chart" class="graph"></div>--}}
 {{--                </div>--}}
 {{--            </div>--}}
 {{--        </div>--}}
-{{--        </a>--}}
-{{--        <a href="{{route('admin.carts.index')}}" style="color: #eee">--}}
-{{--        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">--}}
-{{--            <div class="info-box bg-yellow hover-expand-effect">--}}
-{{--                <div class="icon">--}}
-{{--                    <i class="fa fa-shopping-cart"></i>--}}
-{{--                </div>--}}
-{{--                <div class="content">--}}
-{{--                    <div class="text">عربة التسوق</div>--}}
-{{--                    <div class="number count">{{\App\Cart::count()}}</div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--        </a>--}}
-{{--        <a href="{{route('admin.questions.index')}}" style="color: #eee">--}}
-{{--        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">--}}
-{{--            <div class="info-box bg-yellow hover-expand-effect">--}}
-{{--                <div class="icon">--}}
-{{--                    <i class="fa fa-shopping-cart"></i>--}}
-{{--                </div>--}}
-{{--                <div class="content">--}}
-{{--                    <div class="text">عدد أسئلة--}}
-{{--                            الأستبيان</div>--}}
-{{--                    <div class="number count">{{\App\Question::count()}}</div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--        </a>--}}
-{{--        <a href="{{route('admin.questionnaires.index')}}" style="color: #eee">--}}
-{{--        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">--}}
-{{--            <div class="info-box bg-yellow hover-expand-effect">--}}
-{{--                <div class="icon">--}}
-{{--                    <i class="fa fa-shopping-cart"></i>--}}
-{{--                </div>--}}
-{{--                <div class="content">--}}
-{{--                    <div class="text">عدد--}}
-{{--                            الاستبيانات</div>--}}
-{{--                    <div class="number count">{{\App\Questionnaires::count()}}</div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    --}}
-{{--        </a>--}}
+{{--        <!-- #END# Donut Chart -->--}}
+
+
     </div>
 
 
 @endsection
 
+@push('scripts')
 
+
+<script>
+    $(function () {
+    getMorris('donut', 'donut_chart');
+    });
+
+
+    function getMorris(type, element) {
+    if (type === 'donut') {
+    Morris.Donut({
+    element: element,
+    data: [
+    @foreach(\App\Goal::all() as $key => $value)
+
+
+        {
+        label: "{{$value->team->ar_name}}",
+
+        },
+
+    @endforeach
+
+    ],
+    colors: ['rgb(42, 36, 66)', 'rgb(50, 201, 192)' , 'rgb(76, 72, 96)' , 'rgb(217, 218, 218)'],
+    formatter: function (y) {
+    return y + '%'
+    }
+    });
+    }
+    }
+</script>
+    @endpush
 
 
 

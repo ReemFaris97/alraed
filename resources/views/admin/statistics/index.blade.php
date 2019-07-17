@@ -27,11 +27,10 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>البطولة</th>
+                            <th>اسم المباراة</th>
                             <th>الفريق الأول</th>
                             <th>الفريق الثاني</th>
-                            <th> الملعب</th>
-                            <th> تاريخ المباراة</th>
+                            <th>عرض التفاصيل</th>
                             <th>العمليات</th>
                         </tr>
                         </thead>
@@ -39,10 +38,13 @@
                         @foreach($items as $key=>$item)
                             <tr>
                                 <td>{{++$key}}</td>
+                                <td>{{$item->matches->ar_name}}</td>
                                 <td>{{$item->FirstTeam->ar_name }}</td>
                                 <td>{{$item->SecondTeam->ar_name }}</td>
-                                <td>{{$item->stadium }}</td>
-                                <td>{{$item->date }}</td>
+                                <td>
+                                    <a href="{{route('admin.statistics.show',['id'=>$item->id])}}"
+                                       class="btn btn-info btn-circle"><i class="fa fa-eye"></i></a>
+                                </td>
                                 <td>
                                     <a href="{{route('admin.statistics.edit',['id'=>$item->id])}}"
                                        class="btn btn-info btn-circle"><i class="fa fa-pencil"></i></a>

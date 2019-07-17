@@ -48,7 +48,7 @@
                                 <td>{{$item->age }}</td>
                                 <td>{{$item->length }}</td>
                                 <td>{{$item->appearance }}</td>
-                                <td>{{$item->position }}</td>
+                                <td>{{Position($item->position) }}</td>
                                 <td><img src="{{getimg($item->image)}}" style="width: 50px; height: 50px"></td>
                                 <td>
                                     <a href="{{route('admin.players.edit',['id'=>$item->id])}}"

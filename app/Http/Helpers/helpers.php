@@ -90,13 +90,13 @@ function percentage($first, $second){
     return $pre;
 }
 
-function status()
+function AccountStatus( $status= null)
 {
     $array = [
         '1' => 'مفعل',
         '0' => 'غير مفعل',
     ];
-    return $array;
+    return $array[$status];
 }
 
 function PlayerPosition()
@@ -109,6 +109,22 @@ function PlayerPosition()
     ];
     return $array;
 }
+function Position($position= null)
+{
+    $array = [
+        'goal_keeper'=>'حارس مرمى',
+        'defender'=>'مدافع',
+        'mid_line'=>'خط وسط',
+        'attacking'=>'مهاجم'
+    ];
+
+    if($position == null)
+    return $array;
+
+    return$array[$position];
+}
+
+
 
 function users()
 {

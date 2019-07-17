@@ -44,10 +44,19 @@
 </div>
 
 
+
 <div class="form-group form-float">
     <label class="form-label">مكان اللاعب في التشكيلة</label>
     <div class="form-line">
         {!! Form::select("position",PlayerPosition(),null,['class'=>'form-control','placeholder'=>'اختر مكان اللاعب ف التشكيلة'])!!}
+    </div>
+</div>
+
+<div class="form-group form-float">
+    <label class="form-label">عدد مرات الظهور</label>
+    <div class="form-line">
+        <label>سم</label>
+        {!! Form::number("appearance",null,['class'=>'form-control','placeholder'=>'اكتب عدد مرات ظهور اللاعب...'])!!}
     </div>
 </div>
 
