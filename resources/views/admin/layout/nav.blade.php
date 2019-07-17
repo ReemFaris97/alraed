@@ -328,7 +328,19 @@
 
 
 <li class="header">الإعدادات العامة الخاصة بالنظام</li>
-
+<li>
+    <a href="javascript:void(0);" class="menu-toggle">
+        <i class="material-icons">assignment</i>
+        <span>   إدارة الصلاحيات </span>
+    </a>
+    <ul class="ml-menu">
+        <li >
+            <a class="check_active" href="{{route('admin.permissions.index')}}">
+                <span> عرض  جميع الصلاحيات</span>
+            </a>
+        </li>
+    </ul>
+</li>
 <li>
 <a class="check_active" href="{{route('admin.settings.index')}}">
 <i class="material-icons">layers</i>

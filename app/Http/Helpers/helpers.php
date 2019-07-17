@@ -99,6 +99,7 @@ function AccountStatus( $status= null)
     return $array[$status];
 }
 
+
 function PlayerPosition()
 {
     $array = [
@@ -124,7 +125,13 @@ function Position($position= null)
     return$array[$position];
 }
 
-
+function permissions()
+{
+    $countries = App\Permission::all()->mapWithKeys(function ($item) {
+        return [$item['id'] => $item['title']];
+    });
+    return $countries;
+}
 
 function users()
 {
