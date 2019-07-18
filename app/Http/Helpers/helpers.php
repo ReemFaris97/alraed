@@ -141,6 +141,14 @@ function users()
     return $users;
 }
 
+function assistants()
+{
+    $users = App\User::where('role','assistant')->get()->mapWithKeys(function ($item) {
+        return [$item['id'] => $item['name']];
+    });
+    return $users;
+}
+
 
 function setting($name)
 {

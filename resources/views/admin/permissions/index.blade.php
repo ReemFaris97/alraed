@@ -43,7 +43,7 @@
                                         اضافه مدير مساعد للصلاحيه
                                     </button>
 
-                                    <a href="{{route('admin.permissions.show',$item->id)}}"><i class="fas fa-info"></i></a>
+                                    <a href="{{route('admin.permissions.show',$item->id)}}"><i class="fa fa-info"></i></a>
 
                                 </td>
                                 <!-- Modal -->
@@ -61,11 +61,8 @@
                                             </div>
                                             <div class="modal-body">
                                                 {!! Form::open(['route'=>'admin.permissions.store','method'=>'post']) !!}
-
-                                                {!! Form::select('user_id',\App\User::whereRole('assistant')->pluck('name','id'),null,['class'=>'form-control']) !!}
+                                                {!! Form::select("user_id",assistants(),null,['class'=>'form-control','placeholder'=>'اختر المدير المساعد'])!!}
                                                 {!! Form::hidden('permission_id',$item->id,['class'=>'form-control']) !!}
-
-                                                @dd(request()->all())
                                                 <br>
                                                 <input type="submit" value="حفظ" class="form-control btn btn-success">
 

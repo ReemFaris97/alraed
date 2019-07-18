@@ -38,9 +38,9 @@ class PermissionController extends Controller
      */
     public function store(Request $request)
     {
-//        dd($request->all());
         $user = User::find($request->user_id);
-//        dd($request->user_id);
+        dd($request->user_id);
+
         if (!$user->permissions()->where('permission_id', $request->permission_id)->exists()) {
             $user->permissions()->syncWithoutDetaching($request->permission_id);
         }
@@ -59,7 +59,7 @@ class PermissionController extends Controller
     {
         $items = $permission->users;
 
-        return view('admin.permissions.show', ['item' => $permission, 'items' => $items]);
+        return view('admin.permissions.show', ['permission' => $permission, 'items' => $items]);
     }
 
     /**
