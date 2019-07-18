@@ -17,7 +17,7 @@
                         جميع الأهداف
                     </h2>
                     <ul class="header-dropdown m-r--5">
-                        <a href="{{route('admin.matches.create')}}">
+                        <a href="{{route('admin.goals.create')}}">
                             <button class="btn btn-success">إضافة هدف جديد</button>
                         </a>
                     </ul>

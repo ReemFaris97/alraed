@@ -11,7 +11,6 @@ class ActivateAccountsController extends Controller
       public function activate($id)
         {
             $user=User::findOrFail($id);
-//            dd($user->id);
             $user->is_active = '1';
             $user->save();
             alert()->success('تم تفعيل الحساب !')->autoclose(5000);
