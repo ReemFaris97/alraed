@@ -25,7 +25,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/dashboard';
 
     /**
      * Create a new controller instance.
@@ -43,11 +43,11 @@ class LoginController extends Controller
     }
 
 
-    public function redirectTo()
-    {
-        if (auth()->user()->is_active == 1)
-            return '/dashboard';
-        else
-            return '/';
-    }
+//    public function redirectTo()
+//    {
+//        if (auth()->user()->is_active == 1)
+//            return '/dashboard';
+//        else
+//            return '/';
+//    }
 }

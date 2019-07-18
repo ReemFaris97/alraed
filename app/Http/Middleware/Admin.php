@@ -17,7 +17,7 @@ class Admin
     public function handle($request, Closure $next)
     {
         if (!Auth::Check() || Auth::User()->is_active != 1) {
-            return  redirect()->route('home');
+            return  redirect('/');
         }
         return $next($request);
     }
