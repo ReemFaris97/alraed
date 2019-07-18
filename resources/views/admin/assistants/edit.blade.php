@@ -4,10 +4,6 @@
 تعديل المدير المساعد
 {{ $item->name }}
 @endsection
-@section('header')
-
-@endsection
-
 @section('content')
 
 <!-- Basic Validation -->
@@ -33,6 +29,3 @@
 <!-- #END# Basic Validation -->
 @endsection
 
-@section('footer')
-
-@endsection

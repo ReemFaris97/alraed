@@ -8,8 +8,8 @@ Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin',
     Route::get('/', 'IndexController@index')->name('home');
 
     //USERS
-    Route::resource('admins', 'AdminsController');
-    Route::resource('assistants', 'AssistantsController');
+    Route::resource('admins', 'AdminsController')->middleware('permission:admins');
+    Route::resource('assistants', 'AssistantsController')->middleware('permission:assistants');
 
         //ACTIVATE ACCOUNTS
         Route::get('activate/{id}','ActivateAccountsController@activate')->name('Activate');
@@ -17,28 +17,30 @@ Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin',
 
 
     //GENERAL
-    Route::resource('banners', 'BannersController');
-    Route::resource('partners', 'PartnersController');
-    Route::resource('our-team', 'AlraedPlayersController');
-    Route::resource('multimedia', 'MultiMediaController');
-    Route::resource('categories', 'CategoriesController');
-    Route::resource('news', 'NewsController');
+    Route::resource('banners', 'BannersController')->middleware('permission:banners');
+    Route::resource('partners', 'PartnersController')->middleware('permission:partners');
+    Route::resource('our-team', 'AlraedPlayersController')->middleware('permission:our-team');
+    Route::resource('multimedia', 'MultiMediaController')->middleware('permission:multimedia');
+    Route::resource('categories', 'CategoriesController')->middleware('permission:categories');
+    Route::resource('news', 'NewsController')->middleware('permission:news');
 
 
     //PLAYERS
-    Route::resource('countries', 'CountriesController');
-    Route::resource('teams', 'TeamsController');
-    Route::resource('players', 'TeamPlayersController');
+    Route::resource('countries', 'CountriesController')->middleware('permission:countries');
+    Route::resource('teams', 'TeamsController')->middleware('permission:teams');
+    Route::resource('players', 'TeamPlayersController')->middleware('permission:players');
 
     //MATCHES
-    Route::resource('champions', 'ChampionsController');
-    Route::resource('matches', 'MatchesController');
-    Route::resource('goals', 'GoalsController');
-    Route::resource('statistics', 'StatisticsController');
+    Route::resource('champions', 'ChampionsController')->middleware('permission:champions');
+    Route::resource('matches', 'MatchesController')->middleware('permission:matches');
+    Route::resource('goals', 'GoalsController')->middleware('permission:goals');
+    Route::resource('statistics', 'StatisticsController')->middleware('permission:statistics');
 
 
     //SYSTEM SETTINGS
-    Route::resource('settings', 'SettingsController');
+    Route::resource('permissions','PermissionController')->middleware('permission:permissions');
+    Route::get('permissions/delete_user/{id}','PermissionController@delete_user')->name('permissions.delete_user');
+    Route::resource('settings', 'SettingsController')->middleware('permission:settings');
 
     //Ajax Routes
     Route::get('ajax-team/{team_id}', 'GoalsController@TeamAjax');
@@ -58,4 +60,4 @@ Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin',
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');

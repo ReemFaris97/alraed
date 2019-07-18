@@ -46,16 +46,20 @@
         $("#team_id").change(function () {
             var team_id = $("#team_id").val();
             var base_url = "{{asset('/')}}";
+            // console.log(team_id);
             $.ajax({
                 type: 'get',
                 url: base_url + "dashboard/ajax-team/" + team_id,
                 success: function (data) {
 
                     $("#player_id").empty();
+
                     $.each(data, function (key, value) {
-                        var option = '<option value="' + value.id + '">' + value.name + '</option>';
+                        var option = '<option value="' + value.id + '">' + value.ar_name + '</option>';
+                        // console.log(value);
                         $("#player_id").append(option);
                     });
+                    // co
 
                     $("#player_id").selectpicker('refresh');
                 },

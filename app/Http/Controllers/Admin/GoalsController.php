@@ -110,7 +110,9 @@ class GoalsController extends Controller
     }
 
     public function TeamAjax($id){
+//        dd($id);
         $player=TeamPlayers::select('ar_name','id')->where('team_id',$id)->get();
+//        dd($player);
         return response()->json($player);
     }
 }
