@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e359acf-4fa5-4832-af81-e85b76726f3b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ActivateAccountsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ActivateAccountsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/GoalsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/GoalsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/admins/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/admins/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/assistants/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/assistants/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/goals/form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/goals/form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/goals/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/goals/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/admin/nav_test.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/layout/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layout/nav.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,11 +52,56 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/layout/nav.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="286" column="33" selection-start-line="286" selection-start-column="33" selection-end-line="286" selection-end-column="33" />
+            <state relative-caret-position="746">
+              <caret line="384" column="10" selection-start-line="384" selection-start-column="10" selection-end-line="384" selection-end-column="10" />
               <folding>
                 <element signature="n#li#0;n#!!top" />
                 <element signature="n#li#1;n#!!top" />
+                <element signature="e#0#9150#0#Blade" />
+                <element signature="e#0#9191#0#Blade" />
+                <element signature="e#0#9237#0#Blade" />
+                <element signature="e#0#9280#0#Blade" />
+                <element signature="e#0#9359#0#Blade" />
+                <element signature="e#0#9366#0#Blade" />
+                <element signature="e#0#9408#0#Blade" />
+                <element signature="e#0#9487#0#Blade" />
+                <element signature="e#0#9092#0#Blade" />
+                <element signature="e#0#9092#0#Blade" />
+                <element signature="e#0#9092#0#Blade" />
+                <element signature="e#0#12228#0#Blade" />
+                <element signature="e#0#12228#0#Blade" />
+                <element signature="e#0#12228#0#Blade" />
+                <element signature="e#0#12228#0#Blade" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/nav_test.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="706">
+              <caret line="383" column="10" lean-forward="true" selection-start-line="288" selection-start-column="3" selection-end-line="383" selection-end-column="10" />
+              <folding>
+                <element signature="e#21#192#0#HTML" />
+                <element signature="e#194#328#0#HTML" />
+                <element signature="e#0#13254#0#Blade" />
+                <element signature="e#0#13254#0#Blade" />
+                <element signature="e#0#13254#0#Blade" />
+                <element signature="e#0#13254#0#Blade" />
+                <element signature="e#0#13254#0#Blade" />
+                <element signature="e#0#13254#0#Blade" />
+                <element signature="e#0#13254#0#Blade" />
+                <element signature="e#0#13254#0#Blade" />
+                <element signature="e#0#13254#0#Blade" />
+                <element signature="e#0#13254#0#Blade" />
+                <element signature="e#0#13254#0#Blade" />
+                <element signature="e#0#13254#0#Blade" />
+                <element signature="e#0#13254#0#Blade" />
+                <element signature="e#0#13254#0#Blade" />
+                <element signature="e#0#13254#0#Blade" />
+                <element signature="e#0#13254#0#Blade" />
+                <element signature="e#0#13254#0#Blade" />
               </folding>
             </state>
           </provider>
@@ -96,7 +137,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Match.php" />
         <option value="$PROJECT_DIR$/app/Goal.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/goals/add.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/MatchesController.php" />
@@ -146,6 +186,7 @@
         <option value="$PROJECT_DIR$/resources/views/admin/goals/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/GoalsController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/goals/form.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/nav_test.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/layout/nav.blade.php" />
       </list>
     </option>
@@ -297,14 +338,6 @@
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="alraed" type="b2602c69:ProjectViewProjectNode" />
-              <item name="alraed" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -366,12 +399,12 @@
       <workItem from="1563178259848" duration="24097000" />
       <workItem from="1563265592126" duration="26215000" />
       <workItem from="1563350398455" duration="22515000" />
-      <workItem from="1563438139358" duration="12279000" />
+      <workItem from="1563438139358" duration="14250000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103432000" />
+    <option name="totallyTimeSpent" value="105403000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
@@ -414,13 +447,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/assistants/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="19" column="58" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/AssistantsController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -774,13 +800,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/nav_test.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="706">
+          <caret line="383" column="10" lean-forward="true" selection-start-line="288" selection-start-column="3" selection-end-line="383" selection-end-column="10" />
+          <folding>
+            <element signature="e#21#192#0#HTML" />
+            <element signature="e#194#328#0#HTML" />
+            <element signature="e#0#13254#0#Blade" />
+            <element signature="e#0#13254#0#Blade" />
+            <element signature="e#0#13254#0#Blade" />
+            <element signature="e#0#13254#0#Blade" />
+            <element signature="e#0#13254#0#Blade" />
+            <element signature="e#0#13254#0#Blade" />
+            <element signature="e#0#13254#0#Blade" />
+            <element signature="e#0#13254#0#Blade" />
+            <element signature="e#0#13254#0#Blade" />
+            <element signature="e#0#13254#0#Blade" />
+            <element signature="e#0#13254#0#Blade" />
+            <element signature="e#0#13254#0#Blade" />
+            <element signature="e#0#13254#0#Blade" />
+            <element signature="e#0#13254#0#Blade" />
+            <element signature="e#0#13254#0#Blade" />
+            <element signature="e#0#13254#0#Blade" />
+            <element signature="e#0#13254#0#Blade" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/layout/nav.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="286" column="33" selection-start-line="286" selection-start-column="33" selection-end-line="286" selection-end-column="33" />
+        <state relative-caret-position="746">
+          <caret line="384" column="10" selection-start-line="384" selection-start-column="10" selection-end-line="384" selection-end-column="10" />
           <folding>
             <element signature="n#li#0;n#!!top" />
             <element signature="n#li#1;n#!!top" />
+            <element signature="e#0#9150#0#Blade" />
+            <element signature="e#0#9191#0#Blade" />
+            <element signature="e#0#9237#0#Blade" />
+            <element signature="e#0#9280#0#Blade" />
+            <element signature="e#0#9359#0#Blade" />
+            <element signature="e#0#9366#0#Blade" />
+            <element signature="e#0#9408#0#Blade" />
+            <element signature="e#0#9487#0#Blade" />
+            <element signature="e#0#9092#0#Blade" />
+            <element signature="e#0#9092#0#Blade" />
+            <element signature="e#0#9092#0#Blade" />
+            <element signature="e#0#12228#0#Blade" />
+            <element signature="e#0#12228#0#Blade" />
+            <element signature="e#0#12228#0#Blade" />
+            <element signature="e#0#12228#0#Blade" />
           </folding>
         </state>
       </provider>

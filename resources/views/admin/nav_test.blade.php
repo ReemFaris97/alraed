@@ -73,7 +73,6 @@
         </li>
     @endif
 
-
     @if(in_array($permission->name,['banners','partners','our-team','multimedia','categories','news']))
         @if(!in_array('general',$arr))
             <?php $arr[] = 'general' ?>
@@ -213,7 +212,6 @@
         </li>
     @endif
 
-
     @if(in_array($permission->name,['countries','teams','players']))
         @if(!in_array('play',$arr))
             <?php $arr[] = 'play' ?>
@@ -285,6 +283,7 @@
             </ul>
         </li>
     @endif
+
 
 
     @if(in_array($permission->name,['champions','matches','goals','statistics']))
@@ -386,43 +385,39 @@
 
 
 
-    @if(in_array($permission->name,['settings','headers','messages','advertisement']))
-        @if(!in_array('setting',$arr))
-            <?php $arr[] = 'setting' ?>
-            <li class="header">الإعدادات العامة</li>
+    @if(in_array($permission->name,['permissions','settings']))
+        @if(!in_array('per',$arr))
+            <?php $arr[] = 'per' ?>
+            <li class="header">الإعدادات العامة الخاصة بالنظام</li>
         @endif
-
-
-
-        @if($permission->name== "permissions")
-            <li>
-                <a href="javascript:void(0);" class="menu-toggle">
-                    <i class="material-icons">assignment</i>
-                    <span>   إدارة الصلاحيات </span>
-                </a>
-                <ul class="ml-menu">
-                    <li>
-                        <a class="check_active" href="{{route('admin.permissions.index')}}">
-                            <span> عرض  جميع الصلاحيات</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-        @endif
-
-        @if($permission->name== "settings")
-            <li>
-                <a class="check_active" href="{{route('admin.settings.index')}}">
-                    <i class="material-icons">layers</i>
-                    <span> الاعدادات </span>
-                </a>
-
-            </li>
-
-        @endif
-
     @endif
 
+    @if($permission->name== "permissions")
+        <li>
+            <a href="javascript:void(0);" class="menu-toggle">
+                <i class="material-icons">assignment</i>
+                <span>   إدارة الصلاحيات </span>
+            </a>
+            <ul class="ml-menu">
+                <li>
+                    <a class="check_active" href="{{route('admin.permissions.index')}}">
+                        <span> عرض  جميع الصلاحيات</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    @endif
+
+    @if($permission->name== "settings")
+        <li>
+            <a class="check_active" href="{{route('admin.settings.index')}}">
+                <i class="material-icons">layers</i>
+                <span> الاعدادات </span>
+            </a>
+
+        </li>
+
+    @endif
 
 @endforeach
 
