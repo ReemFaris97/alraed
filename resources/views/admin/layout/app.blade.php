@@ -17,10 +17,12 @@
                 <div class="circle-clipper left">
                     <div class="circle"></div>
                 </div>
+               
                 <div class="circle-clipper right">
                     <div class="circle"></div>
                 </div>
             </div>
+             <i class="fas fa-futbol"></i>
         </div>
         <p>رجاءً انتظر...</p>
     </div>
@@ -33,6 +35,9 @@
 
 <!-- Top Bar -->
 <nav class="navbar">
+     <div class="logo-dashboard text-center">
+            
+        </div>
     <div class="container-fluid">
         <div class="navbar-header">
             <a href="javascript:void(0);" class="bars"></a>
@@ -42,6 +47,8 @@
             <ul class="nav navbar-nav navbar-right">
             </ul>
         </div>
+       
+        
     </div>
 </nav>
 <!-- #Top Bar -->
