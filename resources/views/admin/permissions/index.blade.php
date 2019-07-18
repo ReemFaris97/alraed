@@ -40,7 +40,7 @@
                                 <td class="flex-prem">
                                     <button type="button" class="btn btn-success" data-toggle="modal"
                                             data-target="#exampleModal{{$item->id}}">
-                                        اضافه مدير مساعد للصلاحيه
+                                        اضافه عضو للصلاحيه
                                     </button>
 
                                     <a href="{{route('admin.permissions.show',$item->id)}}"><i class="fa fa-info"></i></a>
@@ -53,7 +53,7 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="exampleModalLabel" style="color: black;">
-                                                    اضافه مدير مساعد لصلاحية : {{$item->title}}</h5>
+                                                    اضافه عضو لصلاحية : {{$item->title}}</h5>
                                                 <button type="button" class="close" data-dismiss="modal"
                                                         aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
@@ -61,7 +61,7 @@
                                             </div>
                                             <div class="modal-body">
                                                 {!! Form::open(['route'=>'admin.permissions.store','method'=>'post']) !!}
-                                                {!! Form::select("user_id",assistants(),null,['class'=>'form-control','placeholder'=>'اختر المدير المساعد'])!!}
+                                                {!! Form::select("user_id",users(),null,['class'=>'form-control','placeholder'=>'اختر المدير'])!!}
                                                 {!! Form::hidden('permission_id',$item->id,['class'=>'form-control']) !!}
                                                 <br>
                                                 <input type="submit" value="حفظ" class="form-control btn btn-success">
