@@ -8043,8 +8043,7 @@ html.ie11 .bs-searchbox .form-control {
     background-color: #e9e9e9 !important;
 }
 .login-page{
-    background-image: url(../images/mobiles-png-1.png);
-   
+    background-image: url(../images/undraw_goal_0v5v.svg);
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -8119,4 +8118,91 @@ body.login-page::after{
 .button-log-in button{
     
     width: 50%
+}
+
+
+/****************************************** Style ********************************/ 
+.login-page {
+    background-image: url(../images/undraw_goal_0v5v.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding-left: 0;
+    max-width: unset;
+    background-size: 41%;
+    margin: unset;
+    background-position: 37px 53%;
+    background-color: #FFF;
+}
+    body.login-page::after {
+    position: absolute;
+    content: '';
+    background-color: rgba(0,0,0,.0);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.login-box {
+    max-width: 450px;
+    margin: auto;
+    position: absolute;
+    z-index: 99;
+    left: 50%;
+    margin-top: 80px;
+    border-radius: 8px;
+    border: 1px solid #B7202B;
+}
+.input-group .form-line:after {
+    border-bottom: 2px solid #B7202B;
+}
+.input-group .input-group-addon .material-icons {
+    font-size: 18px;
+    color: #B7202B;
+}
+
+.login-page .login-box .msg {
+    color: #000;
+    margin-bottom: 33px;
+    text-align: center;
+}
+.btn:not(.btn-link):not(.btn-circle) {
+    border-radius: 20px;
+    background-image: linear-gradient(#000, #B7202B);
+    padding: 10px 0px;
+        border: 1px solid transparent !important;
+    transition: .5s all;
+
+}
+
+.btn:not(.btn-link):not(.btn-circle):hover {
+    background: #FFF !important;
+    border: 1px solid #B7202B !important;
+    background-image: none !important;
+    color: #B7202B !important;
+}
+.login-page .login-box .logo {
+    margin-bottom: 20px;
+    height: 150px;
+    background-image: url(../images/logo.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 130px;
+    
+}
+.login-page .login-box .logo a{
+    color: transparent !important; 
+}
+.login-page .login-box .card {
+    box-shadow: unset;
+    margin-bottom: 0;
+}
+.alert-info {
+    background-color: #B7202B;
+    border-radius: 8px;
+    color: #FFF;
+}
+.bg-blue {
+    background-color: transparent !important;
+    color: #fff;
 }

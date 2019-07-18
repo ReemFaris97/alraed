@@ -47,7 +47,7 @@
 
 
 
-        <a href="{{route('admin.our-team.index')}}" style="color: #eee">أعضاء فريق الأول
+        <a href="{{route('admin.our-team.index')}}" style="color: #eee">
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
             <div class="info-box bg-yellow hover-expand-effect">
                 <div class="icon">
@@ -63,7 +63,7 @@
         </a>
 
 
-        <a href="{{route('admin.teams.index')}}" style="color: #eee">عدد الفرق
+        <a href="{{route('admin.teams.index')}}" style="color: #eee">
             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="info-box bg-yellow hover-expand-effect">
                     <div class="icon">
