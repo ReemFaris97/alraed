@@ -39,7 +39,7 @@ class PermissionController extends Controller
     public function store(Request $request)
     {
         $user = User::find($request->user_id);
-        dd($request->user_id);
+//        dd($request->all());
 
         if (!$user->permissions()->where('permission_id', $request->permission_id)->exists()) {
             $user->permissions()->syncWithoutDetaching($request->permission_id);

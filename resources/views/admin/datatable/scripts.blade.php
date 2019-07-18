@@ -1,25 +1,31 @@
-{!!Html::script('admin/plugins/jquery-datatable/jquery.dataTables.js')!!}
-{!!Html::script('admin/js/pages/tables/jquery-datatable.js')!!}
-
-{!!Html::script('admin/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js')!!}
-{!!Html::script('admin/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js')!!}
-{!!Html::script('admin/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js')!!}
-{!!Html::script('admin/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js')!!}
-{!!Html::script('admin/plugins/jquery-datatable/extensions/export/buttons.flash.min.js')!!}
-{!!Html::script('admin/plugins/jquery-datatable/extensions/export/jszip.min.js')!!}
-{!!Html::script('admin/plugins/jquery-datatable/extensions/export/pdfmake.min.js')!!}
-{!!Html::script('admin/plugins/jquery-datatable/extensions/export/vfs_fonts.js')!!}
-{!!Html::script('admin/plugins/jquery-datatable/extensions/export/buttons.html5.min.js')!!}
-{!!Html::script('admin/plugins/jquery-datatable/extensions/export/buttons.print.min.js')!!}
+<!-- Jquery DataTable Plugin Js -->
+<script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.18/b-1.5.6/r-2.2.2/datatables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js
+"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.flash.min.js
+"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js
+"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js
+"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js
+"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js
+"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js
+"></script>
 
 <script>
-    $(function () {
-        $('.js-exportable').DataTable({
-            dom: 'Bfrtip',
+
+    $(document).ready(function() {
+        $('table.dataTable').DataTable( {
             responsive: true,
+            dom: 'Bfrtip',
             buttons: [
                 'copy', 'csv', 'excel', 'pdf', 'print'
             ]
-        });
-    });
+
+        } );
+    } );
 </script>
+

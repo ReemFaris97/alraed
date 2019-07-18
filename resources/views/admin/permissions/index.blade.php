@@ -4,7 +4,7 @@
     كل الصلاحيات
 @endsection
 @section('header')
-    @include('admin.datatable.headers')
+    {{Html::style('admin/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css')}}
 @endsection
 @section('content')
     @include('admin.common.alert')
@@ -61,7 +61,7 @@
                                             </div>
                                             <div class="modal-body">
                                                 {!! Form::open(['route'=>'admin.permissions.store','method'=>'post']) !!}
-                                                {!! Form::select("user_id",users(),null,['class'=>'form-control','placeholder'=>'اختر المدير'])!!}
+                                                {!! Form::select("user_id",users(),null,['class'=>'form-control ms','placeholder'=>'اختر المدير'])!!}
                                                 {!! Form::hidden('permission_id',$item->id,['class'=>'form-control']) !!}
                                                 <br>
                                                 <input type="submit" value="حفظ" class="form-control btn btn-success">
@@ -91,7 +91,7 @@
 @endsection
 
 @section('footer')
-    @include('admin.datatable.scripts')
+
     <script>
 
         function Delete(id) {
@@ -113,4 +113,6 @@
             });
         }
     </script>
+
+    @include('admin.datatable.scripts')
 @endsection
