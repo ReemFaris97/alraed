@@ -323,3 +323,11 @@ function convert($words)
 
     return $_word;
 }
+
+function actived($req)
+{
+    if (\Request::is($req)) {
+        return 'activated';
+    }
+    return '';
+}

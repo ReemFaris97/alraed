@@ -1,0 +1,38 @@
+<?php  
+
+return [
+
+	'next_match' => 'Next Match',
+	'previous_match' => 'Previous Match',
+	'vs' => 'Vs',
+	'remaining_time' => 'Remaining Time',
+	'day' => 'Day',
+	'hour' => 'Hour',
+	'minute' => 'Minute',
+	'second' => 'Second',
+	'see_more' => 'See More',
+	'football_matches' => 'Football Matches',
+	'matches_results' => 'Matches and Results',
+	'last_match' => 'Last Match',
+	'later_matches' => 'Later Matches',
+	'start' => 'Start',
+	'result' => 'Result',
+	'ticket' => 'Take a ticket',
+	'main' => 'Main',
+	'first_team' => 'First Team',
+	'tables' => 'Tables',
+	'news' => 'News',
+	'tickets' => 'Tickets',
+	'multimedia' => 'Multimedia',
+	'about_alraed' => 'About Alraed',
+	'more_sports' => 'More Sports',
+	'developped' => 'Developped By ',
+	'panorama' => 'Panorama AlQassim',
+	'info' => 'Info',
+	'address' => 'Address',
+	'details' => 'Details',
+	'alraed' => 'Alraed',
+	'arrow_turn' => 'You Can move with arrows',
+	'brief_history' => 'Brief history about us',
+	
+];

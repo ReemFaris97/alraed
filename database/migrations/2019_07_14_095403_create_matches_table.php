@@ -22,7 +22,7 @@ class CreateMatchesTable extends Migration
             $table->foreign('second_team_id')->references('id')->on('teams');
 
             $table->string('stadium');
-            $table->string('date');
+            $table->dateTime('date')->change();
 
 
             $table->timestamps();

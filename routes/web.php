@@ -52,6 +52,20 @@ Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin',
 
 //*******************************  WEBSITE ROUTES  ***********************************
 
+Route::group(['namespace' => 'Site'], function () {
+
+    Route::get('/', 'HomeController@index');
+    Route::get('first-team', 'HomeController@fTeam');
+    Route::get('schedule', 'HomeController@schedule');
+    Route::get('match/{match}/details', ['as' => 'match.details', 'uses' => 'HomeController@matchDetails']);
+    Route::get('news', 'HomeController@news');
+    Route::get('tickets', 'HomeController@tickets');
+    Route::get('multimedia', 'HomeController@multimedia');
+    Route::get('about-alraed', 'HomeController@about');
+    Route::get('more-sports', 'HomeController@moreSports');
+    Route::get('more-news', 'HomeController@moreNews');
+    ;
+});
 
 
 
