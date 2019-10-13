@@ -21,7 +21,11 @@ class HomeController extends Controller
     	$banners = Banner::latest()->limit(3)->get();
     	$next_match = Match::whereDate('date', '>=', date('Y-m-d H:i:s'))->oldest()->first();
     	$previous_matches = Match::whereDate('date', '<=', date('Y-m-d H:i:s'))->oldest()->limit(2)->get();
-    	$next_matches = Match::whereDate('date', '>=', date('Y-m-d H:i:s'))->where('id', '<>', $next_match->id)->oldest()->limit(2)->get();
+        if (!is_null($next_match)) { 
+    	   $next_matches = Match::whereDate('date', '>=', date('Y-m-d H:i:s'))->where('id', '<>', $next_match->id)->oldest()->limit(2)->get();
+        } else {
+            $next_matches = [];
+        }
     	// $category = Category::where('en_name', 'like', '%football%')->first();
     	// $football_news = News::where('category_id', $category->id)->latest()->limit(3)->get();
     	// $news = News::where('category_id', '<>',$category->id)->latest()->limit(3)->get();

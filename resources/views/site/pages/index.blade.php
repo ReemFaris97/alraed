@@ -196,7 +196,7 @@
 												<div class="stadium-name">{{ $prev_match->stadium }}</div>
 											</div>
 											<div class="single-side team-l-wrapper">
-												<img src="{{ getimg($next_match->SecondTeam->image) }}" alt="logo" data-toggle="tooltip" title="{{ $next_match->SecondTeam->name }}">
+												<img src="{{ getimg($prev_match->SecondTeam->image) }}" alt="logo" data-toggle="tooltip" title="{{ $prev_match->SecondTeam->name }}">
 											</div>
 										</div>
 									</div>
@@ -206,6 +206,7 @@
 						 </section>
 						 @endforeach
 						 
+						 @if(!is_null($next_match))
 						 <section class="bee3D--slide">
 						  <div class="bee3D--inner">
 							 <div class="slider-match-timer-wrapper">
@@ -259,6 +260,8 @@
 							</div>
 						  </div>
 						 </section>
+						 @endif
+
 						 @foreach($next_matches as $nx_match)
 						 <section class="bee3D--slide">
 						  <div class="bee3D--inner">
@@ -471,7 +474,7 @@
 
 <!--        Timer-->
         <script type="text/javascript">
-        	var aimTime = {{ ($next_match->date->diffInRealMilliseconds(date('Y-m-d H:i:s'))) }} ;
+        	var aimTime = {{ is_null($next_match) ? date('Y-m-d H:i:s') : ($next_match->date->diffInRealMilliseconds(date('Y-m-d H:i:s'))) }} ;
             function getTimeRemaining(endtime) {
               var t = Date.parse(endtime) - Date.parse(new Date());
               var seconds = Math.floor((t / 1000) % 60);
