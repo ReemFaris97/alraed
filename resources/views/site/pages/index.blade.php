@@ -376,7 +376,7 @@
 						<p> {{ setting('about') }}
 						</p>
 						
-							<a href="about.html" class="first-site-btn">
+							<a href="/about-alraed" class="first-site-btn">
 								@lang('trans.see_more')
 							</a>
 					</div>
