@@ -3,13 +3,13 @@
 <li>
     <a class="check_active" href="{{route('admin.home')}}">
         <i class="material-icons">home</i>
-        <span>الصفحه الرئيسية والاحصائيات</span>
+        <span>الصفحة الرئيسية والاحصائيات</span>
     </a>
 
 </li>
 
 <li>
-    <a class="check_active" href="#">
+    <a class="check_active" href="{{ url('/') }}">
         <i class="material-icons">home</i>
         <span>موقع الرائد</span>
     </a>
@@ -72,7 +72,7 @@
     @endif
 
 
-    @if(hasPermission('banners') || hasPermission('partners') || hasPermission('our-team') || hasPermission('multimedia') || hasPermission('categories') || hasPermission('news'))
+    @if(hasPermission('countries') || hasPermission('banners') || hasPermission('partners') || hasPermission('multimedia') || hasPermission('categories') || hasPermission('news'))
         @if(!in_array('general',$arr))
             <?php $arr[] = 'general' ?>
             <li class="header">عام</li>
@@ -125,28 +125,6 @@
         </li>
     @endif
 
-    @if(hasPermission('our-team'))
-        <li>
-            <a href="javascript:void(0);" class="menu-toggle">
-                <i class="material-icons">layers</i>
-                <span> فريقنا الأول </span>
-            </a>
-            <ul class="ml-menu">
-                <li>
-                    <a class="check_active" href="{{route('admin.our-team.index')}}">
-
-                        <span> عرض أعضاء فريق الرائد</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="check_active" href="{{route('admin.our-team.create')}}">
-                        <span>اضافه عضو جديد </span>
-                    </a>
-                </li>
-            </ul>
-        </li>
-    @endif
-
     @if(hasPermission('multimedia'))
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
@@ -163,6 +141,27 @@
                 <li>
                     <a class="check_active" href="{{route('admin.multimedia.create')}}">
                         <span>اضافه  جديد </span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    @endif
+
+    @if(hasPermission('countries'))
+        <li>
+            <a href="javascript:void(0);" class="menu-toggle">
+                <i class="material-icons">edit_location</i>
+                <span>الدول</span>
+            </a>
+            <ul class="ml-menu">
+                <li>
+                    <a class="check_active" href="{{route('admin.countries.index')}}">
+                        <span>جميع الدول</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="check_active" href="{{route('admin.countries.create')}}">
+                        <span>اضافه دولة جديد</span>
                     </a>
                 </li>
             </ul>
@@ -212,28 +211,30 @@
     @endif
 
 
-    @if(hasPermission('countries') || hasPermission('teams') || hasPermission('players'))
+    @if(hasPermission('our-team') || hasPermission('teams') || hasPermission('players'))
         @if(!in_array('play',$arr))
             <?php $arr[] = 'play' ?>
             <li class="header">إدارة اللاعبين</li>
         @endif
     @endif
 
-    @if(hasPermission('countries'))
+
+    @if(hasPermission('our-team'))
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
-                <i class="material-icons">edit_location</i>
-                <span>الدول</span>
+                <i class="material-icons">layers</i>
+                <span> فريقنا الأول </span>
             </a>
             <ul class="ml-menu">
                 <li>
-                    <a class="check_active" href="{{route('admin.countries.index')}}">
-                        <span>جميع الدول</span>
+                    <a class="check_active" href="{{route('admin.our-team.index')}}">
+
+                        <span> عرض أعضاء فريق الرائد</span>
                     </a>
                 </li>
                 <li>
-                    <a class="check_active" href="{{route('admin.countries.create')}}">
-                        <span>اضافه دولة جديد</span>
+                    <a class="check_active" href="{{route('admin.our-team.create')}}">
+                        <span>اضافه عضو جديد </span>
                     </a>
                 </li>
             </ul>
