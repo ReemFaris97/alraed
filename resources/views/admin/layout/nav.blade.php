@@ -137,7 +137,7 @@
                 <li>
                     <a class="check_active" href="{{route('admin.our-team.index')}}">
 
-                        <span> عرض أعضاء فريق الرواد</span>
+                        <span> عرض أعضاء فريق الرائد</span>
                     </a>
                 </li>
                 <li>
