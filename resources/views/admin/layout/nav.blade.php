@@ -3,7 +3,7 @@
 <li>
     <a class="check_active" href="{{route('admin.home')}}">
         <i class="material-icons">home</i>
-        <span>الصفحه الرئيسه والاحصائيات</span>
+        <span>الصفحه الرئيسية والاحصائيات</span>
     </a>
 
 </li>
@@ -20,7 +20,7 @@
     @if(hasPermission('admins') || hasPermission('assistants'))
         @if(!in_array('users',$arr))
             <?php $arr[] = 'users' ?>
-            <li class="header">مستخدمين النظام</li>
+            <li class="header">مستخدمي النظام</li>
         @endif
     @endif
 

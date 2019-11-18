@@ -46,6 +46,14 @@
                                 </div>
                             </div>
 
+                        @elseif($setting->type == 'social')
+                            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                                <label class="form-label">{{$setting->title}}</label>
+                                <div class="form-line">
+                                    {!! Form::text($setting->name.'[]',$setting->ar_value,['class'=>'form-control'])!!}
+                                </div>
+                            </div>
+
                         @elseif($setting->type == 'varchar')
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                 <label class="form-label">{{$setting->title}}</label>
@@ -56,14 +64,14 @@
 
                         @else($setting->type=='varchar-multiple')
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                <label class="form-label">{{$setting->title}}</label>
+                                <label class="form-label">{{$setting->title}} (AR)</label>
                                 <div class="form-line">
                                     {!! Form::textarea($setting->name.'[]',$setting->ar_value,['class'=>'form-control editor'])!!}
                                 </div>
                             </div>
 
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                <label class="form-label">{{$setting->title}}</label>
+                                <label class="form-label">{{$setting->title}} (EN)</label>
                                 <div class="form-line">
                                     {!! Form::textarea($setting->name.'[]',$setting->en_value,['class'=>'form-control editor'])!!}
                                 </div>
