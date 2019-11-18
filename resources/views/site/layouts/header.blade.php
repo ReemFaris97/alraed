@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-		<meta charset="UTF-8" />
+    <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
         <title>نادى الرائد السعودي :: الصفحة الرئيسية</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0 , user-scalable=no"> 
@@ -48,7 +48,7 @@
          <header>
         <div class="nav-wrapper" id="the-nav-bar">
             <div class="logo-container">
-                <a href="index.html">
+                <a href="{{ url('/') }}">
                     <img class="logo" src="{{ url('site') }}/img/logo.png" alt="Club Logo">
                 </a>    
             </div>
@@ -65,10 +65,10 @@
                         <li class="nav-tab {{ actived('first-team') }}"><a href="{{ url('first-team') }}">@lang('trans.first_team')</a></li>
                         <li class="nav-tab {{ actived('schedule') }}"><a href="{{ url('schedule') }}">@lang('trans.tables')</a></li>
                         <li class="nav-tab {{ actived('news') }}"><a href="{{ url('news') }}">@lang('trans.news')</a></li>
-                        <li class="nav-tab "><a href="404.html">@lang('trans.tickets')</a></li>
+                        <!--<li class="nav-tab "><a href="404.html">@lang('trans.tickets')</a></li>-->
                         <li class="nav-tab {{ actived('multimedia') }}"><a href="{{ url('multimedia') }}">@lang('trans.multimedia')</a></li>
                         <li class="nav-tab {{ actived('about-alraed') }}"><a href="{{ url('about-alraed') }}">@lang('trans.about_alraed')</a></li>
-                        <li class="nav-tab"><a href="404.html">@lang('trans.more_sports')</a></li>
+                        <!--<li class="nav-tab"><a href="404.html">@lang('trans.more_sports')</a></li>-->
                     </ul>
                 </div>
             </nav>
