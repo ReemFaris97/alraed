@@ -17,17 +17,14 @@
 </li>
 
 
-@foreach(auth()->user()->permissions as $permission)
-
-
-    @if(in_array($permission->name,['admins','assistants']))
+    @if(hasPermission('admins') || hasPermission('assistants'))
         @if(!in_array('users',$arr))
             <?php $arr[] = 'users' ?>
             <li class="header">مستخدمين النظام</li>
         @endif
     @endif
 
-    @if($permission->name == 'admins')
+    @if(hasPermission('admins'))
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
                 <i class="material-icons">assignment_ind</i>
@@ -50,7 +47,8 @@
         </li>
     @endif
 
-    @if($permission->name == 'assistants')
+
+    @if(hasPermission('assistants'))
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
                 <i class="material-icons">assignment_ind</i>
@@ -74,7 +72,7 @@
     @endif
 
 
-    @if(in_array($permission->name,['banners','partners','our-team','multimedia','categories','news']))
+    @if(hasPermission('banners') || hasPermission('partners') || hasPermission('our-team') || hasPermission('multimedia') || hasPermission('categories') || hasPermission('news'))
         @if(!in_array('general',$arr))
             <?php $arr[] = 'general' ?>
             <li class="header">عام</li>
@@ -82,7 +80,7 @@
     @endif
 
 
-    @if($permission->name== "banners")
+    @if(hasPermission('banners'))
 
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
@@ -105,7 +103,7 @@
         </li>
     @endif
 
-    @if($permission->name== "partners")
+    @if(hasPermission('partners'))
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
                 <i class="material-icons">layers</i>
@@ -127,7 +125,7 @@
         </li>
     @endif
 
-    @if($permission->name== "our-team")
+    @if(hasPermission('our-team'))
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
                 <i class="material-icons">layers</i>
@@ -149,7 +147,7 @@
         </li>
     @endif
 
-    @if($permission->name== "multimedia")
+    @if(hasPermission('multimedia'))
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
                 <i class="material-icons">perm_media</i>
@@ -171,7 +169,7 @@
         </li>
     @endif
 
-    @if($permission->name== "categories")
+    @if(hasPermission('categories'))
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
                 <i class="material-icons">view_list</i>
@@ -191,7 +189,7 @@
             </ul>
         </li>
     @endif
-    @if($permission->name== "news")
+    @if(hasPermission('news'))
 
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
@@ -214,14 +212,14 @@
     @endif
 
 
-    @if(in_array($permission->name,['countries','teams','players']))
+    @if(hasPermission('countries') || hasPermission('teams') || hasPermission('players'))
         @if(!in_array('play',$arr))
             <?php $arr[] = 'play' ?>
             <li class="header">إدارة اللاعبين</li>
         @endif
     @endif
 
-    @if($permission->name== "countries")
+    @if(hasPermission('countries'))
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
                 <i class="material-icons">edit_location</i>
@@ -242,7 +240,7 @@
         </li>
     @endif
 
-    @if($permission->name== "teams")
+    @if(hasPermission('teams'))
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
                 <i class="material-icons">person_add</i>
@@ -264,7 +262,7 @@
         </li>
     @endif
 
-    @if($permission->name== "players")
+    @if(hasPermission('players'))
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
                 <i class="material-icons">person_add</i>
@@ -287,7 +285,7 @@
     @endif
 
 
-    @if(in_array($permission->name,['champions','matches','goals','statistics']))
+    @if(hasPermission('champions') || hasPermission('matches') || hasPermission('goals') || hasPermission('statistics'))
         @if(!in_array('mat',$arr))
             <?php $arr[] = 'mat' ?>
             <li class="header">إدارة المباريات</li>
@@ -295,7 +293,7 @@
     @endif
 
 
-    @if($permission->name== "champions")
+    @if(hasPermission('champions'))
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
                 <i class="material-icons">layers</i>
@@ -317,7 +315,7 @@
         </li>
     @endif
 
-    @if($permission->name== "matches")
+    @if(hasPermission('matches'))
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
                 <i class="material-icons">update</i>
@@ -339,7 +337,7 @@
         </li>
     @endif
 
-    @if($permission->name== "goals")
+    @if(hasPermission('goals'))
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
                 <i class="material-icons">donut_large</i>
@@ -361,7 +359,7 @@
         </li>
     @endif
 
-    @if($permission->name== "statistics")
+    @if(hasPermission('statistics'))
 
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
@@ -386,7 +384,7 @@
 
 
 
-    @if(in_array($permission->name,['settings','headers','messages','advertisement']))
+    @if(hasPermission('settings') || hasPermission('headers') || hasPermission('messages')|| hasPermission('advertisement'))
         @if(!in_array('setting',$arr))
             <?php $arr[] = 'setting' ?>
             <li class="header">الإعدادات العامة</li>
@@ -394,7 +392,7 @@
 
 
 
-        @if($permission->name== "permissions")
+        @if(hasPermission('permissions'))
             <li>
                 <a href="javascript:void(0);" class="menu-toggle">
                     <i class="material-icons">assignment</i>
@@ -410,7 +408,7 @@
             </li>
         @endif
 
-        @if($permission->name== "settings")
+        @if(hasPermission('settings'))
             <li>
                 <a class="check_active" href="{{route('admin.settings.index')}}">
                     <i class="material-icons">layers</i>
@@ -424,7 +422,6 @@
     @endif
 
 
-@endforeach
 
 
 

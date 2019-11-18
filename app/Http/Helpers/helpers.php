@@ -331,3 +331,12 @@ function actived($req)
     }
     return '';
 }
+
+function hasPermission($name)
+{
+    $permissions = auth()->user()->permissions()->get()->pluck('name')->toArray();
+    if (in_array($name, $permissions)) {
+        return true;
+    }
+    return false;
+}
