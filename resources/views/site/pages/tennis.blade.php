@@ -20,6 +20,9 @@
         </div>
     </section>
 </div>
+<script>
+
+</script>
 <!--        Jquery-->
 <script type="text/javascript" src="{{ url('site') }}/js/jquery-1.11.2.min.js"></script>
 </body>
