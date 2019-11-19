@@ -62,7 +62,8 @@ Route::group(['namespace' => 'Site'], function () {
     Route::get('tickets', 'HomeController@tickets');
     Route::get('multimedia', 'HomeController@multimedia');
     Route::get('about-alraed', 'HomeController@about');
-    Route::get('more-sports', 'HomeController@moreSports');
+    Route::get('other-sports', 'HomeController@otherSports');
+    Route::get('sports', 'HomeController@sports');
     Route::get('more-news', 'HomeController@moreNews');
     ;
 });

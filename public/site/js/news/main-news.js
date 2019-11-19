@@ -8,7 +8,7 @@
  * Copyright 2015, Codrops
  * http://www.codrops.com
  */
-function NewsFunction() {
+(function() {
 
 	var bodyEl = document.body,
 		docElem = window.document.documentElement,
@@ -42,8 +42,7 @@ function NewsFunction() {
 		lockScroll = false, xscroll, yscroll,
 		isAnimating = false,
 		menuCtrl = document.getElementById('menu-toggle'),
-		menuCloseCtrl = document.getElementById('close-it');
-		// menuCloseCtrl = $('.close-button');
+		menuCloseCtrl = $('.close-button');
 
 	/**
 	 * gets the viewport width and height
@@ -209,4 +208,4 @@ function NewsFunction() {
 
 	init();
 
-};
+})();

@@ -91,8 +91,13 @@ class HomeController extends Controller
         return view('site.pages.about', compact('abouts'));
     }
 
-    public function moreSports()
+    public function otherSports()
     {
-        
+        return view('site.pages.other_sports');
+    }
+
+    public function sports()
+    {
+        return view('site.pages.polaroids');
     }
 }

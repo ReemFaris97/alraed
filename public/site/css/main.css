@@ -1736,6 +1736,83 @@ span.custo-progress.transited{
 }
 
 /* ******************* End   Schedule **************/
+/* ******************* Begin  other sports **************/
+
+.other-sports-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.its-img-wrapper img {
+    width: 130px;
+}
+.single-sport-link {
+    text-align: center;
+}
+.single-sport-link a {
+    display: inline-block;
+}
+
+
+.single-sport-link a .its-img-wrapper {
+    border-radius: 50%;
+    height: 130px;
+    width: 130px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.single-sport-link a.active-sport h3 {
+	color: #B7202B
+}
+.single-sport-link a.active-sport .its-img-wrapper {
+    background: #eee;
+    box-shadow: 0px 20px 20px rgba(0,0,0,0.1);
+}
+.its-img-wrapper img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+.single-sport-link h3 {
+    font-size: 30px;
+}
+.others-frame{
+    border: 0px;
+	width: 100%;
+	position:absolute;
+	top:0; 
+	left: 0;
+	height: 100%
+}
+
+.other-sports-content {
+    padding-bottom: 56.25%;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+	margin-top: 40px;
+	text-align: center
+}
+
+.othersTitle {
+    color: #000;
+    font-size: 50px;
+}
+.other-sports-wrapper.container-fluid {
+    padding: 0;
+}
+.single-sport-link a h3 {
+    transition: 0.4s all ease-in-out
+}
+.single-sport-link a:hover h3 {
+    color: #B7202B;
+}
+
+
+/* ******************* End    other sports **************/
+
 
 
 /* *******************Begin Responsive **************/
@@ -1765,6 +1842,18 @@ span.custo-progress.transited{
 	}
 }
 @media (min-width: 768px) and (max-width: 991px) {
+	.single-sport-link h3 {
+    font-size: 22px;
+    margin-top: 0;
+}
+	.single-sport-link a .its-img-wrapper {
+    height: 110px;
+    width: 110px;
+}
+	.its-img-wrapper img {
+    width: 85px;
+    height: 85px;
+	}
 	figure.imghvr-shutter-in-out-diag-1.single-team-player-block.animated.wow{
 		width: calc(50% - 20px);
 	}
@@ -1782,6 +1871,9 @@ span.custo-progress.transited{
 }
 
 @media (max-width: 991px) {
+	.other-sports-content{
+		height: 100vh
+	}
 	.lineup-sec-wrapper .slider-match-details {
     width: 90%;
 }
@@ -1837,6 +1929,21 @@ span.custo-progress.transited{
 }
 }
 @media (max-width: 767px) {
+	.single-sport-link h3 {
+    font-size: 18px;
+		    margin-top: 5px;
+	}
+	.other-sports-links {
+    flex-wrap: wrap;
+}
+	.single-sport-link a .its-img-wrapper {
+    height: 60px;
+    width: 60px;
+	}
+	.its-img-wrapper img {
+    width: 50px;
+    height: 50px;
+	}
 	#grid3d .grid figure, .grid .placeholder {
     height: 200px;
 }
