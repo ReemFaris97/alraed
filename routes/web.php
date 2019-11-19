@@ -63,7 +63,11 @@ Route::group(['namespace' => 'Site'], function () {
     Route::get('multimedia', 'HomeController@multimedia');
     Route::get('about-alraed', 'HomeController@about');
     Route::get('other-sports', 'HomeController@otherSports');
-    Route::get('sports', 'HomeController@sports');
+    Route::get('karateh', 'HomeController@karateh')->name('karateh');
+    Route::get('boxing', 'HomeController@boxing')->name('boxing');
+    Route::get('tennis', 'HomeController@tennis')->name('tennis');
+    Route::get('handball', 'HomeController@handball')->name('handball');
+    Route::get('electronic', 'HomeController@electronic')->name('electronic');
     Route::get('more-news', 'HomeController@moreNews');
     ;
 });

@@ -15,13 +15,13 @@ use App\Settings;
 
 class HomeController extends Controller
 {
-    
+
     public function index()
     {
     	$banners = Banner::latest()->limit(3)->get();
     	$next_match = Match::whereDate('date', '>=', date('Y-m-d H:i:s'))->oldest()->first();
     	$previous_matches = Match::whereDate('date', '<=', date('Y-m-d H:i:s'))->oldest()->limit(2)->get();
-        if (!is_null($next_match)) { 
+        if (!is_null($next_match)) {
     	   $next_matches = Match::whereDate('date', '>=', date('Y-m-d H:i:s'))->where('id', '<>', $next_match->id)->oldest()->limit(2)->get();
         } else {
             $next_matches = [];
@@ -45,7 +45,7 @@ class HomeController extends Controller
     {
         $next_match = Match::whereDate('date', '>=', date('Y-m-d H:i:s'))->oldest()->first();
         $next_matches = Match::whereDate('date', '>=', date('Y-m-d H:i:s'))->where('id', '<>', $next_match->id)->oldest()->limit(8)->get();
-        return view('site.pages.table', compact('next_match', 'next_matches'));        
+        return view('site.pages.table', compact('next_match', 'next_matches'));
     }
 
     public function matchDetails(Match $match)
@@ -76,7 +76,7 @@ class HomeController extends Controller
 
     public function tickets()
     {
-        
+
     }
 
     public function multimedia()
@@ -95,9 +95,24 @@ class HomeController extends Controller
     {
         return view('site.pages.other_sports');
     }
-
-    public function sports()
+    public function karateh()
     {
-        return view('site.pages.polaroids');
+        return view('site.pages.karateh');
+    }
+    public function boxing()
+    {
+        return view('site.pages.boxing');
+    }
+    public function tennis()
+    {
+        return view('site.pages.tennis');
+    }
+    public function handball()
+    {
+        return view('site.pages.handball');
+    }
+    public function electronic()
+    {
+        return view('site.pages.electronic');
     }
 }

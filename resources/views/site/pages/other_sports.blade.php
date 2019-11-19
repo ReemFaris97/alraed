@@ -26,7 +26,7 @@
 				<div class="other-sports">
 					<div class="other-sports-links">
 						<div class="single-sport-link">
-							<a href="{{ url('sports') }}" target="otherSports" >
+							<a href="{{ url('boxing') }}" target="otherSports" class="active-sport">
 								<div class="its-img-wrapper">
 									<img src="{{ url('site') }}/img/other/boxing.svg" alt="الملاكمة" />
 								</div>
@@ -34,7 +34,7 @@
 							</a>
 						</div>
 						<div class="single-sport-link">
-							<a href="{{ url('sports') }}" target="otherSports" class="active-sport" >
+							<a href="{{ url('karateh') }}" target="otherSports"  >
 								<div class="its-img-wrapper">
 									<img src="{{ url('site') }}/img/other/karate.svg" alt="الكاراتيه" />
 								</div>
@@ -42,7 +42,7 @@
 							</a>
 						</div>
 						<div class="single-sport-link">
-							<a href="{{ url('sports') }}" target="otherSports" >
+							<a href="{{ url('tennis') }}" target="otherSports" >
 								<div class="its-img-wrapper">
 									<img src="{{ url('site') }}/img/other/table%20tennis.svg" alt="تنس طاولة" />
 								</div>
@@ -50,15 +50,15 @@
 							</a>
 						</div>
 						<div class="single-sport-link">
-							<a href="{{ url('sports') }}" target="otherSports" >
+							<a href="{{ url('handball') }}" target="otherSports" >
 								<div class="its-img-wrapper">
 									<img src="{{ url('site') }}/img/other/volleyball.svg" alt="كرة يد" />
 								</div>
 								<h3>كرة يد</h3>
 							</a>
-						</div>						
+						</div>
 						<div class="single-sport-link">
-							<a href="{{ url('sports') }}" target="otherSports" >
+							<a href="{{ url('electronic') }}" target="otherSports" >
 								<div class="its-img-wrapper">
 									<img src="{{ url('site') }}/img/other/esports.svg" alt="ألعاب إلكترونية" />
 								</div>
@@ -67,7 +67,7 @@
 						</div>
 					</div>
 					<div class="other-sports-content">
-						<iframe src="{{ url('sports') }}" name="otherSports" class="others-frame"></iframe>
+						<iframe src="{{ url('boxing') }}" name="otherSports" class="others-frame"></iframe>
 					</div>
 				</div>
 			</div>
