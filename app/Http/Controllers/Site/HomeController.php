@@ -44,7 +44,12 @@ class HomeController extends Controller
     public function schedule()
     {
         $next_match = Match::whereDate('date', '>=', date('Y-m-d H:i:s'))->oldest()->first();
-        $next_matches = Match::whereDate('date', '>=', date('Y-m-d H:i:s'))->where('id', '<>', $next_match->id)->oldest()->limit(8)->get();
+        
+        if (!is_null($next_match)) { 
+           $next_matches = Match::whereDate('date', '>=', date('Y-m-d H:i:s'))->where('id', '<>', $next_match->id)->oldest()->limit(8)->get();
+        } else {
+            $next_matches = [];
+        }
         return view('site.pages.table', compact('next_match', 'next_matches'));        
     }
 

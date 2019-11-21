@@ -18,9 +18,10 @@
 			</div>
 			
 			<div class="time-table-wrapper">
+				@unless(is_null($next_match))
 				<div class="slider-match-details">
 					<div class="the-tournament">
-						<img src="img/amir-league.jpg" data-toggle="tooltip" title="MBS">
+						<img src="{{ getimg($next_match->Champion->image) }}" data-toggle="tooltip" title="{{ $next_match->Champion->title }}">
 					</div>
 					<div class="match-common-st">
 						<div class="single-side team-l-wrapper">
@@ -43,6 +44,7 @@
 						</div>
 					</div>
 				</div>
+				@endunless
 				
 				<div class="all-matches-table">
 					@foreach($next_matches as $n_match)
