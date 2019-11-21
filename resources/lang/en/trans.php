@@ -34,5 +34,7 @@ return [
 	'alraed' => 'Alraed',
 	'arrow_turn' => 'You Can move with arrows',
 	'brief_history' => 'Brief history about us',
-	
+	'email' => 'Email',
+	'password' => 'Password',
+	'login' => 'Login',
 ];
