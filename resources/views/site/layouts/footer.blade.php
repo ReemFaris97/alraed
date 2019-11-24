@@ -14,7 +14,7 @@
 				
 				<div class="footer-contact">
 				<div class="row report-downloader">
-					<a href="{{asset('site/img/report.pdf')}}" class="first-site-btn" target="_blank" rel="noreferrer noopener">تقرير </a>
+					<a href="{{asset('site/img/report.pdf')}}" class="first-site-btn" target="_blank" rel="noreferrer noopener">تقرير هيئة الرياضة </a>
 				</div>
 					<div class="contact-single info">
 						<div class="pacifico red-color">@lang('trans.info')</div>
