@@ -24,40 +24,53 @@
 					<div class="match-common-st">
 						<div class="single-side team-l-wrapper">
 							<img src="{{ getimg($match->FirstTeam->image) }}" alt="Al Hilal logo" data-toggle="tooltip" title="{{ $match->FirstTeam->name }}">
-							<div class="goal-scorer">
-								<span class="goal-i"><i class="fas fa-futbol"></i></span>
-								<span class="goal-t"> <i class="far fa-clock"></i> 22 </span>
-								<span class="goal-s">Reem Faris</span>
-							</div>
+							@if($match->date < date('Y-m-d H:i:s'))
+								@foreach($match->goals()->where('team_id', $match->FirstTeam->id)->get() as $f_goal)
+								<div class="goal-scorer">
+									<span class="goal-i"><i class="fas fa-futbol"></i></span>
+									<span class="goal-t"> <i class="far fa-clock"></i> {{ $f_goal->minuit }} </span>
+									<span class="goal-s">{{ $f_goal->player->name }}</span>
+								</div>
+								@endforeach
+							@endif
 						</div>
 						<div class="single-side">
-							<div class="sm-size">النتيجة</div>
+							<div class="sm-size">
+							@if($match->date < date('Y-m-d H:i:s'))
+								@lang('trans.result')
+							@else
+								@lang('trans.start')
+							@endif
+							</div>
 							<div class="red-color sin-middle">
-								1 : 2
+								@if($match->date < date('Y-m-d H:i:s'))
+									{{ $match->goals()->where('team_id', $match->FirstTeam->id)->count() }} : {{ $match->goals()->where('team_id', $match->SecondTeam->id)->count() }}
+								@else
+									{{ $match->date->format('h:i a') }}
+								@endif
 							</div>
 							<div class="the-two-teams">
-								<span>الهلال</span>
-								<span class="red-color">ضد</span>
-								<span>الرائد</span>
+								<span>{{ $match->FirstTeam->name }}</span>
+								<span class="red-color">@lang('trans.vs')</span>
+								<span>{{ $match->SecondTeam->name }}</span>
 							</div>
-							<div class="stadium-name">ستاد الهلال</div>
+							<div class="stadium-name">{{ $match->stadium }}</div>
 						</div>
 						<div class="single-side team-l-wrapper">
-							<img src="{{ url('site') }}/img/logo.png" alt="Al Raed logo" data-toggle="tooltip" title="الرائد">
-							<div class="goal-scorer">
-								<span class="goal-i"><i class="fas fa-futbol"></i></span>
-								<span class="goal-t"> <i class="far fa-clock"></i> 17 </span>
-								<span class="goal-s">Muhammad Elmursi</span>
-							</div>
-							<div class="goal-scorer">
-								<span class="goal-i"><i class="fas fa-futbol"></i></span>
-								<span class="goal-t"> <i class="far fa-clock"></i> 90 </span>
-								<span class="goal-s">Mustafa Aboelnaga</span>
-							</div>
+							<img src="{{ getimg($match->SecondTeam->image) }}" alt="{{ $match->SecondTeam->name }}" data-toggle="tooltip" title="{{ $match->SecondTeam->name }}">
+							@if($match->date < date('Y-m-d H:i:s'))
+								@foreach($match->goals()->where('team_id', $match->SecondTeam->id)->get() as $s_goal)
+								<div class="goal-scorer">
+									<span class="goal-i"><i class="fas fa-futbol"></i></span>
+									<span class="goal-t"> <i class="far fa-clock"></i> {{ $s_goal->minuit }} </span>
+									<span class="goal-s">{{ $s_goal->player->name }}</span>
+								</div>
+								@endforeach
+							@endif
 						</div>
 					</div>
 				</div>
-				<div class="nav nav-tabs radial-switch">
+				{{-- <div class="nav nav-tabs radial-switch">
 					<li class="selected-tab"><a id="formation-tab">التشكيلة</a></li>
 					<li><a id="statistics-tab">الإحصائيات</a></li>
 				</div>
@@ -150,137 +163,30 @@
 						<div class="team-percent ll-side"><span class="custo-progress"></span></div>
 						
 					</div>
-			   </div>
+			   </div> --}}
 				<div class="some-previous-matches">
-					
+					@foreach($previous_matches as $prev_match)
 					<div class="slider-match-details">
 						<div class="match-common-st">
 							<div class="single-side team-l-wrapper">
-								<img src="{{ url('site') }}/img/hilal-logo.png" alt="Al Hilal logo" data-toggle="tooltip" title="الهلال">
-								<div class="teaam-name">الهلال</div>
+								<img src="{{ getimg($prev_match->FirstTeam->image) }}" alt="{{ $prev_match->FirstTeam->name }}" data-toggle="tooltip" title="{{ $prev_match->FirstTeam->name }}">
+								<div class="teaam-name">{{ $prev_match->FirstTeam->name }}</div>
 							</div>
 							<div class="single-side">
 								<div class="red-color sin-middle">
-									1 : 2
+									{{ $prev_match->goals()->where('team_id', $prev_match->FirstTeam->id)->count() }} : {{ $prev_match->goals()->where('team_id', $prev_match->SecondTeam->id)->count() }}
 								</div>
 								<div class="the-two-teams">
-									<span class="red-color"><a href="#">التفاصيل</a></span>
+									<span class="red-color"><a href="{{ route('match.details', $prev_match->id) }}">@lang('trans.details')</a></span>
 								</div>
 							</div>
 							<div class="single-side team-l-wrapper">
-								<img src="{{ url('site') }}/img/logo.png" alt="Al Raed logo" data-toggle="tooltip" title="الرائد">
-								<div class="teaam-name">الرائد</div>
+								<img src="{{ getimg($prev_match->SecondTeam->image) }}" alt="{{ $prev_match->SecondTeam->name }}" data-toggle="tooltip" title="{{ $prev_match->SecondTeam->name }}">
+								<div class="teaam-name">{{ $prev_match->SecondTeam->name }}</div>
 							</div>
 						</div>
-					</div>
-					
-					<div class="slider-match-details">
-						<div class="match-common-st">
-							<div class="single-side team-l-wrapper">
-								<img src="{{ url('site') }}/img/hilal-logo.png" alt="Al Hilal logo" data-toggle="tooltip" title="الهلال">
-								<div class="teaam-name">الهلال</div>
-							</div>
-							<div class="single-side">
-								<div class="red-color sin-middle">
-									1 : 2
-								</div>
-								<div class="the-two-teams">
-									<span class="red-color"><a href="#">التفاصيل</a></span>
-								</div>
-							</div>
-							<div class="single-side team-l-wrapper">
-								<img src="{{ url('site') }}/img/logo.png" alt="Al Raed logo" data-toggle="tooltip" title="الرائد">
-								<div class="teaam-name">الرائد</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="slider-match-details">
-						<div class="match-common-st">
-							<div class="single-side team-l-wrapper">
-								<img src="{{ url('site') }}/img/hilal-logo.png" alt="Al Hilal logo" data-toggle="tooltip" title="الهلال">
-								<div class="teaam-name">الهلال</div>
-							</div>
-							<div class="single-side">
-								<div class="red-color sin-middle">
-									1 : 2
-								</div>
-								<div class="the-two-teams">
-									<span class="red-color"><a href="#">التفاصيل</a></span>
-								</div>
-							</div>
-							<div class="single-side team-l-wrapper">
-								<img src="{{ url('site') }}/img/logo.png" alt="Al Raed logo" data-toggle="tooltip" title="الرائد">
-								<div class="teaam-name">الرائد</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="slider-match-details">
-						<div class="match-common-st">
-							<div class="single-side team-l-wrapper">
-								<img src="{{ url('site') }}/img/hilal-logo.png" alt="Al Hilal logo" data-toggle="tooltip" title="الهلال">
-								<div class="teaam-name">الهلال</div>
-							</div>
-							<div class="single-side">
-								<div class="red-color sin-middle">
-									1 : 2
-								</div>
-								<div class="the-two-teams">
-									<span class="red-color"><a href="#">التفاصيل</a></span>
-								</div>
-							</div>
-							<div class="single-side team-l-wrapper">
-								<img src="{{ url('site') }}/img/logo.png" alt="Al Raed logo" data-toggle="tooltip" title="الرائد">
-								<div class="teaam-name">الرائد</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="slider-match-details">
-						<div class="match-common-st">
-							<div class="single-side team-l-wrapper">
-								<img src="{{ url('site') }}/img/hilal-logo.png" alt="Al Hilal logo" data-toggle="tooltip" title="الهلال">
-								<div class="teaam-name">الهلال</div>
-							</div>
-							<div class="single-side">
-								<div class="red-color sin-middle">
-									1 : 2
-								</div>
-								<div class="the-two-teams">
-									<span class="red-color"><a href="#">التفاصيل</a></span>
-								</div>
-							</div>
-							<div class="single-side team-l-wrapper">
-								<img src="{{ url('site') }}/img/logo.png" alt="Al Raed logo" data-toggle="tooltip" title="الرائد">
-								<div class="teaam-name">الرائد</div>
-							</div>
-						</div>
-					</div>
-					
-					<div class="slider-match-details">
-						<div class="match-common-st">
-							<div class="single-side team-l-wrapper">
-								<img src="{{ url('site') }}/img/hilal-logo.png" alt="Al Hilal logo" data-toggle="tooltip" title="الهلال">
-								<div class="teaam-name">الهلال</div>
-							</div>
-							<div class="single-side">
-								<div class="red-color sin-middle">
-									1 : 2
-								</div>
-								<div class="the-two-teams">
-									<span class="red-color"><a href="#">التفاصيل</a></span>
-								</div>
-							</div>
-							<div class="single-side team-l-wrapper">
-								<img src="{{ url('site') }}/img/logo.png" alt="Al Raed logo" data-toggle="tooltip" title="الرائد">
-								<div class="teaam-name">الرائد</div>
-							</div>
-						</div>
-					</div>
-					
-					
-					
+					</div>															
+					@endforeach
 				
 				</div>
 			</div>

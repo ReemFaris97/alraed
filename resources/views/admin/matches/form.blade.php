@@ -25,7 +25,7 @@
 </div>
 
 <div class="form-group form-float">
-    <label class="form-label">الفريق لثاني </label>
+    <label class="form-label">الفريق الثاني </label>
     <div class="form-line">
         {!! Form::select("second_team_id",teams(),null,['class'=>'form-control','placeholder'=>'اختر الفريق الثاني'])!!}
     </div>
@@ -47,7 +47,7 @@
 <div class="form-group form-float">
     <label class="form-label">تاريخ المباراة</label>
     <div class="form-line">
-        {!! Form::date("date",null,['class'=>'form-control','placeholder'=>'تاريخ المباراة...'])!!}
+        {!! Form::text("date",null,['class'=>'form-control','placeholder'=>'تاريخ المباراة...'])!!}
     </div>
 </div>
 

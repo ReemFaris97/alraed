@@ -34,7 +34,7 @@
 						<figure class="imghvr-shutter-in-out-diag-1 single-team-player-block animated wow"><img src="{{ getimg($team->image) }}" alt="{{ $team->name }}">
 						  <figcaption>
 							<h3>{{ $team->name }}</h3>
-							<p>المدير الفني</p>
+							<p>{{ $team->job_title }}</p>
 						  </figcaption><a href="javascript:;"></a>
 						</figure>
 						@endforeach
