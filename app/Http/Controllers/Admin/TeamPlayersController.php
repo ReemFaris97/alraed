@@ -123,9 +123,9 @@ class TeamPlayersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TeamPlayers $players)
+    public function destroy(TeamPlayers $player)
     {
-        $players->delete();
+        $player->delete();
         popup('delete');
         return back();
     }
