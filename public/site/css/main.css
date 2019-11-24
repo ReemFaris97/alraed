@@ -2381,7 +2381,7 @@ span.custo-progress.transited{
         margin-top: 0;
     }
     .footer-contact {
-        margin-top: 80px;
+        margin-top: 130px;
     }
     .about-words p {
         font-size: 16px;
@@ -2584,4 +2584,9 @@ position: absolute;
 .contact-single.addrrress ,
 .contact-single.info{
     width: calc(50% - 52.5px);
+}
+@media(max-width : 767px){
+	.report-downloader {
+    top: 80px;
+}
 }
