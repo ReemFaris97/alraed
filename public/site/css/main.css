@@ -1343,7 +1343,7 @@ span.transparented a:hover {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-top: 150px;
+    margin-top: 170px;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -2570,4 +2570,18 @@ span.custo-progress.transited{
 #app {
     max-width: 100%;
     overflow-x: hidden !important;
+}
+
+.report-downloader{
+position: absolute;
+    top: 110px;
+    width: 120px;
+    right: calc(50% - 45px);
+}
+.report-downloader .first-site-btn:hover{
+	border-color: #fff 
+}
+.contact-single.addrrress ,
+.contact-single.info{
+    width: calc(50% - 52.5px);
 }
