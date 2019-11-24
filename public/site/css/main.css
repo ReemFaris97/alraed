@@ -2568,12 +2568,14 @@ span.custo-progress.transited{
     max-width: 100%;
     overflow-x: hidden !important;
 }
-
-.report-downloader{
-position: absolute;
+.report-downloader .first-site-btn{
+	width: 150px
+}
+.report-downloader {
+    position: absolute;
     top: 110px;
-    width: 120px;
-    right: calc(50% - 45px);
+    width: 150px;
+    right: calc(50% - 60px);
 }
 .report-downloader .first-site-btn:hover{
 	border-color: #fff 
