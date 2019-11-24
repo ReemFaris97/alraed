@@ -98,8 +98,9 @@ class HomeController extends Controller
 
     public function about()
     {
-        $abouts = Settings::where('page', 'about')->get();
-        return view('site.pages.about', compact('abouts'));
+        $football = Settings::where('name', 'football')->first();
+        $khadem_cup = Settings::where('name', 'khadem_cup')->first();
+        return view('site.pages.about', compact('football', 'khadem_cup'));
     }
 
     public function otherSports()

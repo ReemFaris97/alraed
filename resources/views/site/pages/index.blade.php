@@ -373,7 +373,7 @@
 				 <div class="about-words">
 					<div>
 						<h1>{{ setting('alraed') }}</h1>
-						<p> {{ setting('about') }}
+						<p> {{ preg_replace("/&#?[a-z0-9]+;/i","",strip_tags(setting('about'))) }}
 						</p>
 						
 							<a href="/about-alraed" class="first-site-btn">

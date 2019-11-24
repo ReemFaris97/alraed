@@ -15,32 +15,22 @@
 				</svg>
 			</div>
 			
-			<!--@foreach($abouts as $about)-->
-			<!--<div class="content-wrap">-->
-			<!--	<div class="content content--layout content--layout-1">-->
-			<!--		<img class="content__img" src="{{ url('site') }}/img/logo.png" alt="Some image" />-->
-			<!--		<h3 class="content__title">@lang('trans.brief_history')</h3>-->
-			<!--		<p class="content__desc">-->
-			<!--			{{ $about->value }}-->
-			<!--		</p>-->
-			<!--	</div>-->
-			<!--</div>-->
-			<!--@endforeach-->
+			
 			<div class="content-wrap">
 				<div class="content content--layout content--layout-1">
 					<img class="content__img" src="{{ url('site') }}/img/ball.jpg" alt="كرة القدم" />
-					<h3 class="content__title">كرة القدم</h3>
+					<h3 class="content__title">{{ $football->title }}</h3>
 					<p class="content__desc">
-						برز نادي الرائد واشتهر في لعبة كرة القدم، حيث استطاع الصعود لمصاف فرق دوري الدرجة الأولى السعودي، وذلك موسم 1980-1981 مع نادي الروضة في التصفيات التي أقيمت في الرياض، ويهبط بعد موسم ويعود في								 موسم 1983-1984 للصعود مع نادي الأنصار. وفي موسم 1986 حقق الإنجاز الأغلى والأثمن بصعود الفريق الأول لمصاف أندية الدوري السعودي الممتاز كأول أندية منطقة القصيم يحقق هذا الإنجاز، ثم تكرر صعوده إلى الدوري الممتاز في نهاية أعوام 1989، 1992، 1998، 2002، 2007، ويتمتع الرائد بشعبية جماهيرية تعتبر الأولى بالقصيم والخامسة في المملكة العربية السعودية.
+						{!! $football->ar_value !!}
 					</p>
 				</div>
 			</div>
 			<div class="content-wrap">
 				<div class="content content--layout content--layout-1">
 					<img class="content__img" src="{{ url('site') }}/img/championship.png" alt="كأس خادم الحرمين الشريفين" />
-					<h3 class="content__title">كأس خادم الحرمين الشريفين</h3>
+					<h3 class="content__title">{{ $khadem_cup->title }}</h3>
 					<p class="content__desc">
-						برز نادي الرائد واشتهر في لعبة كرة القدم، حيث استطاع الصعود لمصاف فرق دوري الدرجة الأولى السعودي، وذلك موسم 1980-1981 مع نادي الروضة في التصفيات التي أقيمت في الرياض، ويهبط بعد موسم ويعود في								 موسم 1983-1984 للصعود مع نادي الأنصار. وفي موسم 1986 حقق الإنجاز الأغلى والأثمن بصعود الفريق الأول لمصاف أندية الدوري السعودي الممتاز كأول أندية منطقة القصيم يحقق هذا الإنجاز، ثم تكرر صعوده إلى الدوري الممتاز في نهاية أعوام 1989، 1992، 1998، 2002، 2007، ويتمتع الرائد بشعبية جماهيرية تعتبر الأولى بالقصيم والخامسة في المملكة العربية السعودية.
+						{!! $khadem_cup->ar_value !!}
 					</p>
 				</div>
 			</div> 
