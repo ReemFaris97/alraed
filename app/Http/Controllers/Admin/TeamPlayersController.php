@@ -80,9 +80,9 @@ class TeamPlayersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(TeamPlayers $players)
+    public function edit(TeamPlayers $player)
     {
-        return view('admin.players.edit',['item'=>$players]);
+        return view('admin.players.edit',['item'=>$player]);
     }
 
     /**
