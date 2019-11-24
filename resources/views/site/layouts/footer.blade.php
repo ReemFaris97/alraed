@@ -69,7 +69,7 @@
         <script type="text/javascript" src="{{ url('site') }}/js/wow.js"></script>
 <!--	************	Special Scripts for this page only **************** -->
 		
-        
+
         @yield('scripts')
 
 <!--        Main Scripts-->

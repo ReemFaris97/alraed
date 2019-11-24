@@ -3,6 +3,9 @@
 @section('title')
 اضافة  مباراة جديدة
 @endsection
+@section('styles')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
+@endsection
 
 @section('content')
 
@@ -27,3 +30,8 @@
 <!-- #END# Basic Validation -->
 @endsection
 
+
+@section('scripts')
+
+
+@endscection
