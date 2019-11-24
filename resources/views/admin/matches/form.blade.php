@@ -25,7 +25,7 @@
 </div>
 
 <div class="form-group form-float">
-    <label class="form-label">الفريق لثاني </label>
+    <label class="form-label">الفريق الثاني </label>
     <div class="form-line">
         {!! Form::select("second_team_id",teams(),null,['class'=>'form-control','placeholder'=>'اختر الفريق الثاني'])!!}
     </div>
@@ -46,13 +46,22 @@
 
 <div class="form-group form-float">
     <label class="form-label">تاريخ المباراة</label>
+
     <div class="form-line input-group date" id="datetimepicker">
-        {!! Form::text("text",null,['class'=>'form-control','placeholder'=>'تاريخ المباراة...'])!!}
+        {!! Form::text("date",null,['class'=>'form-control','placeholder'=>'تاريخ المباراة...'])!!}
         <span class="input-group-addon">
-                     <span class="glyphicon glyphicon-calendar"></span>
-               </span>
+             <span class="glyphicon glyphicon-calendar"></span>
+       </span>
     </div>
 </div>
 
 
 <button class="btn btn-primary waves-effect" type="submit">حفظ</button>
+
+@push('scripts')
+<script>
+    $(function() {
+        $('input[name=date').val(" {{ isset($item) ? $item->date : '' }} ")
+    })
+</script>
+@endpush

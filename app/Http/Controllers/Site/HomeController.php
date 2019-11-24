@@ -19,10 +19,10 @@ class HomeController extends Controller
     public function index()
     {
     	$banners = Banner::latest()->limit(3)->get();
-    	$next_match = Match::whereDate('date', '>=', date('Y-m-d H:i:s'))->oldest()->first();
-    	$previous_matches = Match::whereDate('date', '<=', date('Y-m-d H:i:s'))->oldest()->limit(2)->get();
+    	$next_match = Match::whereDate('date', '>=', date('Y-m-d H:i:s'))->oldest('date')->first();
+    	$previous_matches = Match::whereDate('date', '<=', date('Y-m-d H:i:s'))->oldest('date')->limit(2)->get();
         if (!is_null($next_match)) {
-    	   $next_matches = Match::whereDate('date', '>=', date('Y-m-d H:i:s'))->where('id', '<>', $next_match->id)->oldest()->limit(2)->get();
+    	   $next_matches = Match::whereDate('date', '>=', date('Y-m-d H:i:s'))->where('id', '<>', $next_match->id)->oldest('date')->limit(2)->get();
         } else {
             $next_matches = [];
         }
@@ -55,7 +55,13 @@ class HomeController extends Controller
 
     public function matchDetails(Match $match)
     {
-        return view('site.pages.match-details', compact('match'));
+        $previous_matches = Match::whereDate('date', '<=', date('Y-m-d H:i:s'))->where('id', '<>', $match->id)->where(function($q) use ($match){
+          $q->where('first_team_id', $match->first_team_id)->where('second_team_id', $match->second_team_id);  
+        })->orWhere(function($q) use ($match){
+          $q->where('first_team_id', $match->second_team_id)->where('second_team_id', $match->first_team_id);
+        })->oldest('date')->limit(10)->get();
+        
+        return view('site.pages.match-details', compact('match', 'previous_matches'));
     }
 
     public function news()

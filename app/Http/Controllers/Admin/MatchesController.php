@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Match;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 
 class MatchesController extends Controller
 {
@@ -47,6 +48,7 @@ class MatchesController extends Controller
             'date'=>'required'
         ]);
         $inputs=$request->all();
+        $inputs['date'] = Carbon::parse($request->date);
         Match::create($inputs);
         popup('add');
         return back();
@@ -94,6 +96,7 @@ class MatchesController extends Controller
             'date'=>'required'
         ]);
         $inputs=$request->all();
+        $inputs['date'] = Carbon::parse($request->date);
         $match->update($inputs);
         popup('update');
         return back();
