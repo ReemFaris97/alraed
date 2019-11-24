@@ -69,6 +69,11 @@ class HomeController extends Controller
         $newsCount = News::latest()->count();
         return view('site.pages.news', compact('newsCount'));
     }
+	
+	public function volunteer()
+    {
+        return view('site.pages.volunteer');
+    }
 
     public function moreNews()
     {

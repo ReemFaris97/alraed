@@ -69,6 +69,7 @@ Route::group(['namespace' => 'Site'], function () {
     Route::get('handball', 'HomeController@handball')->name('handball');
     Route::get('electronic', 'HomeController@electronic')->name('electronic');
     Route::get('more-news', 'HomeController@moreNews');
+    Route::get('volunteer', 'HomeController@volunteer');
     ;
 });
 

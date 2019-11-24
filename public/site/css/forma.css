@@ -1,0 +1,83 @@
+.volunteer-form-wrapper.container-fluid {
+    padding-bottom: 120px;
+}
+.dropdown.bootstrap-select.bs3 {
+    width: 100% !important;
+    display: inline-block;
+}
+.form-control {
+    border-radius: 0;
+    outline: 0;
+	transition: 0.4s all ease-in-out !important
+}
+.form-group label {
+    color: #B7202B;
+    font-size: 16px;
+}
+.form-control:focus {
+    border-color: #B7202B;
+    outline: 0;
+    -webkit-box-shadow: 0 4px 6px rgba(183,32,43,0.6);
+    box-shadow: 0 4px 6px rgba(183,32,43,0.6);
+}
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus {
+    background-color: #B7202B;
+    background-image: -webkit-linear-gradient(top,#B7202B 0,#B7202B 100%);
+    background-image: -o-linear-gradient(top,#B7202B 0,#000 100%);
+    background-image: -webkit-gradient(linear,left top,left bottom,from(#B7202B),to(#000));
+    background-image: linear-gradient(to bottom,#B7202B 0,#000 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#B7202B', endColorstr='#000000', GradientType=0);
+    background-repeat: repeat-x;
+	transition: 0.4s all ease-in-out !important
+}
+.bootstrap-select .dropdown-toggle .filter-option-inner-inner {
+    overflow: hidden;
+    text-align: right;
+	transition: 0.4s all ease-in-out !important
+}
+.bootstrap-select .dropdown-toggle .caret {
+    right: unset;
+    left: 12px;
+	color: #B7202B;
+	transition: 0.4s all ease-in-out !important
+}
+.btn-default, .btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    border-radius: 0;
+	outline: 0px !important;
+	    background-image: unset;
+	transition: 0.4s all ease-in-out !important
+}
+.dropdown.bootstrap-select.bs3 {
+    background: #fff;
+    outline: 0px !important;
+	transition: 0.4s all ease-in-out !important
+}
+.bootstrap-select .dropdown-toggle:focus, .bootstrap-select>select.mobile-device:focus+.dropdown-toggle {
+    outline: thin dotted #333!important;
+    outline: 0px !important;
+    outline-offset: -2px;
+}
+.col-md-12.form-btn-wrapp {
+    text-align: center;
+    margin-top: 15px;
+}
+.form-group {
+    margin-bottom: 30px;
+}
+@media(min-width:768px){
+	.row.flexy {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-right: 0px;
+}
+}
+@media(max-width:767px){
+	.row.flexy {
+    flex-wrap: wrap
+}
+}
