@@ -4,7 +4,7 @@
 اضافة  مباراة جديدة
 @endsection
 @section('styles')
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">
 @endsection
 
 @section('content')
@@ -31,7 +31,3 @@
 @endsection
 
 
-@section('scripts')
-
-
-@endscection
