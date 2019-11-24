@@ -11,7 +11,11 @@
 					<span class="wow animated">e</span>
 					<span class="wow animated">d</span>
 				</h3>
+				
 				<div class="footer-contact">
+				<div class="row report-downloader">
+					<a href="{{asset('site/img/report.pdf')}}" class="first-site-btn" target="_blank" rel="noreferrer noopener">تقرير </a>
+				</div>
 					<div class="contact-single info">
 						<div class="pacifico red-color">@lang('trans.info')</div>
 						<div><a href="mailto:{{ setting('email') }}">{{ setting('email') }}</a></div>
