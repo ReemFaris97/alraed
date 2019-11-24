@@ -15,6 +15,21 @@
 <!-- Custom Js -->
 {!!Html::script('admin/js/admin.js')!!}
 {!!Html::script('admin/cus/sweetalert.min.js')!!}
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript">
+
+   
+$(document).ready(function(){
+                $('#datetimepicker').datetimepicker();
+           
+})
+
+    
+</script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 <script type="text/javascript">

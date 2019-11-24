@@ -46,10 +46,22 @@
 
 <div class="form-group form-float">
     <label class="form-label">تاريخ المباراة</label>
-    <div class="form-line">
+
+    <div class="form-line input-group date" id="datetimepicker">
         {!! Form::text("date",null,['class'=>'form-control','placeholder'=>'تاريخ المباراة...'])!!}
+        <span class="input-group-addon">
+             <span class="glyphicon glyphicon-calendar"></span>
+       </span>
     </div>
 </div>
 
 
 <button class="btn btn-primary waves-effect" type="submit">حفظ</button>
+
+@push('scripts')
+<script>
+    $(function() {
+        $('input[name=date').val(" {{ isset($item) ? $item->date : '' }} ")
+    })
+</script>
+@endpush
