@@ -15,7 +15,7 @@ class DesireController extends Controller
      */
     public function index()
     {
-        $desires = Desire::all();
+        $desires = Desire::latest()->get();
         return view('admin.desires.index', ['items' => $desires]);
     }
 

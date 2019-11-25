@@ -68,10 +68,10 @@
                         <!--<li class="nav-tab "><a href="404.html">@lang('trans.tickets')</a></li>-->
                         <li class="nav-tab {{ actived('multimedia') }}"><a href="{{ url('multimedia') }}">@lang('trans.multimedia')</a>
                         </li>
-                        <li class="nav-tab {{ actived('volunteer') }}"><a href="{{ url('volunteer') }}">@lang('trans.volunteers')</a>
+                        {{-- <li class="nav-tab {{ actived('volunteer') }}"><a href="{{ url('volunteer') }}">@lang('trans.volunteers')</a>
                         </li>
                         <li class="nav-tab {{ actived('desires') }}"><a href="{{ url('desires') }}">@lang('trans.record_desires')</a>
-                        </li>
+                        </li> --}}
                         <li class="nav-tab {{ actived('about-alraed') }}"><a href="{{ url('about-alraed') }}">@lang('trans.about_alraed')</a></li>
                         <li class="nav-tab"><a href="{{ url('other-sports') }}">@lang('trans.more_sports')</a></li>
                     </ul>

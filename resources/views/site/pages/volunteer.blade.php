@@ -60,12 +60,9 @@
 					<div class="form-group col-md-4">
 					  <label for="nationality">الجنسية</label>
 					  <select name="nationality" id="nationality">
-					  	<option value="السعودية">السعودية</option>
-					  	<option value="مصر">مصر</option>
-					  	<option value="عمان">عمان</option>
-					  	<option value="البحرين">البحرين</option>
-					  	<option value="الكويت">الكويت</option>
-					  	<option value="الإمارات">الإمارات</option>
+					  	@foreach(getAllCountries() as $key => $country)
+					  	<option value="{{ $country }}">{{ $country }}</option>
+					  	@endforeach
 					  </select>
 					  @error('nationality')
 					  	<span style="color: red">{{ $message }}</span>
@@ -74,11 +71,27 @@
 					</div>
 					<div class="form-group col-md-12">
 					  <label for="study">أخر مؤهل دراسي</label>
-					  <input type="text" name="qualification" class="form-control" id="study">
+					  <select name="qualification" id="study">
+					  	<option value="أقل ثانوي">أقل ثانوي</option>
+					  	<option value="ثانوي">ثانوي</option>
+					  	<option value="بكالريوس">بكالريوس</option>
+					  	<option value="ماجستير">ماجستير</option>
+					  	<option value="دكتوراه">دكتوراه</option>
+					  	<option value="other">آخر</option>
+					  </select>
 					  @error('qualification')
 					  	<span style="color: red">{{ $message }}</span>
 					@enderror
 					</div>
+					<div class="form-group col-md-12 other-qual">
+					  <label>آخر مؤهل دراسي</label>
+					  <input type="text" name="other_qualification" class="form-control">
+					  @error('other_qualification')
+					  	<span style="color: red">{{ $message }}</span>
+					@enderror
+					</div>
+
+
 					<div class="form-group col-md-6">
 					  <label for="mob">الجوال</label>
 					  <input type="text" name="phone" class="form-control" id="mob">
@@ -95,17 +108,29 @@
 					</div>
 					<div class="row flexy">
 						<div class="form-group col-md-4">
-					  <label for="nationality">نوع العمل التطوعي</label>
-					  <select name="work_type" id="nationality">
-					  	<option value="نشاطي">نشاطي</option>
-					  	<option value="خيري">خيري</option>
+					  <label for="work_type">نوع العمل التطوعي</label>
+					  <select name="work_type" id="work_type">
 					  	<option value="رياضي">رياضي</option>
-					  	<option value="نشاط اخر">نشاط اخر</option>
+					  	<option value="اجتماعي">اجتماعي</option>
+					  	<option value="ثقافي">ثقافي</option>
+					  	<option value="صحي">صحي</option>
+					  	<option value="الكوراث والطوارئ">الكوراث والطوارئ</option>
+					  	<option value="رياضي">ثقافي</option>
+					  	<option value="other">نشاط آخر</option>
 					  </select>
 					  @error('work_type')
 					  	<span style="color: red">{{ $message }}</span>
 					@enderror
 					</div>
+					<div class="form-group col-md-4 other-work">
+					  <label>نشاط آخر</label>
+					  <input type="text" name="other_work_type" class="form-control">
+					  @error('other_work_type')
+					  	<span style="color: red">{{ $message }}</span>
+					@enderror
+					</div>
+
+
 					<div class="form-group col-md-4">
 					  <label for="nationality">نوع  المشاركة</label>
 					  <select name="type" id="nationality">
@@ -120,10 +145,12 @@
 					  <label for="nationality">أوقات التطوع</label>
 					  <select name="volunteer_time" id="nationality">
 					  	<option value="مفتوح">مفتوح</option>
-					  	<option value="ايام الجازات الصيفية">ايام الجازات الصيفية</option>
+					  	<option value="مناسبات النادي">مناسبات النادي</option>
+					  	<option value="ايام الاجازات الصيفية">ايام الاجازات الصيفية</option>
+					  	<option value="ايام اجازة نهاية الاسبوع">ايام اجازة نهاية الاسبوع</option>
 					  	<option value="ايام المواسم">ايام المواسم</option>
 					  	<option value="المناسبات العامة">المناسبات العامة</option>
-					  	<option value="اايام مباريات النادي">اايام مباريات النادي</option>
+					  	<option value="ايام مباريات النادي">ايام مباريات النادي</option>
 					  </select>
 					  @error('volunteer_time')
 					  	<span style="color: red">{{ $message }}</span>
@@ -148,7 +175,7 @@
 					</div>
 					<div class="row">
 						<div class="col-md-12 form-btn-wrapp">
-							<button type="submit" class="first-site-btn">تقدم لدينا</button>
+							<button type="submit" class="first-site-btn">إرسال</button>
 						</div>
 					</div>
 				  </form>
@@ -164,4 +191,29 @@
 		$('select').selectpicker();
 	})
 </script>
+
+<script>
+	$(function() {
+		$('.other-qual').hide();
+		$('#study').change(function () {
+			let value = $(this).val();
+			if (value == 'other') {
+				$('.other-qual').show();
+			} else {
+				$('.other-qual').hide();
+			}
+		});
+
+		$('.other-work').hide();
+		$('#work_type').change(function () {
+			let value = $(this).val();
+			if (value == 'other') {
+				$('.other-work').show();
+			} else {
+				$('.other-work').hide();
+			}
+		});
+	})
+</script>
+
 @endsection

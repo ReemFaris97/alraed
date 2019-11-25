@@ -39,5 +39,5 @@ return [
 	'login' => 'تسجيل الدخول',
 	'add_success' => 'تم الإضافة بنجاح',
 	'volunteers' => 'المتطوعين',
-	'record_desires' => 'تسجيل الرغبات'
+	'record_desires' => 'تسجيل الراغبيين'
 ];

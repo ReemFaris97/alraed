@@ -15,7 +15,7 @@ class VolunteerController extends Controller
      */
     public function index()
     {
-        $volunteers = Volunteer::all();
+        $volunteers = Volunteer::latest()->get();
         return view('admin.volunteers.index', ['items' => $volunteers]);
     }
 

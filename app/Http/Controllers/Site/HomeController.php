@@ -139,7 +139,14 @@ class HomeController extends Controller
 
     public function postVolunteer(VolunteerRequest $request)
     {
-        Volunteer::create($request->all());
+        $data = $request->except(['other_qualification', 'other_work_type']);
+        if (!empty($request->other_qualification)) {
+            $data['qualification'] = $request->other_qualification;
+        }
+        if (!empty($request->other_work_type)) {
+            $data['work_type'] = $request->other_work_type;
+        }
+        Volunteer::create($data);
         return back()->with('success', __('trans.add_success'));
     }
 
