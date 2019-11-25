@@ -24,6 +24,11 @@
 		</div><!-- /container -->
 		<section>
 			<div class="volunteer-form-wrapper container-fluid">
+				@if(session()->has('success'))
+				<div class="alert alert-success">
+					<strong>{{ session()->get('success') }}</strong>
+				</div>
+				@endif
 				<div class="container vol-form">
 					 <form method="post" action="{{ url('post-desires') }}">@csrf
 					<div class="form-group col-md-12">
@@ -78,7 +83,7 @@
 					<div class="row flexy">
 						<div class="form-group col-md-6">
 					  <label for="student">هل انت طالب ؟</label>
-					  <label><input type="radio" name="student" value="نعم">نعم</label>
+					  <label><input type="radio" name="student" value="نعم" checked>نعم</label>
 					  <label><input type="radio" name="student" value="لا">لا</label>
 					  @error('student')
 					  	<span style="color: red">{{ $message }}</span>
@@ -86,9 +91,9 @@
 					</div>
 					<div class="form-group col-md-6">
 					  <label for="student">هل لديك وظيفة؟</label>
-					  <label><input type="radio" name="student" value="نعم">نعم</label>
-					  <label><input type="radio" name="student" value="لا">لا</label>
-					  	@error('type')
+					  <label><input type="radio" name="job" value="نعم" checked>نعم</label>
+					  <label><input type="radio" name="job" value="لا">لا</label>
+					  	@error('job')
 					  		<span style="color: red">{{ $message }}</span>
 						@enderror
 					</div>
@@ -97,7 +102,7 @@
 					
 					<div class="form-group col-md-12">
 					  <label for="game">حدد اسم اللعبة المرغوب التسجيل به</label>
-					  <select name="game" id="game" multiple="">
+					  <select name="game[]" id="game" multiple="">
 					  	<option value="كرة القدم">كرة القدم</option>
 					  	<option value="كرة السلة">كرة السلة</option>
 					  	<option value="كرة الطائرة">كرة الطائرة</option>
@@ -118,7 +123,7 @@
 					<div class="row flexy">
 						<div class="form-group col-md-6">
 					  <label for="student">هل لديك وسيلة نقل ؟</label>
-					  <label><input type="radio" name="transport" value="نعم">نعم</label>
+					  <label><input type="radio" name="transport" value="نعم" checked>نعم</label>
 					  <label><input type="radio" name="transport" value="لا">لا</label>
 					  @error('transport')
 					  	<span style="color: red">{{ $message }}</span>
@@ -126,7 +131,7 @@
 					</div>
 					<div class="form-group col-md-6">
 					  <label for="nationality">هل انت مسجل في نادِ آخر؟</label>
-					  <label><input type="radio" name="club" value="نعم">نعم</label>
+					  <label><input type="radio" name="club" value="نعم" checked>نعم</label>
 					  <label><input type="radio" name="club" value="لا">لا</label>
 					  	@error('club')
 					  		<span style="color: red">{{ $message }}</span>

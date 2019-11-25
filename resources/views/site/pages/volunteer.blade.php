@@ -23,7 +23,13 @@
 				</div>
 		</div><!-- /container -->
 		<section>
+
 			<div class="volunteer-form-wrapper container-fluid">
+				@if(session()->has('success'))
+				<div class="alert alert-success">
+					<strong>{{ session()->get('success') }}</strong>
+				</div>
+				@endif
 				<div class="container vol-form">
 					 <form method="post" action="{{ url('post-volunteer') }}">@csrf
 					<div class="form-group col-md-12">
@@ -125,7 +131,7 @@
 					</div>
 					</div>
 					<div class="form-group col-md-12">
-					  <label for="nationality">ماهو الهدف من المشاركة بالعمال التطوعية بالنادي</label>
+					  <label for="nationality">ماهو الهدف من المشاركة بالاعمال التطوعية بالنادي</label>
 					  <select name="goal" id="nationality">
 					  	<option value="رغبة في خدمة نادي الرائد">رغبة في خدمة نادي الرائد </option>
 					  	<option value="بناء علاقات اشخصية">بناء علاقات شخصية</option>

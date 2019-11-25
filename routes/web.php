@@ -36,6 +36,9 @@ Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin',
     Route::resource('goals', 'GoalsController')->middleware('permission:goals');
     Route::resource('statistics', 'StatisticsController')->middleware('permission:statistics');
 
+    //Volunteers and Desires
+    Route::resource('volunteer', 'VolunteerController');
+    Route::resource('desire', 'DesireController');
 
     //SYSTEM SETTINGS
     Route::resource('permissions','PermissionController')->middleware('permission:permissions');

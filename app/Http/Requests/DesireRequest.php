@@ -13,7 +13,7 @@ class DesireRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,17 @@ class DesireRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|string|min:6|max:191',
+            'phone' => 'required',
+            'birth_date' => 'required',
+            'birth_area' => 'required',
+            'live_area' => 'required',
+            'nationality' => 'required',
+            'student' => 'required',
+            'job' => 'required',
+            'transport' => 'required',
+            'club' => 'required',
+            'game' => 'required',
         ];
     }
 }

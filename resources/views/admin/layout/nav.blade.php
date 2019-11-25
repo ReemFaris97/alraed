@@ -384,6 +384,30 @@
     @endif
 
 
+     @if(hasPermission('volunteers') || hasPermission('desires'))
+        <li class="header">الاستبيانات</li>
+    @endif
+
+
+    @if(hasPermission('volunteers'))
+        <li>
+            <a class="check_active" href="{{route('admin.volunteer.index')}}">
+                <i class="material-icons">layers</i>
+                <span> المتطوعين </span>
+            </a>
+        </li>
+    @endif
+
+    @if(hasPermission('desires'))
+        <li>
+            <a class="check_active" href="{{route('admin.desire.index')}}">
+                <i class="material-icons">layers</i>
+                <span> سجل الرغبات </span>
+            </a>
+        </li>
+    @endif
+
+
 
     @if(hasPermission('settings') || hasPermission('headers') || hasPermission('messages')|| hasPermission('advertisement'))
         @if(!in_array('setting',$arr))

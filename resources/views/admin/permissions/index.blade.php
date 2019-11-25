@@ -14,13 +14,13 @@
             <div class="card">
                 <div class="header">
                     <h2>
-                        كل الاقسام
+                        كل الصلاحيات
                     </h2>
-                    <ul class="header-dropdown m-r--5">
+                    {{-- <ul class="header-dropdown m-r--5">
                         <a href="{{route('admin.categories.create')}}">
                             <button class="btn btn-success">إضافة قسم جديد</button>
                         </a>
-                    </ul>
+                    </ul> --}}
                 </div>
                 <div class="body">
                     <table class="table table-bordered table-striped table-hover dataTable js-exportable">
