@@ -2619,20 +2619,20 @@ span.custo-progress.transited{
     border-radius: 5px !important;
 }
 .breaking-news-ticker:before{
-    content: "أخبار سعيدة";
+    content: "أحدث الأخبار";
     position: absolute;
     right: 0;
     top: 0;
     width: 93px;
     height: 100%;
-    background-color: #E91E63;
+    background-color: #B7202B;
     z-index: 9;
     color: #fff;
     font-size: 15px;
     word-break: break-word;
 }
 .bn-controls button {
-    background-color: #f73063;
+    background-color: #B7202B;
         width: 28px;
     height: 30px !important;
     line-height: 28px !important;
