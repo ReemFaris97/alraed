@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Site;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\VolunteerRequest;
+use App\Http\Requests\DesireRequest;
 use App\Http\Controllers\Controller;
 use App\Banner;
 use App\News;
@@ -12,6 +14,8 @@ use App\Category;
 use App\OurTeam;
 use App\Multimedia;
 use App\Settings;
+use App\Volunteer;
+use App\Desire;
 
 class HomeController extends Controller
 {
@@ -68,11 +72,6 @@ class HomeController extends Controller
     {
         $newsCount = News::latest()->count();
         return view('site.pages.news', compact('newsCount'));
-    }
-	
-	public function volunteer()
-    {
-        return view('site.pages.volunteer');
     }
 
     public function moreNews()
@@ -131,5 +130,27 @@ class HomeController extends Controller
     public function electronic()
     {
         return view('site.pages.electronic');
+    }
+
+    public function volunteer()
+    {
+        return view('site.pages.volunteer');
+    }
+
+    public function postVolunteer(VolunteerRequest $request)
+    {
+        Volunteer::create($request->all());
+        return back()->with('success', __('trans.add_success'));
+    }
+
+    public function desires()
+    {
+        return view('site.pages.desires');
+    }
+
+    public function postDesires(DesireRequest $request)
+    {
+        Desire::create($request->all());
+        return back()->with('success', __('trans.add_success'));
     }
 }

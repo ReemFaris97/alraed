@@ -37,4 +37,7 @@ return [
 	'email' => 'Email',
 	'password' => 'Password',
 	'login' => 'Login',
+	'add_success' => 'Successfully added',
+	'volunteers' => 'Volunteers',
+	'record_desires' => 'Recording Desires'
 ];

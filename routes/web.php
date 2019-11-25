@@ -70,7 +70,9 @@ Route::group(['namespace' => 'Site'], function () {
     Route::get('electronic', 'HomeController@electronic')->name('electronic');
     Route::get('more-news', 'HomeController@moreNews');
     Route::get('volunteer', 'HomeController@volunteer');
-    ;
+    Route::post('post-volunteer', 'HomeController@postVolunteer');
+    Route::get('desires', 'HomeController@desires');
+    Route::post('post-desires', 'HomeController@postDesires');
 });
 
 

@@ -25,87 +25,120 @@
 		<section>
 			<div class="volunteer-form-wrapper container-fluid">
 				<div class="container vol-form">
-					 <form>
+					 <form method="post" action="{{ url('post-volunteer') }}">@csrf
 					<div class="form-group col-md-12">
 					  <label for="name">الإسم</label>
-					  <input type="text" class="form-control" id="name">
+					  <input type="text" name="name" class="form-control" id="name" required="">
+					@error('name')
+					  	<span style="color: red">{{ $message }}</span>
+					@enderror
 					</div>
 					<div class="row flexy">
 						<div class="form-group col-md-4">
 					  <label for="age">العمر</label>
-					  <input type="text" class="form-control" id="age">
+					  <input type="text" name="age" class="form-control" id="age">
+					  @error('age')
+						  	<span style="color: red">{{ $message }}</span>
+						@enderror
 					</div>
 					<div class="form-group col-md-4">
 					  <label for="gender">الجنس</label>
-					  <select name="gender" id="gender">
-					  	<option value="1">ذكر</option>
-					  	<option value="2">أنثى</option>
+					  <select name="gender" name="gender" id="gender">
+					  	<option value="ذكر">ذكر</option>
+					  	<option value="أنثي">أنثى</option>
 					  </select>
+					  @error('gender')
+					  	<span style="color: red">{{ $message }}</span>
+					@enderror
 					</div>
 					<div class="form-group col-md-4">
 					  <label for="nationality">الجنسية</label>
 					  <select name="nationality" id="nationality">
-					  	<option value="1">السعودية</option>
-					  	<option value="2">مصر</option>
-					  	<option value="3">عمان</option>
-					  	<option value="4">البحرين</option>
-					  	<option value="5">الكويت</option>
-					  	<option value="6">الإمارات</option>
+					  	<option value="السعودية">السعودية</option>
+					  	<option value="مصر">مصر</option>
+					  	<option value="عمان">عمان</option>
+					  	<option value="البحرين">البحرين</option>
+					  	<option value="الكويت">الكويت</option>
+					  	<option value="الإمارات">الإمارات</option>
 					  </select>
+					  @error('nationality')
+					  	<span style="color: red">{{ $message }}</span>
+					@enderror
 					</div>
 					</div>
 					<div class="form-group col-md-12">
 					  <label for="study">أخر مؤهل دراسي</label>
-					  <input type="text" class="form-control" id="study">
+					  <input type="text" name="qualification" class="form-control" id="study">
+					  @error('qualification')
+					  	<span style="color: red">{{ $message }}</span>
+					@enderror
 					</div>
 					<div class="form-group col-md-6">
 					  <label for="mob">الجوال</label>
-					  <input type="text" class="form-control" id="mob">
+					  <input type="text" name="phone" class="form-control" id="mob">
+					  @error('phone')
+					  	<span style="color: red">{{ $message }}</span>
+					@enderror
 					</div>
 					<div class="form-group col-md-6">
 					  <label for="mail">الإيميل</label>
-					  <input type="email" class="form-control" id="mail">
+					  <input type="email" name="email" class="form-control" id="mail">
+					  @error('email')
+					  	<span style="color: red">{{ $message }}</span>
+					@enderror
 					</div>
 					<div class="row flexy">
 						<div class="form-group col-md-4">
 					  <label for="nationality">نوع العمل التطوعي</label>
-					  <select name="nationality" id="nationality">
-					  	<option value="1">نشاطي</option>
-					  	<option value="2">خيري</option>
-					  	<option value="3">رياضي</option>
-					  	<option value="4">نشاط اخر</option>
+					  <select name="work_type" id="nationality">
+					  	<option value="نشاطي">نشاطي</option>
+					  	<option value="خيري">خيري</option>
+					  	<option value="رياضي">رياضي</option>
+					  	<option value="نشاط اخر">نشاط اخر</option>
 					  </select>
+					  @error('work_type')
+					  	<span style="color: red">{{ $message }}</span>
+					@enderror
 					</div>
 					<div class="form-group col-md-4">
 					  <label for="nationality">نوع  المشاركة</label>
-					  <select name="nationality" id="nationality">
-					  	<option value="1">قائد</option>
-					  	<option value="2">فرد</option>
+					  <select name="type" id="nationality">
+					  	<option value="قائد">قائد</option>
+					  	<option value="فرد">فرد</option>
 					  </select>
+					  	@error('type')
+						  	<span style="color: red">{{ $message }}</span>
+						@enderror
 					</div>
 					<div class="form-group col-md-4">
 					  <label for="nationality">أوقات التطوع</label>
-					  <select name="nationality" id="nationality">
-					  	<option value="1">مفتوح</option>
-					  	<option value="2">ايام الجازات الصيفية</option>
-					  	<option value="3">ايام المواسم</option>
-					  	<option value="4">المناسبات العامة</option>
-					  	<option value="5">اايام مباريات النادي</option>
+					  <select name="volunteer_time" id="nationality">
+					  	<option value="مفتوح">مفتوح</option>
+					  	<option value="ايام الجازات الصيفية">ايام الجازات الصيفية</option>
+					  	<option value="ايام المواسم">ايام المواسم</option>
+					  	<option value="المناسبات العامة">المناسبات العامة</option>
+					  	<option value="اايام مباريات النادي">اايام مباريات النادي</option>
 					  </select>
+					  @error('volunteer_time')
+					  	<span style="color: red">{{ $message }}</span>
+					  @enderror
 					</div>
 					</div>
 					<div class="form-group col-md-12">
 					  <label for="nationality">ماهو الهدف من المشاركة بالعمال التطوعية بالنادي</label>
-					  <select name="nationality" id="nationality">
-					  	<option value="1">رغبة في خدمة نادي الرائد </option>
-					  	<option value="2">بناء علاقات اشخصية</option>
-					  	<option value="3">لتطوير مهاراتي </option>
-					  	<option value="4">لتعلم مهارة جديدة</option>
-					  	<option value="5">لهدف الحتساب والجر</option>
-					  	<option value="6">للحصول على خبرة وظيفية</option>
-					  	<option value="7">لستغلل تخصصي بعمل الخير</option>
-					  	<option value="8">لستغلل خبرتي بالعمال  التطوعية والجتماعية</option>
+					  <select name="goal" id="nationality">
+					  	<option value="رغبة في خدمة نادي الرائد">رغبة في خدمة نادي الرائد </option>
+					  	<option value="بناء علاقات اشخصية">بناء علاقات شخصية</option>
+					  	<option value="لتطوير مهاراتي">لتطوير مهاراتي </option>
+					  	<option value="لتعلم مهارة جديدة">لتعلم مهارة جديدة</option>
+					  	<option value="لهدف الإحتساب والأجر">لهدف الإحتساب والأجر</option>
+					  	<option value="للحصول على خبرة وظيفية">للحصول على خبرة وظيفية</option>
+					  	<option value="لإستغلال تخصصي بعمل الخير">لإستغلال تخصصي بعمل الخير</option>
+					  	<option value="لإستغلال خبرتي بالأعمال التطوعية والإجتماعية">لإستغلال خبرتي بالأعمال التطوعية والإجتماعية</option>
 					  </select>
+					  @error('goal')
+					  	<span style="color: red">{{ $message }}</span>
+					@enderror
 					</div>
 					<div class="row">
 						<div class="col-md-12 form-btn-wrapp">
