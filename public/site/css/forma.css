@@ -1,3 +1,14 @@
+.container-fluid.the-footer-section , header{
+	display: none !important
+}
+
+body {
+    background-image: url(../img/logo.png);
+    background-repeat: no-repeat;
+    background-size: 330px;
+    background-position: center;
+    background-attachment: fixed;
+}
 .volunteer-form-wrapper.container-fluid {
     padding-bottom: 120px;
 }
@@ -67,6 +78,14 @@
 .form-group {
     margin-bottom: 30px;
 }
+.container.vol-form {
+    background-color: rgba(255, 255, 255, .5);
+    padding-top: 40px;
+    box-shadow: 0px 20px 15px rgba(40, 40, 40, 0.7);
+    padding-bottom: 40px;
+	
+}
+
 @media(min-width:768px){
 	.row.flexy {
     display: inline-flex;

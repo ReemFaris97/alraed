@@ -160,6 +160,7 @@
 @section('scripts')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.11/js/bootstrap-select.min.js"></script>
 <script>
+		$('.container-fluid.the-footer-section , header').remove();
 	$(document).ready(function(){
 		$('select').selectpicker();
 	})
