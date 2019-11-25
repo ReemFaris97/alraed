@@ -2589,3 +2589,144 @@ span.custo-progress.transited{
     top: 80px;
 }
 }
+
+
+
+
+/********************* Start Newsticker **************/
+.bn-news{
+    left: auto !important;
+}
+.bn-label {
+    background-color: #9e7544;
+}
+
+.demo-section-box {
+    border: 0 !important;
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(198, 192, 192, 0.75);
+    box-shadow: 0px 5px 5px 0px rgba(198, 192, 192, 0.75);
+}
+
+.demo-box {
+    margin: 0;
+}
+
+.breaking-news-ticker {
+    border: 0 !important;
+    background-color: #333;
+    z-index: 9999;
+    padding: 0 0 0 15px;
+    border-radius: 5px !important;
+}
+.breaking-news-ticker:before{
+    content: "أخبار سعيدة";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 93px;
+    height: 100%;
+    background-color: #E91E63;
+    z-index: 9;
+    color: #fff;
+    font-size: 15px;
+    word-break: break-word;
+}
+.bn-controls button {
+    background-color: #f73063;
+        width: 28px;
+    height: 30px !important;
+    line-height: 28px !important;
+    margin: 5px 0;
+}
+
+.bn-direction-rtl .bn-controls button {
+    border-right: solid 1px rgba(184, 151, 111, 0.5);
+}
+.bn-direction-rtl .bn-controls {
+    left: 10px;
+}
+.bn-arrow::after {
+    border-color: #fff;
+}
+
+.bn-play {
+    background: #fff;
+}
+
+.bn-play::after {
+    border-left-color: #fff;
+}
+
+.bn-controls button:hover {
+    background-color: rgba(189, 28, 69, .6);
+}
+
+.bn-controls button:hover .bn-arrow::after {
+    border-color: #fff !important;
+
+}
+
+.bn-controls button:hover .bn-pause::before,
+.bn-controls button:hover .bn-pause::after,
+.bn-pause::before,
+.bn-pause::after {
+    background-color: #fff !important;
+}
+
+.bn-controls button:hover .bn-play::before {
+    border-left-color: #fff !important;
+}
+
+.bn-news ul li a:hover {
+    color: #f73063;
+}
+
+.bn-direction-rtl .bn-label:hover,
+.bn-direction-rtl .bn-label:focus {
+    background-color: #f5c354;
+    color: #fff;
+}
+
+.bn-news ul li a {
+    max-width: 600px;
+}
+.bn-news ul li a {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    padding: 0 10px;
+    color: #fff;
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+.bn-effect-scroll .bn-news ul {
+    margin: 0 auto !important;
+}
+
+
+@media (max-width: 767px) {
+    
+ 
+    /********* End Navbar *********/
+    .breaking-news-ticker:before {
+        width: 42px;
+        font-size: 12px;
+        line-height: 1.2;
+    }
+    .bn-controls button {
+        width: 22px;
+        height: 27px !important;
+        margin: 7px 0;
+    }
+    .bn-direction-rtl .bn-controls {
+    left: 0px;
+        display: none;
+}
+    .breaking-news-ticker{
+        padding: 0;
+    }
+   
+    
+}
+/********************* End Newsticker **************/
