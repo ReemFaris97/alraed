@@ -2594,9 +2594,11 @@ span.custo-progress.transited{
 
 
 /********************* Start Newsticker **************/
+/*
 .bn-news{
     left: auto !important;
 }
+*/
 .bn-label {
     background-color: #9e7544;
 }
@@ -2687,22 +2689,28 @@ span.custo-progress.transited{
     color: #fff;
 }
 
+/*
 .bn-news ul li a {
     max-width: 600px;
 }
+*/
 .bn-news ul li a {
+/*
     white-space: nowrap;
     text-overflow: ellipsis;
+*/
     text-decoration: none;
     padding: 0 10px;
     color: #fff;
     position: relative;
     display: block;
-    overflow: hidden;
+/*    overflow: hidden;*/
 }
+/*
 .bn-effect-scroll .bn-news ul {
     margin: 0 auto !important;
 }
+*/
 
 
 @media (max-width: 767px) {
