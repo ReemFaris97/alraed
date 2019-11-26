@@ -30,7 +30,7 @@
 				<div class="container vol-form">
 					 <form method="post" action="{{ url('post-desires') }}">@csrf
 					<div class="form-group col-md-12">
-					  <label for="name">الإسم رباعي</label>
+					  <label for="name">الإسم ثلاثي</label>
 					  <input type="text" name="name" class="form-control" id="name" required="">
 					@error('name')
 					  	<span style="color: red">{{ $message }}</span>
@@ -139,7 +139,7 @@
 					</div>
 
 					<div class="form-group col-md-12">
-						<label for="opinion">الرآي</label>
+						<label for="opinion">ملاحظات / إقتراحات</label>
 						<textarea name="opinion" class="form-control" rows="5"></textarea>
 					</div>
 

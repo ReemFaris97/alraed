@@ -72,9 +72,10 @@
 					<div class="form-group col-md-12">
 					  <label for="study">أخر مؤهل دراسي</label>
 					  <select name="qualification" id="study">
-					  	<option value="أقل ثانوي">أقل ثانوي</option>
+					  	<option value="أقل ثانوي">أقل من ثانوي</option>
 					  	<option value="ثانوي">ثانوي</option>
 					  	<option value="بكالوريوس">بكالوريوس</option>
+					  	<option value="دبلوم عالي">دبلوم عالي</option>
 					  	<option value="ماجستير">ماجستير</option>
 					  	<option value="دكتوراه">دكتوراه</option>
 					  	<option value="other">آخرى</option>
@@ -144,12 +145,12 @@
 					  <label for="nationality">أوقات التطوع</label>
 					  <select name="volunteer_time" id="nationality">
 					  	<option value="مفتوح">مفتوح</option>
-					  	<option value="مناسبات النادي">مناسبات النادي</option>
-					  	<option value="ايام الاجازات الصيفية">ايام الاجازات الصيفية</option>
-					  	<option value="ايام اجازة نهاية الاسبوع">ايام اجازة نهاية الاسبوع</option>
-					  	<option value="ايام المواسم">ايام المواسم</option>
+					  	<option value="أيام مناسبات النادي">أيام مناسبات النادي</option>
+					  	<option value="أيام الاجازات الصيفية">أيام الاجازات الصيفية</option>
+					  	<option value="أيام اجازة نهاية الاسبوع">أيام اجازة نهاية الاسبوع</option>
+					  	<option value="أيام المواسم">أيام المواسم</option>
 					  	<option value="المناسبات العامة">المناسبات العامة</option>
-					  	<option value="ايام مباريات النادي">ايام مباريات النادي</option>
+					  	
 					  </select>
 					  @error('volunteer_time')
 					  	<span style="color: red">{{ $message }}</span>
