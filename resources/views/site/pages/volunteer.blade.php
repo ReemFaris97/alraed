@@ -31,6 +31,11 @@
 				</div>
 				@endif
 				<div class="container vol-form">
+				     <div class="the-all-form-title">
+						 <span>
+							تسجيل الراغبين للأعمال التطوعية لنادي الرائد
+						 </span>
+					</div>
 					 <form method="post" action="{{ url('post-volunteer') }}">@csrf
 					<div class="form-group col-md-12">
 					  <label for="name">الإسم</label>

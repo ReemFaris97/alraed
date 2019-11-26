@@ -3,11 +3,10 @@
 }
 
 body {
-    background-image: url(../img/logo.png);
+    background-image: url(../img/logo.png) , url(../img/logo.png);
     background-repeat: no-repeat;
-    background-size: 330px;
-    background-position: center;
-    background-attachment: fixed;
+    background-size: 115px;
+    background-position: calc(100% - 30px) 30px , calc(30px) 30px;
 }
 .volunteer-form-wrapper.container-fluid {
     padding-bottom: 120px;
@@ -17,7 +16,7 @@ body {
     display: inline-block;
 }
 .form-control {
-    border-radius: 0;
+    border-radius: 25px !important;
     outline: 0;
 	transition: 0.4s all ease-in-out !important
 }
@@ -56,7 +55,7 @@ body {
     color: #333;
     background-color: #fff;
     border-color: #ccc;
-    border-radius: 0;
+    border-radius: 25px;
 	outline: 0px !important;
 	    background-image: unset;
 	transition: 0.4s all ease-in-out !important
@@ -81,11 +80,24 @@ body {
 .container.vol-form {
     background-color: rgba(255, 255, 255, .5);
     padding-top: 40px;
-    box-shadow: 0px 20px 15px rgba(40, 40, 40, 0.7);
+    box-shadow:0px 0px 41px rgba(40, 40, 40, 0.2);
     padding-bottom: 40px;
-	
+	    border-radius: 15px;
 }
-
+.the-all-form-title {
+    text-align: center;
+	margin-bottom: 35px;
+}
+.the-all-form-title span {
+    color: #333;
+    text-align: center;
+    border-width: 0 4px 4px 0;
+    border-color: #B7202B;
+    border-style: solid;
+    font-size: 24px;
+    padding: 0 5px 5px 0;
+    border-bottom-right-radius: 20px;
+}
 @media(min-width:768px){
 	.row.flexy {
     display: inline-flex;
@@ -96,6 +108,12 @@ body {
 }
 }
 @media(max-width:767px){
+	body {
+    background-size: 80px;
+	}
+	.the-all-form-title span {
+    font-size: 18px;
+	}
 	.row.flexy {
     flex-wrap: wrap
 }
