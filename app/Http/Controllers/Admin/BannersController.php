@@ -42,7 +42,7 @@ class BannersController extends Controller
             'en_title' => 'required|string|max:191',
             'ar_description' => 'required|string',
             'en_description' => 'required|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'image' => 'required|max:2048'
         ]);
 
         $inputs = $request->all();
@@ -91,7 +91,7 @@ class BannersController extends Controller
             'en_title' => 'required|string|max:191',
             'ar_description' => 'required|string',
             'en_description' => 'required|string',
-            'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'image' => 'sometimes|max:2048'
         ]);
 
         $inputs = $request->all();
@@ -113,6 +113,7 @@ class BannersController extends Controller
      */
     public function destroy(Banner $banner)
     {
+        deleteImg($banner->image);
         $banner->delete();
         popup('delete');
         return back();

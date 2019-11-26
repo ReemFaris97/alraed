@@ -588,3 +588,13 @@ function getAllCountries()
 ];
     return $countries;
 }
+
+function isVideo($value='')
+{
+    $fil = explode(".",$value);  
+    $file_ex = end($fil);
+    if ($file_ex =="mp4") {
+        return true;
+    }
+    return false;
+}

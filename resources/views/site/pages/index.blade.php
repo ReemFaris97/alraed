@@ -19,6 +19,22 @@
 
 @section('content')
 
+<div class="breaking-news-ticker" id="newsTicker2">
+    <!--                <a href="news.html" class="bn-label">أخبار</a>-->
+    <div class="bn-news">
+        <ul>
+        	@foreach($top_news as $tp_news)
+            <li><a href="{{ url('news') }}">{{ Str::limit($tp_news->title, 100) }}</a></li>
+           @endforeach
+        </ul>
+    </div>
+    <div class="bn-controls">
+        <button><span class="bn-arrow bn-prev"></span></button>
+        <button><span class="bn-action"></span></button>
+        <button><span class="bn-arrow bn-next"></span></button>
+    </div>
+</div>
+
 <!--     *************************   Beginnig of Slider ********************-->
         <div class="container demo-1 slit-slider-wrap">
             <div id="slider" class="sl-slider-wrapper">
@@ -26,7 +42,15 @@
 					@foreach($banners as $key => $banner)
 					<div class="sl-slide" data-orientation="{{ $key % 2 == 0 ? 'horizontal' : 'vertical' }}" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
 						<div class="sl-slide-inner">
+							@if(isVideo($banner->image))
+				             <video class="slider-image" controls>
+				              <source src="{{getimg($banner->image)}}" type="video/mp4">
+				              {{-- <source src="movie.ogg" type="video/ogg"> --}}
+				            Your browser does not support the video tag.
+				            </video> 
+				            @else
                             <img class="slider-image" src="{{ getimg($banner->image) }}" alt="{{ $banner->title }}" />
+                            @endif
 							<h2>{{ $banner->title }}</h2>
 							<blockquote>
                                 <p>

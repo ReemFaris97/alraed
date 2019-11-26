@@ -39,7 +39,16 @@
                                 <td>{{++$key}}</td>
                                 <td>{{$item->ar_title }}</td>
                                 <td>{{$item->ar_description}}</td>
-                                <td><img src="{{getimg($item->image)}}" style="width: 50px; height: 50px"></td>
+                                <td>
+                                    @if(isVideo($item->image))
+                                     <video width="100" height="80" controls>
+                                      <source src="{{getimg($item->image)}}" type="video/mp4">
+                                      {{-- <source src="movie.ogg" type="video/ogg"> --}}
+                                    Your browser does not support the video tag.
+                                    </video> 
+                                    @else
+                                    <img src="{{getimg($item->image)}}" style="width: 50px; height: 50px"></td>
+                                    @endif
                                 <td>
                                     <a href="{{route('admin.banners.edit',['id'=>$item->id])}}"
                                        class="btn btn-info btn-circle"><i class="fa fa-pencil"></i></a>
