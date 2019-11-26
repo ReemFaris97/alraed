@@ -88,20 +88,3 @@
              
     </header>
 <!--     *************************   End      of Header  ********************-->
-        
-        <div class="breaking-news-ticker" id="newsTicker2">
-                        <!--                <a href="news.html" class="bn-label">أخبار</a>-->
-                        <div class="bn-news">
-                            <ul>
-                                <li><a href="#">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها.</a></li>
-                                <li><a href="#">العديد من برامح النشر المكتبي وبرامح تحرير صفحات الويب</a></li>
-                                <li><a href="#">هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم تعديلها بشكل ما عبر إدخال بعض النوادر</a></li>
-                                <li><a href="#">لافاَ للإعتقاد السائد فإن لوريم إيبسوم ليس نصاَ عشوائياً، بل إن له جذور في الأدب اللاتيني </a></li>
-                            </ul>
-                        </div>
-                        <div class="bn-controls">
-                            <button><span class="bn-arrow bn-prev"></span></button>
-                            <button><span class="bn-action"></span></button>
-                            <button><span class="bn-arrow bn-next"></span></button>
-                        </div>
-                    </div>
