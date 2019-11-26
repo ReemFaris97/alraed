@@ -10,15 +10,13 @@
 				<div class="whole-section-title-wrapper">
 					<h4 class="the-above-title"> Al-Raed</h4>
 					<h3 class="the-section-title">
-						<span class="wow animated">V</span>
-						<span class="wow animated">o</span>
-						<span class="wow animated">l</span>
-						<span class="wow animated">u</span>
-						<span class="wow animated">n</span>
-						<span class="wow animated">t</span>
+						<span class="wow animated">D</span>
 						<span class="wow animated">e</span>
-						<span class="wow animated">e</span>
+						<span class="wow animated">s</span>
+						<span class="wow animated">i</span>
 						<span class="wow animated">r</span>
+						<span class="wow animated">e</span>
+						<span class="wow animated">s</span>
 					</h3>
 				</div>
 		</div><!-- /container -->
@@ -101,8 +99,8 @@
 					</div>
 					
 					<div class="form-group col-md-12">
-					  <label for="game">حدد اسم اللعبة المرغوب التسجيل به</label>
-					  <select name="game[]" id="game" multiple="">
+					  <label for="game">حدد اسم اللعبة المرغوب التسجيل بها</label>
+					  <select name="game[]" id="game" multiple="" title="اختر اللعبة المرغوب التسجيل بها">
 					  	<option value="كرة القدم">كرة القدم</option>
 					  	<option value="كرة السلة">كرة السلة</option>
 					  	<option value="كرة الطائرة">كرة الطائرة</option>
