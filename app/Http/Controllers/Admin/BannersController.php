@@ -91,7 +91,7 @@ class BannersController extends Controller
             'en_title' => 'required|string|max:191',
             'ar_description' => 'required|string',
             'en_description' => 'required|string',
-            'image' => 'sometimes|max:2048'
+            'image' => 'sometimes|max:10048'
         ]);
 
         $inputs = $request->all();

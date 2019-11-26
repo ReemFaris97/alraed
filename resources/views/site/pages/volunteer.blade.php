@@ -74,10 +74,10 @@
 					  <select name="qualification" id="study">
 					  	<option value="أقل ثانوي">أقل ثانوي</option>
 					  	<option value="ثانوي">ثانوي</option>
-					  	<option value="بكالريوس">بكالريوس</option>
+					  	<option value="بكالوريوس">بكالوريوس</option>
 					  	<option value="ماجستير">ماجستير</option>
 					  	<option value="دكتوراه">دكتوراه</option>
-					  	<option value="other">آخر</option>
+					  	<option value="other">آخري</option>
 					  </select>
 					  @error('qualification')
 					  	<span style="color: red">{{ $message }}</span>
@@ -115,7 +115,6 @@
 					  	<option value="ثقافي">ثقافي</option>
 					  	<option value="صحي">صحي</option>
 					  	<option value="الكوراث والطوارئ">الكوراث والطوارئ</option>
-					  	<option value="رياضي">ثقافي</option>
 					  	<option value="other">نشاط آخر</option>
 					  </select>
 					  @error('work_type')

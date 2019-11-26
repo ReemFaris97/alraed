@@ -7,7 +7,6 @@
 					<span class="wow animated">-</span>
 					<span class="wow animated">R</span>
 					<span class="wow animated">a</span>
-					<span class="wow animated">'</span>
 					<span class="wow animated">e</span>
 					<span class="wow animated">d</span>
 				</h3>
