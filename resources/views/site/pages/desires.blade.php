@@ -101,7 +101,7 @@
 					<div class="form-group col-md-12">
 					  <label for="game">حدد اسم اللعبة المرغوب التسجيل بها</label>
 					  <select name="game[]" id="game" multiple="" title="اختر اللعبة المرغوب التسجيل بها">
-					  	<option value="كرة القدم">كرة القدم</option>
+					  	<option value="كرة القدم" selected="">كرة القدم</option>
 					  	<option value="كرة السلة">كرة السلة</option>
 					  	<option value="كرة الطائرة">كرة الطائرة</option>
 					  	<option value="كرة اليد">كرة اليد</option>
