@@ -34,19 +34,19 @@
 					</div>
 				</div>
 				<div class="footer-social">
-					<a href="{{ setting('facebook') }}">
+					<a href="{{ setting('facebook') }}" target="_blank">
 						<i class="fab fa-facebook-f"></i>
 					</a>
-					<a href="{{ setting('twitter') }}">
+					<a href="{{ setting('twitter') }}" target="_blank">
 						<i class="fab fa-twitter"></i>
 					</a>
-				    <a href="{{ setting('google') }}">
+				    <a href="{{ setting('google') }}" target="_blank">
 						<i class="fab fa-google"></i>
 					</a>
-					<a href="{{ setting('snapchat') }}">
+					<a href="{{ setting('snapchat') }}" target="_blank">
 						<i class="fab fa-snapchat-ghost"></i>
 					</a>
-					<a href="{{ setting('instagram') }}">
+					<a href="{{ setting('instagram') }}" target="_blank">
 						<i class="fab fa-instagram"></i>
 					</a>
 				</div>

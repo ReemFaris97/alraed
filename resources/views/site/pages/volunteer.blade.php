@@ -77,7 +77,7 @@
 					  	<option value="بكالوريوس">بكالوريوس</option>
 					  	<option value="ماجستير">ماجستير</option>
 					  	<option value="دكتوراه">دكتوراه</option>
-					  	<option value="other">آخري</option>
+					  	<option value="other">آخرى</option>
 					  </select>
 					  @error('qualification')
 					  	<span style="color: red">{{ $message }}</span>
