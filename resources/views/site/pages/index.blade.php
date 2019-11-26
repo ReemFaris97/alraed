@@ -43,7 +43,7 @@
 					<div class="sl-slide" data-orientation="{{ $key % 2 == 0 ? 'horizontal' : 'vertical' }}" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
 						<div class="sl-slide-inner">
 							@if(isVideo($banner->image))
-				             <video class="slider-image" controls>
+				             <video class="slider-image" autoplay loop>
 				              <source src="{{getimg($banner->image)}}" type="video/mp4">
 				              {{-- <source src="movie.ogg" type="video/ogg"> --}}
 				            Your browser does not support the video tag.
