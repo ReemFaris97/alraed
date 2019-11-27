@@ -595,12 +595,12 @@ input:focus {
 
 @media (min-width: 1200px) {
     .nav-wrapper .nav-tab a {
-        padding: 10px 5px;
+        padding: 10px 15px;
         margin: 0;
         display: inline-block;
     }
     .nav-wrapper .nav-tab {
-        padding: 0 5px!important;
+        padding: 0 15px!important;
     }
 }
 
@@ -2684,7 +2684,7 @@ span.custo-progress.transited{
 }
 
 .bn-news ul li a:hover {
-    color: #f73063;
+    color: #B7202B;
 }
 
 .bn-direction-rtl .bn-label:hover,
@@ -2715,16 +2715,27 @@ span.custo-progress.transited{
     margin: 0 auto !important;
 }
 */
-
+header{
+	position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 9999999999;
+}
+body {
+    padding-top: 78px;
+}
 
 @media (max-width: 767px) {
     
  
     /********* End Navbar *********/
     .breaking-news-ticker:before {
-        width: 42px;
-        font-size: 12px;
-        line-height: 1.2;
+    width: 70px;
+    font-size: 12px;
+    line-height: 3.5;
+    text-align: center;
     }
     .bn-controls button {
         width: 22px;
