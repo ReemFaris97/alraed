@@ -34,7 +34,7 @@ class HomeController extends Controller
     	// $football_news = News::where('category_id', $category->id)->latest()->limit(3)->get();
     	// $news = News::where('category_id', '<>',$category->id)->latest()->limit(3)->get();
         $news = News::latest()->limit(3)->get();
-        $top_news = News::latest()->skip(3)->take(6)->get();
+        $top_news = News::latest()->limit(8)->get();
         $multimedia = Multimedia::latest()->limit(5)->get();
     	$partners = Partner::all();
     	return view('site.pages.index', compact('banners', 'next_match', 'news', 'top_news','next_matches', 'previous_matches', 'partners', 'multimedia'));

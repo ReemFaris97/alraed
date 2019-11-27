@@ -119,7 +119,7 @@
 		<script type="text/javascript" src="{{ url('site') }}/js/news/main-news.js"></script>
 		<script type="text/javascript">
 			$(document).ready(function(){
-				$("body").on('click' , '.grid__item' , function(){
+				$('.grid__item').click(function(){
 					NewsFunction();
 				});
 			})
