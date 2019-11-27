@@ -28,6 +28,11 @@
 				</div>
 				@endif
 				<div class="container vol-form">
+				 <div class="the-all-form-title">
+						 <span>
+							إستمارة تسجيل الراغبين اللعب في النادي
+						 </span>
+					</div>
 					 <form method="post" action="{{ url('post-desires') }}">@csrf
 					<div class="form-group col-md-12">
 					  <label for="name">الإسم ثلاثي</label>
