@@ -177,7 +177,7 @@
 					  	<option value="@lang('trans.make_money')">@lang('trans.make_money')</option>
 					  	<option value="@lang('trans.job_exp')">@lang('trans.job_exp')</option>
 					  	<option value="@lang('trans.do_good')">@lang('trans.do_good')</option>
-					  	<option value="@lang('social_work')">@lang('social_work')</option>
+					  	<option value="@lang('trans.social_work')">@lang('trans.social_work')</option>
 					  </select>
 					  @error('goal')
 					  	<span style="color: red">{{ $message }}</span>

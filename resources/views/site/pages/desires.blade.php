@@ -116,7 +116,7 @@
 					  	<option value="@lang('trans.volleyball')">@lang('trans.volleyball')</option>
 					  	<option value="@lang('trans.handball')">@lang('trans.handball')</option>
 					  	<option value="@lang('trans.boxing')">@lang('trans.boxing')</option>
-					  	<option value="@lang('trans.wrestling')">@lang('trans.Wrestling')</option>
+					  	<option value="@lang('trans.wrestling')">@lang('trans.wrestling')</option>
 					  	<option value="@lang('trans.karate')">@lang('trans.karate')</option>
 					  	<option value="@lang('trans.swimming')">@lang('trans.swimming')</option>
 					  	<option value="@lang('trans.tennis')">@lang('trans.tennis')</option>
