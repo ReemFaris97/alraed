@@ -72,9 +72,9 @@ Route::group(['namespace' => 'Site'], function () {
     Route::get('handball', 'HomeController@handball')->name('handball');
     Route::get('electronic', 'HomeController@electronic')->name('electronic');
     Route::get('more-news', 'HomeController@moreNews');
-    Route::get('volunteer', 'HomeController@volunteer');
+    Route::get('volunteer/{lang?}', 'HomeController@volunteer');
     Route::post('post-volunteer', 'HomeController@postVolunteer');
-    Route::get('desires', 'HomeController@desires');
+    Route::get('desires/{lang?}', 'HomeController@desires');
     Route::post('post-desires', 'HomeController@postDesires');
 });
 

@@ -8,7 +8,7 @@
 <!--     *************************   Beginnig of ٍSection ********************-->
 		<div class="container single-section-padding">
 				<div class="whole-section-title-wrapper">
-					<h4 class="the-above-title"> Al-Raed</h4>
+					<h4 class="the-above-title"> @lang('trans.alraed')</h4>
 					<h3 class="the-section-title">
 						<span class="wow animated">V</span>
 						<span class="wow animated">o</span>
@@ -31,14 +31,19 @@
 				</div>
 				@endif
 				<div class="container vol-form">
+					@if(app()->getLocale() == 'en')
+					<a href="{{ url('volunteer/ar') }}" title="عربي" class="btn btn-default pull-left">عربي</a>
+					@else
+					<a href="{{ url('volunteer/en') }}" title="EN" class="btn btn-default pull-left">EN</a>
+					@endif
 				     <div class="the-all-form-title">
 						 <span>
-							تسجيل الراغبين للأعمال التطوعية لنادي الرائد
+							@lang('trans.register_volunteer')
 						 </span>
 					</div>
 					 <form method="post" action="{{ url('post-volunteer') }}">@csrf
 					<div class="form-group col-md-12">
-					  <label for="name">الإسم</label>
+					  <label for="name">@lang('trans.name')</label>
 					  <input type="text" name="name" class="form-control" id="name" required="">
 					@error('name')
 					  	<span style="color: red">{{ $message }}</span>
@@ -46,24 +51,24 @@
 					</div>
 					<div class="row flexy">
 						<div class="form-group col-md-4">
-					  <label for="age">العمر</label>
+					  <label for="age">@lang('trans.age')</label>
 					  <input type="text" name="age" class="form-control" id="age">
 					  @error('age')
 						  	<span style="color: red">{{ $message }}</span>
 						@enderror
 					</div>
 					<div class="form-group col-md-4">
-					  <label for="gender">الجنس</label>
+					  <label for="gender">@lang('trans.gender')</label>
 					  <select name="gender" name="gender" id="gender">
-					  	<option value="ذكر">ذكر</option>
-					  	<option value="أنثي">أنثى</option>
+					  	<option value="@lang('trans.male')">@lang('trans.male')</option>
+					  	<option value="@lang('trans.female')">@lang('trans.female')</option>
 					  </select>
 					  @error('gender')
 					  	<span style="color: red">{{ $message }}</span>
 					@enderror
 					</div>
 					<div class="form-group col-md-4">
-					  <label for="nationality">الجنسية</label>
+					  <label for="nationality">@lang('trans.nationality')</label>
 					  <select name="nationality" id="nationality">
 					  	@foreach(getAllCountries() as $key => $country)
 					  	<option value="{{ $country }}">{{ $country }}</option>
@@ -75,22 +80,22 @@
 					</div>
 					</div>
 					<div class="form-group col-md-12">
-					  <label for="study">أخر مؤهل دراسي</label>
+					  <label for="study">@lang('trans.last_qualification')</label>
 					  <select name="qualification" id="study">
-					  	<option value="أقل ثانوي">أقل من ثانوي</option>
-					  	<option value="ثانوي">ثانوي</option>
-					  	<option value="بكالوريوس">بكالوريوس</option>
-					  	<option value="دبلوم عالي">دبلوم عالي</option>
-					  	<option value="ماجستير">ماجستير</option>
-					  	<option value="دكتوراه">دكتوراه</option>
-					  	<option value="other">آخرى</option>
+					  	<option value="@lang('trans.less_secondary')">@lang('trans.less_secondary')</option>
+					  	<option value="@lang('trans.secondary')">@lang('trans.secondary')</option>
+					  	<option value="@lang('trans.ba')">@lang('trans.ba')</option>
+					  	<option value="@lang('trans.high_diploma')">@lang('trans.high_diploma')</option>
+					  	<option value="@lang('trans.master')">@lang('trans.master')</option>
+					  	<option value="@lang('trans.phd')">@lang('trans.phd')</option>
+					  	<option value="@lang('trans.other')">@lang('trans.other')</option>
 					  </select>
 					  @error('qualification')
 					  	<span style="color: red">{{ $message }}</span>
 					@enderror
 					</div>
 					<div class="form-group col-md-12 other-qual">
-					  <label>آخر مؤهل دراسي</label>
+					  <label>@lang('trans.last_qualification')</label>
 					  <input type="text" name="other_qualification" class="form-control">
 					  @error('other_qualification')
 					  	<span style="color: red">{{ $message }}</span>
@@ -99,14 +104,14 @@
 
 
 					<div class="form-group col-md-6">
-					  <label for="mob">الجوال</label>
+					  <label for="mob">@lang('trans.phone')</label>
 					  <input type="text" name="phone" class="form-control" id="mob">
 					  @error('phone')
 					  	<span style="color: red">{{ $message }}</span>
 					@enderror
 					</div>
 					<div class="form-group col-md-6">
-					  <label for="mail">الإيميل</label>
+					  <label for="mail">@lang('trans.email')</label>
 					  <input type="email" name="email" class="form-control" id="mail">
 					  @error('email')
 					  	<span style="color: red">{{ $message }}</span>
@@ -114,21 +119,21 @@
 					</div>
 					<div class="row flexy">
 						<div class="form-group col-md-4">
-					  <label for="work_type">نوع العمل التطوعي</label>
+					  <label for="work_type">@lang('trans.type_volunteer_work')</label>
 					  <select name="work_type" id="work_type">
-					  	<option value="رياضي">رياضي</option>
-					  	<option value="اجتماعي">اجتماعي</option>
-					  	<option value="ثقافي">ثقافي</option>
-					  	<option value="صحي">صحي</option>
-					  	<option value="الكوراث والطوارئ">الكوراث والطوارئ</option>
-					  	<option value="other">نشاط آخر</option>
+					  	<option value="@lang('trans.sporty')">@lang('trans.sporty')</option>
+					  	<option value="@lang('trans.social')">@lang('trans.social')</option>
+					  	<option value="@lang('trans.cultural')">@lang('trans.cultural')</option>
+					  	<option value="@lang('trans.healthy')">@lang('trans.healthy')</option>
+					  	<option value="@lang('trans.disasters')">@lang('trans.disasters')</option>
+					  	<option value="@lang('trans.other')">@lang('trans.other')</option>
 					  </select>
 					  @error('work_type')
 					  	<span style="color: red">{{ $message }}</span>
 					@enderror
 					</div>
 					<div class="form-group col-md-4 other-work">
-					  <label>نشاط آخر</label>
+					  <label>@lang('trans.another_activity')</label>
 					  <input type="text" name="other_work_type" class="form-control">
 					  @error('other_work_type')
 					  	<span style="color: red">{{ $message }}</span>
@@ -137,24 +142,24 @@
 
 
 					<div class="form-group col-md-4">
-					  <label for="nationality">نوع  المشاركة</label>
+					  <label for="nationality">@lang('trans.type_of_participation')</label>
 					  <select name="type" id="nationality">
-					  	<option value="قائد">قائد</option>
-					  	<option value="فرد">فرد</option>
+					  	<option value="@lang('trans.leader')">@lang('trans.leader')</option>
+					  	<option value="@lang('trans.member')">@lang('trans.member')</option>
 					  </select>
 					  	@error('type')
 						  	<span style="color: red">{{ $message }}</span>
 						@enderror
 					</div>
 					<div class="form-group col-md-4">
-					  <label for="nationality">أوقات التطوع</label>
+					  <label for="nationality">@lang('trans.volunteer_times')</label>
 					  <select name="volunteer_time" id="nationality">
-					  	<option value="مفتوح">مفتوح</option>
-					  	<option value="أيام مناسبات النادي">أيام مناسبات النادي</option>
-					  	<option value="أيام الاجازات الصيفية">أيام الاجازات الصيفية</option>
-					  	<option value="أيام اجازة نهاية الاسبوع">أيام اجازة نهاية الاسبوع</option>
-					  	<option value="أيام المواسم">أيام المواسم</option>
-					  	<option value="المناسبات العامة">المناسبات العامة</option>
+					  	<option value="@lang('trans.open')">@lang('trans.open')</option>
+					  	<option value="@lang('trans.club_events_days')">@lang('trans.club_events_days')</option>
+					  	<option value="@lang('trans.summer_vacation_days')">@lang('trans.summer_vacation_days')</option>
+					  	<option value="@lang('trans.weekend_days')">@lang('trans.weekend_days')</option>
+					  	<option value="@lang('trans.days_of_seasons')">@lang('trans.days_of_seasons')</option>
+					  	<option value="@lang('trans.public_events')">@lang('trans.public_events')</option>
 					  	
 					  </select>
 					  @error('volunteer_time')
@@ -163,16 +168,16 @@
 					</div>
 					</div>
 					<div class="form-group col-md-12">
-					  <label for="nationality">ماهو الهدف من المشاركة بالاعمال التطوعية بالنادي</label>
+					  <label for="nationality">@lang('trans.goal_participating')</label>
 					  <select name="goal" id="nationality">
-					  	<option value="رغبة في خدمة نادي الرائد">رغبة في خدمة نادي الرائد </option>
-					  	<option value="بناء علاقات اشخصية">بناء علاقات شخصية</option>
-					  	<option value="لتطوير مهاراتي">لتطوير مهاراتي </option>
-					  	<option value="لتعلم مهارة جديدة">لتعلم مهارة جديدة</option>
-					  	<option value="لهدف الإحتساب والأجر">لهدف الإحتساب والأجر</option>
-					  	<option value="للحصول على خبرة وظيفية">للحصول على خبرة وظيفية</option>
-					  	<option value="لإستغلال تخصصي بعمل الخير">لإستغلال تخصصي بعمل الخير</option>
-					  	<option value="لإستغلال خبرتي بالأعمال التطوعية والإجتماعية">لإستغلال خبرتي بالأعمال التطوعية والإجتماعية</option>
+					  	<option value="@lang('trans.serve_club')">@lang('trans.serve_club')</option>
+					  	<option value="@lang('trans.personal_relation')">@lang('trans.personal_relation')</option>
+					  	<option value="@lang('trans.develop_skills')">@lang('trans.develop_skills')</option>
+					  	<option value="@lang('trans.learn_skill')">@lang('trans.learn_skill')</option>
+					  	<option value="@lang('trans.make_money')">@lang('trans.make_money')</option>
+					  	<option value="@lang('trans.job_exp')">@lang('trans.job_exp')</option>
+					  	<option value="@lang('trans.do_good')">@lang('trans.do_good')</option>
+					  	<option value="@lang('social_work')">@lang('social_work')</option>
 					  </select>
 					  @error('goal')
 					  	<span style="color: red">{{ $message }}</span>
@@ -180,7 +185,7 @@
 					</div>
 					<div class="row">
 						<div class="col-md-12 form-btn-wrapp">
-							<button type="submit" class="first-site-btn">إرسال</button>
+							<button type="submit" class="first-site-btn">@lang('trans.send')</button>
 						</div>
 					</div>
 				  </form>

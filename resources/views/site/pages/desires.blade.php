@@ -8,7 +8,7 @@
 <!--     *************************   Beginnig of ٍSection ********************-->
 		<div class="container single-section-padding">
 				<div class="whole-section-title-wrapper">
-					<h4 class="the-above-title"> Al-Raed</h4>
+					<h4 class="the-above-title"> @lang('trans.alraed') </h4>
 					<h3 class="the-section-title">
 						<span class="wow animated">D</span>
 						<span class="wow animated">e</span>
@@ -28,14 +28,19 @@
 				</div>
 				@endif
 				<div class="container vol-form">
+					@if(app()->getLocale() == 'en')
+					<a href="{{ url('desires/ar') }}" title="عربي" class="btn btn-default pull-left">عربي</a>
+					@else
+					<a href="{{ url('desires/en') }}" title="EN" class="btn btn-default pull-left">EN</a>
+					@endif
 				 <div class="the-all-form-title">
 						 <span>
-							إستمارة تسجيل الراغبين اللعب في النادي
+							@lang('trans.form_wish')
 						 </span>
 					</div>
 					 <form method="post" action="{{ url('post-desires') }}">@csrf
 					<div class="form-group col-md-12">
-					  <label for="name">الإسم ثلاثي</label>
+					  <label for="name">@lang('trans.triple_name')</label>
 					  <input type="text" name="name" class="form-control" id="name" required="">
 					@error('name')
 					  	<span style="color: red">{{ $message }}</span>
@@ -43,7 +48,7 @@
 					</div>
 
 					<div class="form-group col-md-12">
-					  <label for="nationality">الجنسية</label>
+					  <label for="nationality">@lang('trans.nationality')</label>
 					  <input type="text" name="nationality" class="form-control" id="nationality" required="">
 					@error('nationality')
 					  	<span style="color: red">{{ $message }}</span>
@@ -52,21 +57,21 @@
 
 					<div class="row flexy">
 						<div class="form-group col-md-4">
-					  <label for="birth_date">تاريخ الميلاد</label>
+					  <label for="birth_date">@lang('trans.birth_date')</label>
 					  <input type="date" name="birth_date" class="form-control" id="birth_date">
 					  @error('birth_date')
 						  	<span style="color: red">{{ $message }}</span>
 						@enderror
 					</div>
 					<div class="form-group col-md-4">
-					  <label for="birth_area">مكان الميلاد</label>
+					  <label for="birth_area">@lang('trans.place_birth')</label>
 					 <input type="text" name="birth_area" class="form-control" id="birth_area" required="">
 					  @error('birth_area')
 					  	<span style="color: red">{{ $message }}</span>
 					@enderror
 					</div>
 					<div class="form-group col-md-4">
-					  <label for="live_area">مكان الإقامة حالياَ</label>
+					  <label for="live_area">@lang('trans.place_residence')</label>
 					  <input type="text" name="live_area" class="form-control" id="live_area" required="">
 					  @error('live_area')
 					  	<span style="color: red">{{ $message }}</span>
@@ -76,7 +81,7 @@
 					
 
 					<div class="form-group col-md-12">
-					  <label for="mob">الجوال</label>
+					  <label for="mob">@lang('trans.phone')</label>
 					  <input type="text" name="phone" class="form-control" id="mob">
 					  @error('phone')
 					  	<span style="color: red">{{ $message }}</span>
@@ -85,17 +90,17 @@
 					
 					<div class="row flexy">
 						<div class="form-group col-md-6">
-					  <label for="student">هل انت طالب ؟</label>
-					  <label><input type="radio" name="student" value="نعم" checked>نعم</label>
-					  <label><input type="radio" name="student" value="لا">لا</label>
+					  <label for="student">@lang('trans.you_student')</label>
+					  <label><input type="radio" name="student" value="@lang('trans.yes')" checked>@lang('trans.yes')</label>
+					  <label><input type="radio" name="student" value="@lang('trans.no')">@lang('trans.no')</label>
 					  @error('student')
 					  	<span style="color: red">{{ $message }}</span>
 					@enderror
 					</div>
 					<div class="form-group col-md-6">
-					  <label for="student">هل لديك وظيفة؟</label>
-					  <label><input type="radio" name="job" value="نعم" checked>نعم</label>
-					  <label><input type="radio" name="job" value="لا">لا</label>
+					  <label for="student">@lang('trans.have_job')</label>
+					  <label><input type="radio" name="job" value="@lang('trans.yes')" checked>@lang('trans.yes')</label>
+					  <label><input type="radio" name="job" value="@lang('trans.no')">@lang('trans.no')</label>
 					  	@error('job')
 					  		<span style="color: red">{{ $message }}</span>
 						@enderror
@@ -104,19 +109,19 @@
 					</div>
 					
 					<div class="form-group col-md-12">
-					  <label for="game">حدد اسم اللعبة المرغوب التسجيل بها</label>
-					  <select name="game[]" id="game" multiple="" title="اختر اللعبة المرغوب التسجيل بها">
-					  	<option value="كرة القدم" selected="">كرة القدم</option>
-					  	<option value="كرة السلة">كرة السلة</option>
-					  	<option value="كرة الطائرة">كرة الطائرة</option>
-					  	<option value="كرة اليد">كرة اليد</option>
-					  	<option value="الملاكمة">الملاكمة</option>
-					  	<option value="المصارعة">المصارعة</option>
-					  	<option value="الكارتيه">الكارتيه</option>
-					  	<option value="السباحة">السباحة</option>
-					  	<option value="تنس الطاولة">تنس الطاولة</option>
-					  	<option value="ألعاب إلكترونية">ألعاب إلكترونية</option>
-					  	<option value="رفع اﻻثقال">رفع اﻻثقال</option>
+					  <label for="game">@lang('trans.select_game')</label>
+					  <select name="game[]" id="game" multiple="" title="{{ __('trans.choose_game') }}">
+					  	<option value="كرة القدم" selected="">@lang('trans.football')</option>
+					  	<option value="@lang('trans.basketball')">@lang('trans.basketball')</option>
+					  	<option value="@lang('trans.volleyball')">@lang('trans.volleyball')</option>
+					  	<option value="@lang('trans.handball')">@lang('trans.handball')</option>
+					  	<option value="@lang('trans.boxing')">@lang('trans.boxing')</option>
+					  	<option value="@lang('trans.Wrestling')">@lang('trans.Wrestling')</option>
+					  	<option value="@lang('trans.karate')">@lang('trans.karate')</option>
+					  	<option value="@lang('trans.swimming')">@lang('trans.swimming')</option>
+					  	<option value="@lang('trans.tennis')">@lang('trans.tennis')</option>
+					  	<option value="@lang('trans.video_games')">@lang('trans.video_games')</option>
+					  	<option value="@lang('trans.weightlifting')">@lang('trans.weightlifting')</option>
 					  </select>
 					  @error('goal')
 					  	<span style="color: red">{{ $message }}</span>
@@ -125,17 +130,17 @@
 
 					<div class="row flexy">
 						<div class="form-group col-md-6">
-					  <label for="student">هل لديك وسيلة نقل ؟</label>
-					  <label><input type="radio" name="transport" value="نعم" checked>نعم</label>
-					  <label><input type="radio" name="transport" value="لا">لا</label>
+					  <label for="student">@lang('trans.have_transport')</label>
+					  <label><input type="radio" name="transport" value="@lang('trans.yes')" checked>@lang('trans.yes')</label>
+					  <label><input type="radio" name="transport" value="@lang('trans.no')">@lang('trans.no')</label>
 					  @error('transport')
 					  	<span style="color: red">{{ $message }}</span>
 					@enderror
 					</div>
 					<div class="form-group col-md-6">
-					  <label for="nationality">هل انت مسجل في نادِ آخر؟</label>
-					  <label><input type="radio" name="club" value="نعم" checked>نعم</label>
-					  <label><input type="radio" name="club" value="لا">لا</label>
+					  <label for="nationality">@lang('trans.register_with_another_club')</label>
+					  <label><input type="radio" name="club" value="@lang('trans.yes')" checked>@lang('trans.yes')</label>
+					  <label><input type="radio" name="club" value="@lang('trans.no')">@lang('trans.no')</label>
 					  	@error('club')
 					  		<span style="color: red">{{ $message }}</span>
 						@enderror
@@ -144,13 +149,13 @@
 					</div>
 
 					<div class="form-group col-md-12">
-						<label for="opinion">ملاحظات / إقتراحات</label>
+						<label for="opinion">@lang('trans.feedback')</label>
 						<textarea name="opinion" class="form-control" rows="5"></textarea>
 					</div>
 
 					<div class="row">
 						<div class="col-md-12 form-btn-wrapp">
-							<button type="submit" class="first-site-btn">تسجيل</button>
+							<button type="submit" class="first-site-btn">@lang('trans.register')</button>
 						</div>
 					</div>
 				  </form>

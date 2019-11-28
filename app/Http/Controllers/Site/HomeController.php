@@ -133,8 +133,9 @@ class HomeController extends Controller
         return view('site.pages.electronic');
     }
 
-    public function volunteer()
+    public function volunteer($lang = 'ar')
     {
+        app()->setLocale($lang);
         return view('site.pages.volunteer');
     }
 
@@ -151,8 +152,9 @@ class HomeController extends Controller
         return back()->with('success', __('trans.add_success'));
     }
 
-    public function desires()
+    public function desires($lang = 'ar')
     {
+        app()->setLocale($lang);
         return view('site.pages.desires');
     }
 
