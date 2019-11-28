@@ -31,7 +31,7 @@ return [
 	'info' => 'Info',
 	'address' => 'Address',
 	'details' => 'Details',
-	'alraed' => 'Alraed',
+	'alraed' => 'Al-Raed',
 	'arrow_turn' => 'You Can move with arrows',
 	'brief_history' => 'Brief history about us',
 	'email' => 'Email',
@@ -108,4 +108,5 @@ return [
 	'feedback' => 'Feedback',
 	'register' => 'Register',
 	'send' => 'Send',
+	'open' => 'Open',
 ];
