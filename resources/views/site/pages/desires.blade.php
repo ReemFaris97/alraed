@@ -49,7 +49,11 @@
 
 					<div class="form-group col-md-12">
 					  <label for="nationality">@lang('trans.nationality')</label>
-					  <input type="text" name="nationality" class="form-control" id="nationality" required="">
+					  <select name="nationality" id="nationality">
+					  	@foreach(getAllCountries() as $key => $country)
+					  	<option value="{{ $country }}">{{ $country }}</option>
+					  	@endforeach
+					  </select>
 					@error('nationality')
 					  	<span style="color: red">{{ $message }}</span>
 					@enderror
