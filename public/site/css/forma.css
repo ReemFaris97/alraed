@@ -30,6 +30,7 @@ body {
     -webkit-box-shadow: 0 4px 6px rgba(183,32,43,0.6);
     box-shadow: 0 4px 6px rgba(183,32,43,0.6);
 }
+
 .dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus {
     background-color: #B7202B;
     background-image: -webkit-linear-gradient(top,#B7202B 0,#B7202B 100%);
@@ -109,12 +110,32 @@ body {
 }
 @media(max-width:767px){
 	body {
-    background-size: 80px;
+    background-size: 70px;
+		    background-position: calc(100% - 40px) 30px , calc(40px) 30px;
+		padding-top: 80px
+
 	}
-	.the-all-form-title span {
-    font-size: 13px;
-	}
-	.row.flexy {
-    flex-wrap: wrap
+	.form-group {
+    padding: 0;
 }
+	.the-all-form-title span {
+    font-size: 12px;
+		    font-weight: 700;
+	}
+.row.flexy {
+    flex-wrap: wrap;
+    padding: 0 15px;
+}
+	.container.vol-form a.btn.btn-default.pull-left {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+}
+
+.bii-lbl{
+	display: block
+}
+.has-rad-div label:not(.bii-lbl) {
+    margin-left: 15px;
 }
