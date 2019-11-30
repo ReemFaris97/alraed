@@ -153,7 +153,7 @@
 					</div>
 
 					<div class="form-group col-md-12">
-						<label for="opinion">@lang('trans.feedback')</label>
+						<label for="opinion">@lang('trans.feedback')  (@lang('trans.optional'))</label>
 						<textarea name="opinion" class="form-control" rows="5"></textarea>
 					</div>
 
