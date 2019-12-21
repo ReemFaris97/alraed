@@ -1629,7 +1629,7 @@ figure.imghvr-shutter-in-out-diag-1.single-team-player-block.animated.wow{
     padding-top: 60px;
     padding-bottom: 60px;
 }
-.content__desc {
+.content__desc, .content__desc + p, .content.content--layout p{
     padding-right: 200px;
     font-size: 20px
 }
