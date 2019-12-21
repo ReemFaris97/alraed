@@ -356,7 +356,7 @@
 					@foreach ($multimedia as $media)
 					<div class="item">
 						<div class="news-image-wrapper">
-							<a class="watch-vid-btn" data-fancybox="multimedia" href="https://www.youtube.com/watch?v=7RZpYuu7d2A" data-toggle="tooltip" title="شاهد المرفق">
+							<a class="watch-vid-btn" data-fancybox="multimedia" data-caption="{{ $media->title }}" href="{{ getimg($media->image) }}" data-toggle="tooltip" title="شاهد المرفق">
 								<img src="{{ getimg($media->image) }}" alt="{{ $media->title }}">
 							</a>
 						</div>
