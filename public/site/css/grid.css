@@ -82,7 +82,7 @@
 	perspective: 1000px;
 	-webkit-transition: opacity 0.5s, visibility 0s 0.5s;
 	transition: opacity 0.5s, visibility 0s 0.5s;
-	z-index: 999999
+	z-index: 9999999999999999999999999
 }
 
 .slideshow-open .slideshow {
