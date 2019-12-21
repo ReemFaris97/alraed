@@ -10,8 +10,8 @@
 <body>
 <div class="container">
     <div class="othersTitle"> تنس الطاولة</div>
-    <p class="othersParagraph">
-        من المعروف عن نادي الرائد امتيازه بفريق كرة سلة عالمي لديه تاريخ عريض فى مجال كرة اليد على مستوى المملكة والعربي على السواء
+    <p class="othersParagraph text-center">
+    الصفحة تحت التطوير
     </p>
     <section id="photostack" class="photostack photostack-start">
         <div class="not-available-content">

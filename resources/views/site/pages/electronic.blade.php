@@ -10,8 +10,8 @@
 <body>
 <div class="container">
     <div class="othersTitle">الألعاب الإلكترونية</div>
-    <p class="othersParagraph">
-        لدينا فريق مبهر فى جميع الألعاب الإلكترونية الحديثة القادرى على تعلم أحدث الألعاب والمنافسة على تحدي جميع الألغاز نظرا للزكاء الفائق الذي يتميزون به
+    <p class="othersParagraph text-center">
+    الصفحة تحت التطوير
     </p>
     <section id="photostack" class="photostack photostack-start">
         <div class="not-available-content">
