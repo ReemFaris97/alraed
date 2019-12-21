@@ -612,9 +612,8 @@ input:focus {
 
 img.slider-image {
     width: 100%;
-    -o-object-fit: cover;
-    object-fit: cover;
-    height: 100vh;
+    height: 510px;
+    margin-top: 118px;
 }
 
 .sl-content {
