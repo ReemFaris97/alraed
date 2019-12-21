@@ -25,6 +25,7 @@
 					</p>
 				</div>
 			</div>
+<!--
 			<div class="content-wrap">
 				<div class="content content--layout content--layout-1">
 					<img class="content__img" src="{{ url('site') }}/img/championship.png" alt="كأس خادم الحرمين الشريفين" />
@@ -34,6 +35,7 @@
 					</p>
 				</div>
 			</div> 
+-->
 		</main>
 
 

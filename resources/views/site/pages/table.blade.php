@@ -1,8 +1,5 @@
-
 @extends('site.layouts.app')
-
 @section('content')
-
 <div class="container single-section-padding lineup-sec-wrapper">
 			<div class="whole-section-title-wrapper">
 				<h3 class="the-section-title">
@@ -16,7 +13,6 @@
 					<span class="wow animated">E</span>
 				</h3>
 			</div>
-			
 			<div class="time-table-wrapper">
 				@unless(is_null($next_match))
 				<div class="slider-match-details">
@@ -45,7 +41,6 @@
 					</div>
 				</div>
 				@endunless
-				
 				<div class="all-matches-table">
 					@foreach($next_matches as $n_match)
 					<div class="single-match-row">
@@ -149,9 +144,7 @@
 							<a href="match-details.html">التفاصيل</a>
 						</div>
 					</div> --}}
-					
 				</div>
 			</div>
 		</div>	
-
 @endsection
