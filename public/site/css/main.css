@@ -1641,7 +1641,7 @@ figure.imghvr-shutter-in-out-diag-1.single-team-player-block.animated.wow{
 	letter-spacing: 0 !important;
 }
 .content__desc{
-	    grid-area: none;
+	    grid-area: none !important;
 }
 /* *******************End   Team **************/
 /* *******************Begin Formation**************/
