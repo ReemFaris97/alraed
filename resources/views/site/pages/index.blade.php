@@ -51,12 +51,14 @@
 				            @else
                             <img class="slider-image" src="{{ getimg($banner->image) }}" alt="{{ $banner->title }}" />
                             @endif
+<!--
 							<h2>{{ $banner->title }}</h2>
 							<blockquote>
                                 <p>
                                     {{ $banner->description }}
                                 </p>
                             </blockquote>
+-->
 						</div>
 					</div>
 					@endforeach
