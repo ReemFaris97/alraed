@@ -324,3 +324,7 @@ p.dummy-text:nth-child(3) {
 	}
 
 }
+
+.content.players-descriptions.show {
+    z-index: 9999999999;
+}
