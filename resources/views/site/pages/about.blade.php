@@ -15,6 +15,16 @@
 				</svg>
 			</div>
 			
+			<div class="content-wrap">
+				<div class="content content--layout content--layout-1">
+					<img class="content__img" src="{{ url('site') }}/img/logo.png" alt="عن الرائد" />
+					<h3 class="content__title">{{ setting('alraed') }}</h3>
+					<p class="content__desc">
+						{{ preg_replace("/&#?[a-z0-9]+;/i","",strip_tags(setting('about'))) }}
+					</p>
+				</div>
+			</div>
+			
 			
 			<div class="content-wrap">
 				<div class="content content--layout content--layout-1">
