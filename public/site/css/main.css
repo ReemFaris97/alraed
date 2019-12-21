@@ -1,3 +1,5 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.23, autoprefixer: v9.7.3) */
+
 /*Table Of content */
 
 
@@ -1636,6 +1638,9 @@ figure.imghvr-shutter-in-out-diag-1.single-team-player-block.animated.wow{
     text-align: right !important;
     text-decoration: none !important;
     text-transform: none !important;
+}
+.content__desc{
+	    grid-area: none;
 }
 /* *******************End   Team **************/
 /* *******************Begin Formation**************/
