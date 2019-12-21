@@ -1316,7 +1316,10 @@ span.transparented a:hover {
     font-size: 16px;
     line-height: 25px;
 }
-
+.the-about-section .about-words p {
+    height: 229px;
+    overflow: hidden;
+}
 
 /* *******************End   About Section **************/
 
