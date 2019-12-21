@@ -464,7 +464,8 @@
 								$nav.removeClass( 'nav-dot-current' );
 								$nav.eq( pos ).addClass( 'nav-dot-current' );
 							},
-							autoplay : true
+							autoplay : true,
+							interval : 2000
 						} ),
 						init = function() {
 							initEvents();
