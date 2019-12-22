@@ -13,12 +13,14 @@
     <p class="othersParagraph text-center">
     الصفحة تحت التطوير
     </p>
+<!--
     <section id="photostack" class="photostack photostack-start">
         <div class="not-available-content">
             <img src="{{ url('site') }}/img/not.png" alt="">
             <h3>عفوا , لايوجد محتوى الأن</h3>
         </div>
     </section>
+-->
 </div>
 <script>
 
