@@ -79,6 +79,15 @@
                         </li> --}}
                         <li class="nav-tab {{ actived('about-alraed') }}"><a href="{{ url('about-alraed') }}">@lang('trans.about_alraed')</a></li>
                         <li class="nav-tab"><a href="{{ url('other-sports') }}">@lang('trans.more_sports')</a></li>
+                        <li class="nav-tab hoverable-droppy-wrap">
+                        	<a href="#">إستمارة تسجيل</a>
+                        	<div class="hoverable-droppy">
+                        		<div class="hoverable-inner">
+                        			<a href="https://alraedsc.com/volunteer" target="_blank" rel="noreferrer noopener">المتطوعين</a>
+                        		<a href="https://alraedsc.com/desires" target="_blank" rel="noreferrer noopener">الراغبين</a>
+                        		</div>
+                        	</div>
+                        </li>
                     </ul>
                 </div>
             </nav>

@@ -492,7 +492,8 @@ input:focus {
         align-items: flex-end;
         margin-top: 80px!important;
         width: 100%;
-        padding-right: 0px!important
+        padding-right: 0px!important;
+		overflow: hidden
     }
     .nav-wrapper .nav-tab {
         padding: 15px 25px;
@@ -2774,4 +2775,45 @@ p.othersParagraph.text-center {
     text-align: center;
     font-size: 25px;
     color: #B7202B;
+}
+li.nav-tab.hoverable-droppy-wrap{
+	position: relative
+}
+
+.hoverable-droppy {
+    position: absolute;
+    background: black;
+    left: -400px;
+    text-align: center;
+    padding: 15px 10px;
+    box-shadow: 0px 10px 15px rgba(0,0,0,0.3);
+	transition: 0.4s all ease-in-out;
+	top: 63px
+}
+li.nav-tab.hoverable-droppy-wrap > a:hover + .hoverable-droppy ,
+li.nav-tab.hoverable-droppy-wrap > a + .hoverable-droppy:hover{
+	left: 0px;
+    width: 100%;
+}
+.hoverable-inner > a:first-child {
+	    border-bottom: 1px solid #ccc!important;
+}
+.hoverable-inner > a {
+	display:inline-block;
+	width: 100%
+}
+.hoverable-inner > a:hover {
+    color: #B7202B !important;
+}
+@media (min-width:800px){
+	.hoverable-droppy {
+	    -webkit-transform: skew(14deg);
+    -ms-transform: skew(14deg);
+    transform: skew(14deg);
+}
+	.hoverable-inner {
+	    -webkit-transform: skew(-14deg);
+    -ms-transform: skew(-14deg);
+    transform: skew(-14deg);
+}
 }
