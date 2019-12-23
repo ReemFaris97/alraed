@@ -598,12 +598,12 @@ input:focus {
 
 @media (min-width: 1200px) {
     .nav-wrapper .nav-tab a {
-        padding: 10px 15px;
+        padding: 10px 10px;
         margin: 0;
         display: inline-block;
     }
     .nav-wrapper .nav-tab {
-        padding: 0 15px!important;
+        padding: 0 5px!important;
     }
 }
 
