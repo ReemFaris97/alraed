@@ -615,8 +615,10 @@ input:focus {
 
 img.slider-image {
     width: 100%;
-    height: 510px;
+    height: calc(100vh - 120px);
     margin-top: 118px;
+    object-fit: cover;
+    object-position: 0 28%;
 }
 
 .sl-content {
@@ -2806,6 +2808,9 @@ li.nav-tab.hoverable-droppy-wrap > a + .hoverable-droppy:hover{
     color: #B7202B !important;
 }
 @media (min-width:800px){
+	img.slider-image {
+    object-position: center;
+}
 	.hoverable-droppy {
 	    -webkit-transform: skew(14deg);
     -ms-transform: skew(14deg);
