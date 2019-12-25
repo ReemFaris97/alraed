@@ -2031,6 +2031,9 @@ span.custo-progress.transited{
     }
 }
 @media (max-width: 767px) {
+		img.slider-image {
+    object-position: center;
+}
     .single-sport-link h3 {
         font-size: 18px;
         margin-top: 5px;
@@ -2808,9 +2811,7 @@ li.nav-tab.hoverable-droppy-wrap > a + .hoverable-droppy:hover{
     color: #B7202B !important;
 }
 @media (min-width:800px){
-	img.slider-image {
-    object-position: center;
-}
+
 	.hoverable-droppy {
 	    -webkit-transform: skew(14deg);
     -ms-transform: skew(14deg);
