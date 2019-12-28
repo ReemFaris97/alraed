@@ -46,6 +46,19 @@
 				</div>
 			</div> 
 -->
+	
+	
+	<div class="pdfs-new">
+		<a href="{{asset('site/img/wathika.pdf')}}" target="_blank" rel="nofollow noopener" class="first-site-btn">
+		وثيقة الخطة الاستراتيجية للنادي (٢٠١٩-٢٠٢٣)
+	</a>
+	
+	<a href="{{asset('site/img/dalil.pdf')}}" target="_blank" rel="nofollow noopener" class="first-site-btn">
+		الدليل التنظيمي بالنادي
+	</a>
+	</div>
+	
+	
 		</main>
 
 

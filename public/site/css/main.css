@@ -2823,3 +2823,19 @@ li.nav-tab.hoverable-droppy-wrap > a + .hoverable-droppy:hover{
     transform: skew(-14deg);
 }
 }
+
+.pdfs-new {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+.pdfs-new .first-site-btn {
+    width: auto;
+    padding: 0 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.pdfs-new .first-site-btn:hover {
+    color: #000
+}
