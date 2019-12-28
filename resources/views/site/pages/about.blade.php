@@ -54,7 +54,8 @@
 	</a>
 	
 	<a href="{{asset('site/img/dalil.pdf')}}" target="_blank" rel="nofollow noopener" class="first-site-btn">
-		الدليل التنظيمي بالنادي
+		الدليل التنظيمي بالنادي (٢٠١٩-٢٠٢٣)
+		
 	</a>
 	</div>
 	
