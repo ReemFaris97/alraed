@@ -453,6 +453,9 @@ input:focus {
 }
 
 @media screen and (max-width: 800px) {
+	.nav-wrapper li.nav-tab .hoverable-inner a {
+    font-size: 14px !important;
+}
     .content.players-descriptions > div{
         padding-top: 90px!important;
     }
@@ -2788,7 +2791,7 @@ li.nav-tab.hoverable-droppy-wrap{
 .hoverable-droppy {
     position: absolute;
     background: black;
-    left: -400px;
+    left: 0;
     text-align: center;
     padding: 15px 10px;
     box-shadow: 0px 10px 15px rgba(0,0,0,0.3);
@@ -2799,6 +2802,9 @@ li.nav-tab.hoverable-droppy-wrap > a:hover + .hoverable-droppy ,
 li.nav-tab.hoverable-droppy-wrap > a + .hoverable-droppy:hover{
 	left: 0px;
     width: 100%;
+	-webkit-transform: skew(14deg) scale(1);
+    -ms-transform: skew(14deg) scale(1);
+    transform: skew(14deg) scale(1);
 }
 .hoverable-inner > a:first-child {
 	    border-bottom: 1px solid #ccc!important;
@@ -2810,20 +2816,33 @@ li.nav-tab.hoverable-droppy-wrap > a + .hoverable-droppy:hover{
 .hoverable-inner > a:hover {
     color: #B7202B !important;
 }
-@media (min-width:800px){
-
 	.hoverable-droppy {
-	    -webkit-transform: skew(14deg);
-    -ms-transform: skew(14deg);
-    transform: skew(14deg);
+	    -webkit-transform: skew(14deg) scale(0);
+    -ms-transform: skew(14deg) scale(0);
+    transform: skew(14deg) scale(0);
 }
+
+@media (min-width:800px){
+.hoverable-inner, .hoverable-droppy {
+    width: max-content !important;
+}
+
 	.hoverable-inner {
 	    -webkit-transform: skew(-14deg);
     -ms-transform: skew(-14deg);
     transform: skew(-14deg);
 }
 }
-
+@media (max-width:799px){
+	li.nav-tab.hoverable-droppy-wrap > a:hover + .hoverable-droppy, li.nav-tab.hoverable-droppy-wrap > a + .hoverable-droppy:hover {
+    left: 0px;
+    width: 100%;
+    -webkit-transform: skew(0deg) scale(1);
+    -ms-transform: skew(0deg) scale(1);
+    transform: skew(0deg) scale(1);
+    top: 0;
+}
+}
 .pdfs-new {
     display: flex;
     justify-content: space-around;

@@ -21,9 +21,19 @@
         $('table.dataTable').DataTable( {
             responsive: true,
             dom: 'Bfrtip',
-            buttons: [
-                'copy', 'csv', 'excel', 'pdf', 'print'
-            ]
+			buttons: [
+			{
+				extend: 'csv',
+				text: 'Export csv',
+				charset: 'utf-8',
+				extension: '.csv',
+				fieldSeparator: ';',
+				fieldBoundary: '',
+				filename: 'export',
+				bom: true
+			}, 'copy', 'excel', 'pdf', 'print'
+]
+			
 
         } );
     } );

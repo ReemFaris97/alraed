@@ -48,6 +48,7 @@
 -->
 	
 	
+<!--
 	<div class="pdfs-new">
 		<a href="{{asset('site/img/wathika.pdf')}}" target="_blank" rel="nofollow noopener" class="first-site-btn">
 		وثيقة الخطة الاستراتيجية للنادي (٢٠١٩-٢٠٢٣)
@@ -58,6 +59,7 @@
 		
 	</a>
 	</div>
+-->
 	
 	
 		</main>

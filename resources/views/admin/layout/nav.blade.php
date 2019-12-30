@@ -402,7 +402,7 @@
         <li>
             <a class="check_active" href="{{route('admin.desire.index')}}">
                 <i class="material-icons">layers</i>
-                <span> سجل الرغبات </span>
+                <span>الراغبين </span>
             </a>
         </li>
     @endif
