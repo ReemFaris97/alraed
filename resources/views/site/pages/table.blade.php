@@ -1,7 +1,6 @@
 @extends('site.layouts.app')
 @section('content')
 <div class="container single-section-padding lineup-sec-wrapper">
-		<button id="share-mee">Share</button>
 			<div class="whole-section-title-wrapper">
 				<h3 class="the-section-title">
 					<span class="wow animated">S</span>
