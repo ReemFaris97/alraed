@@ -1,6 +1,8 @@
 @extends('site.layouts.app')
 @section('content')
 <div class="container single-section-padding lineup-sec-wrapper">
+		<button id="share-mee">Share</button>
+		<div class="result"></div>
 			<div class="whole-section-title-wrapper">
 				<h3 class="the-section-title">
 					<span class="wow animated">S</span>
@@ -147,4 +149,29 @@
 				</div>
 			</div>
 		</div>	
+@endsection
+
+
+@section('scripts')
+ <script>
+      let shareData = {
+        title: 'MDN',
+        text: 'Learn web development on MDN!',
+        url: 'https://developer.mozilla.org',
+      }
+
+      const btn = document.querySelector('#share-mee');
+      const resultPara = document.querySelector('.result');
+
+      btn.addEventListener('click', () => {
+        navigator.share(shareData)
+          .then(() =>
+            resultPara.textContent = 'MDN shared successfully'
+          )
+          .catch((e) =>
+            resultPara.textContent = 'Error: ' + e
+          )
+      });
+    </script>
+
 @endsection
