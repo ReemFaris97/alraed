@@ -163,4 +163,9 @@ class HomeController extends Controller
         Desire::create($request->all());
         return back()->with('success', __('trans.add_success'));
     }
+    
+    public function soical_responsible()
+    {
+        return view('site.pages.soical_responsible');
+    }
 }

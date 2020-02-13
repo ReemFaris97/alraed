@@ -109,4 +109,5 @@ return [
 	'register' => 'Register',
 	'send' => 'Send',
 	'open' => 'Open',
+    'soical_responsible' => 'Socail Responsible'
 ];

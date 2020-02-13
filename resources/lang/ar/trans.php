@@ -1,4 +1,4 @@
-<?php  
+\<?php  
 
 return [
 
@@ -109,5 +109,6 @@ return [
 	'register' => 'تسجيل',
 	'send' => 'إرسال',
 	'open' => 'مفتوح',
-	'optional'=>'اختياري'
+	'optional'=>'اختياري',
+    'soical_responsible' => 'المسئولية الاجتماعية',
 ];

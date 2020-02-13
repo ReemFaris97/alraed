@@ -78,6 +78,7 @@
                         <li class="nav-tab {{ actived('desires') }}"><a href="{{ url('desires') }}">@lang('trans.record_desires')</a>
                         </li> --}}
                         <li class="nav-tab {{ actived('about-alraed') }}"><a href="{{ url('about-alraed') }}">@lang('trans.about_alraed')</a></li>
+                        <li class="nav-tab {{ actived('soical-responsible') }}"><a href="{{ url('soical-responsible') }}">@lang('trans.soical_responsible')</a></li>
                         <li class="nav-tab hoverable-droppy-wrap">
                         	<a href="#">التنظيم الإداري</a>
                         	<div class="hoverable-droppy">
