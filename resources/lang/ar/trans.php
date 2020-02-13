@@ -110,5 +110,5 @@ return [
 	'send' => 'إرسال',
 	'open' => 'مفتوح',
 	'optional'=>'اختياري',
-    'soical_responsible' => 'المسؤولية الاجتماعية',
+    'soical_responsible' => 'المسؤولية الإجتماعية',
 ];
