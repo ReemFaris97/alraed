@@ -12,9 +12,9 @@
 	<body>
 		<div class="container">
 			<div class="othersTitle">الكاراتيه</div>
-			<p class="othersParagraph">
-                يمتاز نادي الرائد بامتلاكه لفريق ملاكمة على أعلى مستوى من خيرة شباب المملكة الأقوياء القادرون على تحقيق أعلى البطولات العالمية حيث فازوا بببطولات عديدة على مستوى المملكة وخارجها وإليكم بعض الصور أثناء تكريم شبابنا الأفاضل
-			</p>
+			<p class="othersParagraph text-center">
+    الصفحة تحت التطوير
+    </p>
 			<section id="photostack" class="photostack photostack-start">
 				<div>
 					<figure>

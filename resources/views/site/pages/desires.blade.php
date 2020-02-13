@@ -3,6 +3,8 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.11/css/bootstrap-select.min.css">
 	<link rel="stylesheet" href="{{asset('site/css/forma.css')}}">
 		<script src="{{ url('site') }}/js/modernizr.custom.js"></script>
+					<meta name="msapplication-TileColor" content="#B7202B">
+	<meta name="theme-color" content="#B7202B">
 @endsection
 @section('content')
 <!--     *************************   Beginnig of ٍSection ********************-->
@@ -93,16 +95,16 @@
 					</div>
 					
 					<div class="row flexy">
-						<div class="form-group col-md-6">
-					  <label for="student">@lang('trans.you_student')</label>
+						<div class="form-group col-md-6 has-rad-div">
+					  <label for="student" class="bii-lbl">@lang('trans.you_student')</label>
 					  <label><input type="radio" name="student" value="@lang('trans.yes')" checked>@lang('trans.yes')</label>
 					  <label><input type="radio" name="student" value="@lang('trans.no')">@lang('trans.no')</label>
 					  @error('student')
 					  	<span style="color: red">{{ $message }}</span>
 					@enderror
 					</div>
-					<div class="form-group col-md-6">
-					  <label for="student">@lang('trans.have_job')</label>
+					<div class="form-group col-md-6 has-rad-div">
+					  <label for="student" class="bii-lbl">@lang('trans.have_job')</label>
 					  <label><input type="radio" name="job" value="@lang('trans.yes')" checked>@lang('trans.yes')</label>
 					  <label><input type="radio" name="job" value="@lang('trans.no')">@lang('trans.no')</label>
 					  	@error('job')
@@ -133,16 +135,16 @@
 					</div>
 
 					<div class="row flexy">
-						<div class="form-group col-md-6">
-					  <label for="student">@lang('trans.have_transport')</label>
+						<div class="form-group col-md-6 has-rad-div">
+					  <label for="student" class="bii-lbl">@lang('trans.have_transport')</label>
 					  <label><input type="radio" name="transport" value="@lang('trans.yes')" checked>@lang('trans.yes')</label>
 					  <label><input type="radio" name="transport" value="@lang('trans.no')">@lang('trans.no')</label>
 					  @error('transport')
 					  	<span style="color: red">{{ $message }}</span>
 					@enderror
 					</div>
-					<div class="form-group col-md-6">
-					  <label for="nationality">@lang('trans.register_with_another_club')</label>
+					<div class="form-group col-md-6 has-rad-div">
+					  <label for="nationality" class="bii-lbl">@lang('trans.register_with_another_club')</label>
 					  <label><input type="radio" name="club" value="@lang('trans.yes')" checked>@lang('trans.yes')</label>
 					  <label><input type="radio" name="club" value="@lang('trans.no')">@lang('trans.no')</label>
 					  	@error('club')
@@ -153,7 +155,7 @@
 					</div>
 
 					<div class="form-group col-md-12">
-						<label for="opinion">@lang('trans.feedback')</label>
+						<label for="opinion">@lang('trans.feedback')  (@lang('trans.optional'))</label>
 						<textarea name="opinion" class="form-control" rows="5"></textarea>
 					</div>
 

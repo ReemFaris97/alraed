@@ -338,6 +338,11 @@ p.othersParagraph {
     text-align: justify;
     direction: rtl;
 }
+p.othersParagraph.text-center {
+    text-align: center;
+    font-size: 25px;
+    color: #B7202B;
+}
 
 .othersTitle {
     color: #000;

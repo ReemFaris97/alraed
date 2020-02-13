@@ -1,4 +1,4 @@
-<?php  
+\<?php  
 
 return [
 
@@ -19,11 +19,11 @@ return [
 	'result' => 'النتيجة',
 	'ticket' => 'إحجز تذكرة',
 	'main' => 'الرئيسية',
-	'first_team' => 'الفريق اﻻول',
-	'tables' => 'الجداول',
+	'first_team' => 'كرة القدم',
+	'tables' => 'مباريات النادي',
 	'news' => 'اﻻخبار',
 	'tickets' => 'التذاكر',
-	'multimedia' => 'الميديا',
+	'multimedia' => 'ألبوم الصور',
 	'about_alraed' => 'عن الرائد',
 	'more_sports' => 'رياضات آخري',
 	'developped' => 'صُمم بواسطة ',
@@ -37,10 +37,10 @@ return [
 	'email' => 'البريد الالكتروني',
 	'password' => 'كلمة المرور',
 	'login' => 'تسجيل الدخول',
-	'add_success' => 'تم الإضافة بنجاح',
+	'add_success' => 'تم تسجيل بياناتك بنجاح',
 	'volunteers' => 'المتطوعين',
 	'record_desires' => 'تسجيل الراغبيين',
-	'register_volunteer' => 'تسجيل الراغبين للأعمال التطوعية لنادي الرائد',
+	'register_volunteer' => 'تسجيل الراغبين في الأعمال التطوعية بنادي الرائد',
 	'last_qualification' => 'آخر مؤهل دراسي',
 	'nationality' => 'الجنسية',
 	'gender' => 'الجنس',
@@ -87,8 +87,8 @@ return [
 	'place_birth' => 'مكان الميلاد',
 	'place_residence' => 'مكان الإقامة حالياَ',
 	'you_student' => 'هل انت طالب ؟',
-	'yes' => '',
-	'no' => '',
+	'yes' => 'نعم',
+	'no' => 'ﻻ',
 	'have_job' => 'هل لديك وظيفة؟',
 	'select_game' => 'حدد اسم اللعبة المرغوب التسجيل بها',
 	'choose_game' => 'اختر اللعبة المرغوب التسجيل بها',
@@ -109,4 +109,6 @@ return [
 	'register' => 'تسجيل',
 	'send' => 'إرسال',
 	'open' => 'مفتوح',
+	'optional'=>'اختياري',
+    'soical_responsible' => 'المسئولية الاجتماعية',
 ];

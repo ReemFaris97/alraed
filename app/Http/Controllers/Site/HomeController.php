@@ -22,7 +22,7 @@ class HomeController extends Controller
 
     public function index()
     {
-    	$banners = Banner::latest()->limit(3)->get();
+    	$banners = Banner::latest()->limit(10)->latest()->first()->get();
     	$next_match = Match::whereDate('date', '>=', date('Y-m-d H:i:s'))->oldest('date')->first();
     	$previous_matches = Match::whereDate('date', '<=', date('Y-m-d H:i:s'))->oldest('date')->limit(2)->get();
         if (!is_null($next_match)) {
@@ -162,5 +162,10 @@ class HomeController extends Controller
     {
         Desire::create($request->all());
         return back()->with('success', __('trans.add_success'));
+    }
+    
+    public function soical_responsible()
+    {
+        return view('site.pages.soical_responsible');
     }
 }

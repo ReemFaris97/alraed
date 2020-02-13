@@ -2,9 +2,9 @@
 @extends('site.layouts.app')
 
 @section('styles')
-<link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/imagehover.min.css" />
+<!--<link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/imagehover.min.css" />-->
 		<!--		Panorama Fancy-->
-		<link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/panorama.css" />
+<!--		<link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/panorama.css" />-->
 		<script src="{{ url('site') }}/js/modernizr.custom.js"></script>
 @endsection
 
@@ -26,9 +26,18 @@
 						<span class="wow animated">M</span>
 					</h3>
 				</div>
+				<section>
+					<div class="container">
+						<div class="row">
+							<a href="{{asset('site/img/theteam.jpeg')}}" data-caption="كرة القدم" data-fancybox="firstteam">
+								<img src="{{asset('site/img/theteam.jpeg')}}" alt="الفريق الأول" class="the-f-team">
+							</a>
+						</div>
+					</div>
+				</section>
+<!--
 			<section class="grid3d vertical" id="grid3d">
 				<div class="grid-wrap">
-					<!--			Here you wil make a loop to get the players image , name and position-->
 					<div class="grid">
 						@foreach($teams as $team)
 						<figure class="imghvr-shutter-in-out-diag-1 single-team-player-block animated wow"><img src="{{ getimg($team->image) }}" alt="{{ $team->name }}">
@@ -41,7 +50,6 @@
 						
 					</div>
 				</div>
-				<!--				Here you wil make a loop to get the players details in the order-->
 				<div class="content players-descriptions">
 					@foreach($teams as $t)
 					<div class="single-player-details">
@@ -61,16 +69,20 @@
 					</span>
 				</div>
 			</section>
+-->
 		</div><!-- /container -->
 <!--     *************************  End      of ٍSection ********************-->
 
 @endsection
 
 @section('scripts')
+		<script type="text/javascript" src="{{ url('site') }}/js/jquery.fancybox.min.js"></script>
+<!--
 		<script src="{{ url('site') }}/js/classie2.js"></script>
 		<script src="{{ url('site') }}/js/helper.js"></script>
 		<script src="{{ url('site') }}/js/grid3d.js"></script>
 		<script>
 			new grid3D( document.getElementById( 'grid3d' ) );
 		</script>
+-->
 @endsection

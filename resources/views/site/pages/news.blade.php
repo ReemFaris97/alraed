@@ -98,22 +98,17 @@
 						   } else {
 						  		el.news = response.data.data;
 						   }
-
 						   if (el.news.length < el.noData) {
 					  			el.show = true;
-					  		}
-						  	
+					  		}	  	
 						  })
 						  .catch(function (error) {
 						    // handle error
 						    console.log(error);
 						  });
 					}
-
 				}
 			})
-
-			
 		</script>
 		<script type="text/javascript" src="{{ url('site') }}/js/news/classie.js"></script>
 		<script type="text/javascript" src="{{ url('site') }}/js/news/main-news.js"></script>

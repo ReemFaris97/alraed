@@ -3,6 +3,8 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.11/css/bootstrap-select.min.css">
 	<link rel="stylesheet" href="{{asset('site/css/forma.css')}}">
 		<script src="{{ url('site') }}/js/modernizr.custom.js"></script>
+			<meta name="msapplication-TileColor" content="#B7202B">
+	<meta name="theme-color" content="#B7202B">
 @endsection
 @section('content')
 <!--     *************************   Beginnig of ٍSection ********************-->

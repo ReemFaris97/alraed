@@ -15,6 +15,16 @@
 				</svg>
 			</div>
 			
+			<div class="content-wrap">
+				<div class="content content--layout content--layout-1">
+					<img class="content__img" src="{{ url('site') }}/img/logo.png" alt="عن الرائد" />
+					<h3 class="content__title">{{ setting('alraed') }}</h3>
+					<p class="content__desc">
+						{{ preg_replace("/&#?[a-z0-9]+;/i","",strip_tags(setting('about'))) }}
+					</p>
+				</div>
+			</div>
+			
 			
 			<div class="content-wrap">
 				<div class="content content--layout content--layout-1">
@@ -25,6 +35,7 @@
 					</p>
 				</div>
 			</div>
+<!--
 			<div class="content-wrap">
 				<div class="content content--layout content--layout-1">
 					<img class="content__img" src="{{ url('site') }}/img/championship.png" alt="كأس خادم الحرمين الشريفين" />
@@ -34,6 +45,23 @@
 					</p>
 				</div>
 			</div> 
+-->
+	
+	
+<!--
+	<div class="pdfs-new">
+		<a href="{{asset('site/img/wathika.pdf')}}" target="_blank" rel="nofollow noopener" class="first-site-btn">
+		وثيقة الخطة الاستراتيجية للنادي (٢٠١٩-٢٠٢٣)
+	</a>
+	
+	<a href="{{asset('site/img/dalil.pdf')}}" target="_blank" rel="nofollow noopener" class="first-site-btn">
+		الدليل التنظيمي بالنادي (٢٠١٩-٢٠٢٣)
+		
+	</a>
+	</div>
+-->
+	
+	
 		</main>
 
 

@@ -10,15 +10,17 @@
 <body>
 <div class="container">
     <div class="othersTitle">كرة اليد</div>
-    <p class="othersParagraph">
-        من المعروف عن نادي الرائد امتيازه بفريق كرة يد عالمي لديه تاريخ عريض فى مجال كرة اليد على مستوى المملكة والعربي على السواء
+    <p class="othersParagraph text-center">
+    الصفحة تحت التطوير
     </p>
+<!--
     <section id="photostack" class="photostack photostack-start">
         <div class="not-available-content">
             <img src="{{ url('site') }}/img/not.png" alt="">
             <h3>عفوا , لايوجد محتوى الأن</h3>
         </div>
     </section>
+-->
 </div>
 <!--        Jquery-->
 <script type="text/javascript" src="{{ url('site') }}/js/jquery-1.11.2.min.js"></script>

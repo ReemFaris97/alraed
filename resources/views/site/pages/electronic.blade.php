@@ -10,15 +10,17 @@
 <body>
 <div class="container">
     <div class="othersTitle">الألعاب الإلكترونية</div>
-    <p class="othersParagraph">
-        لدينا فريق مبهر فى جميع الألعاب الإلكترونية الحديثة القادرى على تعلم أحدث الألعاب والمنافسة على تحدي جميع الألغاز نظرا للزكاء الفائق الذي يتميزون به
+    <p class="othersParagraph text-center">
+    الصفحة تحت التطوير
     </p>
+<!--
     <section id="photostack" class="photostack photostack-start">
         <div class="not-available-content">
             <img src="{{ url('site') }}/img/not.png" alt="">
             <h3>عفوا , لايوجد محتوى الأن</h3>
         </div>
     </section>
+-->
 </div>
 <!--        Jquery-->
 <script type="text/javascript" src="{{ url('site') }}/js/jquery-1.11.2.min.js"></script>

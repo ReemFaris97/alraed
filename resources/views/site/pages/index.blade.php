@@ -51,21 +51,23 @@
 				            @else
                             <img class="slider-image" src="{{ getimg($banner->image) }}" alt="{{ $banner->title }}" />
                             @endif
+<!--
 							<h2>{{ $banner->title }}</h2>
 							<blockquote>
                                 <p>
                                     {{ $banner->description }}
                                 </p>
                             </blockquote>
+-->
 						</div>
 					</div>
 					@endforeach
 			
 				</div><!-- /sl-slider -->
 				<nav id="nav-dots" class="nav-dots">
-					<span class="nav-dot-current"></span>
-					<span></span>
-					<span></span>
+				@foreach($banners as $key => $banner)
+					<span class="{{ $key == 0 ? 'nav-dot-current' : '' }}"></span>
+				@endforeach
 				</nav>
 			</div><!-- /slider-wrapper -->
         </div>
@@ -354,7 +356,7 @@
 					@foreach ($multimedia as $media)
 					<div class="item">
 						<div class="news-image-wrapper">
-							<a class="watch-vid-btn" data-fancybox="multimedia" href="https://www.youtube.com/watch?v=7RZpYuu7d2A" data-toggle="tooltip" title="شاهد المرفق">
+							<a class="watch-vid-btn" data-fancybox="multimedia" data-caption="{{ $media->title }}" href="{{ getimg($media->image) }}" data-toggle="tooltip" title="شاهد المرفق">
 								<img src="{{ getimg($media->image) }}" alt="{{ $media->title }}">
 							</a>
 						</div>
@@ -462,7 +464,8 @@
 								$nav.removeClass( 'nav-dot-current' );
 								$nav.eq( pos ).addClass( 'nav-dot-current' );
 							},
-							autoplay : true
+							autoplay : true,
+							interval : 2000
 						} ),
 						init = function() {
 							initEvents();
