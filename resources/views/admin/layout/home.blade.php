@@ -47,7 +47,7 @@
 
 
 
-        <a href="{{route('admin.our-team.index')}}" style="color: #eee">
+        {{-- <a href="{{route('admin.teams.index')}}" style="color: #eee">
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
             <div class="info-box bg-yellow hover-expand-effect">
                 <div class="icon">
@@ -55,12 +55,12 @@
                 </div>
                 <div class="content">
                     <div class="text">
-                            أعضاء فرق الأول</div>
-                    <div class="number count">{{\App\OurTeam::count()}}</div>
+                            عدد الفرق</div>
+                    <div class="number count">{{\App\Team::count()}}</div>
                 </div>
             </div>
         </div>
-        </a>
+        </a> --}}
 
 
         <a href="{{route('admin.teams.index')}}" style="color: #eee">
