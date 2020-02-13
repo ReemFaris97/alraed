@@ -40,8 +40,8 @@ class BannersController extends Controller
         $this->validate($request, [
             'ar_title' => 'required|string|max:191',
             'en_title' => 'required|string|max:191',
-            'ar_description' => 'required|string',
-            'en_description' => 'required|string',
+            // 'ar_description' => 'required|string',
+            // 'en_description' => 'required|string',
             'image' => 'required|max:2048'
         ]);
 
@@ -89,8 +89,8 @@ class BannersController extends Controller
         $this->validate($request, [
             'ar_title' => 'required|string|max:191',
             'en_title' => 'required|string|max:191',
-            'ar_description' => 'required|string',
-            'en_description' => 'required|string',
+            // 'ar_description' => 'required|string',
+            // 'en_description' => 'required|string',
             'image' => 'sometimes|max:10048'
         ]);
 

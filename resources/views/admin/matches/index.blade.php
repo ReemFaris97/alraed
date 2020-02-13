@@ -31,6 +31,7 @@
                             <th>الفريق الأول</th>
                             <th>الفريق الثاني</th>
                             <th> الملعب</th>
+                            <th> نتيجة المبارة</th>
                             <th> تاريخ المباراة</th>
                             <th>العمليات</th>
                         </tr>
@@ -43,6 +44,15 @@
                                 <td>{{$item->FirstTeam->ar_name }}</td>
                                 <td>{{$item->SecondTeam->ar_name }}</td>
                                 <td>{{$item->stadium }}</td>
+                                <td>
+                                    @if($item->goals_first_team)
+                                    {{ $item->goals_first_team.' : '.$item->goals_second_team }}
+                                    @else
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#matchNo_{{ $item->id }}">
+                                      إضافة أهداف
+                                    </button>
+                                    @endif
+                                </td>
                                 <td>{{$item->date }}</td>
                                 <td>
                                     <a href="{{route('admin.matches.edit',['id'=>$item->id])}}"
@@ -63,6 +73,40 @@
         </div>
     </div>
     <!-- #END# Exportable Table -->
+
+<!-- Update no of goals -->
+@foreach($items as $item)
+<!-- Modal -->
+<div class="modal fade" id="matchNo_{{ $item->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">إضافة الاهداف</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form method="post" action="{{ route('admin.addGoals', $item->id) }}">@csrf @method('PUT')
+      <div class="modal-body">
+        <div class="form-group">
+            <label>أهداف الفريق الاول</label>
+            <input type="number" name="goals_first_team" class="form-control" required="">
+        </div>
+        <div class="form-group">
+            <label>أهداف الفريق الثاني</label>
+            <input type="number" name="goals_second_team" class="form-control" required="">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">إغلاق</button>
+        <button type="submit" class="btn btn-primary">حفظ</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+@endforeach
+
 
 @endsection
 

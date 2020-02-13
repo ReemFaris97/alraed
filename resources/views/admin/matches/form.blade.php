@@ -55,6 +55,20 @@
     </div>
 </div>
 
+@if(isset($item))
+<div class="form-group form-float">
+    <label class="form-label">أهداف الفريق الاول</label>
+    <div class="form-line">
+        {!! Form::number("goals_first_team",null,['class'=>'form-control','placeholder'=>'أهداف الفريق الاول'])!!}
+    </div>
+</div>
+<div class="form-group form-float">
+    <label class="form-label">أهداف الفريق الثاني</label>
+    <div class="form-line">
+        {!! Form::number("goals_second_team",null,['class'=>'form-control','placeholder'=>'أهداف الفريق الثاني'])!!}
+    </div>
+</div>
+@endif
 
 <button class="btn btn-primary waves-effect" type="submit">حفظ</button>
 

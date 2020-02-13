@@ -40,9 +40,9 @@ class AdminsController extends Controller
         $this->validate($request,[
             'name'=>'required|string|max:191|unique:users',
             'email'=>'required|email|max:255|unique:users',
-            'phone'=>'required|numeric|unique:users',
+            'phone'=>'required|unique:users',
             'password'=>'required|min:6|confirmed',
-            'image'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image'=>'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 //            'is_active'=>'required'
         ]);
          $inputs=$request->all();
@@ -79,8 +79,9 @@ class AdminsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit($id)
     {
+        $user = User::findOrFail($id);
         return view('admin.admins.edit',['item'=>$user]);
     }
 
@@ -91,16 +92,19 @@ class AdminsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
         $this->validate($request,[
             'name'=>'required|string|max:191|unique:users,name' . $user->id,
             'email'=>'required|email|max:255|unique:users,email'. $user->id,
-            'phone'=>'required|numeric|max:10|unique:users,phone' .$user->id,
+            'phone'=>'required|max:10|unique:users,phone' .$user->id,
             'password'=>'required|min:6|confirmed',
             'image'=>'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 //            'is_active'=>'required'
         ]);
+
+        $user = User::findOrFail($id);
+
         $inputs=$request->all();
 
         if($request->hasFile('image')){
@@ -125,9 +129,9 @@ class AdminsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy($id)
     {
-
+        $user = User::findOrFail($id);
         $user->delete();
         popup('delete');
         return back();

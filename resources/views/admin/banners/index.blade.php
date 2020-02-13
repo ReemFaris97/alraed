@@ -28,7 +28,7 @@
                         <tr>
                             <th>#</th>
                             <th>عنوان البنر</th>
-                            <th> وصف البنر</th>
+                            {{-- <th> وصف البنر</th> --}}
                             <th>صورة البنر</th>
                             <th>العمليات</th>
                         </tr>
@@ -38,7 +38,7 @@
                             <tr>
                                 <td>{{++$key}}</td>
                                 <td>{{$item->ar_title }}</td>
-                                <td>{{$item->ar_description}}</td>
+                                {{-- <td>{{$item->ar_description}}</td> --}}
                                 <td>
                                     @if(isVideo($item->image))
                                      <video width="100" height="80" controls>

@@ -24,11 +24,11 @@
     </div>
 </div>
 
-@if (isset($item->image))
+@if(isset($item))
     <div class="form-group form-float">
         <label class="form-label">الصورة  الحالية  :</label>
         <div class="form-line">
-            <img class="img-preview" src="{{getimg($item->image)}}" style="height: 100px; width: 100px">
+            <img class="img-preview" src="{{ is_null($item->image) ? url('admin/images/logo.png') : getimg($item->image)}}"  style="height: 100px; width: 100px">
         </div>
     </div>
 @endif

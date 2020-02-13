@@ -42,7 +42,7 @@
 </div>
 
 
-<div class="form-group form-float">
+{{-- <div class="form-group form-float">
     <label class="form-label">محتوى البنر بالعربى</label>
     <div class="form-line">
         {!! Form::textarea("ar_description",null,['class'=>'form-control','placeholder'=>'اكتب محتوى البنر...'])!!}
@@ -54,6 +54,6 @@
     <div class="form-line">
         {!! Form::textarea("en_description",null,['class'=>'form-control','placeholder'=>'write banner  contenent ...'])!!}
     </div>
-</div>
+</div> --}}
 
 <button class="btn btn-primary waves-effect" type="submit">حفظ</button>
