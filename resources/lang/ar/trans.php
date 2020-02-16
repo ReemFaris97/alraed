@@ -1,4 +1,4 @@
-\<?php  
+<?php  
 
 return [
 
@@ -111,4 +111,6 @@ return [
 	'open' => 'مفتوح',
 	'optional'=>'اختياري',
     'soical_responsible' => 'المسئولية الاجتماعية',
+    'next' => 'التالي',
+    'previous' => 'السابق',
 ];

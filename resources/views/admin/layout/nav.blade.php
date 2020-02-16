@@ -125,6 +125,28 @@
         </li>
     @endif
 
+    @if(hasPermission('events'))
+        <li>
+            <a href="javascript:void(0);" class="menu-toggle">
+                <i class="material-icons">layers</i>
+                <span> المسئولية الإجتماعية </span>
+            </a>
+            <ul class="ml-menu">
+                <li>
+                    <a class="check_active" href="{{route('admin.event.index')}}">
+
+                        <span> عرض  الجميع</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="check_active" href="{{route('admin.event.create')}}">
+                        <span>اضافه جديد </span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    @endif
+
     @if(hasPermission('multimedia'))
         <li>
             <a href="javascript:void(0);" class="menu-toggle">

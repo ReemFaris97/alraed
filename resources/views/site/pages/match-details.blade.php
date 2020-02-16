@@ -44,7 +44,8 @@
 							</div>
 							<div class="red-color sin-middle">
 								@if($match->date < date('Y-m-d H:i:s'))
-									{{ $match->goals()->where('team_id', $match->FirstTeam->id)->count() }} : {{ $match->goals()->where('team_id', $match->SecondTeam->id)->count() }}
+									{{-- {{ $match->goals()->where('team_id', $match->FirstTeam->id)->count() }} : {{ $match->goals()->where('team_id', $match->SecondTeam->id)->count() }} --}}
+									{{ $match->goals_first_team.' : '.$match->goals_second_team }}
 								@else
 									{{ $match->date->format('h:i a') }}
 								@endif
@@ -58,7 +59,7 @@
 						</div>
 						<div class="single-side team-l-wrapper">
 							<img src="{{ getimg($match->SecondTeam->image) }}" alt="{{ $match->SecondTeam->name }}" data-toggle="tooltip" title="{{ $match->SecondTeam->name }}">
-							@if($match->date < date('Y-m-d H:i:s'))
+							{{-- @if($match->date < date('Y-m-d H:i:s'))
 								@foreach($match->goals()->where('team_id', $match->SecondTeam->id)->get() as $s_goal)
 								<div class="goal-scorer">
 									<span class="goal-i"><i class="fas fa-futbol"></i></span>
@@ -66,7 +67,7 @@
 									<span class="goal-s">{{ $s_goal->player->name }}</span>
 								</div>
 								@endforeach
-							@endif
+							@endif --}}
 						</div>
 					</div>
 				</div>
@@ -174,7 +175,8 @@
 							</div>
 							<div class="single-side">
 								<div class="red-color sin-middle">
-									{{ $prev_match->goals()->where('team_id', $prev_match->FirstTeam->id)->count() }} : {{ $prev_match->goals()->where('team_id', $prev_match->SecondTeam->id)->count() }}
+									{{-- {{ $prev_match->goals()->where('team_id', $prev_match->FirstTeam->id)->count() }} : {{ $prev_match->goals()->where('team_id', $prev_match->SecondTeam->id)->count() }} --}}
+									{{ $prev_match->goals_first_team.' : '.$prev_match->goals_second_team }}
 								</div>
 								<div class="the-two-teams">
 									<span class="red-color"><a href="{{ route('match.details', $prev_match->id) }}">@lang('trans.details')</a></span>

@@ -71,8 +71,8 @@ class HomeController extends Controller
 
     public function news()
     {
-        $newsCount = News::latest()->count();
-        return view('site.pages.news', compact('newsCount'));
+        $news = News::latest()->paginate(5);
+        return view('site.pages.news', compact('news'));
     }
 
     public function moreNews()

@@ -109,5 +109,7 @@ return [
 	'register' => 'Register',
 	'send' => 'Send',
 	'open' => 'Open',
-    'soical_responsible' => 'Socail Responsible'
+    'soical_responsible' => 'Socail Responsible',
+    'next' => 'Next',
+    'previous' => 'Previous',
 ];

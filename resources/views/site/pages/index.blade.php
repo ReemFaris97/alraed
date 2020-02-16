@@ -212,7 +212,8 @@
 											<div class="single-side">
 												<div class="sm-size">النتيجة</div>
 												<div class="red-color sin-middle">
-													{{ $prev_match->goals()->where('team_id', $prev_match->FirstTeam->id)->count() }} : {{ $prev_match->goals()->where('team_id', $prev_match->SecondTeam->id)->count() }}
+													{{-- {{ $prev_match->goals()->where('team_id', $prev_match->FirstTeam->id)->count() }} : {{ $prev_match->goals()->where('team_id', $prev_match->SecondTeam->id)->count() }} --}}
+													{{ $prev_match->goals_first_team.' : '.$prev_match->goals_second_team }}
 												</div>
 												<div class="the-two-teams">
 													<span>{{ $prev_match->FirstTeam->name }}</span>

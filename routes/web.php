@@ -40,6 +40,7 @@ Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin',
     //Volunteers and Desires
     Route::resource('volunteer', 'VolunteerController');
     Route::resource('desire', 'DesireController');
+    Route::resource('event', 'EventController');
 
     //SYSTEM SETTINGS
     Route::resource('permissions','PermissionController')->middleware('permission:permissions');

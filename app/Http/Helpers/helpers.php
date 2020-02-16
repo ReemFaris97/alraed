@@ -75,6 +75,11 @@ function uploader($request, $img_name)
     return $path;
 }
 
+function uploadFile($file)
+{
+    return \Storage::disk('public')->putFile(uploadpath(), $file);
+}
+
 function deleteImg($img_name)
 {
     \Storage::disk('public')->delete(uploadpath(), $img_name);
