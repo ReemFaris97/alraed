@@ -68,6 +68,7 @@ Route::group(['namespace' => 'Site'], function () {
     Route::get('multimedia', 'HomeController@multimedia');
     Route::get('about-alraed', 'HomeController@about');
     Route::get('soical-responsible', 'HomeController@soical_responsible');
+    Route::get('event/{event}', 'HomeController@showSocial');
     Route::get('other-sports', 'HomeController@otherSports');
     Route::get('karateh', 'HomeController@karateh')->name('karateh');
     Route::get('boxing', 'HomeController@boxing')->name('boxing');

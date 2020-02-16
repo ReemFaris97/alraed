@@ -15,6 +15,7 @@ use App\OurTeam;
 use App\Multimedia;
 use App\Settings;
 use App\Volunteer;
+use App\Event;
 use App\Desire;
 
 class HomeController extends Controller
@@ -166,6 +167,12 @@ class HomeController extends Controller
     
     public function soical_responsible()
     {
-        return view('site.pages.soical_responsible');
+        $events = Event::latest()->paginate(15);
+        return view('site.pages.soical_responsible', compact('events'));
+    }
+
+    public function showSocial(Event $event)
+    {
+        return view('site.pages.soical', compact('event'));
     }
 }
