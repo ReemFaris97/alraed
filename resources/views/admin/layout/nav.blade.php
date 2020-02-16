@@ -129,13 +129,13 @@
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
                 <i class="material-icons">perm_media</i>
-                <span>إدارة الوسائط المتعددة</span>
+                <span>ألبوم الصور</span>
             </a>
             <ul class="ml-menu">
                 <li>
                     <a class="check_active" href="{{route('admin.multimedia.index')}}">
 
-                        <span> عرض الوسائط المتعددة</span>
+                        <span> عرض ألبوم الصور</span>
                     </a>
                 </li>
                 <li>
@@ -219,7 +219,7 @@
     @endif
 
 
-    @if(hasPermission('our-team'))
+    {{-- @if(hasPermission('our-team'))
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
                 <i class="material-icons">layers</i>
@@ -239,7 +239,7 @@
                 </li>
             </ul>
         </li>
-    @endif
+    @endif --}}
 
     @if(hasPermission('teams'))
         <li>
@@ -263,7 +263,7 @@
         </li>
     @endif
 
-    @if(hasPermission('players'))
+    {{-- @if(hasPermission('players'))
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
                 <i class="material-icons">person_add</i>
@@ -283,7 +283,7 @@
                 </li>
             </ul>
         </li>
-    @endif
+    @endif --}}
 
 
     @if(hasPermission('champions') || hasPermission('matches') || hasPermission('goals') || hasPermission('statistics'))
@@ -338,7 +338,7 @@
         </li>
     @endif
 
-    @if(hasPermission('goals'))
+    {{-- @if(hasPermission('goals'))
         <li>
             <a href="javascript:void(0);" class="menu-toggle">
                 <i class="material-icons">donut_large</i>
@@ -358,7 +358,7 @@
                 </li>
             </ul>
         </li>
-    @endif
+    @endif --}}
 
     @if(hasPermission('statistics'))
 
@@ -402,7 +402,7 @@
         <li>
             <a class="check_active" href="{{route('admin.desire.index')}}">
                 <i class="material-icons">layers</i>
-                <span>الراغبين </span>
+                <span> الراغبين </span>
             </a>
         </li>
     @endif

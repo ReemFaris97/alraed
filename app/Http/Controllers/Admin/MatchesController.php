@@ -93,7 +93,9 @@ class MatchesController extends Controller
             'stadium'=>'required|string|max:191',
             'ar_name'=>'required|string|max:191',
             'en_name'=>'required|string|max:191',
-            'date'=>'required'
+            'date'=>'required',
+            'goals_first_team' => 'nullable|numeric',
+            'goals_second_team' => 'nullable|numeric'
         ]);
         $inputs=$request->all();
         $inputs['date'] = Carbon::parse($request->date);
@@ -113,6 +115,17 @@ class MatchesController extends Controller
     {
         $match->delete();
         popup('delete');
+        return back();
+    }
+
+    public function addGoals(Request $request, Match $match)
+    {
+        request()->validate([
+            'goals_first_team' => 'required|numeric',
+            'goals_second_team' => 'required|numeric'
+        ]);
+        $match->update(request()->only(['goals_first_team', 'goals_second_team']));
+        popup('add');
         return back();
     }
 }

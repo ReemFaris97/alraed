@@ -19,7 +19,7 @@ Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin',
     //GENERAL
     Route::resource('banners', 'BannersController')->middleware('permission:banners');
     Route::resource('partners', 'PartnersController')->middleware('permission:partners');
-    Route::resource('our-team', 'AlraedPlayersController')->middleware('permission:our-team');
+    //Route::resource('our-team', 'AlraedPlayersController')->middleware('permission:our-team');
     Route::resource('multimedia', 'MultiMediaController')->middleware('permission:multimedia');
     Route::resource('categories', 'CategoriesController')->middleware('permission:categories');
     Route::resource('news', 'NewsController')->middleware('permission:news');
@@ -28,12 +28,13 @@ Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin',
     //PLAYERS
     Route::resource('countries', 'CountriesController')->middleware('permission:countries');
     Route::resource('teams', 'TeamsController')->middleware('permission:teams');
-    Route::resource('players', 'TeamPlayersController')->middleware('permission:players');
+    //Route::resource('players', 'TeamPlayersController')->middleware('permission:players');
 
     //MATCHES
     Route::resource('champions', 'ChampionsController')->middleware('permission:champions');
     Route::resource('matches', 'MatchesController')->middleware('permission:matches');
-    Route::resource('goals', 'GoalsController')->middleware('permission:goals');
+    Route::put('add-goals/{match}', 'MatchesController@addGoals')->name('addGoals')->middleware('permission:matches');
+    //Route::resource('goals', 'GoalsController')->middleware('permission:goals');
     Route::resource('statistics', 'StatisticsController')->middleware('permission:statistics');
 
     //Volunteers and Desires

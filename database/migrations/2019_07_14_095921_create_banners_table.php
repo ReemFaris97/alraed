@@ -18,8 +18,8 @@ class CreateBannersTable extends Migration
             $table->string('image');
             $table->string('ar_title');
             $table->string('en_title');
-            $table->text('ar_description');;
-            $table->text('en_description');;
+            $table->text('ar_description')->nullable();
+            $table->text('en_description')->nullable();
             $table->timestamps();
         });
     }

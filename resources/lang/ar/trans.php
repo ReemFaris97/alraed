@@ -1,4 +1,4 @@
-\<?php  
+<?php  
 
 return [
 
@@ -110,5 +110,5 @@ return [
 	'send' => 'إرسال',
 	'open' => 'مفتوح',
 	'optional'=>'اختياري',
-    'soical_responsible' => 'المسئولية الاجتماعية',
+    'soical_responsible' => 'المسؤولية الإجتماعية',
 ];
