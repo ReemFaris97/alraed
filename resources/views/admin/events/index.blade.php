@@ -17,7 +17,7 @@
                         كل الفاعليات
                     </h2>
                     <ul class="header-dropdown m-r--5">
-                        <a href="{{route('admin.news.create')}}">
+                        <a href="{{route('admin.event.create')}}">
                             <button class="btn btn-success">إضافة فاعلية جديد</button>
                         </a>
                     </ul>
