@@ -31,7 +31,7 @@
 </div>
 
 <div class="form-group form-float">
-    <label class="form-label">وصف الفاعلية بالانجليزية</label>
+    <label class="form-label">الصور أو الفيديوهات</label>
     <div class="form-line">
         <input type="file" name="attach[]" class="form-control" multiple="">
     </div>
