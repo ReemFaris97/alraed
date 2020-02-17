@@ -1,5 +1,14 @@
-
-function NewsFunction() {
+/**
+ * main.js
+ * http://www.codrops.com
+ *
+ * Licensed under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ * 
+ * Copyright 2015, Codrops
+ * http://www.codrops.com
+ */
+(function() {
 
 	var bodyEl = document.body,
 		docElem = window.document.documentElement,
@@ -33,7 +42,7 @@ function NewsFunction() {
 		lockScroll = false, xscroll, yscroll,
 		isAnimating = false,
 		menuCtrl = document.getElementById('menu-toggle'),
-		menuCloseCtrl = $('#close-it');
+		menuCloseCtrl = $('.close-button');
 
 	/**
 	 * gets the viewport width and height
@@ -198,4 +207,5 @@ function NewsFunction() {
 	}
 
 	init();
-};
+
+})();

@@ -2,26 +2,19 @@
 
 @section('styles')
 		<link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/news.css" />
-		{{-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-		<script src="https://unpkg.com/axios/dist/axios.min.js"></script> --}}
 		<script src="{{ url('site') }}/js/modernizr.custom.js"></script>
-
 @endsection
-
 @section('content')
-
 <!--     *************************   Beginnig of ٍSection ********************-->
-			<div class="container single-section-padding news-sec-wrapper">
-				<div class="whole-section-title-wrapper">
-					<h4 class="the-above-title"> @lang('trans.alraed')</h4>
-					<h3 class="the-section-title">
-						<span class="wow animated">N</span>
-						<span class="wow animated">E</span>
-						<span class="wow animated">W</span>
-						<span class="wow animated">S</span>
-					</h3>
-
-
+	<div class="container single-section-padding news-sec-wrapper">
+		<div class="whole-section-title-wrapper">
+			<h4 class="the-above-title"> @lang('trans.alraed')</h4>
+			<h3 class="the-section-title">
+				<span class="wow animated">N</span>
+				<span class="wow animated">E</span>
+				<span class="wow animated">W</span>
+				<span class="wow animated">S</span>
+			</h3>
 			<button id="menu-toggle" class="menu-toggle"><span>Menu</span></button>
 			<div id="theGrid" class="main">
 				<section class="grid">
@@ -72,12 +65,8 @@
 			</div>
 		</div><!-- /container -->
 <!--     *************************  End      of ٍSection ********************-->
-
 @endsection
-
 @section('scripts')
-
-		
 		<script type="text/javascript" src="{{ url('site') }}/js/news/classie.js"></script>
 		<script type="text/javascript" src="{{ url('site') }}/js/news/main-news.js"></script>
 		{{-- <script type="text/javascript">
