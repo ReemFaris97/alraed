@@ -45,7 +45,7 @@
                                 <td>{{$item->SecondTeam->ar_name }}</td>
                                 <td>{{$item->stadium }}</td>
                                 <td>
-                                    @if($item->goals_first_team)
+                                    @if(!is_null($item->goals_first_team))
                                     {{ $item->goals_first_team.' : '.$item->goals_second_team }}
                                     @else
                                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#matchNo_{{ $item->id }}">
