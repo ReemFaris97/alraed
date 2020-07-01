@@ -36,4 +36,24 @@
     .sidebar .user-info {
         height: 82px;
     }
+	
+	
+	table , table * , table.table-bordered.dataTable , table.table-bordered.dataTable * , table.table-bordered.dataTable th , table.table-bordered.dataTable td{
+		direction: rtl!important;
+		text-align: right!important;
+		letter-spacing: 0!important
+	}
+
+@media print{
+	table , table * , table.table-bordered.dataTable , table.table-bordered.dataTable * , table.table-bordered.dataTable th , table.table-bordered.dataTable td{
+		direction: rtl!important;
+		text-align: right!important;
+		letter-spacing: 0!important
+	}
+}
+
+
+	
 </style>
+
+

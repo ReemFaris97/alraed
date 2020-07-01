@@ -53,8 +53,9 @@
          <header>
         <div class="nav-wrapper" id="the-nav-bar">
             <div class="logo-container">
-                <a href="{{ url('/') }}">
+                <a href="{{ url('/') }}" class="two-side-logos">
                     <img class="logo" src="{{ url('site') }}/img/logo.png" alt="Club Logo">
+                    <img class="logo" src="{{ url('site') }}/img/wefaq-logo.png" alt="Club Logo">
                 </a>    
             </div>
             <nav>

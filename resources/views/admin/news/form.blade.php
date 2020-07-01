@@ -40,6 +40,7 @@
     </div>
 </div>
 
+
 <div class="form-group form-float">
     <label class="form-label">العنوان بالعربى</label>
     <div class="form-line">
@@ -67,5 +68,29 @@
         {!! Form::textarea("en_description",null,['class'=>'form-control','placeholder'=>'write new  contenent ...'])!!}
     </div>
 </div>
+
+<div class="form-group form-float">
+    <label class="form-label">رابط الفيديو</label>
+    <div class="form-line">
+        {!! Form::url("video_title",null,['class'=>'form-control','placeholder'=>' الصق رابط للفيديو ...'])!!}
+    </div>
+</div>
+
+
+<div class="form-group form-float">
+    <label class="form-label">صور الخبر</label>
+    
+    <div class="multiple-uploader">
+              <div class="btn-file  fileinput-button">
+                  <span>اضافة صور توضيحية </span>
+                  <input type="file" name="image[]" id="files" multiple accept="image/jpeg, image/png, image/gif,"><br/>
+              </div>
+              <output id="Filelist"></output>
+          </div>
+    
+    
+</div>
+
+
 
 <button class="btn btn-primary waves-effect" type="submit">حفظ</button>

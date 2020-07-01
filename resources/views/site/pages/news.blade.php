@@ -1,9 +1,14 @@
 @extends('site.layouts.app')
 
 @section('styles')
+			<!--		Owl Carousel-->
+        <link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/owl.carousel.min.css" />
+        <link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/owl.theme.default.min.css" />
 		<link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/news.css" />
 		<script src="{{ url('site') }}/js/modernizr.custom.js"></script>
 @endsection
+
+
 @section('content')
 <!--     *************************   Beginnig of ٍSection ********************-->
 	<div class="container single-section-padding news-sec-wrapper">
@@ -51,9 +56,47 @@
 								<span class="meta__date"><i class="fa fa-calendar-o"></i>{{$news_s->created_at->format('d M') }}</span>
 								<span class="meta__reading-time"><i class="fa fa-clock-o"></i> {{ $news_s->created_at->format('h:i a') }}</span>
 							</div>
+							
+<!--							images slider here if isset-->
+							<div class="inner-news-slider owl-carousel owl-theme news-slider-caro">
+								<div class="item">
+									<div class="news-image-wrapper">
+									<a href="https://alraedsc.com/storage/photos/MU3jqp7Mq0KHjGTQNHjNexNHrbSaJtFzR1eefbXn.jpeg" data-fancybox="news">
+										<img src="https://alraedsc.com/storage/photos/MU3jqp7Mq0KHjGTQNHjNexNHrbSaJtFzR1eefbXn.jpeg" alt="صورة للخبر">
+										</a>
+									</div>
+								</div>
+								<div class="item">
+									<div class="news-image-wrapper">
+									<a href="https://alraedsc.com/storage/photos/mMqeIGhgWFwFcNGx8Zu7GA68UGiy58SgNs2kbnHh.jpeg" data-fancybox="news">
+										<img src="https://alraedsc.com/storage/photos/mMqeIGhgWFwFcNGx8Zu7GA68UGiy58SgNs2kbnHh.jpeg" alt="صورة للخبر">
+										</a>
+									</div>
+								</div>
+								<div class="item">
+									<div class="news-image-wrapper">
+									<a href="https://alraedsc.com/storage/photos/E7fGVOiIOLNp9J6veJchEEIHu4ztGjBC15A7DPm2.jpeg" data-fancybox="news">
+										<img src="https://alraedsc.com/storage/photos/E7fGVOiIOLNp9J6veJchEEIHu4ztGjBC15A7DPm2.jpeg" alt="صورة للخبر">
+										</a>
+									</div>
+								</div>
+							</div>
+									
+
+							
 							<p>
 								{{ $news_s->description }}
 							</p>
+							
+<!--							Video here if isset-->
+							<div class="w-80-percent">
+								<div class="embed-responsive embed-responsive-16by9">
+							  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+							</div>
+							</div>
+
+							
+							
 						</article>
 						@endforeach
 						
@@ -67,6 +110,10 @@
 <!--     *************************  End      of ٍSection ********************-->
 @endsection
 @section('scripts')
+<!--		Fancy Box-->
+		<script type="text/javascript" src="{{ url('site') }}/js/jquery.fancybox.min.js"></script>
+		<!--		Owl Carousel-->
+		<script type="text/javascript" src="{{ url('site') }}/js/owl.carousel.min.js"></script>
 		<script type="text/javascript" src="{{ url('site') }}/js/news/classie.js"></script>
 		<script type="text/javascript" src="{{ url('site') }}/js/news/main-news.js"></script>
 		{{-- <script type="text/javascript">
@@ -76,4 +123,30 @@
 				});
 			})
 		</script> --}}
+		
+		
+		
+		
+		<script>
+	
+$(document).ready(function(){
+		$('.news-slider-caro').owlCarousel({
+	animateOut: 'slideOutDown',
+	animateIn: 'flipInX',
+	items:1,
+	margin:0,
+	loop:true,
+	stagePadding:0,
+	dots:true,
+	rtl:true,
+	nav:false,
+    autoplay:true,
+    autoplayTimeout:5000,
+    autoplaySpeed:5000,
+});
+})
+
+		</script>
+		
+		
 @endsection

@@ -984,3 +984,35 @@ button#menu-toggle {
 }
 
 /*# sourceMappingURL=style1.css.map */
+.news-slider-caro{
+	margin-top: 30px;
+	margin-bottom: 15px;
+	
+}
+
+.w-80-percent{
+width: 80%;	
+	 margin-right: 10%;
+	margin-top: 30px
+}
+
+.news-slider-caro .news-image-wrapper {
+    height: 300px;
+    width: 80%;
+    transform: none !important;
+    overflow: hidden;
+    background: transparent;
+    float: right;
+    margin-right: 10%;
+}
+.news-slider-caro  .news-image-wrapper img {
+    width: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+    height: 300px;
+    transform: none !important;
+}
+
+.news-slider-caro.owl-theme .owl-dots .owl-dot.active span,.news-slider-caro.owl-theme .owl-dots .owl-dot:hover span{
+	background  : #B7202B
+}

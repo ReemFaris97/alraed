@@ -23,7 +23,7 @@
                     </ul>
                 </div>
                 <div class="body">
-                    <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                    <table class="table table-bordered table-striped table-hover dataTable js-exportable" dir="rtl">
                         <thead>
                         <tr>
                             <th>#</th>

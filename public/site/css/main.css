@@ -601,7 +601,7 @@ input:focus {
 
 @media (min-width: 1200px) {
     .nav-wrapper .nav-tab a {
-        padding: 10px 10px;
+        padding: 3.5px;
         margin: 0;
         display: inline-block;
     }
@@ -2999,4 +2999,12 @@ Remove or comment-out the code block below to see how the browser will fall-back
 	.gallery-item {
 		margin: 0;
 	}
+}
+
+a.two-side-logos {
+    display: inline-flex;
+}
+a.two-side-logos img {
+    object-fit: contain;
+    height: 70px;
 }
