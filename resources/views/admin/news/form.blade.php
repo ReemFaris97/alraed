@@ -69,12 +69,7 @@
     </div>
 </div>
 
-<div class="form-group form-float">
-    <label class="form-label">رابط الفيديو</label>
-    <div class="form-line">
-        {!! Form::url("video_title",null,['class'=>'form-control','placeholder'=>' الصق رابط للفيديو ...'])!!}
-    </div>
-</div>
+
 
 
 <div class="form-group form-float">
