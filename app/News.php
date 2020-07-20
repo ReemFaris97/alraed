@@ -31,7 +31,10 @@ class News extends Model
         return getLang($this, 'writer_name');
     }
 
-
+    public function images()
+    {
+        return $this->hasMany(NewsImage::class, 'news_id');
+    }
 
 
 }

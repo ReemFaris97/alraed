@@ -41,7 +41,7 @@ class AssistantsController extends Controller
             'email'=>'required|email|max:255|unique:users',
             'phone'=>'required|unique:users',
             'password'=>'required|min:6|confirmed',
-            'image'=>'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image'=>'nullable|image',
 //            'is_active'=>'required'
         ]);
         $inputs=$request->all();
@@ -94,11 +94,11 @@ class AssistantsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'name'=>'required|string|max:191|unique:users,name' . $user->id,
-            'email'=>'required|email|max:255|unique:users,email'. $user->id,
-            'phone'=>'required|max:10|unique:users,phone' .$user->id,
+            'name'=>'required|string|max:191|unique:users,name' . $id,
+            'email'=>'required|email|max:255|unique:users,email'. $id,
+            'phone'=>'required|max:10|unique:users,phone' .$id,
             'password'=>'required|min:6|confirmed',
-            'image'=>'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image'=>'sometimes|image',
         ]);
 
         $user = User::findOrFail($id);

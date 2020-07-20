@@ -42,7 +42,7 @@ class AdminsController extends Controller
             'email'=>'required|email|max:255|unique:users',
             'phone'=>'required|unique:users',
             'password'=>'required|min:6|confirmed',
-            'image'=>'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image'=>'nullable|image',
 //            'is_active'=>'required'
         ]);
          $inputs=$request->all();
@@ -99,7 +99,7 @@ class AdminsController extends Controller
             'email'=>'required|email|max:255|unique:users,email'. $user->id,
             'phone'=>'required|max:10|unique:users,phone' .$user->id,
             'password'=>'required|min:6|confirmed',
-            'image'=>'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image'=>'sometimes|image',
 //            'is_active'=>'required'
         ]);
 

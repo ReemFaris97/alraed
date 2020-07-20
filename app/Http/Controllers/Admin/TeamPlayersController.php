@@ -47,7 +47,7 @@ class TeamPlayersController extends Controller
             'length'=>'required|numeric',
             'position'=>'required|in:goal_keeper,defender,mid_line,attacking',
             'appearance'=>'required|numeric',
-            'image'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'image'=>'required|image'
         ]);
 
         $inputs=$request->all();
@@ -103,7 +103,7 @@ class TeamPlayersController extends Controller
             'length'=>'required|numeric',
             'position'=>'required|in:goal_keeper,defender,mid_line,attacking',
             'appearance'=>'required|numeric',
-            'image'=>'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'image'=>'sometimes|image'
         ]);
 
         $inputs=$request->all();

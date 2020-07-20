@@ -59,27 +59,29 @@
 							
 <!--							images slider here if isset-->
 							<div class="inner-news-slider owl-carousel owl-theme news-slider-caro">
+								@foreach($news_s->images as $img)
 								<div class="item">
 									<div class="news-image-wrapper">
-									<a href="https://alraedsc.com/storage/photos/MU3jqp7Mq0KHjGTQNHjNexNHrbSaJtFzR1eefbXn.jpeg" data-fancybox="news">
-										<img src="https://alraedsc.com/storage/photos/MU3jqp7Mq0KHjGTQNHjNexNHrbSaJtFzR1eefbXn.jpeg" alt="صورة للخبر">
+									<a href="{{ getimg($img->image) }}" data-fancybox="news">
+										<img src="{{ getimg($img->image) }}" alt="صورة للخبر">
 										</a>
 									</div>
 								</div>
-								<div class="item">
-									<div class="news-image-wrapper">
-									<a href="https://alraedsc.com/storage/photos/mMqeIGhgWFwFcNGx8Zu7GA68UGiy58SgNs2kbnHh.jpeg" data-fancybox="news">
-										<img src="https://alraedsc.com/storage/photos/mMqeIGhgWFwFcNGx8Zu7GA68UGiy58SgNs2kbnHh.jpeg" alt="صورة للخبر">
-										</a>
-									</div>
-								</div>
-								<div class="item">
-									<div class="news-image-wrapper">
-									<a href="https://alraedsc.com/storage/photos/E7fGVOiIOLNp9J6veJchEEIHu4ztGjBC15A7DPm2.jpeg" data-fancybox="news">
-										<img src="https://alraedsc.com/storage/photos/E7fGVOiIOLNp9J6veJchEEIHu4ztGjBC15A7DPm2.jpeg" alt="صورة للخبر">
-										</a>
-									</div>
-								</div>
+								@endforeach
+{{--								<div class="item">--}}
+{{--									<div class="news-image-wrapper">--}}
+{{--									<a href="https://alraedsc.com/storage/photos/mMqeIGhgWFwFcNGx8Zu7GA68UGiy58SgNs2kbnHh.jpeg" data-fancybox="news">--}}
+{{--										<img src="https://alraedsc.com/storage/photos/mMqeIGhgWFwFcNGx8Zu7GA68UGiy58SgNs2kbnHh.jpeg" alt="صورة للخبر">--}}
+{{--										</a>--}}
+{{--									</div>--}}
+{{--								</div>--}}
+{{--								<div class="item">--}}
+{{--									<div class="news-image-wrapper">--}}
+{{--									<a href="https://alraedsc.com/storage/photos/E7fGVOiIOLNp9J6veJchEEIHu4ztGjBC15A7DPm2.jpeg" data-fancybox="news">--}}
+{{--										<img src="https://alraedsc.com/storage/photos/E7fGVOiIOLNp9J6veJchEEIHu4ztGjBC15A7DPm2.jpeg" alt="صورة للخبر">--}}
+{{--										</a>--}}
+{{--									</div>--}}
+{{--								</div>--}}
 							</div>
 									
 

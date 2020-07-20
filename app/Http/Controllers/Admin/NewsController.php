@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\News;
+use App\NewsImage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -45,7 +46,7 @@ class NewsController extends Controller
             'en_description' => 'required|string',
             'ar_writer_name' => 'required|string|max:191',
             'en_writer_name' => 'required|string|max:191',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'image' => 'required'
         ]);
 
         $inputs = $request->all();
@@ -53,7 +54,15 @@ class NewsController extends Controller
         if ($request->hasFile('image')) {
             $inputs['image'] = uploader($request, 'image');
         }
-        News::create($inputs);
+
+        $news = News::create($inputs);
+        if ($request->has('images')) {
+            $imgs = $request->images;
+            foreach ($imgs as $img) {
+                $news->images()->create(['image' => uploadFile($img)]);
+            }
+        }
+
         popup('add');
         return back();
     }
@@ -97,7 +106,7 @@ class NewsController extends Controller
             'en_description' => 'required|string',
             'ar_writer_name' => 'required|string|max:191',
             'en_writer_name' => 'required|string|max:191',
-            'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'image' => 'sometimes'
         ]);
 
         $inputs = $request->all();
@@ -107,6 +116,14 @@ class NewsController extends Controller
         }
 
         $news->update($inputs);
+
+        if ($request->has('images')) {
+            $imgs = $request->images;
+            foreach ($imgs as $img) {
+                $news->images()->create(['image' => uploadFile($img)]);
+            }
+        }
+
         popup('update');
         return back();
     }
@@ -120,6 +137,15 @@ class NewsController extends Controller
     public function destroy(News $news)
     {
         $news->delete();
+        popup('delete');
+        return back();
+    }
+
+    public function removeImage($id)
+    {
+        $img = NewsImage::find($id);
+        deleteImg($img->image);
+        $img->delete();
         popup('delete');
         return back();
     }

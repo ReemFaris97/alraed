@@ -1,4 +1,3 @@
-
 @include('admin.common.errors')
 @include('admin.common.alert')
 
@@ -26,7 +25,7 @@
 
 @if (isset($item->image))
     <div class="form-group form-float">
-        <label class="form-label">صورة الكاتب الحالية  :</label>
+        <label class="form-label">صورة الكاتب الحالية :</label>
         <div class="form-line">
             <img class="img-preview" src="{{getimg($item->image)}}" style="width: 50px; height: 50px">
         </div>
@@ -70,22 +69,30 @@
 </div>
 
 
-
-
 <div class="form-group form-float">
     <label class="form-label">صور الخبر</label>
-    
-    <div class="multiple-uploader">
-              <div class="btn-file  fileinput-button">
-                  <span>اضافة صور توضيحية </span>
-                  <input type="file" name="image[]" id="files" multiple accept="image/jpeg, image/png, image/gif,"><br/>
-              </div>
-              <output id="Filelist"></output>
-          </div>
-    
-    
-</div>
 
+    <div class="multiple-uploader">
+        <div class="btn-file  fileinput-button">
+            <span>اضافة صور توضيحية </span>
+            <input type="file" name="images[]" multiple id="files" accept="image/*"><br/>
+        </div>
+        <output id="Filelist">
+        </output>
+    </div>
+
+    @if(isset($item))
+        <div class="row">
+        @foreach($item->images as $img)
+            <div class="col-md-3">
+                <img class="thumb" height="80" width="120" src="{{ getimg($img->image) }}" alt="">
+                <a href="{{ route('admin.removeImg', $img->id) }}" class="btn btn-danger">حذف الصورة</a>
+            </div>
+        @endforeach
+        </div>
+    @endif
+
+</div>
 
 
 <button class="btn btn-primary waves-effect" type="submit">حفظ</button>

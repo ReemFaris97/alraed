@@ -41,7 +41,7 @@ class TeamsController extends Controller
 
             'ar_name'=>'required|string|max:191',
             'en_name'=>'required|string|max:191',
-            'image'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'image'=>'required|image'
         ]);
 
         $inputs=$request->all();
@@ -90,7 +90,7 @@ class TeamsController extends Controller
 
             'ar_name'=>'required|string|max:191',
             'en_name'=>'required|string|max:191',
-            'image'=>'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+            'image'=>'sometimes|image'
         ]);
 
         $inputs=$request->all();

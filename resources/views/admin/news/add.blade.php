@@ -155,7 +155,7 @@
 
    //To check file Size according to upload conditions
    function CheckFileSize(fileSize) {
-   if (fileSize < 300000) {
+   if (fileSize < 6000000) {
     return true;
    } else {
     return false;
@@ -262,4 +262,5 @@
    arrCounter = arrCounter + 1;
    }
 </script>
-@endscetion
+
+@endsection

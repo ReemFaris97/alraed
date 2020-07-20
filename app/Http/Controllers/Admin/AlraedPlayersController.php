@@ -44,7 +44,7 @@ class AlraedPlayersController extends Controller
             'en_job_title' => 'required|string|max:191',
             'ar_description' => 'required|string',
             'en_description' => 'required|string',
-            'image' => 'required|image|'
+            'image' => 'required|image'
         ]);
 
         $inputs = $request->all();
@@ -95,7 +95,7 @@ class AlraedPlayersController extends Controller
             'en_job_title' => 'required|string|max:191',
             'ar_description' => 'required|string',
             'en_description' => 'required|string',
-            'image' => 'sometimes|image|'
+            'image' => 'sometimes|image'
         ]);
 
         $inputs = $request->all();

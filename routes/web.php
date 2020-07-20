@@ -50,6 +50,8 @@ Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin',
     //Ajax Routes
     Route::get('ajax-team/{team_id}', 'GoalsController@TeamAjax');
 
+    Route::get('remove-img/{id}', 'NewsController@removeImage')->name('removeImg');
+
 });
 
 //*******************************  END DASHBOARD ROUTES  ***********************************
