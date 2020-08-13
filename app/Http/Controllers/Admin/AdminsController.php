@@ -94,6 +94,8 @@ class AdminsController extends Controller
      */
     public function update(Request $request, $id)
     {
+                $user = User::findOrFail($id);
+
         $this->validate($request,[
             'name'=>'required|string|max:191|unique:users,name' . $user->id,
             'email'=>'required|email|max:255|unique:users,email'. $user->id,
@@ -103,7 +105,6 @@ class AdminsController extends Controller
 //            'is_active'=>'required'
         ]);
 
-        $user = User::findOrFail($id);
 
         $inputs=$request->all();
 
