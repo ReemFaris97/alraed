@@ -59,6 +59,20 @@ Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin',
 
 //*******************************  WEBSITE ROUTES  ***********************************
 
+
+Route::get('/setlocale/{locale}', function ($lang) {
+//    dd('hi');
+    if (array_key_exists($lang, [
+        'ar' => 'arabic',
+        'en' => 'English',
+
+    ])) {
+        \Session::put('applocale', $lang);
+
+    }
+    return back();
+})->name('lang');
+
 Route::group(['namespace' => 'Site'], function () {
 
     Route::get('/', 'HomeController@index');

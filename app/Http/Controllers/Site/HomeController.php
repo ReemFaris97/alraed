@@ -50,23 +50,23 @@ class HomeController extends Controller
     public function schedule()
     {
         $next_match = Match::whereDate('date', '>=', date('Y-m-d H:i:s'))->oldest()->first();
-        
-        if (!is_null($next_match)) { 
+
+        if (!is_null($next_match)) {
            $next_matches = Match::whereDate('date', '>=', date('Y-m-d H:i:s'))->where('id', '<>', $next_match->id)->oldest()->limit(8)->get();
         } else {
             $next_matches = [];
         }
-        return view('site.pages.table', compact('next_match', 'next_matches'));        
+        return view('site.pages.table', compact('next_match', 'next_matches'));
     }
 
     public function matchDetails(Match $match)
     {
         $previous_matches = Match::whereDate('date', '<=', date('Y-m-d H:i:s'))->where('id', '<>', $match->id)->where(function($q) use ($match){
-          $q->where('first_team_id', $match->first_team_id)->where('second_team_id', $match->second_team_id);  
+          $q->where('first_team_id', $match->first_team_id)->where('second_team_id', $match->second_team_id);
         })->orWhere(function($q) use ($match){
           $q->where('first_team_id', $match->second_team_id)->where('second_team_id', $match->first_team_id);
         })->oldest('date')->limit(10)->get();
-        
+
         return view('site.pages.match-details', compact('match', 'previous_matches'));
     }
 
@@ -98,7 +98,7 @@ class HomeController extends Controller
 
     public function multimedia()
     {
-        $multimedia = Multimedia::oldest()->paginate(10);
+        $multimedia = Multimedia::latest()->paginate(10);
         return view('site.pages.multimedia', compact('multimedia'));
     }
 
@@ -164,7 +164,7 @@ class HomeController extends Controller
         Desire::create($request->all());
         return back()->with('success', __('trans.add_success'));
     }
-    
+
     public function soical_responsible()
     {
         $events = Event::latest()->paginate(15);

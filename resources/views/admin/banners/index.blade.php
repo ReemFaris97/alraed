@@ -23,7 +23,7 @@
                     </ul>
                 </div>
                 <div class="body">
-                    <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                    <table class="table table-bordered table-striped table-hover dataTable js-exportable" id="orders">
                         <thead>
                         <tr>
                             <th>#</th>
@@ -45,7 +45,7 @@
                                       <source src="{{getimg($item->image)}}" type="video/mp4">
                                       {{-- <source src="movie.ogg" type="video/ogg"> --}}
                                     Your browser does not support the video tag.
-                                    </video> 
+                                    </video>
                                     @else
                                     <img src="{{getimg($item->image)}}" style="width: 50px; height: 50px"></td>
                                     @endif

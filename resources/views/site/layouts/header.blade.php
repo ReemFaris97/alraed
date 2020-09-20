@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ar">
     <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>نادى الرائد السعودي :: الصفحة الرئيسية</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0 , user-scalable=no"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0 , user-scalable=no">
         <meta name="description" content="Al'Ra'ed is A professional spots club located in Saudi Arabia , Al qassiem" />
         <meta name="keywords" content="Al Ra'ed, Saudi Club, Alra'ed Football Club, Alra'ed SC, Alraed Club, Al-raed, Saudi League" />
 		<meta name="HandheldFriendly" content="True">
@@ -40,12 +40,12 @@
 
 <!--	********************Begin	Special Styles for this page only *************************-->
 		@yield('styles')
-       
+
 <!--	********************End  	Special Styles for this page only *************************-->
                 <!--- newsticker -->
         <link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/breaking-news-ticker.css" />
         <link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/demo-page-styles.css" />
-        
+
         <link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/main.css" />
     </head>
     <body>
@@ -56,7 +56,7 @@
                 <a href="{{ url('/') }}" class="two-side-logos">
                     <img class="logo" src="{{ url('site') }}/img/logo.png" alt="Club Logo">
                     <img class="logo" src="{{ url('site') }}/img/wefaq-logo.png" alt="Club Logo">
-                </a>    
+                </a>
             </div>
             <nav>
                 <input class="hidden" type="checkbox" id="menuToggle">
@@ -103,12 +103,29 @@
                         		</div>
                         	</div>
                         </li>
+                        <div id="changeLang">
+
+                @if (App::getLocale()=='en')
+
+                <a href="{{route('lang',['ar'])}}">
+                    العربية
+                    <!--                        <img src="{{asset('website/img/ar.png')}}" alt="">-->
+                </a>
+                @else
+
+                <a href="{{route('lang',['en'])}}">
+                    English
+                    <!--                        <img src="{{asset('website/img/en.png')}}" alt="">-->
+                </a>
+                @endif
+
+            </div>
                     </ul>
                 </div>
             </nav>
         </div>
-             
-             
-             
+
+
+
     </header>
 <!--     *************************   End      of Header  ********************-->

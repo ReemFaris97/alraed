@@ -28,6 +28,7 @@
     $(document).ready(function() {
         $('table.dataTable').DataTable( {
             responsive: true,
+               paging: false
             dom: 'Bfrtip',
 			buttons: [
 			{
@@ -41,8 +42,18 @@
 				bom: true
 			}, 'copy', 'excel', 'pdf', 'print'
 ]
-			
+
 
         } );
     } );
+</script>
+
+<script>
+    $(document).ready(function() {
+        $('#orders').DataTable( {
+            "order": [[ 0, "desc" ]]
+        } );
+    } );
+
+
 </script>
