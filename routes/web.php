@@ -61,7 +61,7 @@ Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin',
 
 
 Route::get('/setlocale/{locale}', function ($lang) {
-//    dd('hi');
+   // dd($lang);
     if (array_key_exists($lang, [
         'ar' => 'arabic',
         'en' => 'English',
@@ -73,7 +73,7 @@ Route::get('/setlocale/{locale}', function ($lang) {
     return back();
 })->name('lang');
 
-Route::group(['namespace' => 'Site'], function () {
+Route::group(['namespace' => 'Site', 'middleware'=>'language'], function () {
 
     Route::get('/', 'HomeController@index');
     Route::get('first-team', 'HomeController@fTeam');
