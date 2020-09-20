@@ -1,17 +1,17 @@
 RewriteEngine on 
 # Change example.com to be your main domain. 
-RewriteCond %{HTTP_HOST} ^(www.)?alraedsc.com$ 
 # Change 'subdirectory' to be the directory you will use for your main domain. 
-RewriteCond %{REQUEST_URI} !^/public/ 
 # Don't change the following two lines. 
+# Change 'subdirectory' to be the directory you will use for your main domain. 
+RewriteCond %{HTTP_HOST} ^(www.)?alraedclub.sa$ 
+RewriteCond %{REQUEST_URI} !^/public/ 
 RewriteCond %{REQUEST_FILENAME} !-f 
 RewriteCond %{REQUEST_FILENAME} !-d 
-# Change 'subdirectory' to be the directory you will use for your main domain. 
 RewriteRule ^(.*)$ /public/$1 
 # Change example.com to be your main domain again. 
 # Change 'subdirectory' to be the directory you will use for your main domain 
 # followed by / then the main file for your site, index.php, index.html, etc. 
-RewriteCond %{HTTP_HOST} ^(www.)?alraedsc.com$ 
+RewriteCond %{HTTP_HOST} ^(www.)?alraedclub.sa$ 
 RewriteRule ^(/)?$ public/ [L]
 
 # Disable index view
@@ -104,6 +104,38 @@ Options -Indexes
     # Javascript 
     ExpiresByType application/javascript "access plus 1 year"
 </IfModule>
+
+# BEGIN cPanel-generated php ini directives, do not edit
+# Manual editing of this file may result in unexpected behavior.
+# To make changes to this file, use the cPanel MultiPHP INI Editor (Home >> Software >> MultiPHP INI Editor)
+# For more information, read our documentation (https://go.cpanel.net/EA4ModifyINI)
+<IfModule php7_module>
+   php_flag display_errors Off
+   php_value max_execution_time 90
+   php_value max_input_time 90
+   php_value max_input_vars 1000
+   php_value memory_limit -1
+   php_value post_max_size 800M
+   php_value session.gc_maxlifetime 1440
+   php_value session.save_path "/var/cpanel/php/sessions/ea-php71"
+   php_value upload_max_filesize 200M
+   php_flag zlib.output_compression Off
+</IfModule>
+<IfModule lsapi_module>
+   php_flag display_errors Off
+   php_value max_execution_time 90
+   php_value max_input_time 90
+   php_value max_input_vars 1000
+   php_value memory_limit -1
+   php_value post_max_size 800M
+   php_value session.gc_maxlifetime 1440
+   php_value session.save_path "/var/cpanel/php/sessions/ea-php71"
+   php_value upload_max_filesize 200M
+   php_flag zlib.output_compression Off
+</IfModule>
+# END cPanel-generated php ini directives, do not edit
+RewriteCond %{HTTP_HOST} ^alraedclub\.com\.sa$
+RewriteRule ^/?$ "https\:\/\/alraedclub\.sa\/" [R=301,L]
 
 # php -- BEGIN cPanel-generated handler, do not edit
 # Set the “ea-php71” package as the default “PHP” programming language.

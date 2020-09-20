@@ -97,9 +97,9 @@ class AdminsController extends Controller
                 $user = User::findOrFail($id);
 
         $this->validate($request,[
-            'name'=>'required|string|max:191|unique:users,name' . $user->id,
-            'email'=>'required|email|max:255|unique:users,email'. $user->id,
-            'phone'=>'required|max:10|unique:users,phone' .$user->id,
+            'name'=>'required|string|max:191|unique:users,name,' . $user->id,
+            'email'=>'required|email|max:255|unique:users,email,'. $user->id,
+            'phone'=>'required|max:10|unique:users,phone,' .$user->id,
             'password'=>'required|min:6|confirmed',
             'image'=>'sometimes|image',
 //            'is_active'=>'required'

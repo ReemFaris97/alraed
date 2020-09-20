@@ -98,8 +98,8 @@
                         	<a href="#">إستمارة تسجيل</a>
                         	<div class="hoverable-droppy">
                         		<div class="hoverable-inner">
-                        			<a href="https://alraedsc.com/volunteer" target="_blank" rel="noreferrer noopener">المتطوعين</a>
-                        		<a href="https://alraedsc.com/desires" target="_blank" rel="noreferrer noopener">الراغبين</a>
+                        			<a href="{{url('volunteer')}}" target="_blank" rel="noreferrer noopener">المتطوعين</a>
+                        		<a href="{{url('desires')}}" target="_blank" rel="noreferrer noopener">الراغبين</a>
                         		</div>
                         	</div>
                         </li>
