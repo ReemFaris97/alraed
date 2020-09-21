@@ -10,23 +10,23 @@
 					<span class="wow animated">e</span>
 					<span class="wow animated">d</span>
 				</h3>
-				
+
 				<div class="footer-contact">
 				<div class="row report-downloader">
-					<a href="{{asset('site/img/report.pdf')}}" class="first-site-btn" target="_blank" rel="noreferrer noopener">تقرير أنشطة النادي </a>
+					<a href="{{asset('site/img/report.pdf')}}" class="first-site-btn" target="_blank" rel="noreferrer noopener">@lang('trans.actitvity_report') </a>
 				</div>
 					<div class="contact-single info">
 						<div class="pacifico red-color">@lang('trans.info')</div>
 						<div><a href="mailto:{{ setting('email') }}">{{ setting('email') }}</a></div>
 						<div>
-							<a href="tel:{{ setting('phone1') }}">{{ setting('phone1') }}</a> 
-							- 
+							<a href="tel:{{ setting('phone1') }}">{{ setting('phone1') }}</a>
+							-
 							<a href="tel:{{ setting('phone2') }}">{{ setting('phone2') }}</a>
 						</div>
 					</div>
 					<div class="contact-single"><a href="#the-nav-bar" class="jump"><img src="{{ url('site') }}/img/logo.png"></a></div>
 					<div class="contact-single addrrress">
-						<div class="pacifico red-color">العنوان</div>
+						<div class="pacifico red-color">@lang('trans.address')</div>
 						<div>{{ setting('address') }}</div>
 						{{-- <div>
 							القصيم - بريدة
@@ -53,7 +53,7 @@
 			</div>
         </div>
 		<div class="container-fluid reserved-part">
-			<span>@lang('trans.developped') </span> 
+			<span>@lang('trans.developped') </span>
 			<a href="http://panorama-q.com/" rel="noreferrer noopener" target="_blank">
 				@lang('trans.panorama')
 			</a>
@@ -67,7 +67,7 @@
 		<!--        Wow-->
         <script type="text/javascript" src="{{ url('site') }}/js/wow.js"></script>
 <!--	************	Special Scripts for this page only **************** -->
-		
+
 
         @yield('scripts')
 
@@ -101,7 +101,7 @@
         })();
 
     </script>
-    
+
         <script type="text/javascript" src="{{ url('site') }}/js/main.js"></script>
 	</body>
 </html>
