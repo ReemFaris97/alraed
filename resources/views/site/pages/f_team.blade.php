@@ -1,6 +1,6 @@
 
 @extends('site.layouts.app')
-
+@section('title' , __('trans.first_team') )
 @section('styles')
 <!--<link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/imagehover.min.css" />-->
 		<!--		Panorama Fancy-->
@@ -47,7 +47,7 @@
 						  </figcaption><a href="javascript:;"></a>
 						</figure>
 						@endforeach
-						
+
 					</div>
 				</div>
 				<div class="content players-descriptions">
@@ -58,11 +58,11 @@
 						<div class="inner-player-position">{{ $t->job_position }}</div>
 						<p class="dummy-text">
 							{{ $t->description }}
-							 
+
 						</p>
 					</div>
 					@endforeach
-					
+
 					<span class="loading"></span>
 					<span class="icon close-content" title="اغلاق">
 						<img src="{{ url('site') }}/img/whistle.svg" alt="close" />

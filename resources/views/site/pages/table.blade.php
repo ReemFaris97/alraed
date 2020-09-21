@@ -1,4 +1,5 @@
 @extends('site.layouts.app')
+@section('title' , __('trans.tables') )
 @section('content')
 <div class="container single-section-padding lineup-sec-wrapper">
 			<div class="whole-section-title-wrapper">
@@ -146,5 +147,5 @@
 					</div> --}}
 				</div>
 			</div>
-		</div>	
+		</div>
 @endsection

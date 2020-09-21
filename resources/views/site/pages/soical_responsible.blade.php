@@ -1,5 +1,5 @@
 @extends('site.layouts.app')
-
+@section('title' , __('trans.soical_responsible') )
 @section('styles')
 
 

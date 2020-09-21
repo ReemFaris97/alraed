@@ -1,5 +1,5 @@
 @extends('site.layouts.app')
-
+@section('title' , __('trans.more_sports') )
 @section('styles')
 		<link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/jquery.fancybox.min.css" />
 		<script src="{{ url('site') }}/js/modernizr.custom.js"></script>

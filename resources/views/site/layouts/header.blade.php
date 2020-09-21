@@ -3,7 +3,8 @@
     <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>نادى الرائد السعودي :: الصفحة الرئيسية</title>
+        <!-- <title>نادى الرائد السعودي :: الصفحة الرئيسية</title> -->
+        <title>@lang('trans.alraed_club') :: @yield('title')</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0 , user-scalable=no">
         <meta name="description" content="Al'Ra'ed is A professional spots club located in Saudi Arabia , Al qassiem" />
         <meta name="keywords" content="Al Ra'ed, Saudi Club, Alra'ed Football Club, Alra'ed SC, Alraed Club, Al-raed, Saudi League" />

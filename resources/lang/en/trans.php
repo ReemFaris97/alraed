@@ -1,7 +1,7 @@
 <?php
 
 return [
-
+	'alraed_club'=>'Alraed Club',
 	'next_match' => 'Next Match',
 	'previous_match' => 'Previous Match',
 	'vs' => 'Vs',

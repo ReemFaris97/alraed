@@ -1,6 +1,6 @@
 
 @extends('site.layouts.app')
-
+@section('title' , __('trans.main') )
 @section('styles')
  <!--        SLit Slider-->
         <link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/style.css" />
@@ -47,7 +47,7 @@
 				              <source src="{{getimg($banner->image)}}" type="video/mp4">
 				              {{-- <source src="movie.ogg" type="video/ogg"> --}}
 				            Your browser does not support the video tag.
-				            </video> 
+				            </video>
 				            @else
                             <img class="slider-image" src="{{ getimg($banner->image) }}" alt="{{ $banner->title }}" />
                             @endif
@@ -62,7 +62,7 @@
 						</div>
 					</div>
 					@endforeach
-			
+
 				</div><!-- /sl-slider -->
 				<nav id="nav-dots" class="nav-dots">
 				@foreach($banners as $key => $banner)
@@ -163,7 +163,7 @@
 						</div>
 					</div>
 					@endforeach
-					
+
 				</div>
             </div>
         </div>
@@ -232,7 +232,7 @@
 						  </div>
 						 </section>
 						 @endforeach
-						 
+
 						 @if(!is_null($next_match))
 						 <section class="bee3D--slide">
 						  <div class="bee3D--inner">
@@ -341,7 +341,7 @@
 						  </div>
 						 </section>
 						 @endforeach
-						
+
 						 <!-- Navigation Arrows -->
 						 <span class="bee3D--nav bee3D--nav__prev"><i class="fas fa-chevron-left"></i></span>
 						 <span class="bee3D--nav bee3D--nav__next"><i class="fas fa-chevron-right"></i></span>
@@ -370,7 +370,7 @@
 						</div>
 					</div>
 					@endforeach
-					
+
 				</div>
             </div>
         </div>
@@ -389,7 +389,7 @@
 						</a>
 					</div>
 					@endforeach
-				
+
 				</div>
             </div>
         </div>
@@ -402,7 +402,7 @@
 						<h1>{{ setting('alraed') }}</h1>
 						<p> {{ preg_replace("/&#?[a-z0-9]+;/i","",strip_tags(setting('about'))) }}
 						</p>
-						
+
 							<a href="/about-alraed" class="first-site-btn">
 								@lang('trans.see_more')
 							</a>
@@ -454,13 +454,13 @@
 <!--        Slit Slider-->
 		<script type="text/javascript" src="{{ url('site') }}/js/jquery.ba-cond.min.js"></script>
 		<script type="text/javascript" src="{{ url('site') }}/js/jquery.slitslider.js"></script>
-		<script type="text/javascript">	
+		<script type="text/javascript">
 			$(function() {
 				var Page = (function() {
 					var $navArrows = $( '#nav-arrows' ),
 						$nav = $( '#nav-dots > span' ),
 						slitslider = $( '#slider' ).slitslider( {
-                            
+
 							onBeforeChange : function( slide, pos ) {
 								$nav.removeClass( 'nav-dot-current' );
 								$nav.eq( pos ).addClass( 'nav-dot-current' );
@@ -496,7 +496,7 @@
 						return { init : init };
 				})();
 				Page.init();
-			
+
 			});
 		</script>
 

@@ -1,6 +1,6 @@
 
 @extends('site.layouts.app')
-
+@section('title' , __('trans.multimedia') )
 @section('styles')
 <link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/grid.css" />
 <script src="{{ url('site') }}/js/multimedia/modernizr.custom.js"></script>
@@ -24,8 +24,8 @@
 						<span class="wow animated">I</span>
 						<span class="wow animated">A</span>
 					</h3>
-				</div>	
-			
+				</div>
+
 			<div id="grid-gallery" class="grid-gallery">
 				<section class="grid-wrap">
 					<ul class="grid">
@@ -70,11 +70,11 @@
 					<div class="info-keys icon">@lang('trans.arrow_turn')</div>
 				</section><!-- // slideshow -->
 			</div><!-- // grid-gallery -->
-			
-			
-			
+
+
+
 		</div>
-			
+
 <!--     *************************  End      of ٍSection ********************-->
 
 @endsection

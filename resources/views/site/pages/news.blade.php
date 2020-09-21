@@ -1,5 +1,5 @@
 @extends('site.layouts.app')
-
+@section('title' , __('trans.news') )
 @section('styles')
 			<!--		Owl Carousel-->
         <link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/owl.carousel.min.css" />
@@ -29,13 +29,13 @@
 						<div class="loader"></div>
 						<span class="category">{{ $s_news->category->name }}</span>
 						<div class="meta meta--preview">
-							<img class="meta__avatar" src="{{ getimg($s_news->image) }}" alt="{{ $s_news->title }}" /> 
+							<img class="meta__avatar" src="{{ getimg($s_news->image) }}" alt="{{ $s_news->title }}" />
 							<span class="meta__date"><i class="fa fa-calendar-o"></i> {{ $s_news->created_at->format('d M') }}</span>
 							<span class="meta__reading-time"><i class="fa fa-clock-o"></i> {{ $s_news->created_at->format('h:i a') }}</span>
 						</div>
 					</a>
 					@endforeach
-					
+
 					{{-- <footer class="page-meta">
 						<span class="transparented"><a href="#" class="first-site-btn">@lang('trans.see_more')</a></span>
 					</footer> --}}
@@ -56,7 +56,7 @@
 								<span class="meta__date"><i class="fa fa-calendar-o"></i>{{$news_s->created_at->format('d M') }}</span>
 								<span class="meta__reading-time"><i class="fa fa-clock-o"></i> {{ $news_s->created_at->format('h:i a') }}</span>
 							</div>
-							
+
 <!--							images slider here if isset-->
 							<div class="inner-news-slider owl-carousel owl-theme news-slider-caro">
 								@foreach($news_s->images as $img)
@@ -83,13 +83,13 @@
 {{--									</div>--}}
 {{--								</div>--}}
 							</div>
-									
 
-							
+
+
 							<p>
 								{{ $news_s->description }}
 							</p>
-							
+
 <!--							Video here if isset-->
 <!--
 							<div class="w-80-percent">
@@ -99,13 +99,13 @@
 							</div>
 -->
 
-							
-							
+
+
 						</article>
 						@endforeach
-						
-						
-						
+
+
+
 					</div>
 					<button class="close-button" id="close-it"><i class="fa fa-times"></i><span>Close</span></button>
 				</section>
@@ -127,12 +127,12 @@
 				});
 			})
 		</script> --}}
-		
-		
-		
-		
+
+
+
+
 		<script>
-	
+
 $(document).ready(function(){
 		$('.news-slider-caro').owlCarousel({
 	animateOut: 'slideOutDown',
@@ -151,6 +151,6 @@ $(document).ready(function(){
 })
 
 		</script>
-		
-		
+
+
 @endsection
