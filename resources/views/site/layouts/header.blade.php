@@ -95,7 +95,7 @@
                         </li>
                         <li class="nav-tab"><a href="{{ url('other-sports') }}">@lang('trans.more_sports')</a></li>
                         <li class="nav-tab hoverable-droppy-wrap">
-                        	<a href="#">إستمارة تسجيل</a>
+                        	<a href="#">@lang('trans.form_wish_nav')</a>
                         	<div class="hoverable-droppy">
                         		<div class="hoverable-inner">
                         			<a href="{{url('volunteer')}}" target="_blank" rel="noreferrer noopener">المتطوعين</a>

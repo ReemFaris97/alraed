@@ -1,4 +1,4 @@
-<?php  
+<?php
 
 return [
 
@@ -82,6 +82,7 @@ return [
 	'phd' => 'Ph.D.',
 	'other' => 'Other',
 	'form_wish' => 'Registration form for those wishing to play in the club',
+	'form_wish_nav'=>'Form Wish',
 	'triple_name' => 'Triple Name',
 	'birth_date' => 'Date of Birth',
 	'place_birth' => 'Place of birth',
