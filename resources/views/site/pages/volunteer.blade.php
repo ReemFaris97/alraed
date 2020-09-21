@@ -1,4 +1,5 @@
 @extends('site.layouts.app')
+@section('title' , __('trans.volunteer') )
 @section('styles')
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.11/css/bootstrap-select.min.css">
 	<link rel="stylesheet" href="{{asset('site/css/forma.css')}}">
@@ -162,7 +163,7 @@
 					  	<option value="@lang('trans.weekend_days')">@lang('trans.weekend_days')</option>
 					  	<option value="@lang('trans.days_of_seasons')">@lang('trans.days_of_seasons')</option>
 					  	<option value="@lang('trans.public_events')">@lang('trans.public_events')</option>
-					  	
+
 					  </select>
 					  @error('volunteer_time')
 					  	<span style="color: red">{{ $message }}</span>

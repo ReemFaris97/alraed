@@ -30,7 +30,7 @@
 								<div class="its-img-wrapper">
 									<img src="{{ url('site') }}/img/other/boxing.svg" alt="الملاكمة" />
 								</div>
-								<h3>الملاكمة</h3>
+								<h3>@lang('trans.boxing')</h3>
 							</a>
 						</div>
 						<div class="single-sport-link">
@@ -38,7 +38,7 @@
 								<div class="its-img-wrapper">
 									<img src="{{ url('site') }}/img/other/karate.svg" alt="الكاراتيه" />
 								</div>
-								<h3>الكاراتيه</h3>
+								<h3>@lang('trans.karate')</h3>
 							</a>
 						</div>
 						<div class="single-sport-link">
@@ -46,7 +46,7 @@
 								<div class="its-img-wrapper">
 									<img src="{{ url('site') }}/img/other/table%20tennis.svg" alt="تنس طاولة" />
 								</div>
-								<h3>تنس طاولة</h3>
+								<h3>@lang('trans.tennis')</h3>
 							</a>
 						</div>
 						<div class="single-sport-link">
@@ -54,7 +54,7 @@
 								<div class="its-img-wrapper">
 									<img src="{{ url('site') }}/img/other/volleyball.svg" alt="كرة يد" />
 								</div>
-								<h3>كرة يد</h3>
+								<h3>@lang('trans.handball')</h3>
 							</a>
 						</div>
 						<div class="single-sport-link">
@@ -62,7 +62,7 @@
 								<div class="its-img-wrapper">
 									<img src="{{ url('site') }}/img/other/esports.svg" alt="ألعاب إلكترونية" />
 								</div>
-								<h3>ألعاب إلكترونية</h3>
+								<h3>@lang('trans.video_games')</h3>
 							</a>
 						</div>
 					</div>
