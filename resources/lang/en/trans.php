@@ -22,6 +22,7 @@ return [
 	'first_team' => 'First Team',
 	'tables' => 'Tables',
 	'news' => 'News',
+	'latest_news'=>'latest news',
 	'tickets' => 'Tickets',
 	'multimedia' => 'Multimedia',
 	'about_alraed' => 'About Alraed',
@@ -113,4 +114,9 @@ return [
     'soical_responsible' => 'Socail Responsible',
     'next' => 'Next',
     'previous' => 'Previous',
+		'Administrative_regulation'=>'Administrative regulation',
+		'Volunteers'=>'Volunteers',
+		'desires'=>'desires',
+		'Document_strategic_club'=>'Document the strategic plan of the club(2019-2023)',
+		'Organizational_guide'=>'Organizational guide of the club (2019-2023)'
 ];

@@ -84,14 +84,14 @@
                         <li class="nav-tab {{ actived('about-alraed') }}"><a href="{{ url('about-alraed') }}">@lang('trans.about_alraed')</a></li>
                         <li class="nav-tab {{ actived('soical-responsible') }}"><a href="{{ url('soical-responsible') }}">@lang('trans.soical_responsible')</a></li>
                         <li class="nav-tab hoverable-droppy-wrap">
-                        	<a href="#">التنظيم الإداري</a>
+                        	<a href="#">@lang('trans.Administrative_regulation')</a>
                         	<div class="hoverable-droppy">
                         		<div class="hoverable-inner">
 									<a href="{{asset('site/img/wathika.pdf')}}" target="_blank" rel="nofollow noopener">
-										وثيقة الخطة الاستراتيجية للنادي (٢٠١٩-٢٠٢٣)
+										@lang('trans.Document_strategic_club')
 									</a>
 									<a href="{{asset('site/img/dalil.pdf')}}" target="_blank" rel="nofollow noopener">
-										الدليل التنظيمي بالنادي (٢٠١٩-٢٠٢٣)
+								            @lang('trans.Organizational_guide')
 									</a>
                         		</div>
                         	</div>
@@ -101,8 +101,8 @@
                         	<a href="#">@lang('trans.form_wish_nav')</a>
                         	<div class="hoverable-droppy">
                         		<div class="hoverable-inner">
-                        			<a href="{{url('volunteer')}}" target="_blank" rel="noreferrer noopener">المتطوعين</a>
-                        		<a href="{{url('desires')}}" target="_blank" rel="noreferrer noopener">الراغبين</a>
+                        			<a href="{{url('volunteer')}}" target="_blank" rel="noreferrer noopener">@lang('trans.Volunteers')</a>
+                        		<a href="{{url('desires')}}" target="_blank" rel="noreferrer noopener">@lang('trans.desires')</a>
                         		</div>
                         	</div>
                         </li>

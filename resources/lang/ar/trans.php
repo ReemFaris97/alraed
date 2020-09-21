@@ -22,6 +22,7 @@ return [
 	'first_team' => 'كرة القدم',
 	'tables' => 'مباريات النادي',
 	'news' => 'اﻻخبار',
+	'latest_news'=>'أحدث الأخبار',
 	'tickets' => 'التذاكر',
 	'multimedia' => 'ألبوم الصور',
 	'about_alraed' => 'عن الرائد',
@@ -114,4 +115,10 @@ return [
     'soical_responsible' => 'المسؤولية الإجتماعية',
     'next' => 'التالي',
     'previous' => 'السابق',
+		'Administrative_regulation'=>'التنظيم الإدارى',
+		'Volunteers'=>'المتطوعين',
+		'desires'=>'الراغبين',
+		'Document_strategic_club'=>'وثيقة الخطة الإستراتية للنادى (2019-2023)',
+		'Organizational_guide'=>'الدليل التنظيمي  بالنادى (2019-2023)'
+
 ];
