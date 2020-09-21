@@ -2913,7 +2913,7 @@ span.custo-progress.transited {
 }
 
 .breaking-news-ticker:before {
-	content: "أحدث الأخبار";
+	content: "Latest News";
 	position: relative;
 	left: 0;
 	top: 0;
@@ -3330,7 +3330,7 @@ article#images-video-slider .content__img,
 
 The following rule will only run if your browser supports CSS grid.
 
-Remove or comment-out the code block below to see how the browser will fall-back to flexbox styling. 
+Remove or comment-out the code block below to see how the browser will fall-back to flexbox styling.
 
 */
 
