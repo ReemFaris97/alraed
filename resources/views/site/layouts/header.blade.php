@@ -30,25 +30,28 @@
         <!--        Bootstrap-->
         <link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/bootstrap.min.css" />
         <link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/bootstrap-theme.min.css" />
-        <link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/bootstrap-rtl.min.css" />
+		@if (App::getLocale()=='ar')
+		<link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/bootstrap-rtl.min.css" />
+		@endif
 		<!--		Font Awesome-->
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 		<!--		Animate-->
         <link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/animate.css" />
 		<!--		FancyBox-->
         <link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/jquery.fancybox.min.css" />
-
 <!--	********************Begin	Special Styles for this page only *************************-->
 		@yield('styles')
-
 <!--	********************End  	Special Styles for this page only *************************-->
                 <!--- newsticker -->
         <link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/breaking-news-ticker.css" />
         <link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/demo-page-styles.css" />
-
-        <link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/main.css" />
+	 @if (App::getLocale()=='en')
+		<link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/main-ltr.css" />
+		@else
+		<link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/main-rtl.css" />
+		@endif
     </head>
-    <body>
+<body>
 <!--     *************************   Beginning of Header ********************-->
          <header>
         <div class="nav-wrapper" id="the-nav-bar">
@@ -107,15 +110,15 @@
 
                 @if (App::getLocale()=='en')
 
-                <a href="{{route('lang',['ar'])}}">
-                    العربية
-                    <!--                        <img src="{{asset('website/img/ar.png')}}" alt="">-->
+                <a href="{{route('lang',['ar'])}}" class="chooose-lang">
+                    <span>ع</span>
+                    <img src="{{asset('site/img/ar.png')}}" alt="">
                 </a>
                 @else
 
-                <a href="{{route('lang',['en'])}}">
-                    English
-                    <!--                        <img src="{{asset('website/img/en.png')}}" alt="">-->
+                <a href="{{route('lang',['en'])}}" class="chooose-lang">
+                    <span>En</span>
+                    <img src="{{asset('site/img/en.png')}}" alt="">
                 </a>
                 @endif
 
