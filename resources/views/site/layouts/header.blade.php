@@ -47,8 +47,10 @@
         <link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/breaking-news-ticker.css" />
         <link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/demo-page-styles.css" />
 	 @if (App::getLocale()=='en')
+	 	<link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/breaking-news-ticker-ltr.css" />
 		<link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/main-ltr.css" />
 		@else
+		<link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/breaking-news-ticker-rtl.css" />
 		<link rel="stylesheet" type="text/css" href="{{ url('site') }}/css/main-rtl.css" />
 		@endif
     </head>
@@ -111,7 +113,7 @@
 
                 @if (App::getLocale()=='en')
 
-                <a href="{{route('lang',['ar'])}}" class="chooose-lang">
+                <a href="{{route('lang',['ar'])}}" id="en-lan" class="chooose-lang">
                     <span>ع</span>
                     <img src="{{asset('site/img/ar.png')}}" alt="">
                 </a>
