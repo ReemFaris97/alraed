@@ -1,28 +1,25 @@
 $(document).ready(function () {
 	
 	
-//	if($("#newsTicker2").length){
-//		alert('exist')
-//		if($("#en-lan").length){
-//			alert('en')
-//			$('#newsTicker2').breakingNews({
-//			  direction: "ltr",
-//			  play: true,
-//			  delayTimer: 4000,
-//			  scrollSpeed: 2,
-//			  stopOnHover: true
-//			});
-//		}else{
-//			alert('ar')
-//			$('#newsTicker2').breakingNews({
-//			  direction: "rtl",
-//			  play: true,
-//			  delayTimer: 4000,
-//			  scrollSpeed: 2,
-//			  stopOnHover: true
-//			});
-//		}
-//	}
+	if($("#news-tick").length){
+		if($("#en-lan").length){
+			$('#news-tick').breakingNews({
+			  direction: "ltr",
+			  play: true,
+			  delayTimer: 4000,
+			  scrollSpeed: 2,
+			  stopOnHover: true
+			});
+		}else{
+			$('#news-tick').breakingNews({
+			  direction: "rtl",
+			  play: true,
+			  delayTimer: 4000,
+			  scrollSpeed: 2,
+			  stopOnHover: true
+			});
+		}
+	}
 	
 	//    Wow initialization
 	wow = new WOW({

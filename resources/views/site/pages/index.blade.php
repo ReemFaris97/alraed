@@ -19,7 +19,7 @@
 
 @section('content')
 
-<div class="breaking-news-ticker" id="newsTicker2">
+<div class="breaking-news-ticker" id="news-tick">
     <!--                <a href="news.html" class="bn-label">أخبار</a>-->
     <div class="bn-news">
         <ul>
