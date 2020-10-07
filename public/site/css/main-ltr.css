@@ -265,7 +265,8 @@ input:focus {
 }
 
 .nav-wrapper .logo {
-	height: 60px;
+    height: 60px;
+    width: 75px;
 }
 
 .nav-wrapper nav {
