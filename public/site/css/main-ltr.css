@@ -265,8 +265,14 @@ input:focus {
 }
 
 .nav-wrapper .logo {
-    height: 60px;
+    height: 65px;
     width: 75px;
+}
+.nav-wrapper .logo:last-child {
+    padding: 0px 5px;
+    background: #FACD01;
+    border-radius: 5px;
+        
 }
 
 .nav-wrapper nav {

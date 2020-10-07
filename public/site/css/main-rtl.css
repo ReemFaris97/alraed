@@ -268,6 +268,12 @@ input:focus {
     height: 60px;
     width: 75px;
 }
+.nav-wrapper .logo:last-child {
+    padding: 0px 5px;
+    background: #FACD01;
+    border-radius: 5px;
+        
+}
 
 .nav-wrapper nav {
 	padding-left: 50px;
