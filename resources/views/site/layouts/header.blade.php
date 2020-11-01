@@ -84,7 +84,7 @@
                 <div class="nav-container">
                     <ul class="nav-tabs navigation-bar">
                         <li class="nav-tab {{ actived('/') }}"><a href="{{ url('/') }}">@lang('trans.main')</a></li>
-                        <li class="nav-tab {{ actived('first-team') }}"><a href="{{ url('first-team') }}">@lang('trans.first_team')</a></li>
+                        <li class="nav-tab {{ actived('first-team') }}"><a href="https://store.alraedclub.sa/" target="_blank">@lang('trans.store')</a></li>
                         <li class="nav-tab {{ actived('schedule') }}"><a href="{{ url('schedule') }}">@lang('trans.tables')</a></li>
                         <li class="nav-tab {{ actived('news') }}"><a href="{{ url('news') }}">@lang('trans.news')</a></li>
                         <!--<li class="nav-tab "><a href="404.html">@lang('trans.tickets')</a></li>-->

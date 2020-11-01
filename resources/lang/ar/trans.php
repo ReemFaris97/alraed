@@ -122,5 +122,7 @@ return [
 		'Document_strategic_club'=>'وثيقة الخطة الإستراتية للنادى (2019-2023)',
 		'Organizational_guide'=>'الدليل التنظيمي  بالنادى (2019-2023)',
 		'actitvity_report'=>'تقرير أنشطة النادى',
+    'store'=>'المتجر',
+
 
 ];

@@ -120,5 +120,6 @@ return [
 		'Document_strategic_club'=>'Document the strategic plan of the club(2019-2023)',
 		'Organizational_guide'=>'Organizational guide of the club (2019-2023)',
 		'actitvity_report'=>'Actitvity Report of club',
+    'store'=>'store',
 		
 ];
