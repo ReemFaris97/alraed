@@ -96,6 +96,9 @@ Route::group(['namespace' => 'Site', 'middleware'=>'language'], function () {
     Route::post('post-volunteer', 'HomeController@postVolunteer');
     Route::get('desires/{lang?}', 'HomeController@desires');
     Route::post('post-desires', 'HomeController@postDesires');
+
+    Route::get('/privacy', 'HomeController@privacy');
+
 });
 
 

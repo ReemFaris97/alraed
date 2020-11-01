@@ -28,6 +28,9 @@
 					<div class="contact-single addrrress">
 						<div class="pacifico red-color">@lang('trans.address')</div>
 						<div>{{ setting('address') }}</div>
+                        <a href="{{ url('privacy') }}" target="_blank">
+                            @lang('trans.privacy')
+                        </a>
 						{{-- <div>
 							القصيم - بريدة
 						</div> --}}

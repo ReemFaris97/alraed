@@ -121,5 +121,7 @@ return [
 		'Organizational_guide'=>'Organizational guide of the club (2019-2023)',
 		'actitvity_report'=>'Actitvity Report of club',
     'store'=>'store',
+    'privacy'=>'privacy',
+
 		
 ];

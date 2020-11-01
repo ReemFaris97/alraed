@@ -134,6 +134,11 @@ class HomeController extends Controller
         return view('site.pages.electronic');
     }
 
+    public function privacy()
+    {
+        return view('site.pages.privacy');
+    }
+
     public function volunteer($lang = 'ar')
     {
         app()->setLocale($lang);

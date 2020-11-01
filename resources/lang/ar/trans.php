@@ -123,6 +123,8 @@ return [
 		'Organizational_guide'=>'الدليل التنظيمي  بالنادى (2019-2023)',
 		'actitvity_report'=>'تقرير أنشطة النادى',
     'store'=>'المتجر',
+    'privacy'=>'الخصوصية',
+
 
 
 ];
