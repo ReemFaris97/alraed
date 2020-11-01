@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9cd8ebfb-79de-4c54-addf-677fbab7a33a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/site/pages/privacy.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Site/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ar/trans.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ar/trans.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/trans.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/trans.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/layouts/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/layouts/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="9cd8ebfb-79de-4c54-addf-677fbab7a33a" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/vendor/beyondcode/laravel-dump-server/" />
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
     <ignored path="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir/" />
@@ -159,8 +151,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/site/pages/privacy.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2057">
-              <caret line="151" column="7" selection-start-line="151" selection-start-column="7" selection-end-line="151" selection-end-column="7" />
+            <state relative-caret-position="255">
+              <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -193,10 +185,10 @@
         <option value="$PROJECT_DIR$/resources/views/site/layouts/header.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Site/HomeController.php" />
-        <option value="$PROJECT_DIR$/resources/views/site/pages/privacy.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/site/layouts/footer.blade.php" />
         <option value="$PROJECT_DIR$/resources/lang/ar/trans.php" />
         <option value="$PROJECT_DIR$/resources/lang/en/trans.php" />
+        <option value="$PROJECT_DIR$/resources/views/site/pages/privacy.blade.php" />
       </list>
     </option>
   </component>
@@ -404,18 +396,17 @@
       <workItem from="1574189974900" duration="63000" />
       <workItem from="1595233340015" duration="3232000" />
       <workItem from="1604230729209" duration="2770000" />
-      <workItem from="1604244533485" duration="557000" />
+      <workItem from="1604244533485" duration="1002000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3327000" />
+    <option name="totallyTimeSpent" value="3772000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="1024" height="741" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.0" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.0" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -428,7 +419,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32930514" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32930514" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -563,8 +554,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/site/pages/privacy.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2057">
-          <caret line="151" column="7" selection-start-line="151" selection-start-column="7" selection-end-line="151" selection-end-column="7" />
+        <state relative-caret-position="255">
+          <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
         </state>
       </provider>
     </entry>
