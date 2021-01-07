@@ -94,7 +94,18 @@
                         </li>
                         <li class="nav-tab {{ actived('desires') }}"><a href="{{ url('desires') }}">@lang('trans.record_desires')</a>
                         </li> --}}
-                        <li class="nav-tab {{ actived('about-alraed') }}"><a href="{{ url('about-alraed') }}">@lang('trans.about_alraed')</a></li>
+                        <li class="nav-tab hoverable-droppy-wrap {{ actived('about-alraed') }}">
+                        	<a href="#">@lang('trans.about_alraed')</a>
+                        	<div class="hoverable-droppy">
+                                <div class="hoverable-inner">
+                                   <a href="{{ url('about-alraed') }}">@lang('trans.about_alraed')</a>
+                                    <a href="https://www.yumpu.com/ar/document/read/65179156/-2020-2019" target="_blank" rel=" noopener">
+                                        @lang('trans.annual_report')
+                                    </a>
+                                    
+                                </div>
+                            </div>
+                        </li>
                         <li class="nav-tab {{ actived('soical-responsible') }}"><a href="{{ url('soical-responsible') }}">@lang('trans.soical_responsible')</a></li>
                         <li class="nav-tab hoverable-droppy-wrap">
                             <a href="#">@lang('trans.Administrative_regulation')</a>
