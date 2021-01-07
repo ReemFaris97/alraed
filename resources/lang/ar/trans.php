@@ -124,7 +124,7 @@ return [
 		'actitvity_report'=>'تقرير أنشطة النادى',
     'store'=>'المتجر',
     'privacy'=>'الخصوصية',
-    'annual_report'=>'التفرير السنوي 2019-2020',
+    'annual_report'=>'التقرير السنوي 2019-2020',
 
 
 
