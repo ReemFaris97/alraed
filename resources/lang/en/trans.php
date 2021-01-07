@@ -122,6 +122,7 @@ return [
 		'actitvity_report'=>'Actitvity Report of club',
     'store'=>'store',
     'privacy'=>'privacy',
+    'annual_report'=>'annual Report 2019-2020',
 
 		
 ];

@@ -3106,8 +3106,13 @@ li.nav-tab.hoverable-droppy-wrap > a + .hoverable-droppy:hover {
 	transform: skew(14deg) scale(1);
 }
 
-.hoverable-inner > a:first-child {
+.hoverable-inner > a {
 	border-bottom: 1px solid #ccc !important;
+	margin-right: -15px !important
+}
+
+.hoverable-inner > a:last-child {
+    border-bottom: 0 !important;
 }
 
 .hoverable-inner > a {
@@ -3129,9 +3134,8 @@ li.nav-tab.hoverable-droppy-wrap > a + .hoverable-droppy:hover {
 
 	.hoverable-inner,
 	.hoverable-droppy {
-		width: -webkit-max-content !important;
-		width: -moz-max-content !important;
-		width: max-content !important;
+		
+		width: 400px !important;
 	}
 
 	.hoverable-inner {

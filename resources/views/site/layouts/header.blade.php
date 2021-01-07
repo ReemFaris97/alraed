@@ -100,10 +100,13 @@
                             <a href="#">@lang('trans.Administrative_regulation')</a>
                             <div class="hoverable-droppy">
                                 <div class="hoverable-inner">
-                                    <a href="{{asset('site/img/wathika.pdf')}}" target="_blank" rel="nofollow noopener">
+                                    <a href="https://www.yumpu.com/ar/document/read/65179156/-2020-2019" target="_blank" rel=" noopener">
+                                        @lang('trans.annual_report')
+                                    </a>
+                                    <a href="{{asset('site/img/wathika.pdf')}}" target="_blank" rel=" noopener">
                                         @lang('trans.Document_strategic_club')
                                     </a>
-                                    <a href="{{asset('site/img/dalil.pdf')}}" target="_blank" rel="nofollow noopener">
+                                    <a href="{{asset('site/img/dalil.pdf')}}" target="_blank" rel=" noopener">
                                         @lang('trans.Organizational_guide')
                                     </a>
                                 </div>
