@@ -1,7 +1,7 @@
 @extends('admin.layout.app')
 
 @section('title')
-    كل الدول
+    كل الاستبيانات
 @endsection
 @section('header')
     @include('admin.datatable.headers')
@@ -14,11 +14,11 @@
             <div class="card">
                 <div class="header">
                     <h2>
-                        كل الدول
+                        كل الاستبيانات
                     </h2>
                     <ul class="header-dropdown m-r--5">
-                        <a href="{{route('admin.countries.create')}}">
-                            <button class="btn btn-success">إضافة دولة جديدة</button>
+                        <a href="{{route('admin.surveys.create')}}">
+                            <button class="btn btn-success">إضافة استبيان جديد</button>
                         </a>
                     </ul>
                 </div>
@@ -29,6 +29,7 @@
                             <th>#</th>
                             <th>الاسم بالعربى</th>
                             <th>name in english</th>
+                            <th>الرابط</th>
                             <th>العمليات</th>
                         </tr>
                         </thead>
@@ -36,15 +37,16 @@
                         @foreach($items as $key=>$item)
                             <tr>
                                 <td>{{++$key}}</td>
-                                <td>{{$item->ar_name}}</td>
-                                <td>{{$item->en_name}}</td>
+                                <td>{{$item->name_ar}}</td>
+                                <td>{{$item->name_en}}</td>
+                                <td><a href="{{$item->url}}">{{$item->url}}</a></td>
                                 <td>
-                                    <a href="{{route('admin.countries.edit',$item->id)}}"
+                                    <a href="{{route('admin.surveys.edit',$item->id)}}"
                                        class="btn btn-info btn-circle"><i class="fa fa-pencil"></i></a>
                                     <a href="#" onclick="Delete({{$item->id}})" data-toggle="tooltip"
                                        data-original-title="حذف" class="btn btn-danger btn-circle"><i
                                                 class="fa fa-trash-o"></i></a>
-                                    {!!Form::open( ['route' => ['admin.countries.destroy',$item] ,'id'=>'delete-form'.$item->id, 'method' => 'Delete']) !!}
+                                    {!!Form::open( ['route' => ['admin.surveys.destroy',$item->id] ,'id'=>'delete-form'.$item->id, 'method' => 'Delete']) !!}
                                     {!!Form::close() !!}
                                 </td>
                             </tr>

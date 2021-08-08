@@ -284,6 +284,39 @@
             </ul>
         </li>
     @endif
+<li>
+    <a href="javascript:void(0);" class="menu-toggle">
+        <i class="material-icons">person_add</i>
+        <span>  الاستبيانات </span>
+    </a>
+    <ul class="ml-menu">
+        <li>
+            <a class="check_active" href="{{route('admin.surveys.index')}}">
+                <span> عرض  جميع الاستبيانات</span>
+            </a>
+        </li>
+        <li>
+            <a class="check_active" href="{{route('admin.surveys.create')}}">
+
+                <span>اضافة استبيان جديد</span>
+            </a>
+        </li>
+    </ul>
+</li>
+<li>
+    <a href="javascript:void(0);" class="menu-toggle">
+        <i class="material-icons">person_add</i>
+        <span>  البلاغات </span>
+    </a>
+    <ul class="ml-menu">
+        <li>
+            <a class="check_active" href="{{route('admin.reports.index')}}">
+                <span> عرض  جميع البلاغات</span>
+            </a>
+        </li>
+
+    </ul>
+</li>
 
     {{-- @if(hasPermission('players'))
         <li>

@@ -156,7 +156,7 @@
 						</div>
 						<div class="news-text-wrapper">
 							<h3 class="news-title"><span>{{ $s_new->category->name }}</span>{{ $s_new->title }}</h3>
-							<p>{{ str_limit($s_new->description, 150) }} </p>
+							<p>{{ Str::limit($s_new->description, 150) }} </p>
 							<a href="{{ url('news') }}" class="first-site-btn">
 								@lang('trans.see_more')
 							</a>

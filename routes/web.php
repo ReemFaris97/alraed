@@ -7,6 +7,8 @@ Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin',
 
     Route::get('/', 'IndexController@index')->name('home');
 
+    Route::resource('surveys','SurveyController');
+    Route::resource('reports','ReportController');
     //USERS
     Route::resource('admins', 'AdminsController')->middleware('permission:admins');
     Route::resource('assistants', 'AssistantsController')->middleware('permission:assistants');

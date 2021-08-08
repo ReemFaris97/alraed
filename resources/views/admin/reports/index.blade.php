@@ -1,7 +1,7 @@
 @extends('admin.layout.app')
 
 @section('title')
-    كل الدول
+جميع البلاغات
 @endsection
 @section('header')
     @include('admin.datatable.headers')
@@ -14,21 +14,18 @@
             <div class="card">
                 <div class="header">
                     <h2>
-                        كل الدول
+                        جميع البلاغات
                     </h2>
-                    <ul class="header-dropdown m-r--5">
-                        <a href="{{route('admin.countries.create')}}">
-                            <button class="btn btn-success">إضافة دولة جديدة</button>
-                        </a>
-                    </ul>
                 </div>
                 <div class="body">
                     <table class="table table-bordered table-striped table-hover dataTable js-exportable">
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>الاسم بالعربى</th>
-                            <th>name in english</th>
+                            <th>الاسم</th>
+                            <th>رقم التيلفون</th>
+                            <th>البريد</th>
+                            <th>الموضوع</th>
                             <th>العمليات</th>
                         </tr>
                         </thead>
@@ -36,15 +33,15 @@
                         @foreach($items as $key=>$item)
                             <tr>
                                 <td>{{++$key}}</td>
-                                <td>{{$item->ar_name}}</td>
-                                <td>{{$item->en_name}}</td>
+                                <td>{{$item->name}}</td>
+                                <td>{{$item->phone}}</td>
+                                <td>{{$item->email}}</td>
+                                <td>{{$item->text}}</td>
                                 <td>
-                                    <a href="{{route('admin.countries.edit',$item->id)}}"
-                                       class="btn btn-info btn-circle"><i class="fa fa-pencil"></i></a>
                                     <a href="#" onclick="Delete({{$item->id}})" data-toggle="tooltip"
                                        data-original-title="حذف" class="btn btn-danger btn-circle"><i
                                                 class="fa fa-trash-o"></i></a>
-                                    {!!Form::open( ['route' => ['admin.countries.destroy',$item] ,'id'=>'delete-form'.$item->id, 'method' => 'Delete']) !!}
+                                    {!!Form::open( ['route' => ['admin.reports.destroy',$item->id] ,'id'=>'delete-form'.$item->id, 'method' => 'Delete']) !!}
                                     {!!Form::close() !!}
                                 </td>
                             </tr>
@@ -68,7 +65,7 @@
             console.log(item_id);
             swal({
                 title: "هل أنت متأكد ",
-                text: "هل تريد حذف هذا القسم ؟",
+                text: "هل تريد حذف هذه المباراة ؟",
                 icon: "warning",
                 buttons: ["الغاء", "موافق"],
                 dangerMode: true,
@@ -77,7 +74,7 @@
                 if (isConfirm) {
                     document.getElementById('delete-form' + item_id).submit();
                 } else {
-                    swal("تم االإلفاء", "حذف  القسم تم الغاؤه", 'info', {buttons: 'موافق'});
+                    swal("تم االإلفاء", "حذف  المباراة تم الغاؤه", 'info', {buttons: 'موافق'});
                 }
             });
         }
