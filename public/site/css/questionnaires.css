@@ -1,0 +1,71 @@
+/***************** Start questionnaires ****************************/
+.questionnaires {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-auto-rows: 1fr;
+	 grid-column-gap: 30px;
+	grid-row-gap: 30px;
+	margin: 0 auto;
+	list-style: none;
+	counter-reset: my-awesome-counter;
+}
+.questionnaires li{
+	position: relative;
+	overflow: hidden;
+	counter-increment: my-awesome-counter;
+    border: 1px solid #e6e6e6;
+    padding: 10px 10px 110px 10px;
+	display: flex;
+	transition: all .4s ease-in-out;
+}
+.questionnaires li a{
+	display: block;
+    text-align: center;
+	position: relative;
+    z-index: 9;
+    height: 100%;
+    width: 100%;
+	transition: all .4s ease-in-out;
+	margin-bottom: 10px;
+    font-size: 15px;
+}
+.questionnaires li a:hover , .questionnaires li a:focus{
+	color: #B7202B;
+}
+.questionnaires li::before{
+	content: "0" counter(my-awesome-counter) ".";
+	font-size: 10rem;
+	line-height: 1;
+	position: absolute;
+	color: #e6e6e6;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+	text-align: center;
+	bottom: 10%;
+	direction: ltr;
+	width: 120px;
+	height: 100px;
+	transition: all .4s ease-in-out;
+	font-family: 'permanent', cursive;
+}
+.questionnaires li:hover::before{
+	color: #B7202B;
+}
+/***************** End questionnaires ****************************/
+@media screen and (max-width: 767px) {
+    .questionnaires {
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 15px;
+       grid-row-gap: 15px;
+    }
+}
+@media screen and (max-width: 480px) {
+    .questionnaires li {
+        padding: 10px 10px 66px 10px;
+    }
+    .questionnaires li::before {
+        font-size: 5rem;
+        height: 50px;
+    }
+}

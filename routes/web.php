@@ -2,7 +2,12 @@
 
 
 //******************************* DASHBOARD ROUTES  ***********************************
-
+Route::get('/complaints', function () {
+    return view('site.pages.complaints');
+});
+Route::get('/questionnaires', function () {
+    return view('site.pages.questionnaires');
+});
 Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware'=>'admin'], function () {
 
     Route::get('/', 'IndexController@index')->name('home');
@@ -111,3 +116,4 @@ Route::group(['namespace' => 'Site', 'middleware'=>'language'], function () {
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
+
