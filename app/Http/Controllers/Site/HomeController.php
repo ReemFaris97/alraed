@@ -2,43 +2,44 @@
 
 namespace App\Http\Controllers\Site;
 
-use Illuminate\Http\Request;
-use App\Http\Requests\VolunteerRequest;
-use App\Http\Requests\DesireRequest;
-use App\Http\Controllers\Controller;
 use App\Banner;
-use App\News;
-use App\Match;
-use App\Partner;
-use App\Category;
-use App\OurTeam;
-use App\Multimedia;
-use App\Settings;
-use App\Volunteer;
-use App\Event;
 use App\Desire;
+use App\Event;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\DesireRequest;
+use App\Http\Requests\VolunteerRequest;
+use App\Match;
+use App\Multimedia;
+use App\News;
+use App\OurTeam;
+use App\Partner;
+use App\Report;
+use App\Settings;
+use App\Survey;
+use App\Volunteer;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
 
     public function index()
     {
-    	$banners = Banner::latest()->limit(10)->latest()->first()->get();
-    	$next_match = Match::whereDate('date', '>=', date('Y-m-d H:i:s'))->oldest('date')->first();
-    	$previous_matches = Match::whereDate('date', '<=', date('Y-m-d H:i:s'))->oldest('date')->limit(2)->get();
+        $banners = Banner::latest()->limit(10)->latest()->first()->get();
+        $next_match = Match::whereDate('date', '>=', date('Y-m-d H:i:s'))->oldest('date')->first();
+        $previous_matches = Match::whereDate('date', '<=', date('Y-m-d H:i:s'))->oldest('date')->limit(2)->get();
         if (!is_null($next_match)) {
-    	   $next_matches = Match::whereDate('date', '>=', date('Y-m-d H:i:s'))->where('id', '<>', $next_match->id)->oldest('date')->limit(2)->get();
+            $next_matches = Match::whereDate('date', '>=', date('Y-m-d H:i:s'))->where('id', '<>', $next_match->id)->oldest('date')->limit(2)->get();
         } else {
             $next_matches = [];
         }
-    	// $category = Category::where('en_name', 'like', '%football%')->first();
-    	// $football_news = News::where('category_id', $category->id)->latest()->limit(3)->get();
-    	// $news = News::where('category_id', '<>',$category->id)->latest()->limit(3)->get();
+        // $category = Category::where('en_name', 'like', '%football%')->first();
+        // $football_news = News::where('category_id', $category->id)->latest()->limit(3)->get();
+        // $news = News::where('category_id', '<>',$category->id)->latest()->limit(3)->get();
         $news = News::latest()->limit(3)->get();
         $top_news = News::latest()->limit(8)->get();
         $multimedia = Multimedia::latest()->limit(5)->get();
-    	$partners = Partner::all();
-    	return view('site.pages.index', compact('banners', 'next_match', 'news', 'top_news','next_matches', 'previous_matches', 'partners', 'multimedia'));
+        $partners = Partner::all();
+        return view('site.pages.index', compact('banners', 'next_match', 'news', 'top_news', 'next_matches', 'previous_matches', 'partners', 'multimedia'));
     }
 
     public function fTeam()
@@ -52,7 +53,7 @@ class HomeController extends Controller
         $next_match = Match::whereDate('date', '>=', date('Y-m-d H:i:s'))->oldest()->first();
 
         if (!is_null($next_match)) {
-           $next_matches = Match::whereDate('date', '>=', date('Y-m-d H:i:s'))->where('id', '<>', $next_match->id)->oldest()->limit(8)->get();
+            $next_matches = Match::whereDate('date', '>=', date('Y-m-d H:i:s'))->where('id', '<>', $next_match->id)->oldest()->limit(8)->get();
         } else {
             $next_matches = [];
         }
@@ -61,10 +62,10 @@ class HomeController extends Controller
 
     public function matchDetails(Match $match)
     {
-        $previous_matches = Match::whereDate('date', '<=', date('Y-m-d H:i:s'))->where('id', '<>', $match->id)->where(function($q) use ($match){
-          $q->where('first_team_id', $match->first_team_id)->where('second_team_id', $match->second_team_id);
-        })->orWhere(function($q) use ($match){
-          $q->where('first_team_id', $match->second_team_id)->where('second_team_id', $match->first_team_id);
+        $previous_matches = Match::whereDate('date', '<=', date('Y-m-d H:i:s'))->where('id', '<>', $match->id)->where(function ($q) use ($match) {
+            $q->where('first_team_id', $match->first_team_id)->where('second_team_id', $match->second_team_id);
+        })->orWhere(function ($q) use ($match) {
+            $q->where('first_team_id', $match->second_team_id)->where('second_team_id', $match->first_team_id);
         })->oldest('date')->limit(10)->get();
 
         return view('site.pages.match-details', compact('match', 'previous_matches'));
@@ -113,22 +114,27 @@ class HomeController extends Controller
     {
         return view('site.pages.other_sports');
     }
+
     public function karateh()
     {
         return view('site.pages.karateh');
     }
+
     public function boxing()
     {
         return view('site.pages.boxing');
     }
+
     public function tennis()
     {
         return view('site.pages.tennis');
     }
+
     public function handball()
     {
         return view('site.pages.handball');
     }
+
     public function electronic()
     {
         return view('site.pages.electronic');
@@ -179,5 +185,24 @@ class HomeController extends Controller
     public function showSocial(Event $event)
     {
         return view('site.pages.soical', compact('event'));
+    }
+
+    public function surveys()
+    {
+        $surveys = Survey::all();
+        return view('site.pages.questionnaires')->with('surveys', $surveys);
+    }
+
+    public function complaints(Request $request)
+    {
+        $inputs = $request->validate([
+            'name' => 'required|string',
+            'phone' => 'required|string',
+            'email' => 'required|email',
+            'text' => 'required|string'
+        ]);
+        Report::create($inputs);
+        return back()->with('success', __('trans.add_success'));
+
     }
 }

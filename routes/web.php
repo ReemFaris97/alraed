@@ -2,12 +2,6 @@
 
 
 //******************************* DASHBOARD ROUTES  ***********************************
-Route::get('/complaints', function () {
-    return view('site.pages.complaints');
-});
-Route::get('/questionnaires', function () {
-    return view('site.pages.questionnaires');
-});
 Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware'=>'admin'], function () {
 
     Route::get('/', 'IndexController@index')->name('home');
@@ -82,6 +76,9 @@ Route::get('/setlocale/{locale}', function ($lang) {
 
 Route::group(['namespace' => 'Site', 'middleware'=>'language'], function () {
 
+    Route::view('complaints', 'site.pages.complaints')->name('complaints');
+    Route::post('complaints', 'HomeController@complaints')->name('complaints');
+    Route::get('/surveys', 'HomeController@surveys')->name('surveys');
     Route::get('/', 'HomeController@index');
     Route::get('first-team', 'HomeController@fTeam');
     Route::get('schedule', 'HomeController@schedule');

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="ar">
 
 <head>
@@ -102,7 +102,7 @@
                                     <a href="https://www.yumpu.com/ar/document/read/65179156/-2020-2019" target="_blank" rel=" noopener">
                                         @lang('trans.annual_report')
                                     </a>
-                                    
+
                                 </div>
                             </div>
                         </li>
@@ -130,6 +130,7 @@
                                 <div class="hoverable-inner">
                                     <a href="{{url('volunteer')}}" target="_blank" rel="noreferrer noopener">@lang('trans.Volunteers')</a>
                                     <a href="{{url('desires')}}" target="_blank" rel="noreferrer noopener">@lang('trans.desires')</a>
+                                    <a href="{{route('surveys')}}"  rel="noreferrer noopener">@lang('trans.surveys')</a>
                                 </div>
                             </div>
                         </li>

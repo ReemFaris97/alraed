@@ -10,14 +10,13 @@
         <div class="whole-section-title-wrapper">
         <h4 class="the-above-title"> الاستبيانات</h4>
         <h3 class="the-section-title">
-            <span class="wow animated">Q</span>
-            <span class="wow animated">U</span>
-            <span class="wow animated">E</span>
             <span class="wow animated">S</span>
-            <span class="wow animated">T</span>
-            <span class="wow animated">I</span>
-            <span class="wow animated">O</span>
-            <span class="wow animated">N</span>
+            <span class="wow animated">U</span>
+            <span class="wow animated">R</span>
+            <span class="wow animated">V</span>
+            <span class="wow animated">E</span>
+            <span class="wow animated">Y</span>
+            <span class="wow animated">S</span>
             <!-- <span class="wow animated">N</span>
             <span class="wow animated">A</span>
             <span class="wow animated">I</span>
@@ -29,11 +28,9 @@
 
         <div class="gallery">
            <ol class="questionnaires">
-                <li><a href="#" target="_blank">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص</a></li>
-                <li><a href="#" target="_blank">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما</a></li>
-                <li><a href="#" target="_blank">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص</a></li>
-                <li><a href="#" target="_blank">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما</a></li>
-                <li><a href="#" target="_blank">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما</a></li>
+               @foreach($surveys as $survey)
+                <li><a href="{{$survey->url}}" target="_blank">{{$survey->name}}</a></li>
+               @endforeach
            </ol>
         </div>
 

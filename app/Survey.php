@@ -9,4 +9,12 @@ class Survey extends Model
 {
     use HasFactory;
     protected $fillable=['name_ar','name_en','url','is_active'];
+
+    public function getNameAttribute()
+    {
+        $lang=app()->getLocale();
+        return $this->{'name_'.$lang};
+    }
+
+
 }
