@@ -123,7 +123,8 @@ return [
     'store' => 'store',
     'privacy' => 'privacy',
     'annual_report' => 'annual Report 2019-2020',
-    'surveys' => 'surveys'
+    'surveys' => 'surveys',
+    'complaints'=>'complaints'
 
 
 ];
