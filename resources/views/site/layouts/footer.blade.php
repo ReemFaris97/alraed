@@ -11,11 +11,11 @@
 					<span class="wow animated">d</span>
 				</h3>
 
-				<div class="footer-contact">
-				<div class="row report-downloader">
+				<div class="row report-downloader footer_btns">
 					<a href="{{asset('site/img/report.pdf')}}" class="first-site-btn" target="_blank" rel="noreferrer noopener">@lang('trans.actitvity_report') </a>
 					<a href="{{route('complaints')}}" class="first-site-btn" target="_blank" rel="noreferrer noopener">@lang('trans.complaints') </a>
 				</div>
+				<div class="footer-contact">
 					<div class="contact-single info">
 						<div class="pacifico red-color">@lang('trans.info')</div>
 						<div><a href="mailto:{{ setting('email') }}">{{ setting('email') }}</a></div>

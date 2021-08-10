@@ -315,6 +315,25 @@ input:focus {
 	display: none;
 }
 
+.row.report-downloader.footer_btns{
+	display: flex;
+    width: 100%;
+	right: 0;
+    left: 0;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+}
+.row.report-downloader.footer_btns .first-site-btn{
+	flex: 1 1 0;
+    max-width: 190px;
+}
+.row.report-downloader.footer_btns .first-site-btn:first-child{
+	margin-right: 10px;
+}
+.row.report-downloader.footer_btns .first-site-btn:only-child{
+	margin-right: 0;
+}
 @media screen and (min-width: 801px) and (max-width: 1199px) {
 	.nav-wrapper nav {
 		padding-right: 15px !important
@@ -3179,6 +3198,12 @@ li.nav-tab.hoverable-droppy-wrap > a + .hoverable-droppy:hover {
 	color: #000
 }
 
+@media (max-width: 425px) {
+	.report-downloader .first-site-btn {
+		padding: 0 4px;
+		font-size: 14px;
+	}
+}
 
 
 
