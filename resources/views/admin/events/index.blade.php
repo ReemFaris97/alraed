@@ -44,14 +44,14 @@
                                 <td>
                                     @if(empty($item->attach))
                                     لا يوجد
-                                    @else 
+                                    @else
                                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{ $item->id }}">
                                       عرض
-                                    </button> 
+                                    </button>
                                     @endif
                                 </td>
                                 <td>
-                                    <a href="{{route('admin.event.edit',['id'=>$item->id])}}"
+                                    <a href="{{route('admin.event.edit',$item->id)}}"
                                        class="btn btn-info btn-circle"><i class="fa fa-pencil"></i></a>
                                     <a href="#" onclick="Delete({{$item->id}})" data-toggle="tooltip"
                                        data-original-title="حذف" class="btn btn-danger btn-circle"><i
@@ -89,7 +89,7 @@
                   <source src="{{$list}}" type="video/mp4">
                   {{-- <source src="movie.ogg" type="video/ogg"> --}}
                 Your browser does not support the video tag.
-                </video> 
+                </video>
                 @else
                 <img class="img-preview" src="{{$list}}" style="height: 250px">
                 @endif

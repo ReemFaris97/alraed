@@ -41,7 +41,7 @@
                                 <td>{{$item->ar_description}}</td>
                                 <td><img src="{{getimg($item->image)}}" style="width: 50px; height: 50px"></td>
                                 <td>
-                                    <a href="{{route('admin.multimedia.edit',['id'=>$item->id])}}"
+                                    <a href="{{route('admin.multimedia.edit',$item->id)}}"
                                        class="btn btn-info btn-circle"><i class="fa fa-pencil"></i></a>
                                     <a href="#" onclick="Delete({{$item->id}})" data-toggle="tooltip"
                                        data-original-title="حذف" class="btn btn-danger btn-circle"><i

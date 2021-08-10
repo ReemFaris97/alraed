@@ -46,15 +46,15 @@
                                 <td>
 
                                     @if($item->is_active == 1)
-                                        <a href="{{route('admin.Deactivate',['id'=>$item->id])}}"
+                                        <a href="{{route('admin.Deactivate',$item->id)}}"
                                            class="btn btn-xs btn-danger"><i class="fa fa-times"></i> </a>
                                     @else
-                                        <a href="{{route('admin.Activate',['id'=>$item->id])}}"
+                                        <a href="{{route('admin.Activate',$item->id)}}"
                                            class="btn btn-xs btn-success"><i class="fa fa-check"></i> </a>
                                     @endif
                                 </td>
                                 <td>
-                                    <a href="{{route('admin.admins.edit',['id'=>$item->id])}}"
+                                    <a href="{{route('admin.admins.edit',$item->id)}}"
                                        class="btn btn-info btn-circle"><i style="padding-top:5px;padding-left: 6px;"
                                                                           class="fa fa-pencil"></i></a>
                                     @if($item->email== "admin@admin.com")

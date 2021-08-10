@@ -39,7 +39,7 @@
                                 <td>{{$item->ar_name}}</td>
                                 <td>{{$item->en_name}}</td>
                                 <td>
-                                    <a href="{{route('admin.categories.edit',['id'=>$item->id])}}"
+                                    <a href="{{route('admin.categories.edit',$item->id)}}"
                                        class="btn btn-info btn-circle"><i class="fa fa-pencil"></i></a>
                                     <a href="#" onclick="Delete({{$item->id}})" data-toggle="tooltip"
                                        data-original-title="حذف" class="btn btn-danger btn-circle"><i
