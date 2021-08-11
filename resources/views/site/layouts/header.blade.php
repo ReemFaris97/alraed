@@ -125,7 +125,7 @@
                         </li>
                         <li class="nav-tab"><a href="{{ url('other-sports') }}">@lang('trans.more_sports')</a></li>
                         <li class="nav-tab hoverable-droppy-wrap">
-                            <a href="#">{{__('more')}}</a>
+                            <a href="#">{{__('trans.more')}}</a>
                             <div class="hoverable-droppy">
                                 <div class="hoverable-inner">
                                     <a href="{{route('surveys')}}"  rel="noreferrer noopener">@lang('trans.surveys')</a>

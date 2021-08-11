@@ -124,7 +124,7 @@ return [
     'privacy' => 'privacy',
     'annual_report' => 'annual Report 2019-2020',
     'surveys' => 'surveys',
-    'complaints'=>'complaints'
-
+    'complaints'=>'complaints',
+    'more'=>'more'
 
 ];
