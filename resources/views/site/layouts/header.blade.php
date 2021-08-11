@@ -128,10 +128,10 @@
                             <a href="#">{{__('trans.more')}}</a>
                             <div class="hoverable-droppy">
                                 <div class="hoverable-inner">
-                                    <a href="{{route('surveys')}}"  rel="noreferrer noopener">@lang('trans.surveys')</a>
+                                    <a href="{{route('surveys')}}" target="_blank"   rel="noreferrer noopener">@lang('trans.surveys')</a>
                                     <a href="{{url('volunteer')}}" target="_blank" rel="noreferrer noopener">@lang('trans.Volunteers')</a>
                                     <a href="{{url('desires')}}" target="_blank" rel="noreferrer noopener">@lang('trans.desires')</a>
-                                    <a href="{{route('complaints')}}"  rel="noreferrer noopener">@lang('trans.complaints')</a>
+                                    <a href="{{route('complaints')}}"  target="_blank"  rel="noreferrer noopener">@lang('trans.complaints')</a>
 
                                 </div>
                             </div>
