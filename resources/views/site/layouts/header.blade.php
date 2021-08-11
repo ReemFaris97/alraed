@@ -125,12 +125,14 @@
                         </li>
                         <li class="nav-tab"><a href="{{ url('other-sports') }}">@lang('trans.more_sports')</a></li>
                         <li class="nav-tab hoverable-droppy-wrap">
-                            <a href="#">@lang('trans.form_wish_nav')</a>
+                            <a href="#">@lang('more')</a>
                             <div class="hoverable-droppy">
                                 <div class="hoverable-inner">
+                                    <a href="{{route('surveys')}}"  rel="noreferrer noopener">@lang('trans.surveys')</a>
                                     <a href="{{url('volunteer')}}" target="_blank" rel="noreferrer noopener">@lang('trans.Volunteers')</a>
                                     <a href="{{url('desires')}}" target="_blank" rel="noreferrer noopener">@lang('trans.desires')</a>
-                                    <a href="{{route('surveys')}}"  rel="noreferrer noopener">@lang('trans.surveys')</a>
+                                    <a href="{{route('complaints')}}"  rel="noreferrer noopener">@lang('trans.complaints')</a>
+
                                 </div>
                             </div>
                         </li>

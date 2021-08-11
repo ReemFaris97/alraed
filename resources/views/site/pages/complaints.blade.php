@@ -31,11 +31,6 @@
 
         <div class="volunteer-form-wrapper container-fluid">
             <div class="container vol-form">
-                @if(app()->getLocale() == 'en')
-                    <a href="{{ url('volunteer/ar') }}" title="عربي" class="btn btn-default pull-left">عربي</a>
-                @else
-                    <a href="{{ url('volunteer/en') }}" title="EN" class="btn btn-default pull-left">EN</a>
-                @endif
                 <div class="the-all-form-title">
                 <span>
                     تسجيل الشكاوى والمقترحات
