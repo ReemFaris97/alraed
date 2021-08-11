@@ -33,7 +33,7 @@
             <div class="container vol-form">
                 <div class="the-all-form-title">
                 <span>
-                    تسجيل الشكاوى والمقترحات
+                    تسجيل البلاغات و الشكاوي
                 </span>
                 </div>
                 @if(session()->has('success'))
