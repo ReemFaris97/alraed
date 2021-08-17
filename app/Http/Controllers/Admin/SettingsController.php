@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Traits\SettingOperation;
+use App\Traits\SettingOperation;
 use App\Settings;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

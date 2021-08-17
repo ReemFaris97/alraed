@@ -17,8 +17,9 @@
     $(document).ready(function () {
         $('table.dataTable').DataTable({
             responsive: true,
-            paging: false,
+            // paging: false,
             dom: 'Bfrtip',
+            "order": [[0, "desc"]],
             buttons: [
                 {
                     extend: 'csv',
@@ -38,11 +39,11 @@
 </script>
 
 <script>
-    $(document).ready(function () {
+/*    $(document).ready(function () {
         $('#orders').DataTable({
             "order": [[0, "desc"]]
         });
-    });
+    });*/
 
 
 </script>

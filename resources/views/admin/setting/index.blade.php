@@ -39,7 +39,7 @@
                             <tr>
                                 <td>{{$key+1}}</td>
                                 <td>{{$item}}</td>
-                                <td><a href="{{route('admin.settings.show',['id'=>$item])}}"><i class="fa fa-eye"></i></a></td>
+                                <td><a href="{{route('admin.settings.show',$item)}}"><i class="fa fa-eye"></i></a></td>
                             </tr>
                         @endforeach
                         </tbody>
