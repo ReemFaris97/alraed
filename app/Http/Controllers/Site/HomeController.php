@@ -25,10 +25,10 @@ class HomeController extends Controller
     public function index()
     {
         $banners = Banner::latest()->limit(10)->latest()->first()->get();
-        $next_match = Match::whereDate('date', '>=', date('Y-m-d H:i:s'))->oldest('date')->first();
-        $previous_matches = Match::whereDate('date', '<=', date('Y-m-d H:i:s'))->oldest('date')->limit(2)->get();
+        $next_match = Match::whereDate('date', '>=', now()->toDateString())->oldest('date')->first();
+        $previous_matches = Match::whereDate('date', '<=',now()->toDateString())->oldest('date')->limit(2)->get();
         if (!is_null($next_match)) {
-            $next_matches = Match::whereDate('date', '>=', date('Y-m-d H:i:s'))->where('id', '<>', $next_match->id)->oldest('date')->limit(2)->get();
+            $next_matches = Match::whereDate('date', '>=', now()->toDateString())->where('id', '<>', $next_match->id)->oldest('date')->limit(2)->get();
         } else {
             $next_matches = [];
         }
