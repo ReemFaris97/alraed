@@ -1,7 +1,10 @@
 <?php
 
 
-//******************************* DASHBOARD ROUTES  ***********************************
+/******************************* DASHBOARD ROUTES  ***********************************/
+Route::get('/organizationalChart', function () {
+    return view('site.pages.organizationalChart');
+});
 Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware'=>'admin'], function () {
 
     Route::get('/', 'IndexController@index')->name('home');
