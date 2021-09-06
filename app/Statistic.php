@@ -12,7 +12,7 @@ class Statistic extends Model
 
     public function matches(){
 
-        return $this->belongsTo(Match::class, 'match_id','id');
+        return $this->belongsTo(Game::class, 'match_id','id');
     }
 
 

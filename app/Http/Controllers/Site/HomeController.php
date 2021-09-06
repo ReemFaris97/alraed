@@ -8,7 +8,7 @@ use App\Event;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\DesireRequest;
 use App\Http\Requests\VolunteerRequest;
-use App\Match;
+use App\Game;
 use App\Multimedia;
 use App\News;
 use App\OurTeam;
@@ -25,10 +25,10 @@ class HomeController extends Controller
     public function index()
     {
         $banners = Banner::latest()->limit(10)->latest()->first()->get();
-        $next_match = Match::whereDate('date', '>=', now()->toDateString())->oldest('date')->first();
-        $previous_matches = Match::whereDate('date', '<=',now()->toDateString())->oldest('date')->limit(2)->get();
+        $next_match = Game::whereDate('date', '>=', now()->toDateString())->oldest('date')->first();
+        $previous_matches = Game::whereDate('date', '<=',now()->toDateString())->oldest('date')->limit(2)->get();
         if (!is_null($next_match)) {
-            $next_matches = Match::whereDate('date', '>=', now()->toDateString())->where('id', '<>', $next_match->id)->oldest('date')->limit(2)->get();
+            $next_matches = Game::whereDate('date', '>=', now()->toDateString())->where('id', '<>', $next_match->id)->oldest('date')->limit(2)->get();
         } else {
             $next_matches = [];
         }
@@ -50,19 +50,19 @@ class HomeController extends Controller
 
     public function schedule()
     {
-        $next_match = Match::whereDate('date', '>=', date('Y-m-d H:i:s'))->oldest()->first();
+        $next_match = Game::whereDate('date', '>=', date('Y-m-d H:i:s'))->oldest()->first();
 
         if (!is_null($next_match)) {
-            $next_matches = Match::whereDate('date', '>=', date('Y-m-d H:i:s'))->where('id', '<>', $next_match->id)->oldest()->limit(8)->get();
+            $next_matches = Game::whereDate('date', '>=', date('Y-m-d H:i:s'))->where('id', '<>', $next_match->id)->oldest()->limit(8)->get();
         } else {
             $next_matches = [];
         }
         return view('site.pages.table', compact('next_match', 'next_matches'));
     }
 
-    public function matchDetails(Match $match)
+    public function matchDetails(Game $match)
     {
-        $previous_matches = Match::whereDate('date', '<=', date('Y-m-d H:i:s'))->where('id', '<>', $match->id)->where(function ($q) use ($match) {
+        $previous_matches = Game::whereDate('date', '<=', date('Y-m-d H:i:s'))->where('id', '<>', $match->id)->where(function ($q) use ($match) {
             $q->where('first_team_id', $match->first_team_id)->where('second_team_id', $match->second_team_id);
         })->orWhere(function ($q) use ($match) {
             $q->where('first_team_id', $match->second_team_id)->where('second_team_id', $match->first_team_id);

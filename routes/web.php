@@ -9,6 +9,10 @@ Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin',
 
     Route::get('/', 'IndexController@index')->name('home');
 
+    Route::resources([
+        'contacts'=>'ContactController',
+        'achievements'=>'AchievementController'
+    ]);
     Route::resource('surveys','SurveyController');
     Route::resource('reports','ReportController');
     //USERS
@@ -79,6 +83,9 @@ Route::get('/setlocale/{locale}', function ($lang) {
 
 Route::group(['namespace' => 'Site', 'middleware'=>'language'], function () {
 
+    Route::resources([
+        'contacts'=>'ContactController'
+    ]);
     Route::view('complaints', 'site.pages.complaints')->name('complaints');
     Route::post('complaints', 'HomeController@complaints')->name('complaints');
     Route::get('/surveys', 'HomeController@surveys')->name('surveys');
