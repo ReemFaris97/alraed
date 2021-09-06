@@ -10,7 +10,7 @@ class Goal extends Model
 
     public function match(){
 
-        return $this->belongsTo(Match::class,'match_id');
+        return $this->belongsTo(Game::class,'match_id');
     }
 
     public function team(){

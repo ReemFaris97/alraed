@@ -4,8 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Match extends Model
+class Game extends Model
 {
+    protected $table='matches';
     protected $fillable=['first_team_id','second_team_id','stadium','champion_id','date','ar_name','en_name', 'goals_first_team', 'goals_second_team'];
     protected $dates = ['date'];
 

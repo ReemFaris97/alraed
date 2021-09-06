@@ -89,7 +89,7 @@
                 </div>
                 <div class="content">
                     <div class="text">المباريات</div>
-                    <div class="number count">{{\App\Match::count()}}</div>
+                    <div class="number count">{{\App\Game::count()}}</div>
                 </div>
             </div>
         </div>

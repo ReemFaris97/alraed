@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Lineup extends Model
 {
-    
+
     protected $fillable = ['match_id', 'player_id', 'team_id', 'x_axis', 'y_axis'];
 
     public function match()
     {
-    	return $this->belongsTo(Match::class);
+    	return $this->belongsTo(Game::class,'match_id');
     }
 
     public function team()

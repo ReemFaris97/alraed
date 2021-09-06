@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Match;
+use App\Game;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Carbon\Carbon;
@@ -16,7 +16,7 @@ class MatchesController extends Controller
      */
     public function index()
     {
-        $matches=Match::all();
+        $matches=Game::all();
         return view('admin.matches.index',['items'=>$matches]);
     }
 
@@ -49,7 +49,7 @@ class MatchesController extends Controller
         ]);
         $inputs=$request->all();
         $inputs['date'] = Carbon::parse($request->date);
-        Match::create($inputs);
+        Game::create($inputs);
         popup('add');
         return back();
 
@@ -72,7 +72,7 @@ class MatchesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Match $match)
+    public function edit(Game $match)
     {
         return view('admin.matches.edit',['item'=>$match]);
     }
@@ -84,7 +84,7 @@ class MatchesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Match $match)
+    public function update(Request $request, Game $match)
     {
         $this->validate($request,[
             'first_team_id'=>'required|exists:teams,id',
@@ -111,14 +111,14 @@ class MatchesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Match $match)
+    public function destroy(Game $match)
     {
         $match->delete();
         popup('delete');
         return back();
     }
 
-    public function addGoals(Request $request, Match $match)
+    public function addGoals(Request $request, Game $match)
     {
         request()->validate([
             'goals_first_team' => 'required|numeric',
