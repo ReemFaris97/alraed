@@ -7,7 +7,8 @@ Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin',
     Route::get('/', 'IndexController@index')->name('home');
 
     Route::resources([
-        'contacts'=>'ContactController'
+        'contacts'=>'ContactController',
+        'achievements'=>'AchievementController'
     ]);
     Route::resource('surveys','SurveyController');
     Route::resource('reports','ReportController');
