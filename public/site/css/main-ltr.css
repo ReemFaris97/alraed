@@ -341,6 +341,63 @@ input:focus {
     width: 100%;
     max-width: 700px;
 }
+h3.content__title.lg_title {
+	margin: 0 auto;
+    font-size: 41px;
+    height: max-content;
+    text-align: center;
+}
+.bdf-wrap {
+    padding: 15px;
+    display: inline-block;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(219,56,68,1) 0%, rgba(183,32,43,1) 100%);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+.bdf-wrap a {
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+}
+.bdf-wrap a:hover {
+    color: #1C2335;
+}
+.bdf-download {
+    position: absolute;
+    background: #1C2335;
+    width: 100px;
+    height: 100%;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    left: -15px;
+    top: 0;
+    color: #B7202B;
+    font-size: 22px;
+    -webkit-transform: skewX(-30deg);
+    -ms-transform: skewX(-30deg);
+    transform: skewX(-30deg);
+	font-size: 17px;
+    font-weight: 700;
+}
+.bdf-download i {
+    -webkit-transform: skewX(30deg) scale(1.2);
+    -ms-transform: skewX(30deg) scale(1.2);
+    transform: skewX(30deg) scale(1.2);
+}
+.bdf-wrap a:hover {
+    color: #1C2335;
+	background: #B7202B;
+}
 @media screen and (min-width: 801px) and (max-width: 1199px) {
 	.nav-wrapper nav {
 		padding-right: 15px !important

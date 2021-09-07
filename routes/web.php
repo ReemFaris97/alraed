@@ -5,6 +5,21 @@
 Route::get('/organizationalChart', function () {
     return view('site.pages.organizationalChart');
 });
+Route::get('/clubVision', function () {
+    return view('site.pages.clubVision');
+});
+Route::get('/strategicGoals', function () {
+    return view('site.pages.strategicGoals');
+});
+Route::get('/soicalVideos', function () {
+    return view('site.pages.soicalVideos');
+});
+Route::get('/singleVideo', function () {
+    return view('site.pages.singleVideo');
+});
+Route::get('/achievementReports', function () {
+    return view('site.pages.achievementReports');
+});
 Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware'=>'admin'], function () {
 
     Route::get('/', 'IndexController@index')->name('home');

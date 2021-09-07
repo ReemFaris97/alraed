@@ -104,12 +104,12 @@
                                 <a href="#">الاستراتيجية<b class=" caret"></b></a>
                                 <div class="hoverable-droppy">
                                     <div class="hoverable-inner">
-                                        <a href="#">رؤية النادى ورسالته وقيمته</a>
-                                        <a href="#">الأهداف الاستراتيجية</a>
+                                        <a href="{{url('clubVision')}}">رؤية النادى ورسالته وقيمته</a>
+                                        <a href="{{url('strategicGoals')}}">الأهداف الاستراتيجية</a>
                                         <a href="{{asset('site/img/wathika.pdf')}}" target="_blank" rel=" noopener">
                                             @lang('trans.Document_strategic_club')
                                         </a>
-                                        <a href="#">تقارير الإنجاز</a>
+                                        <a href="{{url('achievementReports')}}">تقارير الإنجاز</a>
                                     </div>
                                 </div>
                             </li>
@@ -128,8 +128,8 @@
                                 <div class="hoverable-droppy">
                                     <div class="hoverable-inner">
                                         <a href="#">الأخبار</a>
-                                        <a href="#">ألبوم الصور</a>
-                                        <a href="#">الفيديوهات</a>
+                                        <a href="{{ url('soical-responsible') }}">ألبوم الصور</a>
+                                        <a href="{{ url('soicalVideos') }}">الفيديوهات</a>
                                         <a href="#">مباريات النادى</a>
                                     </div>
                                 </div>

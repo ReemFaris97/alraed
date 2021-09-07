@@ -1,7 +1,5 @@
 @extends('site.layouts.app')
-@section('title' ,  )
 @section('title' , __('الهيكل التنظيمى') )
-
 @section('styles')
 @endsection
 @section('content')
