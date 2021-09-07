@@ -291,14 +291,8 @@
     </a>
     <ul class="ml-menu">
         <li>
-            <a class="check_active" href="{{route('admin.surveys.index')}}">
-                <span> عرض  جميع الاستبيانات</span>
-            </a>
-        </li>
-        <li>
-            <a class="check_active" href="{{route('admin.surveys.create')}}">
-
-                <span>اضافة استبيان جديد</span>
+            <a class="check_active" href="{{route('survey-manager.admin')}}">
+                <span>  الاستبيانات</span>
             </a>
         </li>
     </ul>
