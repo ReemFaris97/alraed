@@ -121,7 +121,7 @@
                                     <div class="hoverable-inner">
                                         <a href="{{route('first-team')}}">كرة القدم</a>
                                         <a href="{{route('other-sports')}}">الألعاب المختلفة</a>
-                                        <a href="#">الأكاديمية</a>
+                                        <a href="{{route('academy')}}">الأكاديمية</a>
                                     </div>
                                 </div>
                             </li>

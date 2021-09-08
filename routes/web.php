@@ -20,7 +20,7 @@ Route::get('/achievementReports', function () {
 });
 Route::resource('pages','Site\PageController')->only('show');
 Route::post('upload', 'UploadController@ckeditor')->middleware('admin');
-Route::view('the-academy','site.pages.the-academy');
+Route::view('the-academy','site.pages.the-academy')->name('academy');
 Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware'=>'admin'], function () {
 
     Route::get('/', 'IndexController@index')->name('home');
