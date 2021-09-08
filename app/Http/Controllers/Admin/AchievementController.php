@@ -20,8 +20,8 @@ class AchievementController extends Controller
 
     public function store(Request $request)
     {
-       $input= $request->validate(['name.ar'=>'required|string','name.en'=>'required|string','url'=>'required|file']);
-       Achievement::create($input);
+       $inputs= $request->validate(['name.ar'=>'required|string','name.en'=>'required|string','url'=>'required|file']);
+       Achievement::create($inputs);
        popup('add');
        return back();
     }

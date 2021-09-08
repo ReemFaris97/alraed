@@ -90,7 +90,7 @@
 @endsection
 
 @push('scripts')
-    {!! Html::script('admin/plugins/ckeditor/ckeditor.js') !!}
+    {!! Html::script('ckeditor/ckeditor.js') !!}
 
     <script>
 

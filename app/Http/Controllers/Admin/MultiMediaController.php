@@ -42,7 +42,8 @@ class MultiMediaController extends Controller
             'en_title' => 'required|string|max:191',
             'ar_description' => 'required|string',
             'en_description' => 'required|string',
-            'image' => 'required|image'
+            'image' => 'required',
+            'type'=>'required|in:image,video'
         ]);
 
         $inputs = $request->all();
@@ -91,7 +92,8 @@ class MultiMediaController extends Controller
             'en_title' => 'required|string|max:191',
             'ar_description' => 'required|string',
             'en_description' => 'required|string',
-            'image' => 'required|image'
+            'image' => 'nullable',
+            'type'=>'required|in:image,video'
         ]);
 
         $inputs = $request->all();

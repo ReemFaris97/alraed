@@ -18,18 +18,14 @@
         </div>
         <div class="reports_wrap">
         <div class="row">
+            @foreach(\App\Achievement::all() as $achievement)
                 <div class="col-sm-6 col-xs-12">
                     <div class="bdf-wrap">
-                        <a href="https://www.altaawounfc.com/storage/uploads/ABkywHEAjsglnxK6hDmzt95C9vpnKLqirvX8CifP.pdf"> الخطة الاستراتيجية</a>
-                        <a class="bdf-download" href="https://www.altaawounfc.com/storage/uploads/ABkywHEAjsglnxK6hDmzt95C9vpnKLqirvX8CifP.pdf" download=""><i class="fas fa-download"></i></a>
+                        <a href="{{$achievement->url}}" target="_blank"> {{$achievement->name}}</a>
+                        <a class="bdf-download" href="{{$achievement->url}}" download=""><i class="fas fa-download"></i></a>
                     </div>
                 </div>
-                <div class="col-sm-6 col-xs-12">
-                    <div class="bdf-wrap">
-                        <a href="https://www.altaawounfc.com/storage/uploads/jnyWTwQJsm5a6wtgi1vWNqgLacaUZMLZvH48lhjJ.pdf">التقرير السنوي</a>
-                        <a class="bdf-download" href="https://www.altaawounfc.com/storage/uploads/jnyWTwQJsm5a6wtgi1vWNqgLacaUZMLZvH48lhjJ.pdf" download=""><i class="fas fa-download"></i></a>
-                    </div>
-                </div>
+            @endforeach
             </div>
         </div>
     </div>

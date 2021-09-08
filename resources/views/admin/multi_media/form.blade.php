@@ -17,9 +17,16 @@
     </div>
 </div>
 
+<div class="form-group form-float">
+    <label class="form-label">النوع</label>
+    <div class="form-line">
+        {!! Form::select("type",['image'=>'صورة','video'=>'فديو'],null,['class'=>'form-control'])!!}
+    </div>
+</div>
+
 @if (isset($item->image))
     <div class="form-group form-float">
-        <label class="form-label">صورة الوسائط الحالية  :</label>
+        <label class="form-label">صورة الوسائط الحالية :</label>
         <div class="form-line">
             <img class="img-preview" src="{{getimg($item->image)}}" style="width: 50px; height: 50px">
         </div>

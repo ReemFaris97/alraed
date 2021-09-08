@@ -37,7 +37,7 @@ class HomeController extends Controller
         // $news = News::where('category_id', '<>',$category->id)->latest()->limit(3)->get();
         $news = News::latest()->limit(3)->get();
         $top_news = News::latest()->limit(8)->get();
-        $multimedia = Multimedia::latest()->limit(5)->get();
+        $multimedia = Multimedia::latest()->where('type','image')->limit(5)->get();
         $partners = Partner::all();
         return view('site.pages.index', compact('banners', 'next_match', 'news', 'top_news', 'next_matches', 'previous_matches', 'partners', 'multimedia'));
     }
@@ -99,9 +99,15 @@ class HomeController extends Controller
 
     public function multimedia()
     {
-        $multimedia = Multimedia::latest()->paginate(10);
+        $multimedia = Multimedia::latest()->where('type','image')->paginate(10);
         return view('site.pages.multimedia', compact('multimedia'));
     }
+    public function videos()
+    {
+        $multimedia = Multimedia::latest()->where('type','video')->paginate(10);
+        return view('site.pages.soicalVideos', compact('multimedia'));
+    }
+
 
     public function about()
     {
@@ -199,7 +205,8 @@ class HomeController extends Controller
             'name' => 'required|string',
             'phone' => 'required|string',
             'email' => 'required|email',
-            'text' => 'required|string'
+            'text' => 'required|string',
+            'type'=>'required|in:suggestion,compliant'
         ]);
         Report::create($inputs);
         return back()->with('success', __('trans.add_success'));

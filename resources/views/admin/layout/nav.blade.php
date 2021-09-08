@@ -155,6 +155,12 @@
             </a>
             <ul class="ml-menu">
                 <li>
+                    <a class="check_active" href="{{route('admin.videos.index')}}">
+
+                        <span> الفديوهات</span>
+                    </a>
+                </li>
+                <li>
                     <a class="check_active" href="{{route('admin.multimedia.index')}}">
 
                         <span> عرض ألبوم الصور</span>
@@ -287,6 +293,32 @@
 <li>
     <a href="javascript:void(0);" class="menu-toggle">
         <i class="material-icons">person_add</i>
+        <span>  الانجازات </span>
+    </a>
+    <ul class="ml-menu">
+        <li>
+            <a class="check_active" href="{{route('admin.achievements.index')}}">
+                <span>  الانجازات</span>
+            </a>
+        </li>
+    </ul>
+</li>
+<li>
+    <a href="javascript:void(0);" class="menu-toggle">
+        <i class="material-icons">person_add</i>
+        <span>الصفحات</span>
+    </a>
+    <ul class="ml-menu">
+        <li>
+            <a class="check_active" href="{{route('admin.pages.index')}}">
+                <span>الصفحات</span>
+            </a>
+        </li>
+    </ul>
+</li>
+<li>
+    <a href="javascript:void(0);" class="menu-toggle">
+        <i class="material-icons">person_add</i>
         <span>  الاستبيانات </span>
     </a>
     <ul class="ml-menu">
@@ -306,6 +338,20 @@
         <li>
             <a class="check_active" href="{{route('admin.reports.index')}}">
                 <span> عرض  جميع البلاغات</span>
+            </a>
+        </li>
+
+    </ul>
+</li>
+<li>
+    <a href="javascript:void(0);" class="menu-toggle">
+        <i class="material-icons">person_add</i>
+        <span>  رسائل التواصل </span>
+    </a>
+    <ul class="ml-menu">
+        <li>
+            <a class="check_active" href="{{route('admin.contacts.index')}}">
+                <span> عرض  جميع رسائل التواصل</span>
             </a>
         </li>
 

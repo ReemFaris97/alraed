@@ -12,7 +12,7 @@
     <!--     *************************   Beginnig of ٍSection ********************-->
     <div class="container single-section-padding">
         <div class="whole-section-title-wrapper">
-            <h4 class="the-above-title"> @lang('trans.alraed')</h4>
+            <h4 class="the-above-title"><a href="{{url('/')}}">@lang('trans.alraed')</a></h4>
             <h3 class="the-section-title">
                 <span class="wow animated">C</span>
                 <span class="wow animated">O</span>
@@ -59,6 +59,13 @@
                         <label for="mail">@lang('trans.email')</label>
                         <input type="email" name="email" class="form-control" id="mail">
                         @error('email')
+                        <span style="color: red">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <div class="form-group col-md-12 col-xs-12">
+                        <label for="mail">نوع البلاغ</label>
+                        {!! Form::select('type',['compliant'=>'شكوي','suggestion'=>'مقترح'],null,['class'=>'form-control']) !!}
+                        @error('type')
                         <span style="color: red">{{ $message }}</span>
                         @enderror
                     </div>

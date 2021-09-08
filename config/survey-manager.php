@@ -15,7 +15,7 @@ return [
     'api_prefix'                =>  'api',
 
     // The prefix used in admin route
-    'admin_prefix'              =>  'admin',
+    'admin_prefix'              =>  'dashboard',
 
     /*
     |--------------------------------------------------------------------------
@@ -24,13 +24,13 @@ return [
     */
 
     // route middleware
-    'route_middleware'          =>  ['web','admin'],
+    'route_middleware'          =>  ['web'],
 
     // api middleware
     'api_middleware'            =>  ['api'],
 
     // admin middleware
-    'admin_middleware'          =>  ['web'],
+    'admin_middleware'          =>  ['web','auth'],
 
     /*
     |--------------------------------------------------------------------------

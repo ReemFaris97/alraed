@@ -2,6 +2,9 @@
 
 
 /******************************* DASHBOARD ROUTES  ***********************************/
+
+use Illuminate\Support\Facades\Route;
+
 Route::get('/organizationalChart', function () {
     return view('site.pages.organizationalChart');
 });
@@ -11,22 +14,22 @@ Route::get('/clubVision', function () {
 Route::get('/strategicGoals', function () {
     return view('site.pages.strategicGoals');
 });
-Route::get('/soicalVideos', function () {
-    return view('site.pages.soicalVideos');
-});
-Route::get('/singleVideo', function () {
-    return view('site.pages.singleVideo');
-});
+Route::get('/videos','Site\HomeController@videos')->name('videos.index');
 Route::get('/achievementReports', function () {
     return view('site.pages.achievementReports');
 });
+Route::resource('pages','Site\PageController')->only('show');
+Route::post('upload', 'UploadController@ckeditor')->middleware('admin');
+
 Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware'=>'admin'], function () {
 
     Route::get('/', 'IndexController@index')->name('home');
 
     Route::resources([
         'contacts'=>'ContactController',
-        'achievements'=>'AchievementController'
+        'achievements'=>'AchievementController',
+        'pages'=>'PageController',
+        'videos'=>'VideoController'
     ]);
     Route::resource('surveys','SurveyController');
     Route::resource('reports','ReportController');
@@ -99,14 +102,14 @@ Route::get('/setlocale/{locale}', function ($lang) {
 Route::group(['namespace' => 'Site', 'middleware'=>'language'], function () {
 
     Route::resources([
-        'contacts'=>'ContactController'
+        'contacts'=>'ContactController',
     ]);
     Route::view('complaints', 'site.pages.complaints')->name('complaints');
     Route::post('complaints', 'HomeController@complaints')->name('complaints');
     Route::get('/surveys', 'HomeController@surveys')->name('surveys');
     Route::get('/', 'HomeController@index');
-    Route::get('first-team', 'HomeController@fTeam');
-    Route::get('schedule', 'HomeController@schedule');
+    Route::get('first-team', 'HomeController@fTeam')->name('first-team');
+    Route::get('schedule', 'HomeController@schedule')->name('schedule');
     Route::get('match/{match}/details', ['as' => 'match.details', 'uses' => 'HomeController@matchDetails']);
     Route::get('news', 'HomeController@news');
     Route::get('tickets', 'HomeController@tickets');
@@ -114,7 +117,7 @@ Route::group(['namespace' => 'Site', 'middleware'=>'language'], function () {
     Route::get('about-alraed', 'HomeController@about');
     Route::get('soical-responsible', 'HomeController@soical_responsible');
     Route::get('event/{event}', 'HomeController@showSocial');
-    Route::get('other-sports', 'HomeController@otherSports');
+    Route::get('other-sports', 'HomeController@otherSports')->name('other-sports');
     Route::get('karateh', 'HomeController@karateh')->name('karateh');
     Route::get('boxing', 'HomeController@boxing')->name('boxing');
     Route::get('tennis', 'HomeController@tennis')->name('tennis');

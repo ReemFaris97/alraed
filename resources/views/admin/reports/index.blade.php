@@ -26,17 +26,19 @@
                             <th>رقم التيلفون</th>
                             <th>البريد</th>
                             <th>الموضوع</th>
+                            <th>النوع</th>
                             <th>العمليات</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($items as $key=>$item)
                             <tr>
-                                <td>{{++$key}}</td>
+                                <td>{{$item->id}}</td>
                                 <td>{{$item->name}}</td>
                                 <td>{{$item->phone}}</td>
                                 <td>{{$item->email}}</td>
                                 <td>{{$item->text}}</td>
+                                <td>{{__($item->type)}}</td>
                                 <td>
                                     <a href="#" onclick="Delete({{$item->id}})" data-toggle="tooltip"
                                        data-original-title="حذف" class="btn btn-danger btn-circle"><i

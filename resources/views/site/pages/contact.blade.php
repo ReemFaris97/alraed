@@ -12,7 +12,7 @@
     <!--     *************************   Beginnig of ٍSection ********************-->
     <div class="container single-section-padding">
         <div class="whole-section-title-wrapper">
-            <h4 class="the-above-title"> @lang('trans.alraed')</h4>
+            <h4 class="the-above-title"><a href="{{url('/')}}">@lang('trans.alraed')</a></h4>
             <h3 class="the-section-title">
                 <span class="wow animated">C</span>
                 <span class="wow animated">O</span>

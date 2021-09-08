@@ -17,36 +17,16 @@
             </h3>
         </div>
         <div class="gallery">
-            <a class="col-md-12 wrap-grids" href="{{ url('singleVideo') }}">
-                <div class="gallery-item">
-                    <img class="gallery-image" src="{{asset('site/img/multi4.jpg')}}">
+            <div class="row">
+                @foreach(\App\Video::all() as $video)
+                <div class="col-md-6">
+                    <iframe id="ytplayer" type="text/html" width="580" height="300"
+                            src="https://www.youtube.com/embed/{{$video->code}}"
+                            frameborder="0"></iframe>
                 </div>
-                <h3>  الرائد يكرم علي المقبل عبر المسؤولية الاجتماعية  </h3>
-            </a>
-            <a class="col-md-12 wrap-grids" href="{{ url('singleVideo') }}">
-                <div class="gallery-item">
-                    <img class="gallery-image" src="{{asset('site/img/multi4.jpg')}}">
-                </div>
-                <h3>  الرائد يكرم علي المقبل عبر المسؤولية الاجتماعية  </h3>
-            </a>
-            <a class="col-md-12 wrap-grids" href="{{ url('singleVideo') }}">
-                <div class="gallery-item">
-                    <img class="gallery-image" src="{{asset('site/img/multi4.jpg')}}">
-                </div>
-                <h3>  الرائد يكرم علي المقبل عبر المسؤولية الاجتماعية  </h3>
-            </a>
-            <a class="col-md-12 wrap-grids" href="{{ url('singleVideo') }}">
-                <div class="gallery-item">
-                    <img class="gallery-image" src="{{asset('site/img/multi4.jpg')}}">
-                </div>
-                <h3>  الرائد يكرم علي المقبل عبر المسؤولية الاجتماعية  </h3>
-            </a>
-            <a class="col-md-12 wrap-grids" href="{{ url('singleVideo') }}">
-                <div class="gallery-item">
-                    <img class="gallery-image" src="{{asset('site/img/multi4.jpg')}}">
-                </div>
-                <h3>  الرائد يكرم علي المقبل عبر المسؤولية الاجتماعية  </h3>
-            </a>
+                @endforeach
+            </div>
+
         </div>
     </div>
 </section>

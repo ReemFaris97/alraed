@@ -11,7 +11,6 @@ Route::group(
         Route::get('/{surveySlug}', [\laravelsurveyjs\app\Http\Controllers\SurveyController::class,'runSurvey'])->name('survey-manager.run');
     }
 );
-
 Route::group(
     [
         'namespace'     =>  'LaravelSurveyJs\app\Http\Controllers',

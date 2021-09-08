@@ -30,6 +30,7 @@
                             <th>عنوان الوسائط</th>
                             <th> وصف الوسائط</th>
                             <th>صورة الوسائط</th>
+                            <th>النوع</th>
                             <th>العمليات</th>
                         </tr>
                         </thead>
@@ -39,13 +40,16 @@
                                 <td>{{++$key}}</td>
                                 <td>{{$item->ar_title }}</td>
                                 <td>{{$item->ar_description}}</td>
-                                <td><img src="{{getimg($item->image)}}" style="width: 50px; height: 50px"></td>
+                                <td>@if($item->type=='image')<img src="{{getimg($item->image)}}"
+                                                                  style="width: 50px; height: 50px">@else
+                                        <a href="{{getimg($item->image)}}">رابط الفيديو</a> @endif</td>
+                                <td>{{$item->type=='image'?'صورة':'فيديو'}}</td>
                                 <td>
                                     <a href="{{route('admin.multimedia.edit',$item->id)}}"
                                        class="btn btn-info btn-circle"><i class="fa fa-pencil"></i></a>
                                     <a href="#" onclick="Delete({{$item->id}})" data-toggle="tooltip"
                                        data-original-title="حذف" class="btn btn-danger btn-circle"><i
-                                                class="fa fa-trash-o"></i></a>
+                                            class="fa fa-trash-o"></i></a>
                                     {!!Form::open( ['route' => ['admin.multimedia.destroy',$item->id] ,'id'=>'delete-form'.$item->id, 'method' => 'Delete']) !!}
                                     {!!Form::close() !!}
                                 </td>

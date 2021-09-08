@@ -15,7 +15,7 @@ class Achievement extends Model
 
     public function setUrlAttribute($value)
     {
-        if (is_null($value))
+        if (!is_null($value))
             $this->attributes['url'] = uploadFile($value);
     }
 

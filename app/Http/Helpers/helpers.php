@@ -15,7 +15,7 @@ function getsetting($name)
 {
     $setting = \App\Settings::where('name', $name)->first();
     if (!$setting) return "";
-    return $setting->value();
+    return $setting->value;
 }
 
 /**

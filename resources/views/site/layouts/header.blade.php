@@ -90,13 +90,15 @@
                                 <div class="hoverable-droppy">
                                     <div class="hoverable-inner">
                                         <a href="{{ url('about-alraed') }}">نبذة تاريخية</a>
-                                        <a href="{{url('organizationalChart')}}">الهيكل التنظيمى</a>
-                                        <a href="#">مجلس الإدارة</a>
-                                        <a href="#">الإدارة العليا</a>
+                                        @foreach(\App\Page::all() as $page)
+                                        <a href="{{route('pages.show',$page->id)}}">{{$page->name}}</a>
+                                       {{-- <a href="#">مجلس الإدارة</a>
+                                        <a href="#">الإدارة العليا</a>--}}
+                                        @endforeach
                                         <a href="https://www.yumpu.com/ar/document/read/65179156/-2020-2019" target="_blank" rel=" noopener">
                                             @lang('trans.annual_report')
                                         </a>
-                                        <a href="#">اتصل بنا</a>
+                                        <a href="{{route('contacts.index')}}">اتصل بنا</a>
                                     </div>
                                 </div>
                             </li>
@@ -117,8 +119,8 @@
                                 <a href="#">الرياضيات<b class="caret"></b></a>
                                 <div class="hoverable-droppy">
                                     <div class="hoverable-inner">
-                                        <a href="#">كرة القدم</a>
-                                        <a href="#">الألعاب المختلفة</a>
+                                        <a href="{{route('first-team')}}">كرة القدم</a>
+                                        <a href="{{route('other-sports')}}">الألعاب المختلفة</a>
                                         <a href="#">الأكاديمية</a>
                                     </div>
                                 </div>
@@ -129,45 +131,36 @@
                                     <div class="hoverable-inner">
                                         <a href="#">الأخبار</a>
                                         <a href="{{ url('soical-responsible') }}">ألبوم الصور</a>
-                                        <a href="{{ url('soicalVideos') }}">الفيديوهات</a>
-                                        <a href="#">مباريات النادى</a>
+                                        <a href="{{ route('videos.index') }}">الفيديوهات</a>
+                                        <a href="{{route('schedule')}}">مباريات النادى</a>
                                     </div>
                                 </div>
                             </li>
-                            <li class="nav-tab {{ actived('first-team') }}"><a href="https://store.alraedclub.sa/" target="_blank">@lang('trans.store')</a></li>
+                            <li class="nav-tab "><a href="https://store.alraedclub.sa/" target="_blank">@lang('trans.store')</a></li>
                             <li class="nav-tab hoverable-droppy-wrap">
                                 <a href="#">استطلاعات<b class="caret"></b></a>
                                 <div class="hoverable-droppy">
                                     <div class="hoverable-inner">
-                                        <a href="#">الجماهير</a>
-                                        <a href="#">اللاعبون</a>
-                                        <a href="#">الموظفون</a>
-                                        <a href="#">الزوار</a>
-                                        <a href="#">الانطباعات العامة</a>
-                                        <a href="#">الشكاوى والبلاغات</a>
+                                        @foreach(\laravelsurveyjs\app\Models\Survey::all() as $survey)
+                                            <a href="{{route('survey-manager.run',$survey->slug)}}">{{$survey->name}}</a>
+                                        @endforeach
                                     </div>
                                 </div>
                             </li>
+                            <li class="nav-tab "><a href="{{route('complaints')}}" target="_blank" rel="noreferrer noopener">@lang('trans.complaints')</a>
+                            </li>
+
                             <!-------------------------------------->
                             <li class="nav-tab hoverable-droppy-wrap">
                                 <a href="#">{{__('trans.more')}}<b class="caret"></b></a>
                                 <div class="hoverable-droppy">
                                     <div class="hoverable-inner">
-                                        <a href="{{route('surveys')}}" target="_blank" rel="noreferrer noopener">@lang('trans.surveys')</a>
                                         <a href="{{url('volunteer')}}" target="_blank" rel="noreferrer noopener">@lang('trans.Volunteers')</a>
                                         <a href="{{url('desires')}}" target="_blank" rel="noreferrer noopener">@lang('trans.desires')</a>
-                                        <a href="{{route('complaints')}}" target="_blank" rel="noreferrer noopener">@lang('trans.complaints')</a>
 
-                                        <a href="https://www.yumpu.com/ar/document/read/65179156/-2020-2019" target="_blank" rel=" noopener">
-                                            @lang('trans.annual_report')
-                                        </a>
                                         <a href="{{asset('site/img/dalil.pdf')}}" target="_blank" rel=" noopener">
                                             @lang('trans.Organizational_guide')
                                         </a>
-                                        <a href="{{ url('other-sports') }}">@lang('trans.more_sports')</a>
-                                        <a href="{{ url('schedule') }}">@lang('trans.tables')</a>
-                                        <a href="{{ url('news') }}">@lang('trans.news')</a>
-                                        <a href="{{ url('multimedia') }}">@lang('trans.multimedia')</a>
                                         <a href="{{ url('soical-responsible') }}">@lang('trans.soical_responsible')</a>
                                     </div>
                                 </div>
