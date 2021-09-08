@@ -13,7 +13,6 @@ class CreateSurveysTable extends Migration
      */
     public function up()
     {
-        Schema::dropDatabaseIfExists('surveys');
         Schema::create('surveys', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
