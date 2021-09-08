@@ -16,7 +16,9 @@
 <script>
     $(document).ready(function () {
         $('table.dataTable').DataTable({
-            responsive: true,
+            // responsive: true,
+            scrollX:        true,
+            scrollCollapse: true,
             // paging: false,
             dom: 'Bfrtip',
             "order": [[0, "desc"]],

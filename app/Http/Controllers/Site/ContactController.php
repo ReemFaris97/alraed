@@ -23,7 +23,7 @@ class ContactController extends Controller
         ]);
 
       Contact::create($inputs);
-      alert()->success('تم الارسال بنجاح !');
+      alert()->success('تم الارسال بنجاح !')->with('success', __('trans.add_success'));
       return back();
     }
 }
