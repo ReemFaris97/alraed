@@ -27,7 +27,7 @@ return [
     'multimedia' => 'Multimedia',
     'about_alraed' => 'About Alraed',
     'more_sports' => 'More Sports',
-    'developped' => 'Developped By ',
+    'developped' => 'All rights received by alread club 2021 Developped By ',
     'panorama' => 'Panorama AlQassim',
     'info' => 'Info',
     'address' => 'Address',
