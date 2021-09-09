@@ -29,7 +29,7 @@
                       <source src="{{$list}}" type="video/mp4">
                       <source src="{{ $list }}" type="video/ogg">
                     Your browser does not support the video tag.
-                    </video> 
+                    </video>
                 </a>
                 @else
                 <a class="watch-vid-btn" data-fancybox="multimedia" data-caption="" href="{{ $list }}" data-toggle="tooltip" title="شاهد المرفق">
@@ -39,8 +39,8 @@
             </div>
         </section>
         @endforeach
-        
-        
+
+
 
         <!-- Navigation Arrows -->
         <span class="bee3D--nav bee3D--nav__prev">
@@ -79,7 +79,7 @@
     var element = document.querySelector('#images-video-slider');
     var slider = new Bee3D(element, {
         effect: 'wave',
-        focus: 1,
+        focus: 0,
         listeners: {
             keys: true,
             touches: true
@@ -101,7 +101,7 @@
             enabled: true,
             continuous: true
         },
-       
+
     });
 
 </script>

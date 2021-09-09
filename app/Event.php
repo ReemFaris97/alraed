@@ -46,7 +46,7 @@ class Event extends Model
     	$attachs = json_decode($this->attach, true);
     	$results = [];
     	foreach ($attachs as $attach) {
-    		$attach = getimg($attach);
+    		$attach = asset($attach);
     		$results[] = $attach;
     	}
 
