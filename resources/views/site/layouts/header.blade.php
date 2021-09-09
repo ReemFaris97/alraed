@@ -95,7 +95,7 @@
                                        {{-- <a href="#">مجلس الإدارة</a>
                                         <a href="#">الإدارة العليا</a>--}}
                                         @endforeach
-                                        <a href="https://www.yumpu.com/ar/document/read/65179156/-2020-2019" target="_blank" rel=" noopener">
+                                        <a href="{{asset('site/التقرير السنوي 2020-2021.pdf')}}" target="_blank" rel=" noopener">
                                             @lang('trans.annual_report')
                                         </a>
                                         <a href="{{route('contacts.index')}}">اتصل بنا</a>
