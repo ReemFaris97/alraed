@@ -119,7 +119,7 @@ return [
 		'Administrative_regulation'=>'التنظيم الإدارى',
 		'Volunteers'=>'المتطوعين',
 		'desires'=>'الراغبين',
-		'Document_strategic_club'=>'وثيقة الخطة الإستراتية للنادى (2019-2023)',
+		'Document_strategic_club'=>'وثيقة الخطة الإستراتيجيه للنادى (2019-2023)',
 		'Organizational_guide'=>'الدليل التنظيمي  بالنادى (2019-2023)',
 		'actitvity_report'=>'تقرير أنشطة النادى',
     'store'=>'المتجر',

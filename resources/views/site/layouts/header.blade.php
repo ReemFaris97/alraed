@@ -106,7 +106,7 @@
                                 <a href="#">الاستراتيجية<b class=" caret"></b></a>
                                 <div class="hoverable-droppy">
                                     <div class="hoverable-inner">
-                                        <a href="{{url('clubVision')}}">رؤية النادى ورسالته وقيمته</a>
+                                        <a href="{{url('clubVision')}}">رؤية النادى ورسالته وقيمه</a>
                                         <a href="{{url('strategicGoals')}}">الأهداف الاستراتيجية</a>
                                         <a href="{{asset('site/img/wathika.pdf')}}" target="_blank" rel=" noopener">
                                             @lang('trans.Document_strategic_club')
@@ -116,7 +116,7 @@
                                 </div>
                             </li>
                             <li class="nav-tab hoverable-droppy-wrap">
-                                <a href="#">الرياضيات<b class="caret"></b></a>
+                                <a href="#">الرياضات<b class="caret"></b></a>
                                 <div class="hoverable-droppy">
                                     <div class="hoverable-inner">
                                         <a href="{{route('first-team')}}">كرة القدم</a>
@@ -141,9 +141,26 @@
                                 <a href="#">استطلاعات<b class="caret"></b></a>
                                 <div class="hoverable-droppy">
                                     <div class="hoverable-inner">
-                                        @foreach(\laravelsurveyjs\app\Models\Survey::all() as $survey)
-                                            <a href="{{route('survey-manager.run',$survey->slug)}}">{{$survey->name}}</a>
-                                        @endforeach
+                                        <!--@foreach(\laravelsurveyjs\app\Models\Survey::all() as $survey)-->
+                                        <!--    <a href="{{route('survey-manager.run',$survey->slug)}}">{{$survey->name}}</a>-->
+                                        <!--@endforeach-->
+                                        
+                                              <a href="https://forms.gle/Kx1DrZzskgLr7V3UA">انطباعات الجماهير</a>
+                                              
+                                              
+                                              <a href="https://forms.gle/uVWT38bYTKKWZQ2aA">انطباعات الموظفين</a>
+                                              
+                                              
+                                              <a href="https://forms.gle/LG1WFNFFbNvcy7qE8">استبيان الزوار</a>
+                                        
+                                        
+                                              
+                                              <a href="https://forms.gle/TziNp2awt9XsDZcN7">استبيان اللاعبين</a>
+                                        
+                                        
+                                              
+                                              <a href="https://forms.gle/d482vWGxKRZnPdqd6">استبيان المدربين</a>
+                                        
                                     </div>
                                 </div>
                             </li>
