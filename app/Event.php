@@ -46,6 +46,12 @@ class Event extends Model
     	$attachs = json_decode($this->attach, true);
     	$results = [];
     	foreach ($attachs as $attach) {
+//    	    \Str::words().
+            if (strpos($attach,'storage')){
+                $attach=asset($attach);
+            }else{
+                $attach=getimg($attach);
+            }
     		$attach = asset($attach);
     		$results[] = $attach;
     	}
