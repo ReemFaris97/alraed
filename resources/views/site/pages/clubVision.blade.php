@@ -29,7 +29,7 @@
         </div>
     </div>
     <div class="content-wrap">
-        <h3 class="content__title lg_title">هدف النادى</h3>
+        <h3 class="content__title lg_title">قيم النادي</h3>
         <div class="content content--layout content--layout-1">
             <img class="content__img" src="{{ url('site') }}/img/logo.png" alt="هدف النادى"/>
             <p class="content__desc">{!! getsetting('club_goal') !!} </p>

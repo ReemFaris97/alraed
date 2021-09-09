@@ -141,26 +141,26 @@
                                 <a href="#">استطلاعات<b class="caret"></b></a>
                                 <div class="hoverable-droppy">
                                     <div class="hoverable-inner">
-                                        <!--@foreach(\laravelsurveyjs\app\Models\Survey::all() as $survey)-->
-                                        <!--    <a href="{{route('survey-manager.run',$survey->slug)}}">{{$survey->name}}</a>-->
-                                        <!--@endforeach-->
-                                        
-                                              <a href="https://forms.gle/Kx1DrZzskgLr7V3UA">انطباعات الجماهير</a>
-                                              
-                                              
-                                              <a href="https://forms.gle/uVWT38bYTKKWZQ2aA">انطباعات الموظفين</a>
-                                              
-                                              
-                                              <a href="https://forms.gle/LG1WFNFFbNvcy7qE8">استبيان الزوار</a>
-                                        
-                                        
-                                              
-                                              <a href="https://forms.gle/TziNp2awt9XsDZcN7">استبيان اللاعبين</a>
-                                        
-                                        
-                                              
-                                              <a href="https://forms.gle/d482vWGxKRZnPdqd6">استبيان المدربين</a>
-                                        
+                                     {{--   @foreach(\laravelsurveyjs\app\Models\Survey::all() as $survey)
+                                            <a href="{{route('survey-manager.run',$survey->slug)}}">{{$survey->name}}</a>
+                                        @endforeach--}}
+
+                                              <a target="_blank" href="https://forms.gle/Kx1DrZzskgLr7V3UA">انطباعات الجماهير</a>
+
+
+                                              <a target="_blank" href="https://forms.gle/uVWT38bYTKKWZQ2aA">انطباعات الموظفين</a>
+
+
+                                              <a target="_blank" href="https://forms.gle/LG1WFNFFbNvcy7qE8">استبيان الزوار</a>
+
+
+
+                                              <a target="_blank" href="https://forms.gle/TziNp2awt9XsDZcN7">استبيان اللاعبين</a>
+
+
+
+                                              <a target="_blank" href="https://forms.gle/d482vWGxKRZnPdqd6">استبيان المدربين</a>
+
                                     </div>
                                 </div>
                             </li>
