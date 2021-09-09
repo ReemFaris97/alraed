@@ -47,7 +47,7 @@ class Event extends Model
     	$results = [];
     	foreach ($attachs as $attach) {
 //    	    \Str::words().
-            if (strpos($attach,'storage')){
+            if (count(explode('storage',$attach))>1){
                 $attach=asset($attach);
             }else{
                 $attach=getimg($attach);
