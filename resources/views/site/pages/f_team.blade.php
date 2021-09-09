@@ -29,8 +29,8 @@
 				<section>
 					<div class="container">
 						<div class="row">
-							<a href="{{asset('site/img/theteam.jpeg')}}" data-caption="كرة القدم" data-fancybox="firstteam">
-								<img src="{{asset('site/img/theteam.jpeg')}}" alt="الفريق الأول" class="the-f-team">
+							<a href="{{asset('site/img/theteam.jpg')}}" data-caption="كرة القدم" data-fancybox="firstteam">
+								<img src="{{asset('site/img/theteam.jpg')}}" alt="الفريق الأول" class="the-f-team">
 							</a>
 						</div>
 					</div>
