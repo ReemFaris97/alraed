@@ -17,8 +17,21 @@
     <section id="photostack" class="photostack photostack-start">
         <div>
             <figure>
-                <a href="{{ asset('site/img/maged-egames.jpg') }}" class="photostack-img" data-fancybox="karateh" data-caption="الرياضات الالكترونية">
+                <a href="{{ asset('site/img/egames.jpg') }}" class="photostack-img" data-fancybox="karateh" data-caption="الرياضات الالكترونية">
                     <img src="{{ asset('site/img/egames.jpg') }}" alt="الرياضات الالكترونية"/>
+                </a>
+                <figcaption>
+                    <h2 class="photostack-title">الرياضات الالكترونية</h2>
+                    <div class="photostack-back">
+                        <p>
+حجز اللاعب ماجد الرشيد لاعب الرائد للرياضات الالكترونية بطاقة المشاركة في بطولة غرب اسيا المؤهلة لكأس العالم في بطولة FIFA21 و التي ستقام في الفترة (11 - 10 ابريل القادم )
+                        </p>
+                    </div>
+                </figcaption>
+            </figure>
+            <figure>
+                <a href="{{ asset('site/img/maged-egames.jpg') }}" class="photostack-img" data-fancybox="karateh" data-caption="الرياضات الالكترونية">
+                    <img src="{{ asset('site/img/maged-egames.jpg') }}" alt="الرياضات الالكترونية"/>
                 </a>
                 <figcaption>
                     <h2 class="photostack-title">الرياضات الالكترونية</h2>
