@@ -130,7 +130,7 @@
                                 <div class="hoverable-droppy">
                                     <div class="hoverable-inner">
                                         <a href="#">الأخبار</a>
-                                        <a href="{{ url('soical-responsible') }}">ألبوم الصور</a>
+                                        <a href="{{ url('multimedia') }}">ألبوم الصور</a>
                                         <a href="{{ route('videos.index') }}">الفيديوهات</a>
                                         <a href="{{route('schedule')}}">مباريات النادى</a>
                                     </div>
