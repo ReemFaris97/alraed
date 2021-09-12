@@ -98,8 +98,8 @@
 										<span class="red-color">@lang('trans.vs')</span>
 										<span>{{ $next_match->SecondTeam->name }}</span>
 								</div>
-								<div>{{ $next_match->date->format('Y / m / d') }}</div>
-								<div>{{ $next_match->date->format('h:i a') }}</div>
+                                    <div>{{ $next_match->date->format('Y / m / d') }}</div>
+								<div>{{ $next_match->date->format('h:i A') }}</div>
 								@endif
 							</div>
 						</div>
@@ -502,7 +502,7 @@
 
 <!--        Timer-->
         <script type="text/javascript">
-        	var aimTime = {{ is_null($next_match) ? date('Y-m-d H:i:s') : ($next_match->date->diffInRealMilliseconds(date('Y-m-d H:i:s'))) }} ;
+        	var aimTime = {{ is_null($next_match) ? date('Y-m-d H:i:s') : ($next_match->date->diffInRealMilliseconds(now()->format('Y-m-d H:i:s'))) }} ;
             function getTimeRemaining(endtime) {
               var t = Date.parse(endtime) - Date.parse(new Date());
               var seconds = Math.floor((t / 1000) % 60);

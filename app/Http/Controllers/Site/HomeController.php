@@ -25,10 +25,10 @@ class HomeController extends Controller
     public function index()
     {
         $banners = Banner::latest()->limit(10)->latest()->first()->get();
-        $next_match = Game::whereDate('date', '>=', now()->toDateString())->oldest('date')->first();
-        $previous_matches = Game::whereDate('date', '<=',now()->toDateString())->oldest('date')->limit(2)->get();
+        $next_match = Game::where('date', '>=', now()->toDateTimeString())->oldest('date')->first();
+        $previous_matches = Game::where('date', '<=',now()->toDateTimeString())->oldest('date')->limit(2)->get();
         if (!is_null($next_match)) {
-            $next_matches = Game::whereDate('date', '>=', now()->toDateString())->where('id', '<>', $next_match->id)->oldest('date')->limit(2)->get();
+            $next_matches = Game::where('date', '>=', now()->toDateTimeString())->where('id', '<>', $next_match->id)->oldest('date')->limit(2)->get();
         } else {
             $next_matches = [];
         }
