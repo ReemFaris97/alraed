@@ -62,8 +62,8 @@
 								@foreach($news_s->images as $img)
 								<div class="item">
 									<div class="news-image-wrapper">
-									<a href="{{ getimg($img->image) }}" data-fancybox="news">
-										<img src="{{ getimg($img->image) }}" alt="صورة للخبر">
+									<a href="{{ asset($img->image) }}" data-fancybox="news">
+										<img src="{{ asset($img->image) }}" alt="صورة للخبر">
 										</a>
 									</div>
 								</div>
