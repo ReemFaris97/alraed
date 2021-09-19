@@ -281,7 +281,7 @@
 										</div>
 									</div>
 									<div class="slider-match-btn">
-										<a class="oval-btn" href="#" data-text="{{ __('trans.ticket') }}">{{ __('trans.ticket') }}</a>
+										<a class="oval-btn" href="{{$next_match->booking_url}}" data-text="{{ __('trans.ticket') }}">{{ __('trans.ticket') }}</a>
 									</div>
 								 </div>
 							</div>
@@ -322,7 +322,7 @@
 											<div class="single-side">
 												<div class="sm-size">@lang('trans.start')</div>
 												<div class="red-color sin-middle">
-													 {{ $nx_match->date->format('h:i a') }}
+													 {{ $nx_match->date->format('h:i A') }}
 												</div>
 												<div class="the-two-teams">
 													<span>{{ $nx_match->FirstTeam->name }}</span>

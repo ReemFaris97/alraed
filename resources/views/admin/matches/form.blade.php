@@ -16,6 +16,13 @@
     </div>
 </div>
 
+<div class="form-group form-float">
+    <label class="form-label">رابط الحجز</label>
+    <div class="form-line">
+        {!! Form::url("booking_url",null,['class'=>'form-control','placeholder'=>'رابط حجز التذاكر'])!!}
+    </div>
+</div>
+
 
 <div class="form-group form-float">
     <label class="form-label">الفريق الأول</label>

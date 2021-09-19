@@ -45,7 +45,8 @@ class MatchesController extends Controller
             'stadium'=>'required|string|max:191',
             'ar_name'=>'required|string|max:191',
             'en_name'=>'required|string|max:191',
-            'date'=>'required'
+            'date'=>'required',
+            'booking_url'=>'nullable|url'
         ]);
         $inputs=$request->all();
         $inputs['date'] = Carbon::parse($request->date);
@@ -95,7 +96,9 @@ class MatchesController extends Controller
             'en_name'=>'required|string|max:191',
             'date'=>'required',
             'goals_first_team' => 'nullable|numeric',
-            'goals_second_team' => 'nullable|numeric'
+            'goals_second_team' => 'nullable|numeric',
+            'booking_url'=>'nullable|url'
+
         ]);
         $inputs=$request->all();
         $inputs['date'] = Carbon::parse($request->date);
