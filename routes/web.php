@@ -14,15 +14,14 @@ Route::get('/clubVision', function () {
 Route::get('/strategicGoals', function () {
     return view('site.pages.strategicGoals');
 });
-Route::get('/videos','Site\HomeController@videos')->name('videos.index');
+Route::get('/videos', 'Site\HomeController@videos')->name('videos.index');
 Route::get('/achievementReports', function () {
     return view('site.pages.achievementReports');
 });
-Route::resource('pages','Site\PageController')->only('show');
+Route::resource('pages', 'Site\PageController')->only('show');
 Route::post('upload', 'UploadController@ckeditor')->middleware('admin');
-Route::view('the-academy','site.pages.the-academy')->name('academy');
+Route::view('the-academy', 'site.pages.the-academy')->name('academy');
 Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware'=>'admin'], function () {
-
     Route::get('/', 'IndexController@index')->name('home');
 
     Route::resources([
@@ -31,15 +30,15 @@ Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin',
         'pages'=>'PageController',
         'videos'=>'VideoController'
     ]);
-    Route::resource('surveys','SurveyController');
-    Route::resource('reports','ReportController');
+    Route::resource('surveys', 'SurveyController');
+    Route::resource('reports', 'ReportController');
     //USERS
     Route::resource('admins', 'AdminsController')->middleware('permission:admins');
     Route::resource('assistants', 'AssistantsController')->middleware('permission:assistants');
 
-        //ACTIVATE ACCOUNTS
-        Route::get('activate/{id}','ActivateAccountsController@activate')->name('Activate');
-        Route::get('deactivate/{id}','ActivateAccountsController@deactivate')->name('Deactivate');
+    //ACTIVATE ACCOUNTS
+    Route::get('activate/{id}', 'ActivateAccountsController@activate')->name('Activate');
+    Route::get('deactivate/{id}', 'ActivateAccountsController@deactivate')->name('Deactivate');
 
 
     //GENERAL
@@ -69,15 +68,14 @@ Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin',
     Route::resource('event', 'EventController');
 
     //SYSTEM SETTINGS
-    Route::resource('permissions','PermissionController')->middleware('permission:permissions');
-    Route::get('permissions/delete_user/{id}','PermissionController@delete_user')->name('permissions.delete_user');
+    Route::resource('permissions', 'PermissionController')->middleware('permission:permissions');
+    Route::get('permissions/delete_user/{id}', 'PermissionController@delete_user')->name('permissions.delete_user');
     Route::resource('settings', 'SettingsController')->middleware('permission:settings');
 
     //Ajax Routes
     Route::get('ajax-team/{team_id}', 'GoalsController@TeamAjax');
 
     Route::get('remove-img/{id}', 'NewsController@removeImage')->name('removeImg');
-
 });
 
 //*******************************  END DASHBOARD ROUTES  ***********************************
@@ -87,20 +85,18 @@ Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin',
 
 
 Route::get('/setlocale/{locale}', function ($lang) {
-   // dd($lang);
+    // dd($lang);
     if (array_key_exists($lang, [
         'ar' => 'arabic',
         'en' => 'English',
 
     ])) {
         \Session::put('applocale', $lang);
-
     }
     return back();
 })->name('lang');
 
 Route::group(['namespace' => 'Site', 'middleware'=>'language'], function () {
-
     Route::resources([
         'contacts'=>'ContactController',
     ]);
@@ -111,6 +107,7 @@ Route::group(['namespace' => 'Site', 'middleware'=>'language'], function () {
     Route::get('first-team', 'HomeController@fTeam')->name('first-team');
     Route::get('schedule', 'HomeController@schedule')->name('schedule');
     Route::get('match/{match}/details', ['as' => 'match.details', 'uses' => 'HomeController@matchDetails']);
+    Route::get('news/{news}', 'HomeController@singleNews')->name('newsIndex');
     Route::get('news', 'HomeController@news');
     Route::get('tickets', 'HomeController@tickets');
     Route::get('multimedia', 'HomeController@multimedia');
@@ -130,7 +127,6 @@ Route::group(['namespace' => 'Site', 'middleware'=>'language'], function () {
     Route::post('post-desires', 'HomeController@postDesires');
 
     Route::get('/privacy', 'HomeController@privacy');
-
 });
 
 
@@ -141,4 +137,3 @@ Route::group(['namespace' => 'Site', 'middleware'=>'language'], function () {
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
-

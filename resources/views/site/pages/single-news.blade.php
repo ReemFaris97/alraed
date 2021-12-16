@@ -23,50 +23,38 @@
             <button id="menu-toggle" class="menu-toggle"><span>Menu</span></button>
             <div id="theGrid" class="main">
                 <section class="grid">
-                    @foreach ($news as $s_news)
-                        <a class="grid__item">
-                            <h2 class="title title--preview">{{ $s_news->title }}</h2>
+                        <a class="grid__item" id="myLink">
+                            <h2 class="title title--preview">{{ $news->title }}</h2>
                             <div class="loader"></div>
-                            <span class="category">{{ $s_news->category->name }}</span>
+                            <span class="category">{{ $news->category->name }}</span>
                             <div class="meta meta--preview">
-                                <img class="meta__avatar" src="{{ getimg($s_news->image) }}"
-                                    alt="{{ $s_news->title }}" />
+                                <img class="meta__avatar" src="{{ getimg($news->image) }}"
+                                    alt="{{ $news->title }}" />
                                 <span class="meta__date"><i class="fa fa-calendar-o"></i>
-                                    {{ $s_news->created_at->format('d M') }}</span>
+                                    {{ $news->created_at->format('d M') }}</span>
                                 <span class="meta__reading-time"><i class="fa fa-clock-o"></i>
-                                    {{ $s_news->created_at->format('h:i a') }}</span>
+                                    {{ $news->created_at->format('h:i a') }}</span>
                             </div>
                         </a>
-                    @endforeach
 
-                    {{-- <footer class="page-meta">
-						<span class="transparented"><a href="#" class="first-site-btn">@lang('trans.see_more')</a></span>
-					</footer> --}}
-                    <footer class="page-meta">
-                        <span class="transparented"><a href="{{ $news->previousPageUrl() }}"
-                                class="first-site-btn">@lang('trans.previous')</a></span>
-                        <span class="transparented"><a href="{{ $news->nextPageUrl() }}"
-                                class="first-site-btn">@lang('trans.next')</a></span>
-                    </footer>
                 </section>
                 <section class="content">
                     <div class="scroll-wrap">
-                        @foreach ($news as $news_s)
                             <article class="content__item">
-                                <span class="category category--full">{{ $news_s->category->name }}</span>
-                                <h2 class="title title--full">{{ $news_s->title }}</h2>
+                                <span class="category category--full">{{ $news->category->name }}</span>
+                                <h2 class="title title--full">{{ $news->title }}</h2>
                                 <div class="meta meta--full">
-                                    <img class="meta__avatar" src="{{ getimg($news_s->image) }}" alt="author01" />
-                                    <span class="meta__author">{{ $news_s->writer_name }}</span>
+                                    <img class="meta__avatar" src="{{ getimg($news->image) }}" alt="author01" />
+                                    <span class="meta__author">{{ $news->writer_name }}</span>
                                     <span class="meta__date"><i
-                                            class="fa fa-calendar-o"></i>{{ $news_s->created_at->format('d M') }}</span>
+                                            class="fa fa-calendar-o"></i>{{ $news->created_at->format('d M') }}</span>
                                     <span class="meta__reading-time"><i class="fa fa-clock-o"></i>
-                                        {{ $news_s->created_at->format('h:i a') }}</span>
+                                        {{ $news->created_at->format('h:i a') }}</span>
                                 </div>
 
                                 <!--							images slider here if isset-->
                                 <div class="inner-news-slider owl-carousel owl-theme news-slider-caro">
-                                    @foreach ($news_s->images as $img)
+                                    @foreach ($news->images as $img)
                                         <div class="item">
                                             <div class="news-image-wrapper">
                                                 <a href="{{ asset($img->image) }}" data-fancybox="news">
@@ -75,41 +63,15 @@
                                             </div>
                                         </div>
                                     @endforeach
-                                    {{-- <div class="item"> --}}
-                                    {{-- <div class="news-image-wrapper"> --}}
-                                    {{-- <a href="https://alraedsc.com/storage/photos/mMqeIGhgWFwFcNGx8Zu7GA68UGiy58SgNs2kbnHh.jpeg" data-fancybox="news"> --}}
-                                    {{-- <img src="https://alraedsc.com/storage/photos/mMqeIGhgWFwFcNGx8Zu7GA68UGiy58SgNs2kbnHh.jpeg" alt="صورة للخبر"> --}}
-                                    {{-- </a> --}}
-                                    {{-- </div> --}}
-                                    {{-- </div> --}}
-                                    {{-- <div class="item"> --}}
-                                    {{-- <div class="news-image-wrapper"> --}}
-                                    {{-- <a href="https://alraedsc.com/storage/photos/E7fGVOiIOLNp9J6veJchEEIHu4ztGjBC15A7DPm2.jpeg" data-fancybox="news"> --}}
-                                    {{-- <img src="https://alraedsc.com/storage/photos/E7fGVOiIOLNp9J6veJchEEIHu4ztGjBC15A7DPm2.jpeg" alt="صورة للخبر"> --}}
-                                    {{-- </a> --}}
-                                    {{-- </div> --}}
-                                    {{-- </div> --}}
                                 </div>
 
 
 
                                 <p>
-                                    {{ $news_s->description }}
+                                    {{ $news->description }}
                                 </p>
 
-                                <!--							Video here if isset-->
-                                <!--
-                       <div class="w-80-percent">
-                        <div class="embed-responsive embed-responsive-16by9">
-                       <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
-                       </div>
-                       </div>
-                -->
-
-
-
                             </article>
-                        @endforeach
 
 
 
@@ -140,6 +102,7 @@
 
         <script>
             $(document).ready(function() {
+                document.getElementById('myLink').click();
                 $('.news-slider-caro').owlCarousel({
                     animateOut: 'slideOutDown',
                     animateIn: 'flipInX',
@@ -154,6 +117,7 @@
                     autoplayTimeout: 5000,
                     autoplaySpeed: 5000,
                 });
+
             })
         </script>
 

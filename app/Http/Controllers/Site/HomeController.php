@@ -21,12 +21,11 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-
     public function index()
     {
         $banners = Banner::latest()->limit(10)->latest()->first()->get();
         $next_match = Game::where('date', '>=', now()->toDateTimeString())->oldest('date')->first();
-        $previous_matches = Game::where('date', '<=',now()->toDateTimeString())->oldest('date')->limit(2)->get();
+        $previous_matches = Game::where('date', '<=', now()->toDateTimeString())->oldest('date')->limit(2)->get();
         if (!is_null($next_match)) {
             $next_matches = Game::where('date', '>=', now()->toDateTimeString())->where('id', '<>', $next_match->id)->oldest('date')->limit(2)->get();
         } else {
@@ -37,7 +36,7 @@ class HomeController extends Controller
         // $news = News::where('category_id', '<>',$category->id)->latest()->limit(3)->get();
         $news = News::latest()->limit(3)->get();
         $top_news = News::latest()->limit(8)->get();
-        $multimedia = Multimedia::latest()->where('type','image')->limit(5)->get();
+        $multimedia = Multimedia::latest()->where('type', 'image')->limit(5)->get();
         $partners = Partner::all();
         return view('site.pages.index', compact('banners', 'next_match', 'news', 'top_news', 'next_matches', 'previous_matches', 'partners', 'multimedia'));
     }
@@ -73,8 +72,14 @@ class HomeController extends Controller
 
     public function news()
     {
+        $id = request('id') ?? 0;
         $news = News::latest()->paginate(5);
-        return view('site.pages.news', compact('news'));
+        return view('site.pages.news', compact('news','id'));
+    }
+
+    public function singleNews(News $news)
+    {
+        return view('site.pages.single-news', compact('news'));
     }
 
     public function moreNews()
@@ -94,17 +99,16 @@ class HomeController extends Controller
 
     public function tickets()
     {
-
     }
 
     public function multimedia()
     {
-        $multimedia = Multimedia::latest()->where('type','image')->paginate(10);
+        $multimedia = Multimedia::latest()->where('type', 'image')->paginate(10);
         return view('site.pages.multimedia', compact('multimedia'));
     }
     public function videos()
     {
-        $multimedia = Multimedia::latest()->where('type','video')->paginate(10);
+        $multimedia = Multimedia::latest()->where('type', 'video')->paginate(10);
         return view('site.pages.soicalVideos', compact('multimedia'));
     }
 
@@ -210,6 +214,5 @@ class HomeController extends Controller
         ]);
         Report::create($inputs);
         return back()->with('success', __('trans.add_success'));
-
     }
 }
