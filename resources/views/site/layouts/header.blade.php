@@ -19,7 +19,7 @@
         <link rel="apple-touch-icon" sizes="76x76" href="{{ url('site') }}/img/favicon/apple-icon-76x76.png">
         <link rel="apple-touch-icon" sizes="114x114" href="{{ url('site') }}/img/favicon/apple-icon-114x114.png">
         <link rel="apple-touch-icon" sizes="120x120" href="{{ url('site') }}/img/favicon/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="{{ url('site') }}/img/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="{{ url('site') }}/imاg/favicon/apple-icon-144x144.png">
         <link rel="apple-touch-icon" sizes="152x152" href="{{ url('site') }}/img/favicon/apple-icon-152x152.png">
         <link rel="apple-touch-icon" sizes="180x180" href="{{ url('site') }}/img/favicon/apple-icon-180x180.png">
         <link rel="icon" type="image/png" sizes="192x192" href="{{ url('site') }}/img/favicon/android-icon-192x192.png">
@@ -95,9 +95,7 @@
                                        {{-- <a href="#">مجلس الإدارة</a>
                                         <a href="#">الإدارة العليا</a>--}}
                                         @endforeach
-                                        <a href="{{asset('site/التقرير السنوي 2020-2021.pdf')}}" target="_blank" rel=" noopener">
-                                            @lang('trans.annual_report')
-                                        </a>
+                                     
                                         <a href="{{route('contacts.index')}}">اتصل بنا</a>
                                     </div>
                                 </div>
@@ -111,7 +109,12 @@
                                         <a href="{{asset('site/img/wathika.pdf')}}" target="_blank" rel=" noopener">
                                             @lang('trans.Document_strategic_club')
                                         </a>
-                                        <a href="{{url('achievementReports')}}">تقارير الإنجاز</a>
+                                        
+                                           <a href="{{asset('site/التقرير السنوي 2020-2021.pdf')}}" target="_blank" rel=" noopener">
+                                            @lang('trans.annual_report')
+                                        </a>
+                                        
+                                        <!--<a href="{{url('achievementReports')}}">تقارير الإنجاز</a>-->
                                     </div>
                                 </div>
                             </li>
@@ -131,7 +134,7 @@
                                     <div class="hoverable-inner">
                                         <a href="#">الأخبار</a>
                                         <a href="{{ url('multimedia') }}">ألبوم الصور</a>
-                                        <a href="{{ route('videos.index') }}">الفيديوهات</a>
+                                        <!--<a href="{{ route('videos.index') }}">الفيديوهات</a>-->
                                         <a href="{{route('schedule')}}">مباريات النادى</a>
                                     </div>
                                 </div>
@@ -145,21 +148,21 @@
                                             <a href="{{route('survey-manager.run',$survey->slug)}}">{{$survey->name}}</a>
                                         @endforeach--}}
 
-                                              <a target="_blank" href="https://forms.gle/Kx1DrZzskgLr7V3UA">انطباعات الجماهير</a>
+                                              <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdMDeUwo5Hby3LtH9OL2zHlTvD_107wRqq0SFqyPAmA5JwlEg/viewform">
+                                                 
+                                                  استبيان الزوار
+                                              </a>
 
 
-                                              <a target="_blank" href="https://forms.gle/uVWT38bYTKKWZQ2aA">انطباعات الموظفين</a>
+                                              <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeQ1wrBdcBO8BkZCpodHp3R6lPKTVF2FbzxwtRFD3CGKmOCdA/viewform">استبيان الانطباعات العامه </a>
 
 
-                                              <a target="_blank" href="https://forms.gle/LG1WFNFFbNvcy7qE8">استبيان الزوار</a>
-
-
-
-                                              <a target="_blank" href="https://forms.gle/TziNp2awt9XsDZcN7">استبيان اللاعبين</a>
+                                              <a target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSeUHNTAR_6zwHPC70bxUIY5Z38f5km0B2MgCMXWKdmhL38dww/viewform"> 
+                                              رايك يهمنا
+                                              </a>
 
 
 
-                                              <a target="_blank" href="https://forms.gle/d482vWGxKRZnPdqd6">استبيان المدربين</a>
 
                                     </div>
                                 </div>
@@ -172,12 +175,12 @@
                                 <a href="#">{{__('trans.more')}}<b class="caret"></b></a>
                                 <div class="hoverable-droppy">
                                     <div class="hoverable-inner">
-                                        <a href="{{url('volunteer')}}" target="_blank" rel="noreferrer noopener">@lang('trans.Volunteers')</a>
-                                        <a href="{{url('desires')}}" target="_blank" rel="noreferrer noopener">@lang('trans.desires')</a>
+                                        <a href="{{url('volunteer')}}" target="_blank" rel="noreferrer noopener">المتطوعون</a>
+                                        <a href="{{url('desires')}}" target="_blank" rel="noreferrer noopener">الراعبون في التسجيل</a>
 
-                                        <a href="{{asset('site/img/dalil.pdf')}}" target="_blank" rel=" noopener">
-                                            @lang('trans.Organizational_guide')
-                                        </a>
+                                        <!--<a href="{{asset('site/img/dalil.pdf')}}" target="_blank" rel=" noopener">-->
+                                        <!--    @lang('trans.Organizational_guide')-->
+                                        <!--</a>-->
                                         <a href="{{ url('soical-responsible') }}">@lang('trans.soical_responsible')</a>
                                     </div>
                                 </div>

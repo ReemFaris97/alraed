@@ -33,7 +33,7 @@
             <div class="container vol-form">
                 <div class="the-all-form-title">
                 <span>
-                    تواصل معانا
+                    التواصل معانا
                 </span>
                 </div>
                 @if(session()->has('success'))
