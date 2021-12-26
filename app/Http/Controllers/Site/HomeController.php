@@ -11,6 +11,7 @@ use App\Http\Requests\VolunteerRequest;
 use App\Game;
 use App\Multimedia;
 use App\News;
+use App\OtherGame;
 use App\OurTeam;
 use App\Partner;
 use App\Report;
@@ -74,7 +75,7 @@ class HomeController extends Controller
     {
         $id = request('id') ?? 0;
         $news = News::latest()->paginate(5);
-        return view('site.pages.news', compact('news','id'));
+        return view('site.pages.news', compact('news', 'id'));
     }
 
     public function singleNews(News $news)
@@ -122,7 +123,14 @@ class HomeController extends Controller
 
     public function otherSports()
     {
-        return view('site.pages.other_sports');
+        $items = OtherGame::with('images')->get();
+        return view('site.pages.other_sports', compact('items'));
+    }
+
+    public function singleSport(OtherGame $otherGame)
+    {
+        $otherGame->load('images');
+        return view('site.pages.sport', compact('otherGame'));
     }
 
     public function karateh()

@@ -147,6 +147,8 @@
                             </li>
                             <li class="nav-tab "><a href="https://store.alraedclub.sa/"
                                     target="_blank">@lang('trans.store')</a></li>
+                            <li class="nav-tab "><a href="https://www.alraed.evento.sa/home"
+                                    target="_blank">@lang('trans.my_ticket')</a></li>
                             <li class="nav-tab hoverable-droppy-wrap">
                                 <a href="#">استطلاعات<b class="caret"></b></a>
                                 <div class="hoverable-droppy">
@@ -190,7 +192,7 @@
                                         <a href="{{ url('volunteer') }}" target="_blank"
                                             rel="noreferrer noopener">المتطوعون</a>
                                         <a href="{{ url('desires') }}" target="_blank"
-                                            rel="noreferrer noopener">الراعبون في التسجيل</a>
+                                            rel="noreferrer noopener">الراغبون في التسجيل</a>
 
                                         <!--<a href="{{ asset('site/img/dalil.pdf') }}" target="_blank" rel=" noopener">-->
                                         <!--    @lang('trans.Organizational_guide')-->

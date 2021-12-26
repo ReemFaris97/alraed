@@ -46,6 +46,7 @@ Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin',
     Route::resource('partners', 'PartnersController')->middleware('permission:partners');
     //Route::resource('our-team', 'AlraedPlayersController')->middleware('permission:our-team');
     Route::resource('multimedia', 'MultiMediaController')->middleware('permission:multimedia');
+    Route::resource('other-games', 'OtherGameController')->middleware('permission:other-games');
     Route::resource('categories', 'CategoriesController')->middleware('permission:categories');
     Route::resource('news', 'NewsController')->middleware('permission:news');
 
@@ -115,6 +116,7 @@ Route::group(['namespace' => 'Site', 'middleware'=>'language'], function () {
     Route::get('soical-responsible', 'HomeController@soical_responsible');
     Route::get('event/{event}', 'HomeController@showSocial');
     Route::get('other-sports', 'HomeController@otherSports')->name('other-sports');
+    Route::get('other-sports/{otherGame:en_name}', 'HomeController@singleSport')->name('singleSport');
     Route::get('karateh', 'HomeController@karateh')->name('karateh');
     Route::get('boxing', 'HomeController@boxing')->name('boxing');
     Route::get('tennis', 'HomeController@tennis')->name('tennis');
