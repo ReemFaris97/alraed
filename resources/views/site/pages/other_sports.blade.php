@@ -9,7 +9,7 @@
     <section class="all-soical">
         <div class="container">
             <div class="whole-section-title-wrapper">
-                <h4 class="the-above-title"> الفعاليات</h4>
+                <h4 class="the-above-title"> الرياضات الاخرى</h4>
                 <h3 class="the-section-title">
                     <span class="wow animated">S</span>
                     <span class="wow animated">O</span>

@@ -8,7 +8,7 @@
 @section('content')
     <div class="soical">
         <div class="whole-section-title-wrapper">
-            <h4 class="the-above-title"> {{ $otherGame->ar_name }}</h4>
+            {{-- <h4 class="the-above-title"> {{ $otherGame->ar_name }}</h4> --}}
             <h3 class="the-section-title">
                 <span class="wow animated">S</span>
                 <span class="wow animated">O</span>

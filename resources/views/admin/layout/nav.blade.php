@@ -291,7 +291,7 @@
     </li>
 @endif
 
-@if (hasPermission('other-games'))
+{{-- @if (hasPermission('other-games')) --}}
     <li>
         <a href="javascript:void(0);" class="menu-toggle">
             <i class="material-icons">layers</i>
@@ -311,7 +311,7 @@
             </li>
         </ul>
     </li>
-@endif
+{{-- @endif --}}
 
 <li>
     <a href="javascript:void(0);" class="menu-toggle">
