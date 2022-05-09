@@ -3472,3 +3472,15 @@ a.two-side-logos img {
 		font-size: 14px;
 	}
 }
+/* ========================= modfication ====================*/
+.first-team{
+	padding: 60px 0;
+}
+.owl-carousel .owl-item img {
+    display: block;
+    width: 100%;
+}
+.content-img-txt h4{
+	font-weight: bold;
+	margin-bottom: 0;
+}

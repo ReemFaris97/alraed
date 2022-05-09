@@ -148,7 +148,7 @@
     </div>
     <!--     *************************  End      of Counter ********************-->
     <!--     *************************  Beginnig of News ********************-->
-    <div class="container">
+<!--     <div class="container">
         <div class="row">
             <div class="news-slider owl-carousel owl-theme" id="news-slider">
                 @foreach ($news as $s_new)
@@ -169,8 +169,30 @@
 
             </div>
         </div>
-    </div>
+    </div> -->
     <!--     *************************  End      of News ********************-->
+    <!--     *************************  Beginnig of first team ********************-->
+   <section class='first-team'>
+   <div class="container">
+        <h3 class="some-title">
+            الفريق الاول
+        </h3>
+        <div class="row">
+            <div class="owl-carousel owl-theme" id="first-team">
+
+                    <div class="item">
+                       <div class='content-img-txt'>
+                           <img src="{{asset('site/img/slider1.jpg')}}" alt="">
+                           <h4>محمد صلاح</h4>
+                           <span>وسط</span>
+                       </div>
+                    </div>
+              
+            </div>
+        </div>
+    </div>
+   </section>
+    <!--     *************************  End      of first team ********************-->
     <!--     *************************  Beginnig of Times ********************-->
     <div class="container-fluid matches-slider-section">
         <div class="container">
@@ -566,5 +588,19 @@
         // var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
         var deadline = new Date(Date.parse(new Date()) + aimTime);
         initializeClock('clockdiv', deadline);
+    </script>
+    <script>
+        $('#first-team').owlCarousel({	
+			items: 4,
+			margin:10,
+			loop: true,
+			stagePadding: 0,
+			dots: true,
+			rtl: true,
+			nav: false,
+			autoplay: true,
+			autoplayTimeout: 5000,
+			autoplaySpeed: 5000,
+		});
     </script>
 @endsection
