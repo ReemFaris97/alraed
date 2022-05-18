@@ -189,6 +189,8 @@
                     </div>
               
             </div>
+            <a href="http://127.0.0.1:8000/multimedia" class="first-site-btn">
+                                مشاهدة المزيد                            </a>
         </div>
     </div>
    </section>
@@ -591,16 +593,26 @@
     </script>
     <script>
         $('#first-team').owlCarousel({	
-			items: 4,
-			margin:10,
-			loop: true,
-			stagePadding: 0,
-			dots: true,
+            loop: true,
 			rtl: true,
-			nav: false,
 			autoplay: true,
-			autoplayTimeout: 5000,
-			autoplaySpeed: 5000,
+			margin: 10,
+			responsiveClass: true,
+			nav: false,
+			dots: false,
+			responsive: {
+				0: {
+					items: 1,
+					margin: 0,
+				},
+				991: {
+					items: 2,
+					margin: 0,
+				},
+				1000: {
+					items: 4
+				}
+			}
 		});
     </script>
 @endsection

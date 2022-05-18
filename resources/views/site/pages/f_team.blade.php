@@ -27,11 +27,101 @@
 					</h3>
 				</div>
 				<section>
+					
 					<div class="container">
-						<div class="row">
+						<!-- <div class="row">
 							<a href="{{asset('site/img/theteam.jpg')}}" data-caption="كرة القدم" data-fancybox="firstteam">
 								<img src="{{asset('site/img/theteam.jpg')}}" alt="الفريق الأول" class="the-f-team">
 							</a>
+						</div> -->
+						<div class="row">
+							<div class="col-md-3 col-sm-6">
+								<div class="item fteam">
+									<div class='content-img-txt'>
+										<img src="{{asset('site/img/slider1.jpg')}}" alt="">
+										<div class="content-detail">
+											<h4>محمد صلاح</h4>
+											<span>وسط</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6">
+								<div class="item fteam">
+									<div class='content-img-txt'>
+										<img src="{{asset('site/img/slider1.jpg')}}" alt="">
+										<div class="content-detail">
+											<h4>محمد صلاح</h4>
+											<span>وسط</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6">
+								<div class="item fteam">
+									<div class='content-img-txt'>
+										<img src="{{asset('site/img/slider1.jpg')}}" alt="">
+										<div class="content-detail">
+											<h4>محمد صلاح</h4>
+											<span>وسط</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6">
+								<div class="item fteam">
+									<div class='content-img-txt'>
+										<img src="{{asset('site/img/slider1.jpg')}}" alt="">
+										<div class="content-detail">
+											<h4>محمد صلاح</h4>
+											<span>وسط</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6">
+								<div class="item fteam">
+									<div class='content-img-txt'>
+										<img src="{{asset('site/img/slider1.jpg')}}" alt="">
+										<div class="content-detail">
+											<h4>محمد صلاح</h4>
+											<span>وسط</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-3 col-sm-6">
+								<div class="item fteam">
+									<div class='content-img-txt'>
+										<img src="{{asset('site/img/slider1.jpg')}}" alt="">
+										<div class="content-detail">
+											<h4>محمد صلاح</h4>
+											<span>وسط</span>
+										</div>
+									</div>
+								</div>
+							</div><div class="col-md-3 col-sm-6">
+								<div class="item fteam">
+									<div class='content-img-txt'>
+										<img src="{{asset('site/img/slider1.jpg')}}" alt="">
+										<div class="content-detail">
+											<h4>محمد صلاح</h4>
+											<span>وسط</span>
+										</div>
+									</div>
+								</div>
+							</div><div class="col-md-3 col-sm-6">
+								<div class="item fteam">
+									<div class='content-img-txt'>
+										<img src="{{asset('site/img/slider1.jpg')}}" alt="">
+										<div class="content-detail">
+											<h4>محمد صلاح</h4>
+											<span>وسط</span>
+										</div>
+									</div>
+								</div>
+							</div>
+							
 						</div>
 					</div>
 				</section>
