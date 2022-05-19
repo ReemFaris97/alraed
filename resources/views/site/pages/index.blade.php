@@ -178,17 +178,23 @@
             الفريق الاول
         </h3>
         <div class="row">
+
             <div class="owl-carousel owl-theme" id="first-team">
 
+
+
+                @foreach ($first_teams as $team )
                     <div class="item">
                        <div class='content-img-txt'>
-                           <img src="{{asset('site/img/slider1.jpg')}}" alt="">
-                           <h4>محمد صلاح</h4>
-                           <span>وسط</span>
+                           <img src="{{asset($team->image)}}" alt="">
+                           <h4>{{$team->name}}</h4>
+                           <span>{{$team->job}}</span>
                        </div>
                     </div>
-              
+
+                    @endforeach
             </div>
+
             <a href="http://127.0.0.1:8000/multimedia" class="first-site-btn">
                                 مشاهدة المزيد                            </a>
         </div>
@@ -592,7 +598,7 @@
         initializeClock('clockdiv', deadline);
     </script>
     <script>
-        $('#first-team').owlCarousel({	
+        $('#first-team').owlCarousel({
             loop: true,
 			rtl: true,
 			autoplay: true,
