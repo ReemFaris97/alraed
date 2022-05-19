@@ -355,6 +355,20 @@
 <li>
     <a href="javascript:void(0);" class="menu-toggle">
         <i class="material-icons">person_add</i>
+        <span> اعضاء الفريق الاول </span>
+    </a>
+    <ul class="ml-menu">
+        <li>
+            <a class="check_active" href="{{ route('admin.first-teams.index') }}">
+                <span> اعضاء الفريق الاول</span>
+            </a>
+        </li>
+    </ul>
+</li>
+
+<li>
+    <a href="javascript:void(0);" class="menu-toggle">
+        <i class="material-icons">person_add</i>
         <span> البلاغات </span>
     </a>
     <ul class="ml-menu">

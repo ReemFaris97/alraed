@@ -32,6 +32,7 @@ Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin',
     ]);
     Route::resource('surveys', 'SurveyController');
     Route::resource('reports', 'ReportController');
+    Route::resource('first-teams', 'FirstTeamController');
     //USERS
     Route::resource('admins', 'AdminsController')->middleware('permission:admins');
     Route::resource('assistants', 'AssistantsController')->middleware('permission:assistants');
