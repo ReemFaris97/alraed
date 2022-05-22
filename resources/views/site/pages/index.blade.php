@@ -597,9 +597,9 @@
         var deadline = new Date(Date.parse(new Date()) + aimTime);
         initializeClock('clockdiv', deadline);
     </script>
-    <script>
+   <!--  <script>
         $('#first-team').owlCarousel({
-            loop: true,
+            loop: false,
 			rtl: true,
 			autoplay: true,
 			margin: 10,
@@ -620,5 +620,5 @@
 				}
 			}
 		});
-    </script>
+    </script> -->
 @endsection
