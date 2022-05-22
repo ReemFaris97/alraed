@@ -60,6 +60,30 @@ $(document).ready(function () {
 			nav: true
 		});
 	}
+	if ($('#first-team').length) {
+		$('#first-team').owlCarousel({
+			loop: false,
+			rtl: true,
+			autoplay: true,
+			margin: 10,
+			responsiveClass: true,
+			nav: false,
+			dots: false,
+			responsive: {
+				0: {
+					items: 1,
+					margin: 0,
+				},
+				991: {
+					items: 2,
+					margin: 0,
+				},
+				1000: {
+					items: 4
+				}
+			}
+		});
+	}
 	if ($('#partners-slider').length) {
 		$('#partners-slider').owlCarousel({
 			loop: true,
