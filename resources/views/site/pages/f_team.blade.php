@@ -27,7 +27,7 @@
 					</h3>
 				</div>
 				<section>
-					
+
 					<div class="container">
 						<!-- <div class="row">
 							<a href="{{asset('site/img/theteam.jpg')}}" data-caption="كرة القدم" data-fancybox="firstteam">
@@ -35,135 +35,26 @@
 							</a>
 						</div> -->
 						<div class="row">
-							<div class="col-md-3 col-sm-6">
+                            @foreach ($first_teams as $first_team )
+
+
+						<div class="col-md-3 col-sm-6">
 								<div class="item fteam">
 									<div class='content-img-txt'>
-										<img src="{{asset('site/img/slider1.jpg')}}" alt="">
+										<img src="{{asset($first_team->image)}}" alt="">
 										<div class="content-detail">
-											<h4>محمد صلاح</h4>
-											<span>وسط</span>
+											<h4>{{$first_team->name}}</h4>
+											<span>{{$first_team->job}}</span>
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-md-3 col-sm-6">
-								<div class="item fteam">
-									<div class='content-img-txt'>
-										<img src="{{asset('site/img/slider1.jpg')}}" alt="">
-										<div class="content-detail">
-											<h4>محمد صلاح</h4>
-											<span>وسط</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 col-sm-6">
-								<div class="item fteam">
-									<div class='content-img-txt'>
-										<img src="{{asset('site/img/slider1.jpg')}}" alt="">
-										<div class="content-detail">
-											<h4>محمد صلاح</h4>
-											<span>وسط</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 col-sm-6">
-								<div class="item fteam">
-									<div class='content-img-txt'>
-										<img src="{{asset('site/img/slider1.jpg')}}" alt="">
-										<div class="content-detail">
-											<h4>محمد صلاح</h4>
-											<span>وسط</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 col-sm-6">
-								<div class="item fteam">
-									<div class='content-img-txt'>
-										<img src="{{asset('site/img/slider1.jpg')}}" alt="">
-										<div class="content-detail">
-											<h4>محمد صلاح</h4>
-											<span>وسط</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-3 col-sm-6">
-								<div class="item fteam">
-									<div class='content-img-txt'>
-										<img src="{{asset('site/img/slider1.jpg')}}" alt="">
-										<div class="content-detail">
-											<h4>محمد صلاح</h4>
-											<span>وسط</span>
-										</div>
-									</div>
-								</div>
-							</div><div class="col-md-3 col-sm-6">
-								<div class="item fteam">
-									<div class='content-img-txt'>
-										<img src="{{asset('site/img/slider1.jpg')}}" alt="">
-										<div class="content-detail">
-											<h4>محمد صلاح</h4>
-											<span>وسط</span>
-										</div>
-									</div>
-								</div>
-							</div><div class="col-md-3 col-sm-6">
-								<div class="item fteam">
-									<div class='content-img-txt'>
-										<img src="{{asset('site/img/slider1.jpg')}}" alt="">
-										<div class="content-detail">
-											<h4>محمد صلاح</h4>
-											<span>وسط</span>
-										</div>
-									</div>
-								</div>
-							</div>
-							
+                            @endforeach
+
 						</div>
 					</div>
 				</section>
-<!--
-			<section class="grid3d vertical" id="grid3d">
-				<div class="grid-wrap">
-					<div class="grid">
-						@foreach($teams as $team)
-						<figure class="imghvr-shutter-in-out-diag-1 single-team-player-block animated wow"><img src="{{ getimg($team->image) }}" alt="{{ $team->name }}">
-						  <figcaption>
-							<h3>{{ $team->name }}</h3>
-							<p>{{ $team->job_title }}</p>
-						  </figcaption><a href="javascript:;"></a>
-						</figure>
-						@endforeach
 
-					</div>
-				</div>
-				<div class="content players-descriptions">
-					@foreach($teams as $t)
-					<div class="single-player-details">
-						<img src="{{ getimg($t->image) }}" alt="{{ $t->name }}" >
-						<h3>{{ $t->name }}</h3>
-						<div class="inner-player-position">{{ $t->job_position }}</div>
-						<p class="dummy-text">
-							{{ $t->description }}
-
-						</p>
-					</div>
-					@endforeach
-
-					<span class="loading"></span>
-					<span class="icon close-content" title="اغلاق">
-						<img src="{{ url('site') }}/img/whistle.svg" alt="close" />
-					</span>
-				</div>
-			</section>
--->
-		</div><!-- /container -->
-<!--     *************************  End      of ٍSection ********************-->
-
-@endsection
 
 @section('scripts')
 		<script type="text/javascript" src="{{ url('site') }}/js/jquery.fancybox.min.js"></script>

@@ -195,7 +195,7 @@
                     @endforeach
             </div>
 
-            <a href="http://127.0.0.1:8000/multimedia" class="first-site-btn">
+            <a href="{{route('first-team')}}" class="first-site-btn">
                                 مشاهدة المزيد                            </a>
         </div>
     </div>
