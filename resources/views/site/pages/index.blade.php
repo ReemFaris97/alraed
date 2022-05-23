@@ -171,36 +171,7 @@
         </div>
     </div> -->
     <!--     *************************  End      of News ********************-->
-    <!--     *************************  Beginnig of first team ********************-->
-   <section class='first-team'>
-   <div class="container">
-        <h3 class="some-title">
-            الفريق الاول
-        </h3>
-        <div class="row">
-
-            <div class="owl-carousel owl-theme" id="first-team">
-
-
-
-                @foreach ($first_teams as $team )
-                    <div class="item">
-                       <div class='content-img-txt'>
-                           <img src="{{asset($team->image)}}" alt="">
-                           <h4>{{$team->name}}</h4>
-                           <span>{{$team->job}}</span>
-                       </div>
-                    </div>
-
-                    @endforeach
-            </div>
-
-            <a href="{{route('first-team')}}" class="first-site-btn">
-                                مشاهدة المزيد                            </a>
-        </div>
-    </div>
-   </section>
-    <!--     *************************  End      of first team ********************-->
+    
     <!--     *************************  Beginnig of Times ********************-->
     <div class="container-fluid matches-slider-section">
         <div class="container">
@@ -395,6 +366,36 @@
         </div>
     </div>
     <!--     *************************  End      of Times ********************-->
+    <!--     *************************  Beginnig of first team ********************-->
+   <section class='first-team'>
+   <div class="container">
+        <h3 class="some-title">
+            الفريق الاول
+        </h3>
+        <div class="row">
+
+            <div class="owl-carousel owl-theme" id="first-team">
+
+
+
+                @foreach ($first_teams as $team )
+                    <div class="item">
+                       <div class='content-img-txt'>
+                           <img src="{{asset($team->image)}}" alt="">
+                           <h4>{{$team->name}}</h4>
+                           <span>{{$team->job}}</span>
+                       </div>
+                    </div>
+
+                    @endforeach
+            </div>
+
+            <a href="{{route('first-team')}}" class="first-site-btn">
+                                مشاهدة المزيد                            </a>
+        </div>
+    </div>
+   </section>
+    <!--     *************************  End      of first team ********************-->
     <!--     *************************  Beginnig of News ********************-->
     <div class="container">
         <div class="row">
