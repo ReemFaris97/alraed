@@ -3509,6 +3509,12 @@ a.two-side-logos img {
 .fteam h4{
 	margin-top: 0;
 }
+section.first-team {
+    background-image: url(../img/background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+	color: #fff;
+}
 @media (max-width:767px) {
 	.fteam h4 {
 		font-size: 14px;
