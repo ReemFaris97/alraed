@@ -3480,7 +3480,7 @@ a.two-side-logos img {
     display: block;
     width: 100%;
 	height: 200px;
-	object-fit: cover;
+	object-fit: contain;
 }
 .content-img-txt h4{
 	font-weight: bold;
@@ -3490,7 +3490,7 @@ a.two-side-logos img {
 .fteam img{
 	width: 100%;
 	height: 235px;
-	object-fit: cover;
+	object-fit: contain;
 	
 }
 .item.fteam{
@@ -3514,6 +3514,9 @@ section.first-team {
     background-repeat: no-repeat;
     background-size: cover;
 	color: #fff;
+}
+.content-img-txt{
+	text-align: center;
 }
 @media (max-width:767px) {
 	.fteam h4 {
