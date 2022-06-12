@@ -42,16 +42,21 @@ class MultiMediaController extends Controller
             'en_title' => 'required|string|max:191',
             'ar_description' => 'required|string',
             'en_description' => 'required|string',
-            'image' => 'required',
-            'type'=>'required|in:image,video'
+           // 'image' => 'required',
+            'type'=>'required|in:image,video',
+            'path'   => 'required|array',
+            'path.*' => 'required|mimes:png,jpg,jpeg|max:10000'
+
+
         ]);
 
         $inputs = $request->all();
 
-        if ($request->hasFile('image')) {
+        /*f ($request->hasFile('image')) {
             $inputs['image'] = uploader($request, 'image');
-        }
-        Multimedia::create($inputs);
+        }*/
+       $model = Multimedia::create($inputs);
+       $model->createImages($request->path);
         popup('add');
         return back();
     }
@@ -92,17 +97,24 @@ class MultiMediaController extends Controller
             'en_title' => 'required|string|max:191',
             'ar_description' => 'required|string',
             'en_description' => 'required|string',
-            'image' => 'nullable',
-            'type'=>'required|in:image,video'
+          //  'image' => 'nullable',
+            'type'=>'required|in:image,video',
+            'path'   => 'nullable|array',
+            'path.*' => 'nullable|mimes:png,jpg,jpeg|max:10000'
+
         ]);
 
         $inputs = $request->all();
 
-        if ($request->hasFile('image')) {
+       /* if ($request->hasFile('image')) {
             $inputs['image'] = uploader($request, 'image');
-        }
+        }*/
 
         $multimedia->update($inputs);
+        if ($request->path) {
+            $multimedia->images()->delete();
+            $multimedia->createImages($request->path);
+        }
         popup('update');
         return back();
     }

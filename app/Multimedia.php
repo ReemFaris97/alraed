@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Multimedia extends Model
 {
-    protected  $fillable=['ar_title','en_title','ar_description','en_description','image','type'];
+    protected  $fillable=['ar_title','en_title','ar_description','en_description','type'];
 
 
     public function getTitleAttribute()
@@ -17,5 +17,15 @@ class Multimedia extends Model
     public function getDescriptionAttribute()
     {
         return getLang($this, 'description');
+    }
+    public function images()
+    {
+        return $this->morphMany(Media::class, 'model');
+    }
+    public function createImages(array $images)
+    {
+        foreach ($images as $key => $value) {
+            $this->images()->create(['path' => $value]);
+        }
     }
 }
