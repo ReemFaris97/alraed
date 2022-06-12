@@ -171,7 +171,7 @@
         </div>
     </div> -->
     <!--     *************************  End      of News ********************-->
-    
+
     <!--     *************************  Beginnig of Times ********************-->
     <div class="container-fluid matches-slider-section">
         <div class="container">
@@ -400,7 +400,7 @@
     <div class="container">
         <div class="row">
             <div class="multimedia-slider owl-carousel owl-theme" id="multimedia-slider">
-                @foreach ($multimedia as $media)
+                @foreach (\App\News::get() as $media)
                     <div class="item">
                         <div class="news-image-wrapper">
                             <a class="watch-vid-btn" data-fancybox="multimedia" data-caption="{{ $media->title }}"
@@ -411,7 +411,7 @@
                         <div class="news-text-wrapper">
                             <h3 class="news-title">{{ $media->title }}</h3>
                             <p> {{ $media->description }} </p>
-                            <a href="{{ url('multimedia') }}" class="first-site-btn">
+                            <a href="{{ url('news') }}" class="first-site-btn">
                                 @lang('trans.see_more')
                             </a>
                         </div>
