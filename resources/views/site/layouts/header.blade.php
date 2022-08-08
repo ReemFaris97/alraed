@@ -68,11 +68,11 @@
                     <a href="{{ url('/') }}" class="two-side-logos">
                         <img class="logo" src="{{ url('site') }}/img/logo.png" alt="Club Logo">
 
-                        @if (App::getLocale() == 'en')
+                        {{-- @if (App::getLocale() == 'en')
                             <img class="logo" src="{{ url('site') }}/img/en-logo.png" alt="Club Logo">
                         @else
                             <img class="logo" src="{{ url('site') }}/img/ar-logo.png" alt="Club Logo">
-                        @endif
+                        @endif --}}
 
 
                     </a>
