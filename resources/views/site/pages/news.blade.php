@@ -21,6 +21,208 @@
                 <span class="wow animated">S</span>
             </h3>
             <button id="menu-toggle" class="menu-toggle"><span>Menu</span></button>
+
+            <!--     *************************  Beginnig of Times ********************-->
+            <div class="container-fluid matches-slider-section">
+                <div class="container">
+                    <h3 class="some-title">
+                        <span class="red-color pacifico sm-size">@lang('trans.football_matches')</span>
+                        @lang('trans.matches_results')
+                    </h3>
+                </div>
+                <div class="row">
+                    <div class="matches-slider">
+                        <article class="example" id="matches-slider">
+                            @foreach ($previous_matches as $prev_match)
+                                <section class="bee3D--slide">
+                                    <div class="bee3D--inner">
+                                        <div class="slider-match-timer-wrapper">
+                                            <div class="slider-match-timer">
+                                                <div class="the-top-sec">
+                                                    <div>
+                                                        <span>{{ $prev_match->date->format('d') }}</span>
+                                                        <span>
+                                                            <span>{{ $prev_match->date->format('D') }}</span>
+                                                            <span>{{ $prev_match->date->format('M') }}</span>
+                                                        </span>
+                                                    </div>
+                                                    <div>
+                                                        <span class="big-size">@lang('trans.previous_match')</span>
+                                                    </div>
+                                                    {{-- <div>
+											<span>برعاية</span>
+											<span>
+											<img src="img/panorama.png" data-toggle="tooltip" title="بانوراما القصيم"/></span>
+										</div> --}}
+                                                </div>
+                                                <div class="slider-match-details">
+                                                    <div class="the-tournament">
+                                                        <img src="{{ getimg($prev_match->Champion->image) }}"
+                                                            data-toggle="tooltip"
+                                                            title="{{ $prev_match->Champion->title }}">
+                                                    </div>
+                                                    <div class="match-common-st">
+                                                        <div class="single-side team-l-wrapper">
+                                                            <img src="{{ getimg($prev_match->FirstTeam->image) }}"
+                                                                alt="logo" data-toggle="tooltip"
+                                                                title="{{ $prev_match->FirstTeam->name }}">
+                                                        </div>
+                                                        <div class="single-side">
+                                                            <div class="sm-size">النتيجة</div>
+                                                            <div class="red-color sin-middle">
+                                                                {{-- {{ $prev_match->goals()->where('team_id', $prev_match->FirstTeam->id)->count() }} : {{ $prev_match->goals()->where('team_id', $prev_match->SecondTeam->id)->count() }} --}}
+                                                                {{ $prev_match->goals_first_team . ' : ' . $prev_match->goals_second_team }}
+                                                            </div>
+                                                            <div class="the-two-teams">
+                                                                <span>{{ $prev_match->FirstTeam->name }}</span>
+                                                                <span class="red-color">@lang('trans.result')</span>
+                                                                <span>{{ $prev_match->SecondTeam->name }}</span>
+                                                            </div>
+                                                            <div class="stadium-name">{{ $prev_match->stadium }}</div>
+                                                        </div>
+                                                        <div class="single-side team-l-wrapper">
+                                                            <img src="{{ getimg($prev_match->SecondTeam->image) }}"
+                                                                alt="logo" data-toggle="tooltip"
+                                                                title="{{ $prev_match->SecondTeam->name }}">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            @endforeach
+
+                            @if (!is_null($next_match))
+                                <section class="bee3D--slide">
+                                    <div class="bee3D--inner">
+                                        <div class="slider-match-timer-wrapper">
+                                            <div class="slider-match-timer">
+                                                <div class="the-top-sec">
+                                                    <div>
+                                                        <span>{{ $next_match->date->format('d') }}</span>
+                                                        <span>
+                                                            <span>{{ $next_match->date->format('D') }}</span>
+                                                            <span>{{ $next_match->date->format('M') }}</span>
+                                                        </span>
+                                                    </div>
+                                                    <div>
+                                                        <span class="big-size">@lang('trans.next_match')</span>
+                                                    </div>
+                                                    {{-- <div>
+											<span>برعاية</span>
+											<span>
+											<img src="{{ url('site') }}/img/panorama.png" data-toggle="tooltip" title="Panorma Alqassim."/></span>
+										</div> --}}
+                                                </div>
+                                                <div class="slider-match-details">
+                                                    <div class="the-tournament">
+                                                        <img src="{{ getimg($next_match->Champion->image) }}"
+                                                            data-toggle="tooltip"
+                                                            title="{{ $next_match->Champion->title }}">
+                                                    </div>
+                                                    <div class="match-common-st">
+                                                        <div class="single-side team-l-wrapper">
+                                                            <img src="{{ getimg($next_match->FirstTeam->image) }}"
+                                                                alt="logo" data-toggle="tooltip"
+                                                                title="{{ $next_match->FirstTeam->name }}">
+                                                        </div>
+                                                        <div class="single-side">
+                                                            <div class="sm-size">@lang('trans.start')</div>
+                                                            <div class="red-color sin-middle">
+                                                                {{ $next_match->date->format('h:i a') }}
+                                                            </div>
+                                                            <div class="the-two-teams">
+                                                                <span>{{ $next_match->FirstTeam->name }}</span>
+                                                                <span class="red-color">@lang('trans.vs')</span>
+                                                                <span>{{ $next_match->SecondTeam->name }}</span>
+                                                            </div>
+                                                            <div class="stadium-name">{{ $next_match->stadium }}</div>
+                                                        </div>
+                                                        <div class="single-side team-l-wrapper">
+                                                            <img src="{{ getimg($next_match->SecondTeam->image) }}"
+                                                                alt="logo" data-toggle="tooltip"
+                                                                title="{{ $next_match->SecondTeam->name }}">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="slider-match-btn">
+                                                    <a class="oval-btn" href="{{ $next_match->booking_url }}"
+                                                        data-text="{{ __('trans.ticket') }}">{{ __('trans.ticket') }}</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            @endif
+
+                            @foreach ($next_matches as $nx_match)
+                                <section class="bee3D--slide">
+                                    <div class="bee3D--inner">
+                                        <div class="slider-match-timer-wrapper">
+                                            <div class="slider-match-timer">
+                                                <div class="the-top-sec">
+                                                    <div>
+                                                        <span>{{ $nx_match->date->format('d') }}</span>
+                                                        <span>
+                                                            <span>{{ $nx_match->date->locale('ar')->format('D') }}</span>
+                                                            <span>{{ $nx_match->date->format('M') }}</span>
+                                                        </span>
+                                                    </div>
+                                                    <div>
+                                                        <span class="big-size">@lang('trans.later_matches')</span>
+                                                    </div>
+                                                    {{-- <div>
+											<span>برعاية</span>
+											<span>
+											<img src="{{ url('site') }}/img/panorama.png" data-toggle="tooltip" title="بانوراما القصيم"/></span>
+										</div> --}}
+                                                </div>
+                                                <div class="slider-match-details">
+                                                    <div class="the-tournament">
+                                                        <img src="{{ getimg($nx_match->Champion->image) }}"
+                                                            data-toggle="tooltip" title="{{ $nx_match->Champion->title }}">
+                                                    </div>
+                                                    <div class="match-common-st">
+                                                        <div class="single-side team-l-wrapper">
+                                                            <img src="{{ getimg($nx_match->FirstTeam->image) }}"
+                                                                alt="logo" data-toggle="tooltip"
+                                                                title="{{ $nx_match->FirstTeam->name }}">
+                                                        </div>
+                                                        <div class="single-side">
+                                                            <div class="sm-size">@lang('trans.start')</div>
+                                                            <div class="red-color sin-middle">
+                                                                {{ $nx_match->date->format('h:i A') }}
+                                                            </div>
+                                                            <div class="the-two-teams">
+                                                                <span>{{ $nx_match->FirstTeam->name }}</span>
+                                                                <span class="red-color">@lang('trans.vs')</span>
+                                                                <span>{{ $nx_match->SecondTeam->name }}</span>
+                                                            </div>
+                                                            <div class="stadium-name">{{ $nx_match->stadium }}</div>
+                                                        </div>
+                                                        <div class="single-side team-l-wrapper">
+                                                            <img src="{{ getimg($nx_match->SecondTeam->image) }}"
+                                                                alt="logo" data-toggle="tooltip"
+                                                                title="{{ $nx_match->SecondTeam->name }}">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                            @endforeach
+
+                            <!-- Navigation Arrows -->
+                            <span class="bee3D--nav bee3D--nav__prev"><i class="fas fa-chevron-left"></i></span>
+                            <span class="bee3D--nav bee3D--nav__next"><i class="fas fa-chevron-right"></i></span>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            <!--     *************************  End      of Times ********************-->
+
             <div id="theGrid" class="main">
                 <section class="grid">
                     @foreach ($news as $s_news)
@@ -99,12 +301,12 @@
 
                                 <!--							Video here if isset-->
                                 <!--
-                       <div class="w-80-percent">
-                        <div class="embed-responsive embed-responsive-16by9">
-                       <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
-                       </div>
-                       </div>
-                -->
+                           <div class="w-80-percent">
+                            <div class="embed-responsive embed-responsive-16by9">
+                           <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+                           </div>
+                           </div>
+                    -->
 
 
 
