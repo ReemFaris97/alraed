@@ -53,13 +53,13 @@
                                 <img class="slider-image" src="{{ getimg($banner->image) }}" alt="{{ $banner->title }}" />
                             @endif
                             <!--
-               <h2>{{ $banner->title }}</h2>
-               <blockquote>
-                                        <p>
-                                            {{ $banner->description }}
-                                        </p>
-                                    </blockquote>
-        -->
+                   <h2>{{ $banner->title }}</h2>
+                   <blockquote>
+                                            <p>
+                                                {{ $banner->description }}
+                                            </p>
+                                        </blockquote>
+            -->
                         </div>
                     </div>
                 @endforeach
@@ -147,7 +147,7 @@
     </div>
     <!--     *************************  End      of Counter ********************-->
     <!--     *************************  Beginnig of News ********************-->
-    <div class="container">
+    {{-- <div class="container">
         <div class="row">
             <div class="news-slider owl-carousel owl-theme" id="news-slider">
                 @foreach ($news as $s_new)
@@ -168,7 +168,7 @@
 
             </div>
         </div>
-    </div>
+    </div> --}}
     <!--     *************************  End      of News ********************-->
     <!--     *************************  Beginnig of Times ********************-->
     {{-- <div class="container-fluid matches-slider-section">
