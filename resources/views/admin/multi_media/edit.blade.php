@@ -13,7 +13,7 @@
       <div class="header">
         <h2>تعديل الوسائط       {{ $item->title }}</h2>
         <ul class="header-dropdown m-r--5">
-            <a href="{{route('admin.multimedia.index')}}">   <button class="btn btn-danger">كل الوسائط</button></a>
+            <a href="{{route('admin.multimedia.index')}}">   <button class="btn btn-danger">كل البنرات</button></a>
          </ul>
       </div>
       <div class="body">

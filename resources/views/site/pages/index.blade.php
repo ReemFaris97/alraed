@@ -50,17 +50,16 @@
                                     Your browser does not support the video tag.
                                 </video>
                             @else
-                                <img class="slider-image" src="{{ getimg($banner->image) }}"
-                                    alt="{{ $banner->title }}" />
+                                <img class="slider-image" src="{{ getimg($banner->image) }}" alt="{{ $banner->title }}" />
                             @endif
                             <!--
-           <h2>{{ $banner->title }}</h2>
-           <blockquote>
-                                    <p>
-                                        {{ $banner->description }}
-                                    </p>
-                                </blockquote>
-    -->
+                   <h2>{{ $banner->title }}</h2>
+                   <blockquote>
+                                            <p>
+                                                {{ $banner->description }}
+                                            </p>
+                                        </blockquote>
+            -->
                         </div>
                     </div>
                 @endforeach
@@ -173,7 +172,7 @@
     <!--     *************************  End      of News ********************-->
 
     <!--     *************************  Beginnig of Times ********************-->
-    <div class="container-fluid matches-slider-section">
+    {{-- <div class="container-fluid matches-slider-section">
         <div class="container">
             <h3 class="some-title">
                 <span class="red-color pacifico sm-size">@lang('trans.football_matches')</span>
@@ -199,11 +198,6 @@
                                             <div>
                                                 <span class="big-size">@lang('trans.previous_match')</span>
                                             </div>
-                                            {{-- <div>
-											<span>برعاية</span>
-											<span>
-											<img src="img/panorama.png" data-toggle="tooltip" title="بانوراما القصيم"/></span>
-										</div> --}}
                                         </div>
                                         <div class="slider-match-details">
                                             <div class="the-tournament">
@@ -218,7 +212,6 @@
                                                 <div class="single-side">
                                                     <div class="sm-size">النتيجة</div>
                                                     <div class="red-color sin-middle">
-                                                        {{-- {{ $prev_match->goals()->where('team_id', $prev_match->FirstTeam->id)->count() }} : {{ $prev_match->goals()->where('team_id', $prev_match->SecondTeam->id)->count() }} --}}
                                                         {{ $prev_match->goals_first_team . ' : ' . $prev_match->goals_second_team }}
                                                     </div>
                                                     <div class="the-two-teams">
@@ -257,11 +250,7 @@
                                             <div>
                                                 <span class="big-size">@lang('trans.next_match')</span>
                                             </div>
-                                            {{-- <div>
-											<span>برعاية</span>
-											<span>
-											<img src="{{ url('site') }}/img/panorama.png" data-toggle="tooltip" title="Panorma Alqassim."/></span>
-										</div> --}}
+
                                         </div>
                                         <div class="slider-match-details">
                                             <div class="the-tournament">
@@ -318,11 +307,7 @@
                                             <div>
                                                 <span class="big-size">@lang('trans.later_matches')</span>
                                             </div>
-                                            {{-- <div>
-											<span>برعاية</span>
-											<span>
-											<img src="{{ url('site') }}/img/panorama.png" data-toggle="tooltip" title="بانوراما القصيم"/></span>
-										</div> --}}
+
                                         </div>
                                         <div class="slider-match-details">
                                             <div class="the-tournament">
@@ -358,13 +343,12 @@
                         </section>
                     @endforeach
 
-                    <!-- Navigation Arrows -->
                     <span class="bee3D--nav bee3D--nav__prev"><i class="fas fa-chevron-left"></i></span>
                     <span class="bee3D--nav bee3D--nav__next"><i class="fas fa-chevron-right"></i></span>
                 </article>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!--     *************************  End      of Times ********************-->
     <!--     *************************  Beginnig of first team ********************-->
    <section class='first-team'>

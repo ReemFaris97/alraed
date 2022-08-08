@@ -77,7 +77,14 @@ class HomeController extends Controller
     {
         $id = request('id') ?? 0;
         $news = News::latest()->paginate(5);
-        return view('site.pages.news', compact('news', 'id'));
+        $next_match = Game::where('date', '>=', now()->toDateTimeString())->oldest('date')->first();
+        $previous_matches = Game::where('date', '<=', now()->toDateTimeString())->oldest('date')->limit(2)->get();
+        if (!is_null($next_match)) {
+            $next_matches = Game::where('date', '>=', now()->toDateTimeString())->where('id', '<>', $next_match->id)->oldest('date')->limit(2)->get();
+        } else {
+            $next_matches = [];
+        }
+        return view('site.pages.news', compact('news', 'id','next_match','previous_matches','next_matches'));
     }
 
     public function singleNews(News $news)

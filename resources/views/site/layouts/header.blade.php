@@ -65,14 +65,14 @@
         <header>
             <div class="nav-wrapper" id="the-nav-bar">
                 <div class="logo-container">
-                    <a href="{{ url('/') }}" class="two-side-logos">
+                    <a href="{{ url('/') }}" class="">
                         <img class="logo" src="{{ url('site') }}/img/logo.png" alt="Club Logo">
 
-                        @if (App::getLocale() == 'en')
+                        {{-- @if (App::getLocale() == 'en')
                             <img class="logo" src="{{ url('site') }}/img/en-logo.png" alt="Club Logo">
                         @else
                             <img class="logo" src="{{ url('site') }}/img/ar-logo.png" alt="Club Logo">
-                        @endif
+                        @endif --}}
 
 
                     </a>
