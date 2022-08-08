@@ -32,6 +32,7 @@ Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin',
     ]);
     Route::resource('surveys', 'SurveyController');
     Route::resource('reports', 'ReportController');
+    Route::resource('first-teams', 'FirstTeamController');
     //USERS
     Route::resource('admins', 'AdminsController')->middleware('permission:admins');
     Route::resource('assistants', 'AssistantsController')->middleware('permission:assistants');
@@ -46,6 +47,7 @@ Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin',
     Route::resource('partners', 'PartnersController')->middleware('permission:partners');
     //Route::resource('our-team', 'AlraedPlayersController')->middleware('permission:our-team');
     Route::resource('multimedia', 'MultiMediaController')->middleware('permission:multimedia');
+    Route::resource('other-games', 'OtherGameController')->middleware('permission:other-games');
     Route::resource('categories', 'CategoriesController')->middleware('permission:categories');
     Route::resource('news', 'NewsController')->middleware('permission:news');
 
@@ -104,7 +106,7 @@ Route::group(['namespace' => 'Site', 'middleware'=>'language'], function () {
     Route::post('complaints', 'HomeController@complaints')->name('complaints');
     Route::get('/surveys', 'HomeController@surveys')->name('surveys');
     Route::get('/', 'HomeController@index');
-    Route::get('first-team', 'HomeController@fTeam')->name('first-team');
+    Route::get('first-team', 'FirstTeamController@index')->name('first-team');
     Route::get('schedule', 'HomeController@schedule')->name('schedule');
     Route::get('match/{match}/details', ['as' => 'match.details', 'uses' => 'HomeController@matchDetails']);
     Route::get('news/{news}', 'HomeController@singleNews')->name('newsIndex');
@@ -115,6 +117,7 @@ Route::group(['namespace' => 'Site', 'middleware'=>'language'], function () {
     Route::get('soical-responsible', 'HomeController@soical_responsible');
     Route::get('event/{event}', 'HomeController@showSocial');
     Route::get('other-sports', 'HomeController@otherSports')->name('other-sports');
+    Route::get('other-sports/{otherGame:en_name}', 'HomeController@singleSport')->name('singleSport');
     Route::get('karateh', 'HomeController@karateh')->name('karateh');
     Route::get('boxing', 'HomeController@boxing')->name('boxing');
     Route::get('tennis', 'HomeController@tennis')->name('tennis');

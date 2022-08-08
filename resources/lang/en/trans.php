@@ -125,6 +125,7 @@ return [
     'annual_report' => 'annual Report 2020-2021',
     'surveys' => 'surveys',
     'complaints'=>'complaints',
-    'more'=>'more'
+    'more'=>'more',
+    'my_ticket'=>'My Ticket',
 
 ];
