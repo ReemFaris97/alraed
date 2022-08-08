@@ -65,7 +65,7 @@
         <header>
             <div class="nav-wrapper" id="the-nav-bar">
                 <div class="logo-container">
-                    <a href="{{ url('/') }}" class="two-side-logos">
+                    <a href="{{ url('/') }}" class="">
                         <img class="logo" src="{{ url('site') }}/img/logo.png" alt="Club Logo">
 
                         {{-- @if (App::getLocale() == 'en')
