@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Site;
 use App\Banner;
 use App\Desire;
 use App\Event;
+use App\FirstTeam;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\DesireRequest;
 use App\Http\Requests\VolunteerRequest;
@@ -39,7 +40,8 @@ class HomeController extends Controller
         $top_news = News::latest()->limit(8)->get();
         $multimedia = Multimedia::latest()->where('type', 'image')->limit(5)->get();
         $partners = Partner::all();
-        return view('site.pages.index', compact('banners', 'next_match', 'news', 'top_news', 'next_matches', 'previous_matches', 'partners', 'multimedia'));
+        $first_teams = FirstTeam::all();
+        return view('site.pages.index', compact('banners', 'next_match', 'news', 'top_news', 'next_matches', 'previous_matches', 'partners', 'multimedia','first_teams'));
     }
 
     public function fTeam()

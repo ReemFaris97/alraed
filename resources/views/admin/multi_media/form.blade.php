@@ -30,19 +30,29 @@
     </div>
 </div>
 
-@if (isset($item->image))
+@if (isset($item) && $item->images->count())
     <div class="form-group form-float">
-        <label class="form-label">صورة الوسائط الحالية :</label>
+        <label class="form-label">صور الوسائط الحالية :</label>
         <div class="form-line">
-            <img class="img-preview" src="{{ getimg($item->image) }}" style="width: 50px; height: 50px">
+            @foreach ($item->images as $image)
+                <a href="{{asset($image->path)}}" target="_blank" rel="noopener noreferrer">
+                    <img class="img-preview" src="{{ asset($image->path) }}" style="width: 50px; height: 50px">
+                </a>
+            @endforeach
         </div>
     </div>
 @endif
 
-<div class="form-group form-float">
-    <label class="form-label">اضافة صور متعددة </label>
+{{--<div class="form-group form-float">
+    <label class="form-label">اضافة صورة الوسائط  </label>
     <div class="form-line">
         <input type="file" name="images[]" id="images" multiple>
+    </div>
+</div>--}}
+<div class="form-group form-float">
+    <label class="form-label">اضافة صور الوسائط </label>
+    <div class="form-line">
+        <input type="file" name="path[]" multiple class="form-control">
     </div>
 </div>
 

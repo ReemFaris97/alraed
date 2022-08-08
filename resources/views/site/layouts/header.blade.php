@@ -153,11 +153,11 @@
                                 <a href="#">استطلاعات<b class="caret"></b></a>
                                 <div class="hoverable-droppy">
                                     <div class="hoverable-inner">
-                                        {{-- @foreach (\laravelsurveyjs\app\Models\Survey::all() as $survey)
+                                         @foreach (\laravelsurveyjs\app\Models\Survey::all() as $survey)
                                             <a href="{{route('survey-manager.run',$survey->slug)}}">{{$survey->name}}</a>
-                                        @endforeach --}}
+                                        @endforeach 
 
-                                        <a target="_blank"
+                                       {{--<a target="_blank"
                                             href="https://docs.google.com/forms/d/e/1FAIpQLSdMDeUwo5Hby3LtH9OL2zHlTvD_107wRqq0SFqyPAmA5JwlEg/viewform">
 
                                             استبيان الزوار
@@ -172,7 +172,7 @@
                                         <a target="_blank"
                                             href="https://docs.google.com/forms/d/e/1FAIpQLSeUHNTAR_6zwHPC70bxUIY5Z38f5km0B2MgCMXWKdmhL38dww/viewform">
                                             رايك يهمنا
-                                        </a>
+                                        </a>--}}
 
 
 

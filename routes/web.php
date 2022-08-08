@@ -32,6 +32,7 @@ Route::group(['prefix' => 'dashboard', 'as' => 'admin.', 'namespace' => 'Admin',
     ]);
     Route::resource('surveys', 'SurveyController');
     Route::resource('reports', 'ReportController');
+    Route::resource('first-teams', 'FirstTeamController');
     //USERS
     Route::resource('admins', 'AdminsController')->middleware('permission:admins');
     Route::resource('assistants', 'AssistantsController')->middleware('permission:assistants');
@@ -105,7 +106,7 @@ Route::group(['namespace' => 'Site', 'middleware'=>'language'], function () {
     Route::post('complaints', 'HomeController@complaints')->name('complaints');
     Route::get('/surveys', 'HomeController@surveys')->name('surveys');
     Route::get('/', 'HomeController@index');
-    Route::get('first-team', 'HomeController@fTeam')->name('first-team');
+    Route::get('first-team', 'FirstTeamController@index')->name('first-team');
     Route::get('schedule', 'HomeController@schedule')->name('schedule');
     Route::get('match/{match}/details', ['as' => 'match.details', 'uses' => 'HomeController@matchDetails']);
     Route::get('news/{news}', 'HomeController@singleNews')->name('newsIndex');

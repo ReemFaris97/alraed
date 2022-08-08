@@ -28,4 +28,14 @@ class Multimedia extends Model
     {
         return getLang($this, 'description');
     }
+    public function images()
+    {
+        return $this->morphMany(Media::class, 'model');
+    }
+    public function createImages(array $images)
+    {
+        foreach ($images as $key => $value) {
+            $this->images()->create(['path' => $value]);
+        }
+    }
 }

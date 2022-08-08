@@ -50,16 +50,11 @@ class MultiMediaController extends Controller
 
         $inputs = $request->all();
 
-        if ($request->hasFile('image')) {
+        /*f ($request->hasFile('image')) {
             $inputs['image'] = uploader($request, 'image');
-        }
-        $multimedia = Multimedia::create($inputs);
-        if ($request->has('images')) {
-            $imgs = $request->images;
-            foreach ($imgs as $img) {
-                $multimedia->images()->create(['path' => $img]);
-            }
-        }
+        }*/
+       $model = Multimedia::create($inputs);
+       $model->createImages($request->path);
         popup('add');
         return back();
     }
@@ -100,17 +95,18 @@ class MultiMediaController extends Controller
             'en_title' => 'required|string|max:191',
             'ar_description' => 'required|string',
             'en_description' => 'required|string',
-            'image' => 'nullable',
-            'images[]' => 'nullable|array',
-            'images.*' => 'nullable|image|max:3500',
-            'type' => 'required|in:image,video'
+          //  'image' => 'nullable',
+            'type'=>'required|in:image,video',
+            'path'   => 'nullable|array',
+            'path.*' => 'nullable|mimes:png,jpg,jpeg|max:10000'
+
         ]);
 
         $inputs = $request->all();
 
-        if ($request->hasFile('image')) {
+       /* if ($request->hasFile('image')) {
             $inputs['image'] = uploader($request, 'image');
-        }
+        }*/
 
         if ($request->has('images')) {
             $imgs = $request->images;
@@ -120,6 +116,10 @@ class MultiMediaController extends Controller
         }
 
         $multimedia->update($inputs);
+        if ($request->path) {
+            $multimedia->images()->delete();
+            $multimedia->createImages($request->path);
+        }
         popup('update');
         return back();
     }
