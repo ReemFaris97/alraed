@@ -13,12 +13,12 @@
       <div class="header">
         <h2>تعديل البنر       {{ $item->title }}</h2>
         <ul class="header-dropdown m-r--5">
-            <a href="{{route('admin.banners.index')}}">   <button class="btn btn-danger">كل البنرات</button></a>
+            <a href="{{route('admin.multimedia.index')}}">   <button class="btn btn-danger">كل البنرات</button></a>
          </ul>
       </div>
       <div class="body">
-        {!!Form::model($item , ['route' => ['admin.banners.update' , $item->id] , 'method' => 'PATCH','files' => true]) !!}
-        @include('admin.banners.form')
+        {!!Form::model($item , ['route' => ['admin.multimedia.update' , $item->id] , 'method' => 'PATCH','files' => true]) !!}
+        @include('admin.multi_media.form')
         {!!Form::close() !!}
       </div>
     </div>

@@ -15,8 +15,8 @@ class MultiMediaController extends Controller
      */
     public function index()
     {
-        $media=Multimedia::all();
-        return view('admin.multi_media.index',['items'=>$media]);
+        $media = Multimedia::all();
+        return view('admin.multi_media.index', ['items' => $media]);
     }
 
     /**
@@ -37,13 +37,15 @@ class MultiMediaController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
+        $this->validate($request, [
             'ar_title' => 'required|string|max:191',
             'en_title' => 'required|string|max:191',
             'ar_description' => 'required|string',
             'en_description' => 'required|string',
             'image' => 'required',
-            'type'=>'required|in:image,video'
+            'images[]' => 'nullable|array',
+            'images.*' => 'nullable|image|max:3500',
+            'type' => 'required|in:image,video'
         ]);
 
         $inputs = $request->all();
@@ -51,7 +53,13 @@ class MultiMediaController extends Controller
         if ($request->hasFile('image')) {
             $inputs['image'] = uploader($request, 'image');
         }
-        Multimedia::create($inputs);
+        $multimedia = Multimedia::create($inputs);
+        if ($request->has('images')) {
+            $imgs = $request->images;
+            foreach ($imgs as $img) {
+                $multimedia->images()->create(['path' => $img]);
+            }
+        }
         popup('add');
         return back();
     }
@@ -75,7 +83,7 @@ class MultiMediaController extends Controller
      */
     public function edit(Multimedia $multimedia)
     {
-        return view('admin.multi_media.edit',['item'=>$multimedia]);
+        return view('admin.multi_media.edit', ['item' => $multimedia]);
     }
 
     /**
@@ -93,13 +101,22 @@ class MultiMediaController extends Controller
             'ar_description' => 'required|string',
             'en_description' => 'required|string',
             'image' => 'nullable',
-            'type'=>'required|in:image,video'
+            'images[]' => 'nullable|array',
+            'images.*' => 'nullable|image|max:3500',
+            'type' => 'required|in:image,video'
         ]);
 
         $inputs = $request->all();
 
         if ($request->hasFile('image')) {
             $inputs['image'] = uploader($request, 'image');
+        }
+
+        if ($request->has('images')) {
+            $imgs = $request->images;
+            foreach ($imgs as $img) {
+                $multimedia->images()->create(['path' => $img]);
+            }
         }
 
         $multimedia->update($inputs);
