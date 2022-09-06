@@ -38,4 +38,15 @@ class Multimedia extends Model
             $this->images()->create(['path' => $value]);
         }
     }
+
+    /**
+     * Get the image
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function getImageAttribute($value)
+    {
+        return @$this->images()->first()->path ?? '';
+    }
 }
