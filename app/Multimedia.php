@@ -49,4 +49,15 @@ class Multimedia extends Model
     {
         return $this->attributes['image'] = uploadFile($value);
     }
+
+    /**
+     * Get the image
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function getImageAttribute($value)
+    {
+        return $this->image ?? @$this->images()->first()->path;
+    }
 }
