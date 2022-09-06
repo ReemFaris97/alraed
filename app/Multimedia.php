@@ -40,13 +40,13 @@ class Multimedia extends Model
     }
 
     /**
-     * Get the image
+     * Set the image
      *
      * @param  string  $value
-     * @return string
+     * @return void
      */
-    public function getImageAttribute($value)
+    public function setImageAttribute($value)
     {
-        return @$this->images()->first()->path ?? '';
+        return $this->attributes['image'] = uploadFile($value);
     }
 }

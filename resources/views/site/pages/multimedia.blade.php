@@ -35,7 +35,7 @@
                                 {{-- @foreach ($media->images as $item) --}}
                                 {{-- <img src="{{ asset($item->path) }}" alt="{{ $media->title }}"/> --}}
                                 {{-- @endforeach --}}
-                                <img src="{{ getimg($media->image) }}" alt="{{ $media->title }}" />
+                                <img src="{{ $media->image }}" alt="{{ $media->title }}" />
                                 <figcaption>
                                     <h3>{{ $media->title }}</h3>
                                     <p>{{ $media->description }}</p>
