@@ -270,7 +270,7 @@ input:focus {
 }
 .nav-wrapper .logo:last-child {
     padding: 0px 5px;
-    background: #FACD01;
+    /* background: #FACD01; */
     border-radius: 5px;
         
 }
