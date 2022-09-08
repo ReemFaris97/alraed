@@ -53,13 +53,13 @@
                                 <img class="slider-image" src="{{ getimg($banner->image) }}" alt="{{ $banner->title }}" />
                             @endif
                             <!--
-                   <h2>{{ $banner->title }}</h2>
-                   <blockquote>
-                                            <p>
-                                                {{ $banner->description }}
-                                            </p>
-                                        </blockquote>
-            -->
+                           <h2>{{ $banner->title }}</h2>
+                           <blockquote>
+                                                    <p>
+                                                        {{ $banner->description }}
+                                                    </p>
+                                                </blockquote>
+                    -->
                         </div>
                     </div>
                 @endforeach
@@ -147,28 +147,28 @@
     </div>
     <!--     *************************  End      of Counter ********************-->
     <!--     *************************  Beginnig of News ********************-->
-<!--     <div class="container">
-        <div class="row">
-            <div class="news-slider owl-carousel owl-theme" id="news-slider">
-                @foreach ($news as $s_new)
-                    <div class="item">
-                        <div class="news-image-wrapper">
-                            <img src="{{ getimg($s_new->image) }}" alt="{{ $s_new->title }}">
-                        </div>
-                        <div class="news-text-wrapper">
-                            <h3 class="news-title"><span>{{ $s_new->category->name }}</span>{{ $s_new->title }}
-                            </h3>
-                            <p>{{ Str::limit($s_new->description, 150) }} </p>
-                            <a href="{{ url('news') }}" class="first-site-btn">
-                                @lang('trans.see_more')
-                            </a>
-                        </div>
-                    </div>
-                @endforeach
+    <!--     <div class="container">
+                <div class="row">
+                    <div class="news-slider owl-carousel owl-theme" id="news-slider">
+                        @foreach ($news as $s_new)
+    <div class="item">
+                                <div class="news-image-wrapper">
+                                    <img src="{{ getimg($s_new->image) }}" alt="{{ $s_new->title }}">
+                                </div>
+                                <div class="news-text-wrapper">
+                                    <h3 class="news-title"><span>{{ $s_new->category->name }}</span>{{ $s_new->title }}
+                                    </h3>
+                                    <p>{{ Str::limit($s_new->description, 150) }} </p>
+                                    <a href="{{ url('news') }}" class="first-site-btn">
+                                        @lang('trans.see_more')
+                                    </a>
+                                </div>
+                            </div>
+    @endforeach
 
-            </div>
-        </div>
-    </div> -->
+                    </div>
+                </div>
+            </div> -->
     <!--     *************************  End      of News ********************-->
 
     <!--     *************************  Beginnig of Times ********************-->
@@ -351,40 +351,39 @@
     </div> --}}
     <!--     *************************  End      of Times ********************-->
     <!--     *************************  Beginnig of first team ********************-->
-   <section class='first-team'>
-   <div class="container">
-        <h3 class="some-title">
-            الفريق الاول
-        </h3>
-        <div class="row">
+    <section class='first-team'>
+        <div class="container">
+            <h3 class="some-title">
+                الفريق الاول
+            </h3>
+            <div class="row">
 
-            <div class="owl-carousel owl-theme" id="first-team">
+                <div class="owl-carousel owl-theme" id="first-team">
 
 
 
-                @foreach ($first_teams as $team )
-                    <div class="item">
-                       <div class='content-img-txt'>
-                           <img src="{{asset($team->image)}}" alt="">
-                           <h4>{{$team->name}}</h4>
-                           <span>{{$team->job}}</span>
-                       </div>
-                    </div>
-
+                    @foreach ($first_teams as $team)
+                        <div class="item">
+                            <div class='content-img-txt'>
+                                <img src="{{ asset($team->image) }}" alt="">
+                                <h4>{{ $team->name }}</h4>
+                                <span>{{ $team->job }}</span>
+                            </div>
+                        </div>
                     @endforeach
-            </div>
+                </div>
 
-            <a href="{{route('first-team')}}" class="first-site-btn">
-                                مشاهدة المزيد                            </a>
+                <a href="{{ route('first-team') }}" class="first-site-btn">
+                    مشاهدة المزيد </a>
+            </div>
         </div>
-    </div>
-   </section>
+    </section>
     <!--     *************************  End      of first team ********************-->
     <!--     *************************  Beginnig of News ********************-->
     <div class="container">
         <div class="row">
             <div class="multimedia-slider owl-carousel owl-theme" id="multimedia-slider">
-                @foreach (\App\News::get() as $media)
+                @foreach (\App\News::latest()->get() as $media)
                     <div class="item">
                         <div class="news-image-wrapper">
                             <a class="watch-vid-btn" data-fancybox="multimedia" data-caption="{{ $media->title }}"
@@ -582,28 +581,28 @@
         var deadline = new Date(Date.parse(new Date()) + aimTime);
         initializeClock('clockdiv', deadline);
     </script>
-   <!--  <script>
+    <!--  <script>
         $('#first-team').owlCarousel({
             loop: false,
-			rtl: true,
-			autoplay: true,
-			margin: 10,
-			responsiveClass: true,
-			nav: false,
-			dots: false,
-			responsive: {
-				0: {
-					items: 1,
-					margin: 0,
-				},
-				991: {
-					items: 2,
-					margin: 0,
-				},
-				1000: {
-					items: 4
-				}
-			}
-		});
+            rtl: true,
+            autoplay: true,
+            margin: 10,
+            responsiveClass: true,
+            nav: false,
+            dots: false,
+            responsive: {
+                0: {
+                    items: 1,
+                    margin: 0,
+                },
+                991: {
+                    items: 2,
+                    margin: 0,
+                },
+                1000: {
+                    items: 4
+                }
+            }
+        });
     </script> -->
 @endsection
