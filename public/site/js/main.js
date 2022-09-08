@@ -57,7 +57,10 @@ $(document).ready(function () {
 			rtl: true,
 			margin: 10,
 			dots: false,
-			nav: true
+			nav: true,
+			autoplay:true,
+			autoplayTimeout:4000,
+			autoplayHoverPause:true
 		});
 	}
 	if ($('#first-team').length) {
