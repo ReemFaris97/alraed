@@ -59,7 +59,8 @@ class HomeController extends Controller
         } else {
             $next_matches = [];
         }
-        return view('site.pages.table', compact('next_match', 'next_matches'));
+        $previous_matches = Game::where('date', '<=', now()->toDateTimeString())->oldest('date')->limit(2)->get();
+        return view('site.pages.table', compact('next_match', 'next_matches', 'previous_matches'));
     }
 
     public function matchDetails(Game $match)

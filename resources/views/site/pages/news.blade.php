@@ -22,7 +22,7 @@
             </h3>
             <button id="menu-toggle" class="menu-toggle"><span>Menu</span></button>
 
-            <!--     *************************  Beginnig of Times ********************-->
+            {{-- <!--     *************************  Beginnig of Times ********************-->
             <div class="container-fluid matches-slider-section">
                 <div class="container">
                     <h3 class="some-title">
@@ -49,11 +49,6 @@
                                                     <div>
                                                         <span class="big-size">@lang('trans.previous_match')</span>
                                                     </div>
-                                                    {{-- <div>
-											<span>برعاية</span>
-											<span>
-											<img src="img/panorama.png" data-toggle="tooltip" title="بانوراما القصيم"/></span>
-										</div> --}}
                                                 </div>
                                                 <div class="slider-match-details">
                                                     <div class="the-tournament">
@@ -70,7 +65,6 @@
                                                         <div class="single-side">
                                                             <div class="sm-size">النتيجة</div>
                                                             <div class="red-color sin-middle">
-                                                                {{-- {{ $prev_match->goals()->where('team_id', $prev_match->FirstTeam->id)->count() }} : {{ $prev_match->goals()->where('team_id', $prev_match->SecondTeam->id)->count() }} --}}
                                                                 {{ $prev_match->goals_first_team . ' : ' . $prev_match->goals_second_team }}
                                                             </div>
                                                             <div class="the-two-teams">
@@ -109,11 +103,6 @@
                                                     <div>
                                                         <span class="big-size">@lang('trans.next_match')</span>
                                                     </div>
-                                                    {{-- <div>
-											<span>برعاية</span>
-											<span>
-											<img src="{{ url('site') }}/img/panorama.png" data-toggle="tooltip" title="Panorma Alqassim."/></span>
-										</div> --}}
                                                 </div>
                                                 <div class="slider-match-details">
                                                     <div class="the-tournament">
@@ -172,11 +161,6 @@
                                                     <div>
                                                         <span class="big-size">@lang('trans.later_matches')</span>
                                                     </div>
-                                                    {{-- <div>
-											<span>برعاية</span>
-											<span>
-											<img src="{{ url('site') }}/img/panorama.png" data-toggle="tooltip" title="بانوراما القصيم"/></span>
-										</div> --}}
                                                 </div>
                                                 <div class="slider-match-details">
                                                     <div class="the-tournament">
@@ -221,7 +205,7 @@
                     </div>
                 </div>
             </div>
-            <!--     *************************  End      of Times ********************-->
+            <!--     *************************  End      of Times ********************--> --}}
 
             <div id="theGrid" class="main">
                 <section class="grid">
@@ -299,14 +283,12 @@
                                     {{ $news_s->description }}
                                 </p>
 
-                                <!--							Video here if isset-->
-                                <!--
-                           <div class="w-80-percent">
-                            <div class="embed-responsive embed-responsive-16by9">
-                           <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
-                           </div>
-                           </div>
-                    -->
+
+                                {{-- <div class="w-80-percent">
+                                        <div class="embed-responsive embed-responsive-16by9">
+                                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
+                                        </div>
+                                    </div> --}}
 
 
 
