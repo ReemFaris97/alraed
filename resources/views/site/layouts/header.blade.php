@@ -115,7 +115,7 @@
                                             @lang('trans.Document_strategic_club')
                                         </a>
 
-                                        <a href="{{ asset('site/التقرير السنوي 2020-2021.pdf') }}" target="_blank"
+                                        <a href="{{ asset('site/التقرير السنوي 2021-2022.pdf') }}" target="_blank"
                                             rel=" noopener">
                                             @lang('trans.annual_report')
                                         </a>
@@ -155,7 +155,7 @@
                                     <div class="hoverable-inner">
                                          @foreach (\laravelsurveyjs\app\Models\Survey::all() as $survey)
                                             <a href="{{route('survey-manager.run',$survey->slug)}}">{{$survey->name}}</a>
-                                        @endforeach 
+                                        @endforeach
 
                                        {{--<a target="_blank"
                                             href="https://docs.google.com/forms/d/e/1FAIpQLSdMDeUwo5Hby3LtH9OL2zHlTvD_107wRqq0SFqyPAmA5JwlEg/viewform">
