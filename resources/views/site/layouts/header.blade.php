@@ -115,7 +115,7 @@
                                             @lang('trans.Document_strategic_club')
                                         </a>
 
-                                        <a href="{{ asset('التقرير السنوي 2021 - 2022.pdf') }}" target="_blank"
+                                        <a href="{{ asset('site/التقرير السنوي 2021 - 2022.pdf') }}" target="_blank"
                                             rel=" noopener">
                                             @lang('trans.annual_report')
                                         </a>
